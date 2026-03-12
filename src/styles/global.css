@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #999;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #666;
+		border-radius: 100px;
+	}
+
+	@font-face {
+		font-family: GilroySemibold;
+		src: url(/fonts/Gilroy-SemiBold.woff2) format('woff2');
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: GilroyBold;
+		src: url(/fonts/Gilroy-Bold.woff2) format('woff2');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+@theme {
+	--font-heading: 'GilroyBold', sans-serif;
+	--font-display: 'GilroySemibold', sans-serif;
+	--font-accent: 'Albert Sans Variable', sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+::selection {
+	background-color: #ffe1e3;
+	color: #ff5e69;
+}
+
+::view-transition-group(root) {
+	animation-timing-function: var(--expo-out);
+}
+
+::view-transition-new(root) {
+	mask: url('/svg/polygon.svg') top left / 0 no-repeat;
+	mask-origin: top left;
+	animation: scale 1.5s;
+}
+
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+	animation: scale 1.5s;
+	z-index: -1;
+	transform-origin: top left;
+}
+
+@keyframes scale {
+	to {
+		mask-size: 200vmax;
+	}
+}
+
+.tooltip {
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.has-tooltip:hover .tooltip {
+	opacity: 1;
+}
+
+.fade-enter-active {
+	opacity: 0;
+	transform: translateY(20px);
+	transition:
+		opacity 0.5s ease,
+		transform 0.5s ease;
+}
+
+.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
