@@ -8,29 +8,29 @@ const i18n = getI18N({ currentLocale })
 	class='relative flex flex-col items-center justify-center gap-y-4 px-6 pt-20'
 	id='about-me'
 >
-	<h2 class='text-center font-GilroyBold text-2xl font-bold lg:text-5xl'>
+	<h2 class='font-heading text-center text-2xl font-bold lg:text-5xl'>
 		{i18n.landing.moreinfo.phrase}
 	</h2>
-	<span class='font-GilroySemibold text-lg text-neutral-500 lg:text-2xl'
+	<span class='font-display text-lg text-neutral-500 lg:text-2xl'
 		>{i18n.landing.moreinfo.who.title}</span
 	>
-	<p class='max-w-[42rem] text-pretty font-GilroyRegular text-lg'>
+	<p class='font-accent max-w-[42rem] text-lg text-pretty'>
 		{i18n.landing.moreinfo.who['1']}
 	</p>
-	<p class='max-w-[42rem] text-pretty font-GilroyRegular text-lg'>
+	<p class='font-accent max-w-[42rem] text-lg text-pretty'>
 		{i18n.landing.moreinfo.who['2'].fp}
 		<span
-			class='has-tooltip relative cursor-crosshair select-none rounded-lg bg-[#ff5e69] px-1.5 py-0.5 font-GilroySemibold'
+			class='has-tooltip font-display relative cursor-crosshair rounded-lg bg-[#ff5e69] px-1.5 py-0.5 select-none'
 			>{i18n.landing.moreinfo.who['2'].sp}<span
-				class='tooltip absolute -top-[90px] left-0 z-10 w-48 rounded-lg bg-[#ff5e69]/50 px-1.5 py-0.5 font-GilroySemibold text-sm backdrop-blur-sm'
+				class='tooltip font-display absolute -top-[90px] left-0 z-10 w-48 rounded-lg bg-[#ff5e69]/50 px-1.5 py-0.5 text-sm backdrop-blur-sm'
 			>
 				HTML | CSS | JS | TS | ReactJS | NextJS | NodeJS | API REST | MongoDB | MySQL
 			</span></span
 		>,
 		<span
-			class='has-tooltip relative cursor-crosshair select-none rounded-lg bg-[#b16cea] px-1.5 py-0.5 font-GilroySemibold'
+			class='has-tooltip font-display relative cursor-crosshair rounded-lg bg-[#b16cea] px-1.5 py-0.5 select-none'
 			>{i18n.landing.moreinfo.who['2'].tp}<span
-				class='tooltip absolute -left-32 -top-[110px] w-48 rounded-lg bg-[#b16cea]/50 px-1.5 py-0.5 font-GilroySemibold text-sm backdrop-blur-sm'
+				class='tooltip font-display absolute -top-[110px] -left-32 w-48 rounded-lg bg-[#b16cea]/50 px-1.5 py-0.5 text-sm backdrop-blur-sm'
 			>
 				Figma | Adobe Photoshop | Adobe Illustrator | Responsive Design | Wireframes | Web
 				Accessibility
@@ -38,27 +38,27 @@ const i18n = getI18N({ currentLocale })
 		</span>
 		&nbsp;{i18n.landing.moreinfo.who['2'].ftp}
 		<span
-			class='has-tooltip relative cursor-crosshair select-none rounded-lg bg-[#ffa84b] px-1.5 py-0.5 font-GilroySemibold'
+			class='has-tooltip font-display relative cursor-crosshair rounded-lg bg-[#ffa84b] px-1.5 py-0.5 select-none'
 			>{i18n.landing.moreinfo.who['2'].ffp}
 			<span
-				class='tooltip absolute left-0 top-8 w-48 text-pretty rounded-lg bg-[#ffa84b]/50 px-1.5 py-0.5 font-GilroySemibold text-sm backdrop-blur-sm'
+				class='tooltip font-display absolute top-8 left-0 w-48 rounded-lg bg-[#ffa84b]/50 px-1.5 py-0.5 text-sm text-pretty backdrop-blur-sm'
 			>
 				Android | iOS | React Native | Cordova | JS & TS
 			</span>
 		</span>
 	</p>
-	<p class='max-w-[42rem] text-pretty font-GilroyRegular text-lg'>
+	<p class='font-accent max-w-[42rem] text-lg text-pretty'>
 		{i18n.landing.moreinfo.who['3']}
 	</p>
 	<div
-		class='pointer-events-none absolute -inset-x-2.5 -bottom-2.5 h-[16.6%] w-full select-none overflow-hidden bg-gradient-to-t from-white from-10% via-white/50 via-30% to-transparent to-90% sm:h-[44.4%]'
+		class='pointer-events-none absolute -inset-x-2.5 -bottom-2.5 h-[16.6%] w-full overflow-hidden bg-gradient-to-t from-white from-10% via-white/50 via-30% to-transparent to-90% select-none sm:h-[44.4%]'
 	>
 	</div>
 	<div>
 		<a
 			href='/about-me'
 			class='group relative inline-flex h-12 items-center justify-center overflow-hidden bg-neutral-950 px-6 font-medium text-neutral-200'
-			><span class='select-none font-GilroySemibold'>{i18n.landing.moreinfo.who.button}</span>
+			><span class='font-display select-none'>{i18n.landing.moreinfo.who.button}</span>
 			<div class='ml-1 transition group-hover:translate-x-1'>
 				<svg
 					width='15'
