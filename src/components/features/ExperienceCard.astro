@@ -50,7 +50,7 @@ const {
 				<div class='group relative overflow-hidden rounded-lg transition-all duration-300 md:p-6'>
 					<div class='mb-2 flex items-center justify-between'>
 						<h2
-							class=`${textStyles} pr-2 md:text-3xl text-lg font-bold font-GilroyBold transition-colors text-balance`
+							class=`${textStyles} pr-2 md:text-3xl text-lg font-bold font-heading transition-colors text-balance`
 						>
 							{title}
 						</h2>
@@ -59,14 +59,14 @@ const {
 							class:list='h-6 w-6 flex-shrink-0 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 '
 						/>
 					</div>
-					<time class='mb-4 font-GilroySemibold text-neutral-500'>{location} | {duration}</time>
-					<p class='text-pretty pt-4 font-GilroyRegular italic text-neutral-400'>
+					<time class='font-display mb-4 text-neutral-500'>{location} | {duration}</time>
+					<p class='font-accent pt-4 text-pretty text-neutral-400 italic'>
 						{phase}
 					</p>
-					<p class='mb-4 text-pretty pt-4 font-GilroyRegular text-neutral-800'>
+					<p class='font-accent mb-4 pt-4 text-pretty text-neutral-800'>
 						{description}
 					</p>
-					<p class='mb-4 text-pretty font-GilroyRegular text-neutral-800'>
+					<p class='font-accent mb-4 text-pretty text-neutral-800'>
 						{description2}
 					</p>
 					<div class='flex flex-wrap gap-2'>
