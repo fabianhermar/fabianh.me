@@ -8,31 +8,29 @@ import Layout from '@/layouts/Layout.astro'
 <Layout title='404 - Page not found'>
 	<main class='flex min-h-[500px] flex-col items-center justify-center p-4'>
 		<section class='space-y-6 text-center'>
-			<h1 class='font-GilroyBold text-6xl font-bold text-primary'>404</h1>
+			<h1 class='font-heading text-primary text-6xl font-bold'>404</h1>
 
 			<div
-				class='mb-4 flex items-center justify-center space-x-2 font-GilroySemibold text-4xl font-semibold'
+				class='font-display mb-4 flex items-center justify-center space-x-2 text-4xl font-semibold'
 			>
 				<Bug />
 				<span>¡Ups! Parece que hay un bug en la matriz</span>
 			</div>
 
-			<p class='mb-8 font-GilroyRegular text-xl'>
-				La página que buscas se ha perdido en el void pointer.
-			</p>
+			<p class='font-accent mb-8 text-xl'>La página que buscas se ha perdido en el void pointer.</p>
 
 			<div
-				class='flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0'
+				class='flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4'
 			>
 				<a
 					href='/'
-					class='flex items-center space-x-2 bg-primary px-4 py-2 font-GilroySemibold font-semibold text-primary-foreground transition-colors hover:bg-primary/90'
+					class='bg-primary font-display text-primary-foreground hover:bg-primary/90 flex items-center space-x-2 px-4 py-2 font-semibold transition-colors'
 				>
 					<Home />
 					<span>Volver al inicio</span>
 				</a>
 				<button
-					class='flex items-center space-x-2 bg-secondary px-4 py-2 font-GilroySemibold font-semibold text-secondary-foreground transition-colors hover:bg-secondary/90'
+					class='bg-secondary font-display text-secondary-foreground hover:bg-secondary/90 flex items-center space-x-2 px-4 py-2 font-semibold transition-colors'
 					id='reload-button'
 				>
 					<RefreshCw />
