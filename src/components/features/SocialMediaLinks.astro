@@ -33,7 +33,7 @@ const translatePath = useTranslatedPath(lang)
 					fill=''></path>
 			</svg>
 			<div
-				class='absolute left-0 top-full z-0 h-full w-full rounded-full bg-black transition-all duration-300 group-hover:top-0'
+				class='absolute top-full left-0 z-0 h-full w-full rounded-full bg-black transition-all duration-300 group-hover:top-0'
 			>
 			</div>
 		</a>
@@ -60,7 +60,7 @@ const translatePath = useTranslatedPath(lang)
 					fill=''></path>
 			</svg>
 			<div
-				class='absolute left-0 top-full z-0 h-full w-full rounded-full bg-[#006699] transition-all duration-300 group-hover:top-0'
+				class='absolute top-full left-0 z-0 h-full w-full rounded-full bg-[#006699] transition-all duration-300 group-hover:top-0'
 			>
 			</div>
 		</a>
@@ -76,7 +76,7 @@ const translatePath = useTranslatedPath(lang)
 		>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
-				class='fill-gray-900 relative z-10 size-6 transition-all duration-300 group-hover:fill-white'
+				class='relative z-10 size-6 fill-gray-900 transition-all duration-300 group-hover:fill-white'
 				viewBox='0 0 512 512'
 			>
 				<path
@@ -84,7 +84,7 @@ const translatePath = useTranslatedPath(lang)
 				></path>
 			</svg>
 			<div
-				class='absolute left-0 top-full z-0 h-full w-full rounded-full bg-[#2B3137] transition-all duration-300 group-hover:top-0'
+				class='absolute top-full left-0 z-0 h-full w-full rounded-full bg-[#2B3137] transition-all duration-300 group-hover:top-0'
 			>
 			</div>
 		</a>
@@ -100,7 +100,7 @@ const translatePath = useTranslatedPath(lang)
 		>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
-				class='fill-gray-900 relative z-10 size-6 transition-all duration-300 group-hover:fill-white'
+				class='relative z-10 size-6 fill-gray-900 transition-all duration-300 group-hover:fill-white'
 				viewBox='0 0 512 512'
 			>
 				<path
@@ -108,12 +108,12 @@ const translatePath = useTranslatedPath(lang)
 				></path>
 			</svg>
 			<div
-				class='absolute left-0 top-full z-0 h-full w-full rounded-full bg-gradient-to-bl from-[#B16CEA] via-[#FF5E69] to-[#FFA84B] transition-all duration-300 group-hover:top-0'
+				class='absolute top-full left-0 z-0 h-full w-full rounded-full bg-linear-to-bl from-[#B16CEA] via-[#FF5E69] to-[#FFA84B] transition-all duration-300 group-hover:top-0'
 			>
 			</div>
 		</a>
 	</div>
-	<div class='flex select-none flex-row justify-center gap-3 lg:justify-start'>
+	<div class='flex flex-row justify-center gap-3 select-none lg:justify-start'>
 		<a
 			aria-label='Download my CV in PDF format'
 			class='Btn'
@@ -133,12 +133,12 @@ const translatePath = useTranslatedPath(lang)
 			href='https://cv.fabianh.me'
 			target='_blank'
 			rel='noopener noreferrer'
-			class='group relative inline-flex h-10 items-center justify-center bg-neutral-950 px-[10px] font-GilroyBold text-sm text-neutral-200 dark:bg-neutral-50 dark:text-black'
+			class='group font-heading relative inline-flex h-10 items-center justify-center bg-neutral-950 px-[10px] text-sm text-neutral-200 dark:bg-neutral-50 dark:text-black'
 		>
 			<span>{t('btn.digitalCV')}</span>
 			<div class='relative ml-1 h-5 w-5 overflow-hidden'>
 				<div
-					class='absolute transition-all duration-300 group-hover:-translate-y-5 group-hover:translate-x-4'
+					class='absolute transition-all duration-300 group-hover:translate-x-4 group-hover:-translate-y-5'
 				>
 					<svg
 						width='15'
@@ -175,6 +175,7 @@ const translatePath = useTranslatedPath(lang)
 </section>
 
 <style>
+	@reference "../../styles/global.css";
 	.Btn {
 		width: auto;
 		height: 2.5rem;
@@ -191,7 +192,7 @@ const translatePath = useTranslatedPath(lang)
 		background-color: dark-light(#fff, #000);
 		color: dark-light(#fff, #000);
 		border: 1px solid #000;
-		@apply font-GilroySemibold;
+		@apply font-display;
 	}
 
 	.svgIcon {
