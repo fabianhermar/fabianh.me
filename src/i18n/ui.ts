@@ -39,7 +39,7 @@ export const ui = {
 		'footer.style': 'Guía de estilo',
 		'footer.blog': 'Blog',
 		'footer.small':
-			'Desarrollado con mucho ❤ utilizando <a class="font-GilroyBold underline text-[#FF5D01]" href="https://astro.build" target="_blank">Astro</a> y <a class="font-GilroyBold underline text-[#00D8FF]" href="https://react.dev" target="_blank">React</a>. Desplegado en <a class="font-GilroyBold underline text-[#000]" href="https://vercel.com" target="_blank">Vercel</a> y administrado por <a class="font-GilroyBold underline text-[#F48120]" href="https://cloudflare.com" target="_blank">CloudFlare</a>.',
+			'Desarrollado con mucho ❤ utilizando <a class="font-heading underline text-[#FF5D01]" href="https://astro.build" target="_blank">Astro</a> y <a class="font-heading underline text-[#00D8FF]" href="https://react.dev" target="_blank">React</a>. Desplegado en <a class="font-heading underline text-black href="https://vercel.com" target="_blank">Vercel</a> y administrado por <a class="font-heading underline text-[#F48120]" href="https://cloudflare.com" target="_blank">CloudFlare</a>.',
 	},
 	en: {
 		'nav.about': 'About me',
@@ -55,7 +55,7 @@ export const ui = {
 		'footer.style': 'Style guide',
 		'footer.blog': 'Blog',
 		'footer.small':
-			'Developed with a lot of ❤ using <a class="font-GilroyBold underline text-[#FF5D01]" href="https://astro.build" target="_blank">Astro</a> and <a class="font-GilroyBold underline text-[#00D8FF]" href="https://react.dev" target="_blank">React</a>. Deployed on <a class="font-GilroyBold underline text-[#000]" href="https://vercel.com" target="_blank">Vercel</a> and managed by <a class="font-GilroyBold underline text-[#F48120]" href="https://cloudflare.com" target="_blank">CloudFlare</a>.',
+			'Developed with a lot of ❤ using <a class="font-heading underline text-[#FF5D01]" href="https://astro.build" target="_blank">Astro</a> and <a class="font-heading underline text-[#00D8FF]" href="https://react.dev" target="_blank">React</a>. Deployed on <a class="font-heading underline text-black href="https://vercel.com" target="_blank">Vercel</a> and managed by <a class="font-heading underline text-[#F48120]" href="https://cloudflare.com" target="_blank">CloudFlare</a>.',
 	},
 	de: {
 		'nav.about': 'Über mich',
@@ -71,7 +71,7 @@ export const ui = {
 		'footer.style': 'Stilhandbuch',
 		'footer.blog': 'Blog',
 		'footer.small':
-			'Entwickelt mit viel ❤ unter Verwendung von <a class="font-GilroyBold underline text-[#FF5D01]" href="https://astro.build" target="_blank">Astro</a> und <a class="font-GilroyBold underline text-[#00D8FF]" href="https://react.dev" target="_blank">React</a>. Bereitgestellt auf <a class="font-GilroyBold underline text-[#000]" href="https://vercel.com" target="_blank">Vercel</a> und verwaltet von <a class="font-GilroyBold underline text-[#F48120]" href="https://cloudflare.com" target="_blank">CloudFlare</a>.',
+			'Entwickelt mit viel ❤ unter Verwendung von <a class="font-heading underline text-[#FF5D01]" href="https://astro.build" target="_blank">Astro</a> und <a class="font-heading underline text-[#00D8FF]" href="https://react.dev" target="_blank">React</a>. Bereitgestellt auf <a class="font-heading underline text-black href="https://vercel.com" target="_blank">Vercel</a> und verwaltet von <a class="font-heading underline text-[#F48120]" href="https://cloudflare.com" target="_blank">CloudFlare</a>.',
 	},
 } as const
 
