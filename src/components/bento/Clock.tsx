@@ -53,14 +53,14 @@ export function UTCClock() {
 		<div className='mx-auto w-full max-w-md overflow-hidden rounded-lg shadow-lg'>
 			<div className='px-6 py-4'>
 				<div className='flex flex-col items-center space-y-4 text-white'>
-					<div className='text-gray-700 font-GilroyBold text-5xl md:text-7xl' aria-live='polite'>
+					<div className='text-gray-700 font-heading text-5xl md:text-7xl' aria-live='polite'>
 						{time ? formatTime(time) : 'Cargando...'}
 					</div>
-					<p className='text-gray-600 font-GilroySemibold text-sm md:text-xl'>
+					<p className='text-gray-600 font-display text-sm md:text-xl'>
 						Zona horaria: {timeZone}
 					</p>
 					<p
-						className='text-gray-600 text-center font-GilroyRegular text-xs md:text-lg'
+						className='text-gray-600 text-center font-accent text-xs md:text-lg'
 						aria-live='polite'
 					>
 						{getTimeZoneMessage()}
