@@ -48,7 +48,7 @@ const {
 							<Image
 								src={projectImage}
 								alt=`Screenshot of ${title} project`
-								class='h-full w-full select-none object-cover'
+								class='h-full w-full object-cover select-none'
 								width={500}
 								height={500}
 								loading='lazy'
@@ -57,7 +57,7 @@ const {
 					</div>
 					<div class='w-full space-y-6 p-6 md:order-1 md:w-1/2'>
 						<div class='flex items-center justify-start gap-4 pb-4'>
-							<h2 class='font-GilroyBold text-3xl font-bold text-[#FFA84B] drop-shadow-sm'>
+							<h2 class='font-heading text-3xl font-bold text-[#FFA84B] drop-shadow-sm'>
 								{title}
 							</h2>
 							<div class='flex items-center gap-4'>
@@ -82,13 +82,13 @@ const {
 								</div>
 							</div>
 						</div>
-						<p class='font-GilroySemibold font-medium text-neutral-600'>
+						<p class='font-display font-medium text-neutral-600'>
 							{subtitle}
 						</p>
-						<p class='font-GilroyRegular text-sm font-normal text-neutral-700'>
+						<p class='font-accent text-sm font-normal text-neutral-700'>
 							{description}
 						</p>
-						<p class='font-GilroyRegular text-sm font-normal text-neutral-700'>
+						<p class='font-accent text-sm font-normal text-neutral-700'>
 							{description2}
 						</p>
 						<div class='flex flex-wrap gap-2'>
