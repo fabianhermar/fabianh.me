@@ -21,24 +21,24 @@ const translatePath = useTranslatedPath(lang)
 			<div class='lg:flex lg:items-end lg:justify-between'>
 				<div>
 					<div class='flex justify-center lg:justify-start'>
-						<h4 class='font-GilroyBold text-2xl tracking-tight text-black'>
+						<h4 class='font-heading text-2xl tracking-tight text-black'>
 							Fabian Herrera
 							<span
-								class='bg-gradient-to-r from-[#b16cea] from-10% via-[#ff5e69] via-30% to-[#ffa84b] to-90% bg-clip-text font-GilroyBold tracking-tight text-transparent'
+								class='font-heading bg-gradient-to-r from-[#b16cea] from-10% via-[#ff5e69] via-30% to-[#ffa84b] to-90% bg-clip-text tracking-tight text-transparent'
 								>.
 							</span>
 						</h4>
 					</div>
 
 					<p
-						class='text-gray-500 mx-auto mt-6 max-w-md text-center font-GilroyRegular italic leading-relaxed lg:text-left'
+						class='font-accent mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 italic lg:text-left'
 					>
 						"Programa, aprende, falla, corrige y crece, una y otra vez."
 					</p>
 				</div>
 
 				<ul
-					class='text-gray-500 mb-6 mt-6 flex flex-wrap items-center justify-center font-GilroySemibold text-base sm:mb-0 md:mt-0'
+					class='font-display mt-6 mb-6 flex flex-wrap items-center justify-center text-base text-gray-500 sm:mb-0 md:mt-0'
 				>
 					<li>
 						<a
@@ -79,7 +79,7 @@ const translatePath = useTranslatedPath(lang)
 			</div>
 
 			<p
-				class='mt-12 text-balance text-center font-GilroyRegular text-base font-medium lg:text-right'
+				class='font-accent mt-12 text-center text-base font-medium text-balance lg:text-right'
 				set:html={sanitizeHtml(t('footer.small'))}
 			/>
 		</div>
