@@ -70,7 +70,7 @@ export default function HyperText({
 				{displayText.map((letter, i) => (
 					<motion.h1
 						key={i}
-						className={cn('font-GilroyBold', letter === ' ' ? 'w-3' : '', className)}
+						className={cn('font-heading', letter === ' ' ? 'w-3' : '', className)}
 						{...framerProps}
 					>
 						{letter}
