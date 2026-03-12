@@ -6,7 +6,7 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<div class='prose max-w-full px-3 pb-4 pt-4 md:pb-0'>
-	<p class='font-GilroyRegular text-black' set:html={sanitizeHtml(i18n.landing.bento.hobbies.fp)} />
-	<p class='font-GilroyRegular text-black' set:html={sanitizeHtml(i18n.landing.bento.hobbies.sp)} />
+<div class='prose max-w-full px-3 pt-4 pb-4 md:pb-0'>
+	<p class='font-accent text-black' set:html={sanitizeHtml(i18n.landing.bento.hobbies.fp)} />
+	<p class='font-accent text-black' set:html={sanitizeHtml(i18n.landing.bento.hobbies.sp)} />
 </div>
