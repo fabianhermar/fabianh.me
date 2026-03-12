@@ -12,7 +12,7 @@ const i18n = getI18N({ currentLocale })
 		<div class='group relative overflow-hidden transition-all duration-300 md:p-4'>
 			<div class='mb-2 flex items-center justify-between px-4 md:px-0'>
 				<h3
-					class='w-full pr-2 font-GilroyBold text-lg font-bold text-black transition-colors md:text-3xl'
+					class='font-heading w-full pr-2 text-lg font-bold text-black transition-colors md:text-3xl'
 				>
 					{i18n.landing.bento.education.career}
 				</h3>
@@ -21,13 +21,13 @@ const i18n = getI18N({ currentLocale })
 					styles='text-black'
 				/>
 			</div>
-			<time class='mb-4 px-4 font-GilroySemibold text-neutral-500 md:px-0'
+			<time class='font-display mb-4 px-4 text-neutral-500 md:px-0'
 				>{i18n.landing.bento.education.location} | {i18n.landing.bento.education.duration}</time
 			>
 		</div>
 	</a>
 	<p
-		class='text-pretty px-4 pt-4 font-GilroyRegular text-lg text-neutral-800'
+		class='font-accent px-4 pt-4 text-lg text-pretty text-neutral-800'
 		set:html={sanitizeHtml(i18n.landing.bento.education.description)}
 	/>
 </div>
