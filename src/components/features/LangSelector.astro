@@ -13,7 +13,7 @@ const otherLocales = Object.values(LANGUAGES).filter((locale) => locale.code !==
 
 <div class='relative inline-block text-left'>
 	<div
-		class='group rounded-md bg-black/100 font-GilroySemibold text-xs text-white transition-all hover:bg-black/70'
+		class='group font-display rounded-md bg-black text-xs text-white transition-all hover:bg-black/70'
 	>
 		<button
 			type='button'
@@ -26,13 +26,13 @@ const otherLocales = Object.values(LANGUAGES).filter((locale) => locale.code !==
 			<DropdownArrow />
 		</button>
 		<ul
-			class='absolute hidden w-full pt-0.5 group-hover:block group-hover:animate-accordion-down group-hover:duration-200'
+			class='group-hover:animate-accordion-down absolute hidden w-full pt-0.5 group-hover:block group-hover:duration-200'
 		>
 			{
 				otherLocales.map((locale) => (
 					<li class='py-[2px]'>
 						<a
-							class='inline-flex w-full items-center justify-start gap-x-2 whitespace-nowrap rounded-md bg-black/50 px-3 py-2 hover:bg-black/70'
+							class='inline-flex w-full items-center justify-start gap-x-2 rounded-md bg-black/50 px-3 py-2 whitespace-nowrap hover:bg-black/70'
 							href={translatePath(`/${route || ''}`, locale.code)}
 						>
 							<locale.flag />
