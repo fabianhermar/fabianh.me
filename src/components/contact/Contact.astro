@@ -3,22 +3,22 @@ import ContactForm from '@/components/contact/ContactForm'
 ---
 
 <div
-	class='text-gray-800 flex min-h-screen flex-col bg-white pt-6 md:pt-0 lg:flex-row'
+	class='flex min-h-screen flex-col bg-white pt-6 text-gray-800 md:pt-0 lg:flex-row'
 	id='contact'
 >
 	<div
 		class='flex w-full flex-col items-center justify-center border-neutral-200 md:p-8 lg:w-1/2 lg:border-r'
 	>
 		<div class='mb-8 lg:mb-0'>
-			<h2 class='mb-4 font-GilroyBold text-2xl font-bold md:text-4xl'>Gracias por estar aquí 🧡</h2>
-			<p class='text-gray-600 mb-4 font-GilroyRegular font-normal'>
+			<h2 class='font-heading mb-4 text-2xl font-bold md:text-4xl'>Gracias por estar aquí 🧡</h2>
+			<p class='font-accent mb-4 font-normal text-gray-600'>
 				Si tienes alguna pregunta, un proyecto en mente en que te gustaría que trabajáramos juntos,
 				o simplemente quieres decir ¡Hola!, mi correo es el siguiente:
 			</p>
 			<div class='pb-4 md:pb-10'>
 				<a
 					href='mailto:ctofabian@gmail.com'
-					class='text-gray-400 mt-4 flex max-w-xs flex-row items-center gap-2 font-GilroySemibold text-lg'
+					class='font-display mt-4 flex max-w-xs flex-row items-center gap-2 text-lg text-gray-400'
 				>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -38,8 +38,8 @@ import ContactForm from '@/components/contact/ContactForm'
 			</div>
 			<hr />
 			<div class='hidden pt-10 md:block'>
-				<h3 class='mb-4 font-GilroyBold text-3xl font-bold md:text-4xl'>Más formas de contacto</h3>
-				<p class='font-GilroyRegular text-base'>
+				<h3 class='font-heading mb-4 text-3xl font-bold md:text-4xl'>Más formas de contacto</h3>
+				<p class='font-accent text-base'>
 					Si lo prefieres, también puedes contactarme mediante mis otras redes que te dejo aquí
 					debajo. En todas siempre estaré con el gusto de poder atenderte.{' '}
 				</p>
@@ -100,19 +100,19 @@ import ContactForm from '@/components/contact/ContactForm'
 	</div>
 	<div class='flex w-full flex-col items-center justify-center md:p-8 lg:w-1/2'>
 		<div class='mb-8 rounded-lg bg-neutral-50 p-6 shadow-sm lg:mb-0'>
-			<h2 class='mb-4 font-GilroySemibold text-xl font-semibold md:text-2xl'>
+			<h2 class='font-display mb-4 text-xl font-semibold md:text-2xl'>
 				Rellena el siguiente formulario y me pondré en contacto contigo lo más pronto posible.
 			</h2>
 			<ContactForm client:visible />
-			<p class='text-gray-500 mt-4 font-GilroyRegular text-xs'>
+			<p class='font-accent mt-4 text-xs text-gray-500'>
 				No conservo ni comparto ninguno de tus datos personales. Todo lo proporcionado en el
 				formulario es totalmente confidencial y solo será utilizado para ambitos de contacto
 				profesional.
 			</p>
 		</div>
 		<div class='block border-t border-neutral-200 pt-4 md:hidden'>
-			<h3 class='mb-4 font-GilroyBold text-3xl font-bold md:text-4xl'>Más formas de contacto</h3>
-			<p class='font-GilroyRegular text-base'>
+			<h3 class='font-heading mb-4 text-3xl font-bold md:text-4xl'>Más formas de contacto</h3>
+			<p class='font-accent text-base'>
 				Si lo prefieres, también puedes contactarme mediante mis otras redes que te dejo aquí
 				debajo. En todas siempre estaré con el gusto de poder atenderte.{' '}
 			</p>
