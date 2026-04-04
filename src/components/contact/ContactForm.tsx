@@ -2,7 +2,7 @@ import { Textarea } from '@/components/ui/textarea'
 import EmailTemplate from '@/components/contact/EmailComponent'
 import { render } from '@react-email/render'
 import { AUTH_TOKEN } from 'astro:env/client'
-import { toast, Toaster } from 'sonner'
+import { sileo, Toaster } from 'sileo'
 import { useRef } from 'react'
 
 function ContactForm() {
@@ -36,7 +36,7 @@ function ContactForm() {
 			}
 		)
 
-		const promise = await fetch('/api/sendEmail.json', {
+		const promise = fetch('/api/sendEmail.json', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -56,22 +56,42 @@ function ContactForm() {
 			return res.json()
 		})
 
-		toast.promise(promise, {
-			loading: 'Enviando...',
-			success: (data) => {
-				// Reiniciar el formulario
-				if (formRef.current) {
-					formRef.current.reset()
-				}
-				return 'Correo enviado exitosamente'
-			},
-			error: 'Error al enviar el correo',
+		const promiseWithReset = promise.then((data) => {
+			if (formRef.current) {
+				formRef.current.reset()
+			}
+			return data
 		})
+
+		sileo.promise(promiseWithReset, {
+			loading: {
+				fill: "#171717",
+				title: "Enviando...",
+			},
+			success: {
+				fill: "#171717",
+				title: "Correo enviado exitosamente",
+				description: (
+					<span className="text-green-300/50! font-accent!">
+						I recieve your message and I will respond as soon as possible. Thank you for reaching out!
+					</span>
+				),
+			},
+			error: {
+				fill: "#171717",
+				title: "Error al enviar el correo",
+				description: (
+					<span className="text-red-300/50! font-accent!">
+						Something went wrong while sending your message. Please try again later or try to contact me directly with my email.
+					</span>
+				),
+			}
+		});
 	}
 
 	return (
 		<>
-			<Toaster />
+			<Toaster position='top-center' />
 			<form onSubmit={handleSubmit} ref={formRef}>
 				<div className='mb-4 grid grid-cols-1 gap-4 md:grid-cols-2'>
 					<div>
@@ -82,7 +102,7 @@ function ContactForm() {
 						<input
 							id='name'
 							placeholder='John Doe'
-							className='flex h-9 w-full rounded-md border border-input bg-transparent bg-white px-3 py-1 font-accent text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50'
+							className='flex h-9 w-full rounded-md border border-input bg-white px-3 py-1 font-accent text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50'
 							required
 							name='name'
 						/>
@@ -94,7 +114,7 @@ function ContactForm() {
 						</label>
 						<input
 							type='email'
-							className='flex h-9 w-full rounded-md border border-input bg-transparent bg-white px-3 py-1 font-accent text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50'
+							className='flex h-9 w-full rounded-md border border-input bg-white px-3 py-1 font-accent text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50'
 							placeholder='john.doe@email.com'
 							required
 							name='email'
@@ -109,7 +129,7 @@ function ContactForm() {
 					<input
 						id='subject'
 						placeholder={null}
-						className='flex h-9 w-full rounded-md border border-input bg-transparent bg-white px-3 py-1 font-accent text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50'
+						className='flex h-9 w-full rounded-md border border-input bg-white px-3 py-1 font-accent text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50'
 						required
 						name='subject'
 					/>
@@ -137,7 +157,7 @@ function ContactForm() {
 					/>
 					<input
 						type='reset'
-						className='text-gray-700 w-full cursor-pointer border border-neutral-200 border-neutral-300 bg-white py-2 font-display hover:bg-neutral-100 sm:w-60'
+						className='text-gray-700 w-full cursor-pointer border border-neutral-300 bg-white py-2 font-display hover:bg-neutral-100 sm:w-60'
 						value='Borrar'
 					/>
 				</div>
