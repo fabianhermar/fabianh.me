@@ -121,12 +121,34 @@
           "forward": "Forward"
         },
         "message": {
-          "yuore": "You're",
+          "youre": "You're",
           "hour": {
             "singular": "hour",
             "plural": "s"
           },
           "local": "of Mexico"
+        },
+        "zone": "Time Zone: "
+      }
+    },
+    "contact": {
+      "title": "Ready for work together :)?",
+      "form": {
+        "gratefulness": "Thanks for beeing here!",
+        "subtitle": "If you have any questions, a project in mind that you would like us to work on together, or simply want to say hello, my email is the following:",
+        "alternatives": {
+          "title": "More ways to contact me",
+          "subtitle": "If you prefer, you can also reach me through my other social media accounts that I list below. I will always be happy to assist you."
+        },
+        "contactForm": {
+          "title": "Fill out the form below and I will get in touch with you as soon as possible.",
+          "name": "Name",
+          "email": "Email",
+          "subject": "Subject",
+          "message": "Message",
+          "submit": "Submit",
+          "delete": "Delete",
+          "footer": "I do not store or share any of your personal data. All information provided in the form is completely confidential and will only be used for professional contact purposes."
         }
       }
     }
