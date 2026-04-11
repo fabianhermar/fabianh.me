@@ -127,6 +127,28 @@
             "plural": "n"
           },
           "local": "von Mexiko"
+        },
+        "zone": "Zeitzone: "
+      }
+    },
+    "contact": {
+      "title": "Lass uns gemeinsam arbeiten :)?",
+      "form": {
+        "gratefulness": "Danke, dass du hier bist!",
+        "subtitle": "Wenn du irgendwelche Fragen hast, ein Projekt im Kopf, an dem du gerne zusammen mit uns arbeiten würdest, oder einfach nur Hallo sagen möchtest, ist meine E-Mail-Adresse die folgende:",
+        "alternatives": {
+          "title": "Mehr Möglichkeiten zur Kontaktaufnahme",
+          "subtitle": "Wenn du es vorziehst, kannst du mich auch über meine anderen Social-Media-Konten erreichen, die ich unten aufliste. Ich bin immer gerne bereit, dir zu helfen."
+        },
+        "contactForm": {
+          "title": "Fülle das folgende Formular aus und ich werde mich so schnell wie möglich mit dir in Verbindung setzen.",
+          "name": "Name",
+          "email": "E-Mail",
+          "subject": "Betreff",
+          "message": "Nachricht",
+          "submit": "Senden",
+          "delete": "Löschen",
+          "footer": "Ich speichere oder teile keine deiner persönlichen Daten. Alle in das Formular eingegebenen Informationen sind vollständig vertraulich und werden nur für professionelle Kontaktdaten verwendet."
         }
       }
     }
