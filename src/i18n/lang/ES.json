@@ -127,6 +127,28 @@
             "plural": "s"
           },
           "local": "de México"
+        },
+        "zone": "Zona horaria: "
+      }
+    },
+    "contact": {
+      "title": "¿Listo para trabajar juntos :)?",
+      "form": {
+        "gratefulness": "¡Gracias por estar aqui!",
+        "subtitle": "Si tienes alguna pregunta, un proyecto en mente en que te gustaría que trabajáramos juntos, o simplemente quieres decir ¡Hola!, mi correo es el siguiente:",
+        "alternatives": {
+          "title": "Más formas de contacto",
+          "subtitle": "Si lo prefieres, también puedes contactarme mediante mis otras redes que te dejo aquí debajo. En todas siempre estaré con el gusto de poder atenderte."
+        },
+        "contactForm": {
+          "title": "Rellena el siguiente formulario y me pondré en contacto contigo lo más pronto posible.",
+          "name": "Nombre",
+          "email": "Correo electrónico",
+          "subject": "Asunto",
+          "message": "Mensaje",
+          "submit": "Enviar",
+          "delete": "Borrar",
+          "footer": "No conservo ni comparto ninguno de tus datos personales. Todo lo proporcionado en el formulario es totalmente confidencial y solo será utilizado para ambitos de contacto profesional."
         }
       }
     }
