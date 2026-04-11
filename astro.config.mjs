@@ -6,38 +6,42 @@ import partytown from '@astrojs/partytown'
 
 import tailwindcss from '@tailwindcss/vite'
 
+import sitemap from '@astrojs/sitemap';
+
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
-	output: 'server',
+    output: 'server',
 
-	adapter: vercel({
-		webAnalytics: { enabled: true },
-	}),
+    adapter: vercel({
+        webAnalytics: { enabled: true },
+    }),
 
-	env: {
-		schema: {
-			IPINFO_API_KEY: envField.string({ context: 'server', access: 'secret' }),
-			OPENWEATHER_API_KEY: envField.string({ context: 'server', access: 'secret' }),
-			RESEND_API_KEY: envField.string({ context: 'client', access: 'public', includes: 're_' }),
-			AUTH_TOKEN: envField.string({ context: 'client', access: 'public' }),
-			SITE_KEY: envField.string({ context: 'server', access: 'public' }),
-		},
-		validateSecrets: true,
-	},
+    env: {
+        schema: {
+            IPINFO_API_KEY: envField.string({ context: 'server', access: 'secret' }),
+            OPENWEATHER_API_KEY: envField.string({ context: 'server', access: 'secret' }),
+            RESEND_API_KEY: envField.string({ context: 'client', access: 'public', includes: 're_' }),
+            AUTH_TOKEN: envField.string({ context: 'client', access: 'public' }),
+            SITE_KEY: envField.string({ context: 'server', access: 'public' }),
+        },
+        validateSecrets: true,
+    },
 
-	serverIslands: true,
+    serverIslands: true,
 
-	integrations: [react(), partytown()],
+    integrations: [react(), partytown(), sitemap(), mdx()],
 
-	i18n: {
-		defaultLocale: 'es',
-		locales: ['es', 'en', 'de'],
-		routing: {
-			prefixDefaultLocale: false,
-		},
-	},
+    i18n: {
+        defaultLocale: 'es',
+        locales: ['es', 'en', 'de'],
+        routing: {
+            prefixDefaultLocale: false,
+        },
+    },
 
-	vite: {
-		plugins: [tailwindcss()],
-	},
+    vite: {
+        plugins: [tailwindcss()],
+    },
 })
