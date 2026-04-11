@@ -1,5 +1,10 @@
 ---
 import ContactForm from '@/components/contact/ContactForm'
+
+import { getI18N } from '@/i18n'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
 ---
 
 <div
@@ -10,10 +15,11 @@ import ContactForm from '@/components/contact/ContactForm'
 		class='flex w-full flex-col items-center justify-center border-neutral-200 md:p-8 lg:w-1/2 lg:border-r'
 	>
 		<div class='mb-8 lg:mb-0'>
-			<h2 class='font-heading mb-4 text-2xl font-bold md:text-4xl'>Gracias por estar aquí 🧡</h2>
+			<h2 class='font-heading mb-4 text-2xl font-bold md:text-4xl'>
+				{i18n.landing.contact.form.gratefulness} 🧡
+			</h2>
 			<p class='font-accent mb-4 font-normal text-gray-600'>
-				Si tienes alguna pregunta, un proyecto en mente en que te gustaría que trabajáramos juntos,
-				o simplemente quieres decir ¡Hola!, mi correo es el siguiente:
+				{i18n.landing.contact.form.subtitle}
 			</p>
 			<div class='pb-4 md:pb-10'>
 				<a
@@ -38,10 +44,11 @@ import ContactForm from '@/components/contact/ContactForm'
 			</div>
 			<hr />
 			<div class='hidden pt-10 md:block'>
-				<h3 class='font-heading mb-4 text-3xl font-bold md:text-4xl'>Más formas de contacto</h3>
+				<h3 class='font-heading mb-4 text-3xl font-bold md:text-4xl'>
+					{i18n.landing.contact.form.alternatives.title}
+				</h3>
 				<p class='font-accent text-base'>
-					Si lo prefieres, también puedes contactarme mediante mis otras redes que te dejo aquí
-					debajo. En todas siempre estaré con el gusto de poder atenderte.{' '}
+					{i18n.landing.contact.form.alternatives.subtitle}
 				</p>
 				<div class='flex flex-row items-center gap-x-3 pt-3'>
 					<a
@@ -101,20 +108,20 @@ import ContactForm from '@/components/contact/ContactForm'
 	<div class='flex w-full flex-col items-center justify-center md:p-8 lg:w-1/2'>
 		<div class='mb-8 rounded-lg bg-neutral-50 p-6 shadow-sm lg:mb-0'>
 			<h2 class='font-display mb-4 text-xl font-semibold md:text-2xl'>
-				Rellena el siguiente formulario y me pondré en contacto contigo lo más pronto posible.
+				{i18n.landing.contact.form.contactForm.title}
 			</h2>
-			<ContactForm client:visible />
+			<ContactForm client:visible currentLocale={currentLocale} />
 			<p class='font-accent mt-4 text-xs text-gray-500'>
-				No conservo ni comparto ninguno de tus datos personales. Todo lo proporcionado en el
-				formulario es totalmente confidencial y solo será utilizado para ambitos de contacto
+				{i18n.landing.contact.form.contactForm.footer}
 				profesional.
 			</p>
 		</div>
 		<div class='block border-t border-neutral-200 pt-4 md:hidden'>
-			<h3 class='font-heading mb-4 text-3xl font-bold md:text-4xl'>Más formas de contacto</h3>
+			<h3 class='font-heading mb-4 text-3xl font-bold md:text-4xl'>
+				{i18n.landing.contact.form.alternatives.title}
+			</h3>
 			<p class='font-accent text-base'>
-				Si lo prefieres, también puedes contactarme mediante mis otras redes que te dejo aquí
-				debajo. En todas siempre estaré con el gusto de poder atenderte.{' '}
+				{i18n.landing.contact.form.alternatives.subtitle}
 			</p>
 			<div class='flex flex-row items-center gap-x-3 pt-3'>
 				<a
