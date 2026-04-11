@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react'
 import { getI18N } from '@/i18n'
 
-export function UTCClock() {
+
+interface ClockProps {
+	currentLocale?: string
+}
+
+export function UTCClock({ currentLocale }: ClockProps) {
 	const [time, setTime] = useState<Date | null>(null)
 	const [timeZone, setTimeZone] = useState('')
 	const [utcOffset, setUtcOffset] = useState(0)
-	const currentLocale = 'es'
 	const i18n = getI18N({ currentLocale })
 
 	useEffect(() => {
@@ -44,8 +48,8 @@ export function UTCClock() {
 			return `${i18n.landing.bento.time.timezone}`
 		} else {
 			const diff = utcOffset + 6
-			const direction = diff > 0 ? 'adelante' : 'atrás'
-			return `Estás ${Math.abs(diff)} hora${Math.abs(diff) !== 1 ? 's' : ''} ${direction} de México (UTC-6)`
+			const direction = diff > 0 ? i18n.landing.bento.time.direction.forward : i18n.landing.bento.time.direction.back
+			return `${i18n.landing.bento.time.message.youre} ${Math.abs(diff)} ${i18n.landing.bento.time.message.hour.singular}${Math.abs(diff) !== 1 ? i18n.landing.bento.time.message.hour.plural : ''} ${direction} ${i18n.landing.bento.time.message.local}`
 		}
 	}
 
@@ -57,7 +61,7 @@ export function UTCClock() {
 						{time ? formatTime(time) : 'Cargando...'}
 					</div>
 					<p className='text-neutral-400 font-display text-sm md:text-xl'>
-						Zona horaria: {timeZone}
+						{i18n.landing.bento.time.zone} {timeZone}
 					</p>
 					<p
 						className='text-neutral-400 text-center font-accent text-xs md:text-lg'
