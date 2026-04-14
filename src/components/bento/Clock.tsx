@@ -58,7 +58,7 @@ export function UTCClock({ currentLocale }: ClockProps) {
 			<div className='px-6 py-4'>
 				<div className='flex flex-col items-center space-y-4 text-white'>
 					<div className='text-white font-heading text-5xl md:text-7xl' aria-live='polite'>
-						{time ? formatTime(time) : 'Cargando...'}
+						{time ? formatTime(time) : 'Loading...'}
 					</div>
 					<p className='text-neutral-400 font-display text-sm md:text-xl'>
 						{i18n.landing.bento.time.zone} {timeZone}
