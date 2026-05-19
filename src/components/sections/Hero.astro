@@ -12,7 +12,7 @@ const i18n = getI18N({ currentLocale })
 	<section class='flex flex-col items-center justify-center pt-10 lg:flex-row lg:pt-16'>
 		<div class='size-full flex-1 pr-4'>
 			<h1
-				class='font-heading bg-gradient-to-r from-[#b16cea] from-10% via-[#ff5e69] via-30% to-[#ffa84b] to-90% bg-clip-text text-4xl font-bold tracking-tight text-transparent lg:h-[148px] lg:text-7xl'
+				class='font-heading bg-linear-to-r from-[#b16cea] from-10% via-[#ff5e69] via-30% to-[#ffa84b] to-90% bg-clip-text text-4xl font-bold tracking-tight text-transparent lg:h-37 lg:text-7xl'
 			>
 				{i18n.landing.title}
 			</h1>
@@ -26,12 +26,12 @@ const i18n = getI18N({ currentLocale })
 				<SocialMediaLinks />
 			</div>
 		</div>
-		<div class='relative aspect-square h-auto w-80 select-none lg:w-137.5'>
+		<div class='relative -top-10 aspect-square h-auto w-80 select-none lg:w-147.5'>
 			<Image
 				src='/me.avif'
 				alt='Fabian Herrera photo'
-				width='550'
-				height='550'
+				width='600'
+				height='600'
 				loading='eager'
 				decoding='async'
 				style='
