@@ -27,6 +27,7 @@ const i18n = getI18N({ currentLocale })
 			</div>
 		</div>
 		<div class='relative -top-10 aspect-square h-auto w-80 select-none lg:w-147.5'>
+			<div class='absolute inset-0 -z-10 scale-75 rounded-full bg-white/30 blur-2xl mix-blend-screen'></div>
 			<Image
 				src='/me.avif'
 				alt='Fabian Herrera photo'
@@ -36,7 +37,6 @@ const i18n = getI18N({ currentLocale })
 				fetchpriority='high'
 				decoding='async'
 				style='
-			filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 			mask-image: linear-gradient(to bottom, white 50%, transparent 85%);
 			aspect-ratio: 1/1;
 		'
