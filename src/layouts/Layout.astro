@@ -7,7 +7,6 @@ import '../styles/global.css'
 
 import Footer from '@/components/common/Footer.astro'
 import Header from '@/components/common/Header.astro'
-import '@fontsource-variable/albert-sans'
 interface Props {
 	title: string
 }
@@ -78,6 +77,7 @@ const lang = getLangFromUrl(Astro.url)
 		/>
 		<ClientRouter />
 		<Analytics />
+		<link rel='preload' href='/me.avif' as='image' type='image/avif' fetchpriority='high' />
 	</head>
 	<body class='dark-transition flex h-full flex-col'>
 		<Header />
