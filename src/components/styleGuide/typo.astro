@@ -1,38 +1,86 @@
 ---
 import Type from '@/components/icons/type.astro'
+import { getI18N } from '@/i18n'
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
 ---
 
-<section>
-	<h2 class='font-display flex items-center gap-x-2 pb-6 text-3xl'>
+<section class="space-y-6 pt-10">
+	<h2 class="font-display flex items-center gap-x-2 text-3xl font-semibold">
 		<Type />
-		Tipografía
+		{i18n.styleguide.typo.title}
 	</h2>
-	<div class='space-y-10'>
-		<div>
-			<h3 class='font-heading text-4xl font-bold tracking-tight md:text-7xl'>Titulo Principal</h3>
-			<p class='font-accent text-base text-neutral-600 md:text-xl'>
-				Gilroy Bold / 7xl / -0.025em espaciado en letras
-			</p>
+	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+		
+		<!-- H1 -->
+		<div class="group relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 backdrop-blur-md transition-all hover:border-neutral-700 hover:bg-neutral-800/80">
+			<div class="pointer-events-none absolute -right-4 -top-8 select-none font-heading text-[150px] font-bold text-white/[0.03] transition-all group-hover:scale-110 group-hover:text-white/[0.05]">Aa</div>
+			<div class="relative z-10 flex h-full flex-col justify-between">
+				<div>
+					<span class="mb-4 inline-block rounded-full border border-neutral-700 bg-neutral-800 px-3 py-1 text-xs font-medium text-neutral-300">{i18n.styleguide.typo.h1}</span>
+					<h3 class="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">Gilroy Bold</h3>
+				</div>
+				<div class="mt-12 border-t border-neutral-800/80 pt-4">
+					<p class="font-accent text-sm text-neutral-400">7xl (72px) / -0.025em tracking</p>
+				</div>
+			</div>
 		</div>
-		<div>
-			<h4 class='font-display text-2xl font-semibold tracking-tight md:text-5xl'>
-				Titulo Secundario
-			</h4>
-			<p class='font-accent text-base text-neutral-600 md:text-xl'>
-				Gilroy Semibold / 5xl / -0.025em espaciado en letras
-			</p>
+
+		<!-- H2 -->
+		<div class="group relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 backdrop-blur-md transition-all hover:border-neutral-700 hover:bg-neutral-800/80">
+            <div class="pointer-events-none absolute -right-4 -top-8 select-none font-display text-[150px] font-semibold text-white/[0.03] transition-all group-hover:scale-110 group-hover:text-white/[0.05]">Aa</div>
+			<div class="relative z-10 flex h-full flex-col justify-between">
+				<div>
+					<span class="mb-4 inline-block rounded-full border border-neutral-700 bg-neutral-800 px-3 py-1 text-xs font-medium text-neutral-300">{i18n.styleguide.typo.h2}</span>
+					<h4 class="font-display text-3xl font-semibold tracking-tight text-white md:text-4xl lg:text-5xl">Gilroy Semibold</h4>
+				</div>
+				<div class="mt-12 border-t border-neutral-800/80 pt-4">
+					<p class="font-accent text-sm text-neutral-400">5xl (48px) / -0.025em tracking</p>
+				</div>
+			</div>
 		</div>
-		<div>
-			<h5 class='font-display text-lg font-semibold tracking-tight md:text-2xl'>Subtitulo</h5>
-			<p class='font-accent text-base text-neutral-600 md:text-xl'>Gilroy Semibold / 2xl</p>
+
+		<!-- H3 -->
+		<div class="group relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 backdrop-blur-md transition-all hover:border-neutral-700 hover:bg-neutral-800/80">
+            <div class="pointer-events-none absolute -right-4 -top-8 select-none font-display text-[150px] font-semibold text-white/[0.03] transition-all group-hover:scale-110 group-hover:text-white/[0.05]">Aa</div>
+			<div class="relative z-10 flex h-full flex-col justify-between">
+				<div>
+					<span class="mb-4 inline-block rounded-full border border-neutral-700 bg-neutral-800 px-3 py-1 text-xs font-medium text-neutral-300">{i18n.styleguide.typo.h3}</span>
+					<h5 class="font-display text-2xl font-semibold tracking-tight text-white md:text-3xl lg:text-4xl">Gilroy Semibold</h5>
+				</div>
+				<div class="mt-12 border-t border-neutral-800/80 pt-4">
+					<p class="font-accent text-sm text-neutral-400">2xl (24px)</p>
+				</div>
+			</div>
 		</div>
-		<div>
-			<p class='font-regular font-accent text-base md:text-lg'>Texto fuente</p>
-			<p class='font-accent text-base text-neutral-600 md:text-xl'>Gilroy Regular / lg</p>
+
+		<!-- P (Body) -->
+		<div class="group relative col-span-1 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 backdrop-blur-md transition-all hover:border-neutral-700 hover:bg-neutral-800/80 md:col-span-2 lg:col-span-3">
+			<div class="relative z-10 flex flex-col justify-between gap-8 md:flex-row md:items-center">
+				<div class="flex-1 max-w-3xl">
+					<span class="mb-4 inline-block rounded-full border border-neutral-700 bg-neutral-800 px-3 py-1 text-xs font-medium text-neutral-300">{i18n.styleguide.typo.p}</span>
+					<p class="font-accent mt-2 text-lg leading-relaxed text-neutral-300 md:text-xl">
+						<strong class="text-white">Albert Sans Variable.</strong> {i18n.styleguide.typo.description}
+					</p>
+				</div>
+				<div class="md:border-l md:border-neutral-700 md:pl-8">
+					<div class="flex flex-col gap-4">
+						<div>
+                            <div class="font-accent mb-1 text-sm text-neutral-400">{i18n.styleguide.typo.highlight}</div>
+                            <div class="font-accent text-base text-white"><strong class="font-medium">Regular (Lg)</strong> / 18px</div>
+                        </div>
+                        <div>
+                            <div class="font-accent mb-1 text-sm text-neutral-400">{i18n.styleguide.typo.standard}</div>
+                            <div class="font-accent text-base text-white"><strong class="font-medium">Regular (Base)</strong> / 16px</div>
+                        </div>
+                        <div>
+                            <div class="font-accent mb-1 text-sm text-neutral-400">{i18n.styleguide.typo.small}</div>
+                            <div class="font-accent text-base text-white"><strong class="font-medium">Regular (Sm)</strong> / 14px</div>
+                        </div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div>
-			<h3 class='font-regular font-accent text-xs md:text-base'>Texto pequeño</h3>
-			<p class='font-accent text-base text-neutral-600'>Gilroy Regular / base</p>
-		</div>
+
 	</div>
 </section>
