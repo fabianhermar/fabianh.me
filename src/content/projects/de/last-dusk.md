@@ -1,7 +1,7 @@
 ---
 title: "Last Dusk"
 subtitle: "Zombie-Überlebensspiel"
-date: 2022-12-01
+date: 2025-12-01
 lang: "de"
 image: "/projects/LastDusk.avif"
 description: "Last Dusk war ein Universitätsprojekt im Rahmen des Kurses „Videospielentwicklung“ und besteht darin, so viele Nächte wie möglich vor Zombies und verschiedenen Feinden zu überleben. Tagsüber muss man die notwendigen Ressourcen sammeln, um auf einer großen Karte mit verschiedenen Zonen und besserer Beute, aber stärkeren Feinden, zu überleben."

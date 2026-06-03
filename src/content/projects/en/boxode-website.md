@@ -1,7 +1,7 @@
 ---
 title: "Boxode Website"
 subtitle: "Complete redesign of the Boxode website"
-date: 2024-01-01
+date: 2024-06-20
 lang: "en"
 image: "/projects/Boxode.avif"
 description: "The redesign of the Boxode website was an experience that allowed me to merge visual creativity with technological identity. Inspired by the immensity of space, the new design incorporates elements such as starry skies and subtle meteor showers that envelop the interface in a futuristic and immersive atmosphere. The main palette of deep blue tones, bright white, and black accents reinforces a clean, professional, and modern aesthetic that respects part of the previous style while taking it to a new level."

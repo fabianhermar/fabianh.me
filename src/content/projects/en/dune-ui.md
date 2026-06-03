@@ -1,7 +1,7 @@
 ---
 title: "Dune UI"
 subtitle: "A TailwindCSS components library"
-date: 2024-03-01
+date: 2025-03-01
 lang: "en"
 image: "/projects/DuneUI.webp"
 description: "This project has been one of the somewhat large projects I have carried out in the year 2024 and thanks to this I was able to learn many more things that I previously did not know how to use."
