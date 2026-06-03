@@ -24,6 +24,23 @@ const translatePath = useTranslatedPath(lang)
 	<div class='relative flex flex-col items-center justify-center pt-10'>
 		<div class='py-16'>
 			<ProjectsCard
+				projectImage='/projects/ClearCutStudio.avif'
+				externalLink='https://studio.fabianh.me'
+				githubLink='https://github.com/fabianhermar/clearcut-studio'
+				target='_blank'
+				title=`${i18n.landing.projects.project3.title}`
+				subtitle=`🤖 ${i18n.landing.projects.project3.subtitle}`
+				description=`${i18n.landing.projects.project3.description}`
+				description2=`${i18n.landing.projects.project3.description2}`
+				technologies={[
+					{ text: 'NextJS', image: '/svg/nextjs.svg' },
+					{ text: 'TypeScript', image: '/svg/typescript.svg' },
+					{ text: 'Antigravity', image: '/svg/antigravity.svg' },
+				]}
+			/>
+		</div>
+		<div class='py-16'>
+			<ProjectsCard
 				projectImage='/projects/Boxode.avif'
 				externalLink='https://boxode.org'
 				githubLink={null}
@@ -43,7 +60,7 @@ const translatePath = useTranslatedPath(lang)
 		<div class='py-16'>
 			<ProjectsCard
 				projectImage='/projects/DuneUI.webp'
-				externalLink='https://duneui.com'
+				externalLink='https://ui.fabianh.me'
 				githubLink='https://github.com/fabianhermar/duneui'
 				target='_blank'
 				title=`${i18n.landing.projects.project1.title}`
@@ -56,24 +73,6 @@ const translatePath = useTranslatedPath(lang)
 					{ text: 'JavaScript', image: '/svg/javascript.svg' },
 					{ text: 'TypeScript', image: '/svg/typescript.svg' },
 					{ text: 'TailwindCSS', image: '/svg/tailwindcss.svg' },
-				]}
-			/>
-		</div>
-		<div class='py-16'>
-			<ProjectsCard
-				projectImage='/projects/LastDusk.avif'
-				externalLink={null}
-				githubLink={null}
-				target='_blank'
-				title=`${i18n.landing.projects.project3.title}`
-				subtitle=`🌱 ${i18n.landing.projects.project3.subtitle}`
-				description=`${i18n.landing.projects.project3.description}`
-				description2=`${i18n.landing.projects.project3.description2}`
-				technologies={[
-					{ text: 'Unity', image: '/svg/unity.svg' },
-					{ text: 'C#', image: '/svg/csharp.svg' },
-					{ text: 'Blender', image: '/svg/blender.svg' },
-					{ text: `${i18n.landing.projects.project3.tech['1']}`, image: '/svg/team.svg' },
 				]}
 			/>
 		</div>

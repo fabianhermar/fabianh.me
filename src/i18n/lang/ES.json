@@ -46,40 +46,25 @@
             }
         },
         "projects": {
-            "title": "Algunos de mis proyectos",
-            "project1": {
-                "title": "Dune UI",
-                "subtitle": "Una biblioteca de componentes TailwindCSS",
-                "description": "Este proyecto ha sido uno de los proyectos un tanto grande de los que he realizado en el año 2024 y que gracias a este pude aprender muchas más cosas de las cuales anteriormente desconocía y que no sabía cómo usar.",
-                "description2": "Hoy en día, DuneUI es una biblioteca más de componentes de TailwindCSS, pero esta esta más enfocada a mi estilo de diseño que llega a ser un tanto más minimalista y moderno, la cual a conllevado muchos meses de trabajo y planificación anticipada. A lo cual, decidí crearla por motivación de varios amigos, maestros y conocidos que les gusta mi forma de diseñar y es aquí que les presento DuneUI."
-            },
-            "project2": {
-                "title": "UTNA Website Redesign",
-                "subtitle": "Rediseño total del sitio web de la UTNA realizado por un estudiante",
-                "description": "El rediseño de la página web de mi universidad fue algo que disfrute mucho en realizar, este tiene un diseño más simple, pero a la vez muestra diseño de tendencia actual como lo es el \"Bento Grid\". Este proyecto surgió gracias a que uno de mis profesores me ofreció la posibilidad de rediseñar dicha página web a lo cual acepte, el diseño propuesto fue aprobado por parte del personal administrativo y a partir de ahí comencé a trabajar en el.",
-                "description2": "Este proyecto tenía que estar listo en 3 semanas, por lo cual tuve que darme prisa en terminarlo lo antes posible por la auditoria que iba a tener la universidad. Al paso de la primer semana, el diseño inicial de la landing estaba terminado, pero el proyecto cayo y nunca se pudo concretar al final con superiores de continuar con el proyecto y de poderlo desplegar con el dominio oficial. Dejo por aquí el preview como luce."
-            },
-            "project3": {
-                "title": "Last Dusk",
-                "subtitle": "Juego de supervivencia zombie",
-                "description": "Last Dusk fue un proyecto universitario parte la clase de \"Desarrollo de Videojuegos\" y este consta en sobrevivir la mayor cantidad noches posibles de los zombies y de enemigos varios. Que por el día se tienen que recoger los recursos necesarios para sobrevivir recorriendo un mapa extenso con diferentes zonas y mejor loot, pero con enemigos más fuertes.",
-                "description2": "El proyecto esta terminado un 50% de su totalidad a lo que se desea llegar, se pretende seguir con el proyecto pero usando tecnologías diferentes, modelados mejores, mejoras de interfaces, easter eggs, etc. El juego no esta disponible para el uso y/o distribución comercial hasta que este pueda estar terminado en su mayoría.",
-                "tech": {
-                    "1": "Trabajo en equipo"
-                }
-            },
-            "project4": {
-                "title": "Boxode Website",
-                "subtitle": "Rediseño total de la página web de Boxode",
-                "description": "El rediseño de la página web de Boxode fue una experiencia que me permitió fusionar creatividad visual con identidad tecnológica. Inspirado en la inmensidad del espacio, el nuevo diseño incorpora elementos como cielos estrellados y sutiles lluvias de meteoros que envuelven la interfaz en una atmósfera futurista y envolvente. La paleta principal de tonos de azul profundo, blanco brillante y acentos en negro refuerza una estética limpia, profesional y moderna que respeta parte del estilo anterior mientras lo lleva a un nuevo nivel",
-                "description2": "Se mantuvieron ciertos componentes visuales del diseño previo, pero esta vez se aplico una estructura más fluida e intuitiva, integrando elementos de interacción actuales que reflejan mejor el carácter innovador de Boxode y el resultado fue una propuesta visual sólida que refleja una visión más audaz del futuro digital de la marca. "
-            },
-            "project5": {
-                "title": "Smart Agriculture Laboratory",
-                "subtitle": "Blog de artículos científicos",
-                "description": "Este proyecto fue el último realizado dentro de mi universidad para poder graduarme de la carrera. Fue llevado a cabo durante mi servicio social, también conocido como estadía, en el cual tuve que estar en una empresa desarrollando este proyecto con base en lo que mi asesor empresarial necesitaba. He aquí el proyecto realizado. Debido al tiempo de entrega, no se completó al 100 %, pero aún se siguen incorporando nuevas funciones poco a poco.",
-                "description2": "El objetivo principal del proyecto fue garantizar una interfaz intuitiva que facilitara a los investigadores la carga de sus trabajos, priorizando una experiencia de usuario fluida y accesible para todos los usuarios de la plataforma. A pesar de las limitaciones de tiempo, mantuve un alto nivel de compromiso y dedicación para ofrecer un resultado de calidad, sin importar la escala del proyecto."
-            }
+          "title": "Algunos de mis proyectos",
+          "project1": {
+            "title": "Dune UI",
+            "subtitle": "Una biblioteca de componentes TailwindCSS",
+            "description": "Este proyecto ha sido uno de los proyectos un tanto grande de los que he realizado en el año 2024 y que gracias a este pude aprender muchas más cosas de las cuales anteriormente desconocía y que no sabía cómo usar.",
+            "description2": "Hoy en día, DuneUI es una biblioteca más de componentes de TailwindCSS, pero esta esta más enfocada a mi estilo de diseño que llega a ser un tanto más minimalista y moderno, la cual a conllevado muchos meses de trabajo y planificación anticipada. A lo cual, decidí crearla por motivación de varios amigos, maestros y conocidos que les gusta mi forma de diseñar y es aquí que les presento DuneUI."
+          },
+          "project3": {
+            "title": "ClearCut Studio",
+            "subtitle": "Edita imágenes con IA",
+            "description": "ClearCut Studio es un proyecto que se desarrollo durante el año 2026, el cual se trata de una aplicación web que permite a los usuarios eliminar fondos de imagenes utilizando inteligencia artificial y optimizar el peso de sus imagenes a formatos .WebP, .AVIF, etc.",
+            "description2": "El proyecto se desarrollo utilizando NextJS, TypeScript y Google Antigravity. Fue un proyecto que me permitió aprender a integrar modelos de inteligencia artificial en aplicaciones web, así como también a optimizar el rendimiento y la experiencia del usuario al trabajar con imágenes de alta calidad."
+          },
+          "project4": {
+            "title": "Boxode Website",
+            "subtitle": "Rediseño total de la página web de Boxode",
+            "description": "El rediseño de la página web de Boxode fue una experiencia que me permitió fusionar creatividad visual con identidad tecnológica. Inspirado en la inmensidad del espacio, el nuevo diseño incorpora elementos como cielos estrellados y sutiles lluvias de meteoros que envuelven la interfaz en una atmósfera futurista y envolvente. La paleta principal de tonos de azul profundo, blanco brillante y acentos en negro refuerza una estética limpia, profesional y moderna que respeta parte del estilo anterior mientras lo lleva a un nuevo nivel",
+            "description2": "Se mantuvieron ciertos componentes visuales del diseño previo, pero esta vez se aplico una estructura más fluida e intuitiva, integrando elementos de interacción actuales que reflejan mejor el carácter innovador de Boxode y el resultado fue una propuesta visual sólida que refleja una visión más audaz del futuro digital de la marca. "
+          }
         },
         "moreinfo": {
             "title": "Mas sobre mi",
