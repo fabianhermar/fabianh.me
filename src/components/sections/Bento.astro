@@ -68,7 +68,7 @@ const i18n = getI18N({ currentLocale })
 						{i18n.landing.bento.time.title}
 					</h2>
 				</div>
-				<UTCClock client:load currentLocale={currentLocale} />
+				<UTCClock client:visible currentLocale={currentLocale} />
 			</article>
 			<article class='education md:p-5'>
 				<div class='flex items-center gap-x-3 px-6 pt-5 md:px-1 md:pt-0'>
