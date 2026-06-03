@@ -1,0 +1,103 @@
+---
+import Container from '@/components/common/Container.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getI18N } from '@/i18n'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+---
+<Layout title={`${i18n.landing.moreinfo.who.title} | ${i18n.SEO.title}`}>
+	<section class='relative min-h-screen pt-24 pb-24'>
+		<Container>
+            <div class="mx-auto max-w-6xl">
+                <!-- Hero Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 mb-16 items-center">
+                    <!-- Text Side -->
+                    <div class="flex flex-col justify-center order-2 md:order-1">
+                        <h1 class="font-display mb-8 text-5xl font-bold tracking-tight text-neutral-950 md:text-6xl lg:text-7xl">
+                            {i18n.landing.moreinfo.who.title}
+                        </h1>
+                        <div class="font-accent text-lg text-neutral-600 space-y-6">
+                            <p class="leading-relaxed">
+                                {i18n.landing.moreinfo.who['1']}
+                            </p>
+                            <p class="leading-relaxed">
+                                {i18n.landing.moreinfo.who['2'].fp} <strong class="text-neutral-900">{i18n.landing.moreinfo.who['2'].sp}</strong>, 
+                                <strong class="text-neutral-900">{i18n.landing.moreinfo.who['2'].tp}</strong> {i18n.landing.moreinfo.who['2'].ftp} 
+                                <strong class="text-neutral-900">{i18n.landing.moreinfo.who['2'].ffp}</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Image Side -->
+                    <div class="order-1 md:order-2">
+                        <div class="relative w-full aspect-[4/5] md:aspect-square overflow-hidden rounded-[2rem] bg-neutral-100 shadow-xl shadow-neutral-200/50">
+                            <img 
+                                src="/me.avif" 
+                                alt="Fabián Hernández" 
+                                class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Section -->
+                <div class="mb-16 rounded-[2rem] bg-white p-8 md:p-12 border border-neutral-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-linear-to-b from-[#b16cea] via-[#ff5e69] to-[#ffa84b]"></div>
+                    <div class="prose prose-neutral prose-lg mx-auto font-accent leading-relaxed text-neutral-600 space-y-6">
+                        {i18n.landing.moreinfo.who.story?.map((paragraph: string) => (
+                            <p>{paragraph}</p>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Bento Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Philosophy / Quote Block -->
+                    <div class="col-span-1 md:col-span-3 rounded-[2rem] bg-neutral-900 text-white p-8 md:p-12 shadow-sm flex flex-col md:flex-row items-center gap-8 md:gap-12 overflow-hidden relative">
+                        <div class="absolute -right-10 -top-10 opacity-10 pointer-events-none">
+                            <svg width="300" height="300" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                        </div>
+                        <img src="/me2.avif" class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-neutral-800 z-10 shadow-xl" alt="Fabián Hernández smiling" />
+                        <div class="flex-1 z-10 text-center md:text-left">
+                            <p class="font-accent text-xl md:text-2xl text-neutral-300 italic leading-relaxed">
+                                "{i18n.landing.moreinfo.who.quote}"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hobbies -->
+                    <div class="col-span-1 md:col-span-2 rounded-[2rem] bg-[#ff5e69]/80 p-8 md:p-10 shadow-sm relative overflow-hidden group">
+                        <div class="absolute right-0 bottom-0 opacity-10 transition-transform duration-700 group-hover:scale-110">
+                            <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="flex items-center gap-3 mb-6 relative z-10">
+                            <img src="/svg/man_tech.svg" alt="Hobbies" class="w-10 h-10 select-none" />
+                            <h2 class="text-3xl font-bold text-black font-display">Hobbies</h2>
+                        </div>
+                        <div class="font-accent text-neutral-900 space-y-4 relative z-10 text-lg leading-relaxed font-medium">
+                            <p set:html={i18n.landing.bento.hobbies.fp}></p>
+                            <p set:html={i18n.landing.bento.hobbies.sp}></p>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="col-span-1 rounded-[2rem] bg-[#ffa84b]/80 p-8 md:p-10 shadow-sm relative overflow-hidden flex flex-col justify-center group">
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <img src="/svg/graduation_cap_3d.svg" alt="Education" class="w-10 h-10 select-none" />
+                                <h2 class="text-2xl font-bold text-black font-display">{i18n.landing.bento.education.title}</h2>
+                            </div>
+                            <div class="font-accent text-neutral-900 text-lg leading-relaxed font-medium">
+                                <p set:html={i18n.landing.bento.education.description}></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</Container>
+	</section>
+</Layout>

@@ -1,156 +1,205 @@
 {
-  "SEO": {
-    "title": "Fabian Herrera - Fullstack-Webentwickler mit mehr als 2 Jahren Erfahrung."
-  },
-  "landing": {
-    "title": "Ich entwickle digitale produkte",
-    "title_2": "die die fantasie anregen und das nutzererlebnis verbessern.",
-    "subtitle": "Hallo! Ich bin Fabian Herrera, der „Cowboy des Codes“. Ich bin Softwareentwickler und habe mich auf die Erstellung moderner Benutzeroberflächen (unter Verwendung von Technologien wie React, Next.js und Astro) spezialisiert, um Start-ups und digitale Unternehmen voranzubringen.",
-    "WIW": {
-      "title": "Wo ich arbeitete",
-      "card1": {
-        "title": "Leitender Frontend-Entwickler • Boxode",
-        "location": "Aguascalientes, Mexiko - Fernarbeit",
-        "duration": "April 2023 - Juli 2024 | Teilzeit",
-        "phrase": "\"Jeder Schritt aus der Komfortzone bringt Sie Ihren Zielen näher.\"",
-        "description1": "Boxode war eines der bedeutendsten Projekte, an denen ich jemals mitwirken durfte. Boxode, Ltd., oder einfach Boxode, ist ein Softwareentwicklungsunternehmen, das im Dezember 2022 im Bundesstaat Aguascalientes gegründet wurde und im April 2023 seinen offiziellen Betrieb aufnahm. Während meiner Zeit im Unternehmen war ich Zeuge des Wachstums eines Teams, das sich der technologischen Innovation und der Entwicklung wirkungsvoller digitaler Lösungen verschrieben hat.",
-        "description2": "Während meiner Zeit im Unternehmen leitete ich ein kleines Entwicklungsteam, das aus fünf Personen bestand, darunter auch ich selbst. Außerdem war ich für die Schulung meines Entwicklungsteams verantwortlich und führte Tools ein, die die Effizienz der Zusammenarbeit und die Endbenutzererfahrung verbesserten.",
-        "tech": {
-          "tech1": "Resilienz"
-        }
-      },
-      "card2": {
-        "title": "Technischer Service für Systeme • CompuCel",
-        "location": "Cuauhtémoc, ZAC, Mexiko • Vor Ort",
-        "duration": "November 2022 - Februar 2023 | Befristeter Vertrag",
-        "phrase": "",
-        "description1": "Während meiner Zeit im technischen Support-Team war ich dafür verantwortlich, Benutzern bei der Lösung von Softwareproblemen sowie bei der Konfiguration und Wartung von Betriebssystemen und Hardware zu helfen.",
-        "description2": "Ich habe auch Fähigkeiten in der Erstellung technischer Dokumentationen entwickelt, in denen ich Vorfälle und ihre jeweiligen Lösungen aufgezeichnet habe, was die Lösung zukünftiger Probleme für andere Teammitglieder erleichterte.",
-        "tech": {
-          "tech1": "Problem lösen",
-          "tech2": "Kommunikation",
-          "tech3": "Zeitmanagement",
-          "tech4": "Problemidentifikation"
-        }
-      },
-      "card3": {
-        "title": "Softwareentwicklungspraktikant • INBAC Niels Bohr Institut",
-        "location": "San Francisco de los Romo, AGS, Mexiko • Fernarbeit",
-        "duration": "März 2022 - August 2022 | Befristeter Vertrag",
-        "phrase": "",
-        "description1": "Diese Position war eine der ersten Herausforderungen, die sich mir auf meinem Weg stellten, als ich meine beruflichen Praktiken vorstellte, da ein Schulverwaltungssystem erstellt wurde, um das Personal, das die Institution bildet, sowie die Schüler besser zu verwalten.",
-        "description2": "Dank dieses Projekts, das eines der komplexesten war, das ich zu dieser Zeit durchgeführt habe, konnte ich die Programmiersprachen PHP und JS sowie die Verwendung verschiedener Methoden in den Datenbanken tiefergehend lernen und verstehen, die ich ehrlich gesagt nicht kannte, obwohl die Beratung durch meinen Projektleiter praktisch null war, konnte ich dieses Projekt durchführen.",
-        "tech": {
-          "tech1": "Analytisches Denken"
-        }
-      }
+    "SEO": {
+        "title": "Fabian Herrera - Fullstack-Webentwickler mit mehr als 2 Jahren Erfahrung."
     },
-    "projects": {
-      "title": "Einige meiner Projekte",
-      "project1": {
-        "title": "Dune UI",
-        "subtitle": "Eine Bibliothek von TailwindCSS-Komponenten",
-        "description": "Dieses Projekt war eines der etwas größeren Projekte, die ich im Jahr 2024 durchgeführt habe, und dank dessen konnte ich viele weitere Dinge lernen, die ich zuvor nicht kannte.",
-        "description2": "Heute ist DuneUI eine Bibliothek von mehr TailwindCSS-Komponenten, die jedoch stärker auf meinen Designstil ausgerichtet ist, der etwas minimalistischer und moderner wird, was viele Monate Arbeit und eine frühzeitige Planung erfordert hat. Daher habe ich mich aus der Motivation von mehreren Freunden, Lehrern und Bekannten entschieden, sie zu erstellen, die meinen Designstil mögen, und hier präsentiere ich DuneUI."
-      },
-      "project2": {
-        "title": "Neugestaltung der UTNA-Website",
-        "subtitle": "Völlige Neugestaltung der Website von UTNA durch einen Studenten",
-        "description": "Die Neugestaltung der Website meiner Universität hat mir sehr viel Spaß gemacht. Sie ist schlichter gestaltet, zeigt aber gleichzeitig ein aktuelles, trendiges Design wie das „Bento Grid“. Dieses Projekt kam zustande, weil einer meiner Professoren mir anbot, die Website neu zu gestalten, was ich annahm. Das vorgeschlagene Design wurde von den Verwaltungsmitarbeitern genehmigt und von da an begann ich mit der Arbeit daran.",
-        "description2": "Dieses Projekt musste innerhalb von 3 Wochen fertig sein, also musste ich mich beeilen, um es so schnell wie möglich fertigzustellen, da die Universität ein Audit durchführen wollte. Nach der ersten Woche war das anfängliche Design der Landing Page fertig, aber das Projekt fiel durch und konnte nie fertiggestellt werden, um es mit der offiziellen Domain bereitstellen zu können. Ich lasse hier die Vorschau, wie sie aussieht."
-      },
-      "project3": {
-        "title": "Last Dusk",
-        "subtitle": "Zombie-Überlebensspiel",
-        "description": "Last Dusk war ein Universitätsprojekt im Rahmen des Kurses „Videospielentwicklung“ und besteht darin, so viele Nächte wie möglich vor Zombies und verschiedenen Feinden zu überleben. Tagsüber muss man die notwendigen Ressourcen sammeln, um auf einer großen Karte mit verschiedenen Zonen und besserer Beute, aber stärkeren Feinden, zu überleben.",
-        "description2": "Das Projekt ist zu 50 % fertiggestellt. Es ist geplant, das Projekt fortzusetzen, aber mit anderen Technologien, besserer Modellierung, Verbesserungen der Benutzeroberfläche, Ostereiern usw. Das Spiel ist nicht für die kommerzielle Nutzung und/oder den Vertrieb verfügbar, bis es weitgehend fertig ist.",
-        "tech": {
-          "1": "Teamarbeit"
+    "landing": {
+        "title": "Ich entwickle digitale produkte",
+        "title_2": "die die fantasie anregen und das nutzererlebnis verbessern.",
+        "subtitle": "Hallo! Ich bin Fabian Herrera, der „Cowboy des Codes“. Ich bin Softwareentwickler und habe mich auf die Erstellung moderner Benutzeroberflächen (unter Verwendung von Technologien wie React, Next.js und Astro) spezialisiert, um Start-ups und digitale Unternehmen voranzubringen.",
+        "WIW": {
+            "title": "Wo ich arbeitete",
+            "card1": {
+                "title": "Leitender Frontend-Entwickler • Boxode",
+                "location": "Aguascalientes, Mexiko - Fernarbeit",
+                "duration": "April 2023 - Juli 2024 | Teilzeit",
+                "phrase": "\"Jeder Schritt aus der Komfortzone bringt Sie Ihren Zielen näher.\"",
+                "description1": "Boxode war eines der bedeutendsten Projekte, an denen ich jemals mitwirken durfte. Boxode, Ltd., oder einfach Boxode, ist ein Softwareentwicklungsunternehmen, das im Dezember 2022 im Bundesstaat Aguascalientes gegründet wurde und im April 2023 seinen offiziellen Betrieb aufnahm. Während meiner Zeit im Unternehmen war ich Zeuge des Wachstums eines Teams, das sich der technologischen Innovation und der Entwicklung wirkungsvoller digitaler Lösungen verschrieben hat.",
+                "description2": "Während meiner Zeit im Unternehmen leitete ich ein kleines Entwicklungsteam, das aus fünf Personen bestand, darunter auch ich selbst. Außerdem war ich für die Schulung meines Entwicklungsteams verantwortlich und führte Tools ein, die die Effizienz der Zusammenarbeit und die Endbenutzererfahrung verbesserten.",
+                "tech": {
+                    "tech1": "Resilienz"
+                }
+            },
+            "card2": {
+                "title": "Technischer Service für Systeme • CompuCel",
+                "location": "Cuauhtémoc, ZAC, Mexiko • Vor Ort",
+                "duration": "November 2022 - Februar 2023 | Befristeter Vertrag",
+                "phrase": "",
+                "description1": "Während meiner Zeit im technischen Support-Team war ich dafür verantwortlich, Benutzern bei der Lösung von Softwareproblemen sowie bei der Konfiguration und Wartung von Betriebssystemen und Hardware zu helfen.",
+                "description2": "Ich habe auch Fähigkeiten in der Erstellung technischer Dokumentationen entwickelt, in denen ich Vorfälle und ihre jeweiligen Lösungen aufgezeichnet habe, was die Lösung zukünftiger Probleme für andere Teammitglieder erleichterte.",
+                "tech": {
+                    "tech1": "Problem lösen",
+                    "tech2": "Kommunikation",
+                    "tech3": "Zeitmanagement",
+                    "tech4": "Problemidentifikation"
+                }
+            },
+            "card3": {
+                "title": "Softwareentwicklungspraktikant • INBAC Niels Bohr Institut",
+                "location": "San Francisco de los Romo, AGS, Mexiko • Fernarbeit",
+                "duration": "März 2022 - August 2022 | Befristeter Vertrag",
+                "phrase": "",
+                "description1": "Diese Position war eine der ersten Herausforderungen, die sich mir auf meinem Weg stellten, als ich meine beruflichen Praktiken vorstellte, da ein Schulverwaltungssystem erstellt wurde, um das Personal, das die Institution bildet, sowie die Schüler besser zu verwalten.",
+                "description2": "Dank dieses Projekts, das eines der komplexesten war, das ich zu dieser Zeit durchgeführt habe, konnte ich die Programmiersprachen PHP und JS sowie die Verwendung verschiedener Methoden in den Datenbanken tiefergehend lernen und verstehen, die ich ehrlich gesagt nicht kannte, obwohl die Beratung durch meinen Projektleiter praktisch null war, konnte ich dieses Projekt durchführen.",
+                "tech": {
+                    "tech1": "Analytisches Denken"
+                }
+            }
+        },
+        "projects": {
+            "title": "Einige meiner Projekte",
+            "project1": {
+                "title": "Dune UI",
+                "subtitle": "Eine Bibliothek von TailwindCSS-Komponenten",
+                "description": "Dieses Projekt war eines der etwas größeren Projekte, die ich im Jahr 2024 durchgeführt habe, und dank dessen konnte ich viele weitere Dinge lernen, die ich zuvor nicht kannte.",
+                "description2": "Heute ist DuneUI eine Bibliothek von mehr TailwindCSS-Komponenten, die jedoch stärker auf meinen Designstil ausgerichtet ist, der etwas minimalistischer und moderner wird, was viele Monate Arbeit und eine frühzeitige Planung erfordert hat. Daher habe ich mich aus der Motivation von mehreren Freunden, Lehrern und Bekannten entschieden, sie zu erstellen, die meinen Designstil mögen, und hier präsentiere ich DuneUI."
+            },
+            "project2": {
+                "title": "Neugestaltung der UTNA-Website",
+                "subtitle": "Völlige Neugestaltung der Website von UTNA durch einen Studenten",
+                "description": "Die Neugestaltung der Website meiner Universität hat mir sehr viel Spaß gemacht. Sie ist schlichter gestaltet, zeigt aber gleichzeitig ein aktuelles, trendiges Design wie das „Bento Grid“. Dieses Projekt kam zustande, weil einer meiner Professoren mir anbot, die Website neu zu gestalten, was ich annahm. Das vorgeschlagene Design wurde von den Verwaltungsmitarbeitern genehmigt und von da an begann ich mit der Arbeit daran.",
+                "description2": "Dieses Projekt musste innerhalb von 3 Wochen fertig sein, also musste ich mich beeilen, um es so schnell wie möglich fertigzustellen, da die Universität ein Audit durchführen wollte. Nach der ersten Woche war das anfängliche Design der Landing Page fertig, aber das Projekt fiel durch und konnte nie fertiggestellt werden, um es mit der offiziellen Domain bereitstellen zu können. Ich lasse hier die Vorschau, wie sie aussieht."
+            },
+            "project3": {
+                "title": "Last Dusk",
+                "subtitle": "Zombie-Überlebensspiel",
+                "description": "Last Dusk war ein Universitätsprojekt im Rahmen des Kurses „Videospielentwicklung“ und besteht darin, so viele Nächte wie möglich vor Zombies und verschiedenen Feinden zu überleben. Tagsüber muss man die notwendigen Ressourcen sammeln, um auf einer großen Karte mit verschiedenen Zonen und besserer Beute, aber stärkeren Feinden, zu überleben.",
+                "description2": "Das Projekt ist zu 50 % fertiggestellt. Es ist geplant, das Projekt fortzusetzen, aber mit anderen Technologien, besserer Modellierung, Verbesserungen der Benutzeroberfläche, Ostereiern usw. Das Spiel ist nicht für die kommerzielle Nutzung und/oder den Vertrieb verfügbar, bis es weitgehend fertig ist.",
+                "tech": {
+                    "1": "Teamarbeit"
+                }
+            },
+            "project4": {
+                "title": "Boxode Website",
+                "subtitle": "Komplette Neugestaltung der Website von Boxode",
+                "description": "Die Neugestaltung der Boxode-Website war eine Erfahrung, bei der ich visuelle Kreativität mit technologischer Identität verbinden konnte. Inspiriert von der Unendlichkeit des Weltraums, enthält das neue Design Elemente wie Sternenhimmel und subtile Meteoritenschauer, die die Benutzeroberfläche in eine futuristische und einhüllende Atmosphäre tauchen. Die Hauptfarbpalette aus tiefen Blautönen, strahlendem Weiß und schwarzen Akzenten unterstreicht eine klare, professionelle und moderne Ästhetik, die einen Teil des bisherigen Stils beibehält und ihn gleichzeitig auf eine neue Ebene hebt.",
+                "description2": "Bestimmte visuelle Komponenten des vorherigen Designs wurden beibehalten, aber diesmal wurde eine flüssigere und intuitivere Struktur angewendet, die aktuelle Interaktionselemente integriert, die den innovativen Charakter von Boxode besser widerspiegeln. Das Ergebnis war ein solider visueller Entwurf, der eine mutigere Vision der digitalen Zukunft der Marke widerspiegelt."
+            },
+            "project5": {
+                "title": "Smart Agriculture Laboratory",
+                "subtitle": "Blog mit wissenschaftlichen Artikeln",
+                "description": "Dieses Projekt war das letzte, das ich an meiner Universität durchführen musste, um meinen Abschluss zu machen. Es wurde während meines Sozialdienstes, auch bekannt als Praktikum, durchgeführt, bei dem ich in einem Unternehmen arbeiten musste, das dieses Projekt auf der Grundlage der Anforderungen meines Unternehmensberaters entwickelte. Hier ist das fertige Projekt. Aufgrund der Lieferzeit war es noch nicht zu 100 % fertig, aber neue Funktionen werden nach und nach hinzugefügt.",
+                "description2": "Das Hauptziel des Projekts bestand darin, eine intuitive Schnittstelle zu schaffen, die es den Forschern erleichtert, ihre Arbeiten hochzuladen, wobei eine reibungslose und zugängliche Benutzererfahrung für alle Nutzer der Plattform im Vordergrund stand. Trotz der zeitlichen Beschränkungen habe ich ein hohes Maß an Engagement und Hingabe an den Tag gelegt, um ungeachtet des Umfangs des Projekts ein hochwertiges Ergebnis zu liefern."
+            }
+        },
+        "moreinfo": {
+            "title": "Mehr über mich",
+            "phrase": "Inspiration entriegelt die Zukunft",
+            "who": {
+                "1": "Software-Ingenieur mit Abschluss an der Universidad Tecnológica del Norte de Aguascalientes und 1 Jahr Erfahrung als Entwickler",
+                "2": {
+                    "fp": "Im Alter von 13 Jahren begann ich, mich intensiver mit der Welt der Programmierung zu beschäftigen, indem ich meine ersten Programme in C++ erstellte. Nach einer Weile begann ich, mich intensiver mit dem Erlernen der",
+                    "sp": "Web-Entwicklung",
+                    "tp": "UI/UX",
+                    "ftp": "und natürlich auch die Entwicklung von",
+                    "ffp": "Mobile Anwendungen."
+                },
+                "3": "Ich liebe es zu reisen und besonders der Natur nahe zu sein und mehr über sie zu erfahren.",
+                "title": "Wer bin ich?",
+                "button": "Siehe vollständige Zusammenfassung",
+                "story": [
+                    "Ich bin ein junger Mann, der sich schon in jungen Jahren für Technologie im Allgemeinen begeistert. Ich fing an zu programmieren, als ich in die Mittelschule kam, wo ich meine ersten Schritte im Programmieren in C++ machte, obwohl der Unterricht nicht sehr tiefgreifend war. In der High School begannen wir dann, alles rund um Webtechnologien und Netzwerke zu sehen, wovon ich zunehmend fasziniert war.",
+                    "Eine meiner größten Motivationen ist es, jeden Tag zu lernen. So begann ich, mir Dinge selbst beizubringen, indem ich mir verschiedene Tutorial-Videos, Dokumente und sogar Bücher ansah, die ich im Internet fand. Ein paar Jahre später begann ich an der UTNA ein Studium im Bereich Softwareentwicklung und -management. Und seitdem lerne und entwickle ich mich als Softwareentwickler weiter.",
+                    "Ich liebe es, mein Wissen durch verschiedene Vorträge von Fachleuten auf diesem Gebiet weiter zu bereichern und mein Wissen schrittweise mit der Entwicklergemeinschaft teilen zu können."
+                ],
+                "quote": "Und denken Sie daran: Glauben Sie an sich selbst und an das, was Sie sind. Seien Sie sich bewusst, dass etwas in Ihnen steckt, das größer ist als jedes Hindernis."
+            }
+        },
+        "bento": {
+            "weather": {
+                "title": "Aktuelles Wetter"
+            },
+            "hobbies": {
+                "fp": "Wenn ich nicht in die Welt der Entwicklung eintauche, verbringe ich gerne Zeit mit Aktivitäten, die meine Kreativität fördern und mich inspirieren. Ich liebe , <strong class='font-heading text-black font-bold'>Kochen</strong>, <strong class='font-heading text-black font-bold'>Geige spielen</strong>, <strong class='font-heading text-black font-bold'>Gartenarbeit</strong>, <strong class='font-heading text-black font-bold'>Die Natur erforschen</strong> und vor allem genieße ich es, <strong class='font-heading text-black font-bold'>Zeit mit meiner Familie und meinen Freunden zu verbringen.</strong>.",
+                "sp": "Ich bin der festen Überzeugung, dass das, was wir abseits der Tastatur tun, sich direkt auf unsere Perspektive und Kreativität auswirkt, wenn wir vor der Tastatur sitzen. <strong class='font-heading text-black font-bold'>Es ist ein perfekter Kreislauf aus Lernen und Inspiration!</strong>"
+            },
+            "education": {
+                "title": "Bildung",
+                "career": "Softwareentwicklungs- und Managementingenieurwesen",
+                "location": "Rincón de Romos, AGS",
+                "duration": "September 2019 - April 2025",
+                "description": "Student an der <a href='https://utna.edu.mx/utna' target='_blank' rel='noopener noreferrer' class='font-heading font-bold text-black underline'>Universidad Tecnológica del Norte de Aguascalientes (UTNA)</a>, wo ich meine Fähigkeiten in der Softwareentwicklung gefestigt und mein Wissen in Schlüsselbereichen wie <strong class='font-heading font-bold text-black'>Algorithmen</strong>, <strong class='font-heading font-bold text-black'>Datenstrukturen</strong>, <strong class='font-heading font-bold text-black'>objektorientierte Programmierung</strong>, <strong class='font-heading font-bold text-black'>Datenbankverwaltung</strong>, usw. Meine Ausbildung hat es mir ermöglicht, Theorie und Praxis zu integrieren, um technologische Projekte mit einem innovativen und effizienten Ansatz anzugehen."
+            },
+            "time": {
+                "title": "Aktuelle Zeit",
+                "timezone": "Wir sind in der gleichen Zeitzone (UTC-6)",
+                "direction": {
+                    "back": "Zurück",
+                    "forward": "Vorwärts"
+                },
+                "message": {
+                    "youre": "Du bist",
+                    "hour": {
+                        "singular": "Stunde",
+                        "plural": "n"
+                    },
+                    "local": "von Mexiko"
+                },
+                "zone": "Zeitzone: "
+            }
+        },
+        "contact": {
+            "title": "Lass uns gemeinsam arbeiten :)?",
+            "form": {
+                "gratefulness": "Danke, dass du hier bist!",
+                "subtitle": "Wenn du irgendwelche Fragen hast, ein Projekt im Kopf, an dem du gerne zusammen mit uns arbeiten würdest, oder einfach nur Hallo sagen möchtest, ist meine E-Mail-Adresse die folgende:",
+                "alternatives": {
+                    "title": "Mehr Möglichkeiten zur Kontaktaufnahme",
+                    "subtitle": "Wenn du es vorziehst, kannst du mich auch über meine anderen Social-Media-Konten erreichen, die ich unten aufliste. Ich bin immer gerne bereit, dir zu helfen."
+                },
+                "contactForm": {
+                    "title": "Fülle das folgende Formular aus und ich werde mich so schnell wie möglich mit dir in Verbindung setzen.",
+                    "name": "Name",
+                    "email": "E-Mail",
+                    "subject": "Betreff",
+                    "message": "Nachricht",
+                    "submit": "Senden",
+                    "delete": "Löschen",
+                    "footer": "Ich speichere oder teile keine deiner persönlichen Daten. Alle in das Formular eingegebenen Informationen sind vollständig vertraulich und werden nur für professionelle Kontaktdaten verwendet."
+                }
+            }
         }
-      },
-      "project4": {
-        "title": "Boxode Website",
-        "subtitle": "Komplette Neugestaltung der Website von Boxode",
-        "description": "Die Neugestaltung der Boxode-Website war eine Erfahrung, bei der ich visuelle Kreativität mit technologischer Identität verbinden konnte. Inspiriert von der Unendlichkeit des Weltraums, enthält das neue Design Elemente wie Sternenhimmel und subtile Meteoritenschauer, die die Benutzeroberfläche in eine futuristische und einhüllende Atmosphäre tauchen. Die Hauptfarbpalette aus tiefen Blautönen, strahlendem Weiß und schwarzen Akzenten unterstreicht eine klare, professionelle und moderne Ästhetik, die einen Teil des bisherigen Stils beibehält und ihn gleichzeitig auf eine neue Ebene hebt.",
-        "description2": "Bestimmte visuelle Komponenten des vorherigen Designs wurden beibehalten, aber diesmal wurde eine flüssigere und intuitivere Struktur angewendet, die aktuelle Interaktionselemente integriert, die den innovativen Charakter von Boxode besser widerspiegeln. Das Ergebnis war ein solider visueller Entwurf, der eine mutigere Vision der digitalen Zukunft der Marke widerspiegelt."
-      },
-      "project5": {
-        "title": "Smart Agriculture Laboratory",
-        "subtitle": "Blog mit wissenschaftlichen Artikeln",
-        "description": "Dieses Projekt war das letzte, das ich an meiner Universität durchführen musste, um meinen Abschluss zu machen. Es wurde während meines Sozialdienstes, auch bekannt als Praktikum, durchgeführt, bei dem ich in einem Unternehmen arbeiten musste, das dieses Projekt auf der Grundlage der Anforderungen meines Unternehmensberaters entwickelte. Hier ist das fertige Projekt. Aufgrund der Lieferzeit war es noch nicht zu 100 % fertig, aber neue Funktionen werden nach und nach hinzugefügt.",
-        "description2": "Das Hauptziel des Projekts bestand darin, eine intuitive Schnittstelle zu schaffen, die es den Forschern erleichtert, ihre Arbeiten hochzuladen, wobei eine reibungslose und zugängliche Benutzererfahrung für alle Nutzer der Plattform im Vordergrund stand. Trotz der zeitlichen Beschränkungen habe ich ein hohes Maß an Engagement und Hingabe an den Tag gelegt, um ungeachtet des Umfangs des Projekts ein hochwertiges Ergebnis zu liefern."
-      }
     },
-    "moreinfo": {
-      "title": "Mehr über mich",
-      "phrase": "Inspiration entriegelt die Zukunft",
-      "who": {
-        "title": "Wer bin ich?",
-        "1": "Software-Ingenieur mit Abschluss an der Universidad Tecnológica del Norte de Aguascalientes und mehr als 3 Jahren Erfahrung als Entwickler",
-        "2": {
-          "fp": "Im Alter von 13 Jahren begann ich, mich intensiver mit der Welt der Programmierung zu beschäftigen, indem ich meine ersten Programme in C++ erstellte. Nach einer Weile begann ich, mich intensiver mit dem Erlernen der",
-          "sp": "Web-Entwicklung",
-          "tp": "UI/UX",
-          "ftp": "und natürlich auch die Entwicklung von",
-          "ffp": "Mobile Anwendungen."
+    "styleguide": {
+        "title": "Stilhandbuch",
+        "subtitle": "Erfahren Sie mehr über das Design, die Farben und die Typografie meines Portfolios.",
+        "badge": "Design System",
+        "colors": {
+            "title": "Farben",
+            "description": "Eine dunkle, kontrastreiche und lebendige Palette mit Farbverläufen. Ideal für Komponenten im Glassmorphismus-Stil, die die Augen nicht ermüden, aber Eleganz verleihen."
         },
-        "3": "Ich liebe es zu reisen und vor allem der Natur nahe zu sein und mehr über sie zu lernen. Derzeit konzentriere ich mich darauf, zu wachsen, zu lernen und mein Softwareentwicklungs-Startup zusammen mit mehreren Kollegen aufzubauen, um unser Wissen weiter zu teilen.",
-        "button": "Siehe vollständige Zusammenfassung"
-      }
-    },
-    "bento": {
-      "weather": {
-        "title": "Aktuelles Wetter"
-      },
-      "hobbies": {
-        "fp": "Wenn ich nicht in die Welt der Entwicklung eintauche, verbringe ich gerne Zeit mit Aktivitäten, die meine Kreativität fördern und mich inspirieren. Ich liebe , <strong class='font-heading text-black font-bold'>Kochen</strong>, <strong class='font-heading text-black font-bold'>Geige spielen</strong>, <strong class='font-heading text-black font-bold'>Gartenarbeit</strong>, <strong class='font-heading text-black font-bold'>Die Natur erforschen</strong> und vor allem genieße ich es, <strong class='font-heading text-black font-bold'>Zeit mit meiner Familie und meinen Freunden zu verbringen.</strong>.",
-        "sp": "Ich bin der festen Überzeugung, dass das, was wir abseits der Tastatur tun, sich direkt auf unsere Perspektive und Kreativität auswirkt, wenn wir vor der Tastatur sitzen. <strong class='font-heading text-black font-bold'>Es ist ein perfekter Kreislauf aus Lernen und Inspiration!</strong>"
-      },
-      "education": {
-        "title": "Bildung",
-        "career": "Softwareentwicklungs- und Managementingenieurwesen",
-        "location": "Rincón de Romos, AGS",
-        "duration": "September 2019 - April 2025",
-        "description": "Student an der <a href='https://utna.edu.mx/utna' target='_blank' rel='noopener noreferrer' class='font-heading font-bold text-black underline'>Universidad Tecnológica del Norte de Aguascalientes (UTNA)</a>, wo ich meine Fähigkeiten in der Softwareentwicklung gefestigt und mein Wissen in Schlüsselbereichen wie <strong class='font-heading font-bold text-black'>Algorithmen</strong>, <strong class='font-heading font-bold text-black'>Datenstrukturen</strong>, <strong class='font-heading font-bold text-black'>objektorientierte Programmierung</strong>, <strong class='font-heading font-bold text-black'>Datenbankverwaltung</strong>, usw. Meine Ausbildung hat es mir ermöglicht, Theorie und Praxis zu integrieren, um technologische Projekte mit einem innovativen und effizienten Ansatz anzugehen."
-      },
-      "time": {
-        "title": "Aktuelle Zeit",
-        "timezone": "Wir sind in der gleichen Zeitzone (UTC-6)",
-        "direction": {
-          "back": "Zurück",
-          "forward": "Vorwärts"
+        "typo": {
+            "title": "Typografie",
+            "description": "Schnelles und elegantes Design beginnt mit sauberer Typografie. Dies ist der Text, der für lange Absätze, Beschreibungen und allgemeine Inhalte im Portfolio verwendet wird und eine hervorragende Lesbarkeit gewährleistet.",
+            "h1": "H1 - Haupttitel",
+            "h2": "H2 - Sekundärtitel",
+            "h3": "H3 - Untertitel",
+            "p": "P - Basistext",
+            "highlight": "Hervorgehobener Text",
+            "standard": "Standardtext",
+            "small": "Kleiner Text"
         },
-        "message": {
-          "youre": "Du bist",
-          "hour": {
-            "singular": "Stunde",
-            "plural": "n"
-          },
-          "local": "von Mexiko"
+        "elements": {
+            "title": "UI-Elemente",
+            "buttons": {
+                "title": "Schaltflächen",
+                "primary": "Primäre Schaltfläche",
+                "cv": "Lebenslauf Herunterladen",
+                "description": "Interaktive Schaltflächenstile mit sanften Übergängen beim Hover und subtilen Schatten."
+            },
+            "pills": {
+                "title": "Abzeichen (Pills)",
+                "description": "Minimalistische Abzeichen zur Anzeige von Technologien und Fähigkeiten mithilfe der globalen Komponente `Pill`."
+            },
+            "cards": {
+                "title": "Karten (Cards)",
+                "light_desc": "Beispiel für einen hellen Kartenstil, der in Projektkarten verwendet wird, um visuelle Inhalte hervorzuheben und maximale Lesbarkeit zu gewährleisten.",
+                "dark_desc": "Dunkles Stilbeispiel, das in der Erfahrung und im Bento Grid verwendet wird, um im standardmäßigen Dunkelmodus visuelle Tiefe zu erzeugen."
+            }
         },
-        "zone": "Zeitzone: "
-      }
-    },
-    "contact": {
-      "title": "Lass uns gemeinsam arbeiten :)?",
-      "form": {
-        "gratefulness": "Danke, dass du hier bist!",
-        "subtitle": "Wenn du irgendwelche Fragen hast, ein Projekt im Kopf, an dem du gerne zusammen mit uns arbeiten würdest, oder einfach nur Hallo sagen möchtest, ist meine E-Mail-Adresse die folgende:",
-        "alternatives": {
-          "title": "Mehr Möglichkeiten zur Kontaktaufnahme",
-          "subtitle": "Wenn du es vorziehst, kannst du mich auch über meine anderen Social-Media-Konten erreichen, die ich unten aufliste. Ich bin immer gerne bereit, dir zu helfen."
-        },
-        "contactForm": {
-          "title": "Fülle das folgende Formular aus und ich werde mich so schnell wie möglich mit dir in Verbindung setzen.",
-          "name": "Name",
-          "email": "E-Mail",
-          "subject": "Betreff",
-          "message": "Nachricht",
-          "submit": "Senden",
-          "delete": "Löschen",
-          "footer": "Ich speichere oder teile keine deiner persönlichen Daten. Alle in das Formular eingegebenen Informationen sind vollständig vertraulich und werden nur für professionelle Kontaktdaten verwendet."
+        "icons": {
+            "title": "Symbole",
+            "subtitle": "Hauptikonographie",
+            "description": "Native SVG-Symbole werden für maximale Effizienz inline gerendert. Sie werden hauptsächlich für die Navigation, externe Links und dekorative Details verwendet."
         }
-      }
     }
-  }
 }

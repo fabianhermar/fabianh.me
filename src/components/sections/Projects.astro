@@ -3,9 +3,12 @@ import Container from '@/components/common/Container.astro'
 import ProjectsCard from '@/components/features/ProjectsCard.astro'
 import GradualSpacing from '@/components/ui/gradual-spacing'
 import { getI18N } from '@/i18n'
+import { getLangFromUrl, useTranslatedPath } from '@/i18n/utils'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
+const lang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(lang)
 ---
 
 <Container>
@@ -79,7 +82,7 @@ const i18n = getI18N({ currentLocale })
 		>
 		</div> -->
 		<a
-			href='/archive'
+			href={translatePath('/proyectos')}
 			class='group relative inline-flex h-12 items-center justify-center overflow-hidden bg-black px-6 font-medium text-white'
 			><span class='font-display select-none'>Ver todos los proyectos</span>
 			<div class='ml-1 transition group-hover:translate-x-1'>

@@ -1,0 +1,122 @@
+---
+import Container from '@/components/common/Container.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import { getLangFromUrl, useTranslatedPath } from '@/i18n/utils'
+import { getI18N } from '@/i18n'
+
+const lang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(lang)
+const projects = await getCollection('projects', ({ data }) => {
+  return data.lang === lang;
+})
+projects.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+
+const isEs = lang === 'es';
+const isDe = lang === 'de';
+
+const t = {
+    title: isEs ? 'Archivo de Proyectos' : isDe ? 'Projektarchiv' : 'Projects Archive',
+    subtitle: isEs ? 'Aquí están listadas todas las cosas en las que he trabajado y que considero dignas de mencionar.' : isDe ? 'Hier finden Sie alle Dinge, an denen ich gearbeitet habe und die ich für erwähnenswert halte.' : 'Here is listed all the stuff I\'ve worked on that I consider to be worth mentioning.',
+    goBack: isEs ? 'Volver al inicio' : isDe ? 'Zurück' : 'Go back',
+    year: isEs ? 'Año' : isDe ? 'Jahr' : 'Year',
+    project: isEs ? 'Proyecto' : isDe ? 'Projekt' : 'Project',
+    description: isEs ? 'Descripción' : isDe ? 'Beschreibung' : 'Description',
+    built: isEs ? 'Hecho con' : isDe ? 'Erstellt mit' : 'Built with',
+    links: 'Links',
+    live: 'Live',
+    code: 'Code'
+};
+---
+<Layout title={`${t.title} | ${i18n.SEO.title}`}>
+	<section class='relative min-h-screen pt-24 pb-24'>
+		<Container>
+            <div class="w-full">
+                <!-- Title -->
+                <h1 class='font-display mb-6 text-4xl font-bold tracking-tight text-neutral-950 md:text-5xl lg:text-6xl'>
+                    {t.title}
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="font-accent mb-4 text-lg text-neutral-600">
+                    {t.subtitle}
+                </p>
+
+                <!-- Back button -->
+                <div class="mt-12 mb-10">
+                    <a href={translatePath('/')} class="inline-flex items-center gap-2 text-base font-semibold text-amber-600 hover:text-amber-700 transition-colors">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        {t.goBack}
+                    </a>
+                </div>
+
+                <!-- Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[800px] text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-neutral-200 text-neutral-500 font-accent text-sm">
+                                <th class="py-4 pr-4 font-medium w-16">{t.year}</th>
+                                <th class="py-4 pr-4 font-medium w-48">{t.project}</th>
+                                <th class="py-4 pr-4 font-medium w-[40%]">{t.description}</th>
+                                <th class="py-4 pr-4 font-medium">{t.built}</th>
+                                <th class="py-4 font-medium text-right w-32">{t.links}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-accent text-sm">
+                            {projects.map(project => (
+                                <tr class="border-b border-neutral-100 transition-colors hover:bg-neutral-50/50">
+                                    <td class="py-4 pr-4 text-neutral-500 align-top">
+                                        {project.data.date ? project.data.date.getFullYear() : ''}
+                                    </td>
+                                    <td class="py-4 pr-4 align-top">
+                                        <span class="font-bold text-neutral-900">{project.data.title}</span>
+                                    </td>
+                                    <td class="py-4 pr-4 align-top text-neutral-600">
+                                        {project.data.description}
+                                    </td>
+                                    <td class="py-4 pr-4 align-top">
+                                        <div class="flex flex-wrap gap-2">
+                                            {project.data.technologies?.map(tech => (
+                                                <span class="inline-flex rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700 border border-amber-200/50 uppercase tracking-wider">
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </td>
+                                    <td class="py-4 align-top text-right">
+                                        <div class="flex items-center justify-end gap-3 text-amber-600 font-bold text-xs tracking-wider">
+                                            {project.data.githubLink && (
+                                                <a href={project.data.githubLink} target="_blank" class="hover:text-amber-700 flex items-center gap-1 group">
+                                                    {t.code}
+                                                    <svg class="h-3 w-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                                                    </svg>
+                                                </a>
+                                            )}
+                                            {project.data.githubLink && project.data.externalLink && (
+                                                <span class="text-neutral-300 font-normal">|</span>
+                                            )}
+                                            {project.data.externalLink && (
+                                                <a href={project.data.externalLink} target="_blank" class="hover:text-amber-700 flex items-center gap-1 group">
+                                                    {t.live}
+                                                    <svg class="h-3 w-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                                                    </svg>
+                                                </a>
+                                            )}
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+		</Container>
+	</section>
+</Layout>

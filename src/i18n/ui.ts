@@ -76,25 +76,18 @@ export const ui = {
 } as const
 
 export const routes = {
-	es: {
-		'about': 'sobre-mi',
-		'projects': 'proyectos',
-		'archive': 'archivo',
-		'blog': 'blog',
-		'style-guide': 'guia-de-estilo',
-	},
 	en: {
-		'about': 'about-me',
-		'projects': 'projects',
-		'archive': 'archive',
+		'sobre-mi': 'about-me',
+		'proyectos': 'projects',
+		'archivo': 'archive',
 		'blog': 'blog',
-		'style-guide': 'style-guide',
+		'guia-de-estilo': 'style-guide',
 	},
 	de: {
-		'about': 'ueber-mich',
-		'projects': 'projekte',
-		'archive': 'archiv',
+		'sobre-mi': 'ueber-mich',
+		'proyectos': 'projekte',
+		'archivo': 'archiv',
 		'blog': 'blog',
-		'style-guide': 'stilhandbuch',
+		'guia-de-estilo': 'stilhandbuch',
 	},
 }

@@ -1,0 +1,60 @@
+---
+import Container from '@/components/common/Container.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import { getLangFromUrl } from '@/i18n/utils'
+import { getI18N } from '@/i18n'
+
+const lang = getLangFromUrl(Astro.url)
+const projects = await getCollection('projects', ({ data }) => {
+  return data.lang === lang;
+})
+projects.sort((a, b) => {
+    if(!a.data.date || !b.data.date) return 0;
+    return b.data.date.valueOf() - a.data.date.valueOf()
+})
+
+const posts = await getCollection('blog', ({ data }) => {
+  return data.lang === lang;
+})
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+---
+<Layout title={`Archivo | ${i18n.SEO.title}`}>
+	<section class='relative min-h-screen pt-24 pb-16'>
+		<Container>
+			<h1 class='font-heading mb-8 bg-linear-to-r from-[#b16cea] from-10% via-[#ff5e69] via-30% to-[#ffa84b] to-90% bg-clip-text text-4xl font-bold tracking-tight text-transparent drop-shadow-sm md:text-6xl'>
+                Archivo
+            </h1>
+            <p class="font-accent mb-12 text-lg text-neutral-400">Una lista completa de todos los proyectos en los que he trabajado y artículos que he escrito.</p>
+            
+            <div class="space-y-16">
+                <div>
+                    <h2 class="font-heading mb-6 text-2xl font-bold text-white border-b border-neutral-800 pb-2">Proyectos ({projects.length})</h2>
+                    <ul class="space-y-4">
+                        {projects.map(p => (
+                            <li class="flex items-center justify-between">
+                                <span class="font-heading text-lg text-neutral-300">{p.data.title}</span>
+                                <time class="font-accent text-sm text-neutral-500">{p.data.date ? p.data.date.toLocaleDateString(lang, { year: 'numeric', month: 'long' }) : ''}</time>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="font-heading mb-6 text-2xl font-bold text-white border-b border-neutral-800 pb-2">Blog ({posts.length})</h2>
+                    <ul class="space-y-4">
+                        {posts.map(p => (
+                            <li class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <a href={`/${lang === 'es' ? 'blog' : lang + '/blog'}/${p.id.split('/').pop()}`} class="font-heading text-lg text-neutral-300 hover:text-[#ff5e69] transition-colors">{p.data.title}</a>
+                                <time class="font-accent text-sm text-neutral-500">{p.data.pubDate.toLocaleDateString(lang, { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+		</Container>
+	</section>
+</Layout>
