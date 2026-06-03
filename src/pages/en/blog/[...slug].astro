@@ -1,0 +1,12 @@
+---
+import BlogPost from '@/components/pages/BlogPost.astro'
+import { getEntry } from 'astro:content'
+
+const { slug } = Astro.params;
+const post = await getEntry('blog', `en/${slug}`);
+
+if (!post) {
+    return Astro.redirect('/404');
+}
+---
+<BlogPost post={post} />

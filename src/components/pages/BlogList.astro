@@ -1,0 +1,76 @@
+---
+import Container from '@/components/common/Container.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import { getLangFromUrl } from '@/i18n/utils'
+import { getI18N } from '@/i18n'
+import { Image } from 'astro:assets'
+
+const lang = getLangFromUrl(Astro.url)
+const posts = await getCollection('blog', ({ data }) => {
+  return data.lang === lang;
+})
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+
+// Get unique categories for the filters
+const allCategories = [...new Set(posts.map(p => p.data.category).filter(Boolean))];
+---
+<Layout title={`Blog | ${i18n.SEO.title}`}>
+	<section class='relative min-h-screen pt-24 pb-16'>
+		<Container>
+            <!-- Title -->
+			<h1 class='font-display mb-6 text-5xl font-bold tracking-tight text-neutral-950 md:text-6xl lg:text-7xl'>
+                Blog
+            </h1>
+
+            <!-- Filters -->
+            <div class="mb-10 flex flex-wrap items-center gap-3">
+                <button class="rounded-full bg-neutral-900 px-4 py-1.5 font-accent text-sm font-medium text-white transition-colors hover:bg-neutral-800">
+                    All
+                </button>
+                {allCategories.map(cat => (
+                    <button class="rounded-full bg-neutral-100 px-4 py-1.5 font-accent text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200">
+                        {cat}
+                    </button>
+                ))}
+                {/* Fallbacks if empty to match design */}
+                {allCategories.length === 0 && (
+                    <>
+                        <button class="rounded-full bg-neutral-100 px-4 py-1.5 font-accent text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200">Guides</button>
+                        <button class="rounded-full bg-neutral-100 px-4 py-1.5 font-accent text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200">Comparisons</button>
+                        <button class="rounded-full bg-neutral-100 px-4 py-1.5 font-accent text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200">Native</button>
+                    </>
+                )}
+            </div>
+            
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+                {posts.map(post => (
+                    <a href={`/${lang === 'es' ? 'blog' : lang + '/blog'}/${post.id.split('/').pop()}`} class="group flex flex-col gap-4 transition-all">
+                        <div class="relative aspect-video w-full overflow-hidden rounded-2xl bg-neutral-100 border border-neutral-200">
+                            {post.data.image && (
+                                <img
+                                    src={post.data.image} 
+                                    alt={post.data.title}
+                                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                            )}
+                        </div>
+                        <div>
+                            <h2 class="font-heading mb-2 text-2xl font-bold text-neutral-900 transition-colors group-hover:text-[#ff5e69]">{post.data.title}</h2>
+                            <p class="font-accent text-base text-neutral-600 line-clamp-2">{post.data.description}</p>
+                        </div>
+                        <div class="mt-auto flex items-center gap-2 font-accent text-sm text-neutral-500">
+                            <span>{post.data.author || 'Fabián Hernández'}</span>
+                            <span class="text-neutral-400">•</span>
+                            <time>{post.data.pubDate.toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric' })}</time>
+                        </div>
+                    </a>
+                ))}
+            </div>
+		</Container>
+	</section>
+</Layout>
