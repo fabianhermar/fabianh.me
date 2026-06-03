@@ -1,7 +1,6 @@
 ---
 import { getLangFromUrl } from '@/i18n/utils'
 import Analytics from '@vercel/analytics/astro'
-import { ClientRouter } from 'astro:transitions'
 
 import '../styles/global.css'
 
@@ -75,7 +74,6 @@ const lang = getLangFromUrl(Astro.url)
 			name='twitter:image'
 			content='https://res.cloudinary.com/dvjzjasfg/image/upload/v1725076616/portfolio_mockup.webp'
 		/>
-		<ClientRouter />
 		<Analytics />
 		<link rel='preload' href='/me.avif' as='image' type='image/avif' fetchpriority='high' />
 	</head>
