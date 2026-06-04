@@ -11,28 +11,24 @@ const currentLocaleData = LANGUAGES[lang]
 const otherLocales = Object.values(LANGUAGES).filter((locale) => locale.code !== lang)
 ---
 
-<div class='relative inline-block text-left'>
-	<div
-		class='group font-display rounded-md bg-black text-xs text-white transition-all hover:bg-black/70'
+<div class='group relative z-50 inline-block text-left font-display text-xs text-white'>
+	<button
+		type='button'
+		class='inline-flex w-full items-center justify-start gap-x-2 rounded-md bg-black px-3 py-2 transition-all group-hover:bg-black/70'
+		aria-expanded='true'
+		aria-haspopup='true'
 	>
-		<button
-			type='button'
-			class='inline-flex w-full items-center justify-start gap-x-2 px-3 py-2'
-			aria-expanded='true'
-			aria-haspopup='true'
-		>
-			<currentLocaleData.flag />
-			{currentLocaleData.name}
-			<DropdownArrow />
-		</button>
-		<ul
-			class='group-hover:animate-accordion-down absolute hidden w-full pt-0.5 group-hover:block group-hover:duration-200'
-		>
+		<currentLocaleData.flag />
+		{currentLocaleData.name}
+		<DropdownArrow />
+	</button>
+	<div class='absolute left-0 top-full hidden w-full pt-1 group-hover:block'>
+		<ul class='flex flex-col gap-1 rounded-md bg-black p-1 shadow-xl'>
 			{
 				otherLocales.map((locale) => (
-					<li class='py-[2px]'>
+					<li>
 						<a
-							class='inline-flex w-full items-center justify-start gap-x-2 rounded-md bg-black/50 px-3 py-2 whitespace-nowrap hover:bg-black/70'
+							class='inline-flex w-full items-center justify-start gap-x-2 rounded-sm px-2 py-1.5 transition-colors hover:bg-white/20 whitespace-nowrap'
 							href={translatePath(`/${route || ''}`, locale.code)}
 						>
 							<locale.flag />
