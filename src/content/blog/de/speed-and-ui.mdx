@@ -1,0 +1,132 @@
+---
+title: "Speed & UI: Anatomie eines ultraschnellen Portfolios"
+description: "Wie ich fabianh.me mit Astro v6, Server Islands, Partytown und Tailwind v4 optimiert habe, um nahezu sofortige Ladezeiten zu erreichen."
+pubDate: 2024-06-03
+lang: "de"
+image: "/blog/speed-and-ui.avif"
+author: "Fabian Herrera"
+category: "Guides"
+---
+
+# Speed & UI: Anatomie eines ultraschnellen Portfolios
+
+Als ich beschloss, mein neues Portfolio aufzubauen, hatte ich zwei sehr klare Ziele vor Augen: Es musste ein makelloses Design (UI) haben und lächerlich schnell laden (Speed). Im modernen Web reicht es nicht mehr aus, eine schöne Seite zu erstellen; die Benutzererfahrung bricht zusammen, wenn die Seite Sekunden braucht, um Informationen zu verarbeiten oder die Schnittstelle zu zeichnen.
+
+In diesem Artikel möchte ich die Architektur von **fabianh.me** aufschlüsseln, welche Technologien ich ausgewählt habe und vor allem, wie ich diese extremen Leistungstechniken implementiert habe, um nahezu sofortige Ladezeiten zu erreichen.
+
+## 🏗️ Die Basis: Astro in Bestform
+
+Das Herzstück dieses Projekts ist **Astro v6**. Im Gegensatz zu anderen auf React oder Vue fokussierten Frameworks, die schwere JavaScript-Pakete an den Browser senden, arbeitet Astro nach der Philosophie "Standardmäßig null JavaScript".
+
+Für dieses Projekt habe ich Astro im Modus **SSR (Server-Side Rendering)** konfiguriert. Dies ist entscheidend, da es mir ermöglicht, meine API-Schlüssel geheim zu halten, Formulare serverseitig zu validieren und dynamische Integrationen durchzuführen, ohne Code an den Client weiterzugeben.
+
+So sieht die Basiskonfiguration in meiner `astro.config.mjs` aus:
+
+```javascript
+import { defineConfig } from 'astro/config';
+import vercel from '@astrojs/vercel';
+
+export default defineConfig({
+  output: 'server', // Aktiviert vollständiges SSR
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
+});
+```
+
+Aber ich bin nicht bei der Standardkonfiguration stehen geblieben. Ich bin bei der Optimierung noch einige Schritte weiter gegangen.
+
+## ⚡ Leistung optimieren (Speed)
+
+Um die Geschwindigkeit auf die nächste Stufe zu heben und perfekte Lighthouse-Metriken zu erzielen, habe ich die folgenden Strategien implementiert:
+
+### 1. Server Islands
+
+Eines der größten Probleme beim traditionellen SSR ist, dass eine langsame Abfrage an eine externe API (z. B. das Abrufen von Wetterdaten) dazu führt, dass sich die gesamte Seite verzögert, bevor sie an den Benutzer gesendet wird.
+
+Um dies zu lösen, habe ich `serverIslands: true` in der Astro-Konfiguration aktiviert. "Server Islands" ermöglichen es mir, die statische Hülle der Seite sofort zu senden. Während der Benutzer die Seite bereits ansieht und navigiert, wird die schwere Komponente asynchron geladen.
+
+**Wie wird es implementiert?**
+Fügen Sie einfach die Anweisung `server:defer` beim Rendern der Komponente hinzu. Zum Beispiel für ein Wetter-Widget:
+
+```astro
+---
+import WeatherWidget from '../components/WeatherWidget.astro';
+---
+<!-- Der Rest der Website wird sofort geladen -->
+<main>
+  <h1>Über mich</h1>
+  <!-- Diese Komponente wird separat geladen -->
+  <WeatherWidget server:defer>
+    <div slot="fallback">Lokales Wetter wird geladen...</div>
+  </WeatherWidget>
+</main>
+```
+
+### 2. Den Main Thread mit Partytown befreien
+
+Jedes Projekt benötigt Skripte von Drittanbietern (Analytics, Tracker usw.). Das Problem ist, dass diese Skripte um den *Main Thread* des Browsers konkurrieren, wodurch sich Ihre Website bei der Interaktion träge anfühlt.
+
+Durch die Integration von `@astrojs/partytown` konnte ich alle nicht wesentlichen Skripte in einen *Web Worker* verschieben.
+
+**Die Implementierung:**
+Zuerst wird die Integration zur Konfigurationsdatei hinzugefügt, und dann wird jedes Drittanbieter-Skript mit `type="text/partytown"` deklariert:
+
+```html
+<!-- Dieses schwere Analytics-Skript läuft jetzt im Hintergrund -->
+<script type="text/partytown" src="https://example.com/analytics.js"></script>
+```
+Das Ergebnis ist eine Seite, die sofort auf Klicks und Scrolls des Benutzers reagiert.
+
+### 3. Die neue Engine: Tailwind CSS v4 + Vite
+
+Das Design ist mit Tailwind CSS aufgebaut, aber anstelle des traditionellen Workflows habe ich die neue Version 4 über Vite (`@tailwindcss/vite`) verwendet.
+
+**Was hat sich verbessert?**
+Der Tailwind v4-Compiler wurde von Grund auf in Rust neu geschrieben. Er ist überwältigend schneller und generiert eine winzige CSS-Datei, ohne dass komplexe Purge-Konfigurationen erforderlich sind. Ich habe ihn einfach zu den Vite-Plugins in der Astro-Konfiguration hinzugefügt:
+
+```javascript
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
+});
+```
+
+### 4. Lokale Variable Schriftarten
+
+Anfragen an Google Fonts blockieren das anfängliche Rendern der Seite und verursachen visuelle Sprünge (den gefürchteten *Cumulative Layout Shift* oder CLS).
+
+Um dies zu lösen, habe ich die Schriftart `@fontsource-variable/albert-sans` installiert. "Variable" Schriftarten sind Magie: Anstatt 4 verschiedene Dateien für normalen Text, Fett, Extra-Fett und Kursiv herunterzuladen, laden Sie eine einzige leichte Datei herunter, die der Browser mathematisch interpoliert. Der Text wird sofort auf den Bildschirm gezeichnet.
+
+## 🎨 Die Benutzeroberfläche erstellen (UI)
+
+Geschwindigkeit ist nutzlos, wenn das Design nicht fesselt. Für die Benutzeroberfläche habe ich Leistung mit Ästhetik kombiniert:
+
+### Bento Grid Architektur und Shadcn
+Anstelle eines traditionellen Designs habe ich mich für ein *Bento Grid* entschieden. Es ist ein modernes Layout, das Informationen in "Boxen" (wie eine japanische Lunchbox) kapselt und so sehr scanbar macht.
+
+Die Basiskomponenten (Schaltflächen, Eingabefelder, Modale) sind von der **Shadcn/ui**-Architektur inspiriert, wobei `clsx` und `tailwind-merge` gemischt werden, um Tailwind-Klassen ohne Konflikte bedingt zu behandeln. Für Eingangsanimationen habe ich `framer-motion` verwendet, um meine React-Komponenten zu umhüllen.
+
+### Natives E-Mail-System
+Für den Kontaktbereich wollte ich mich nicht auf klassische, hässliche eingebettete Formulare verlassen. Ich habe ein eigenes System mit **React Email** entwickelt, um die E-Mail-Vorlage mit React und Tailwind wunderschön zu codieren, und sie an die **Resend**-API angeschlossen.
+
+Dank des SSR von Astro wird eine Nachricht eines Benutzers an einen internen versteckten Astro-Endpunkt (`/api/contact`) gesendet, der meinen `RESEND_API_KEY` (als Umgebungsvariable geschützt) verwendet, um die E-Mail direkt zu senden. Sicher, nativ und blitzschnell.
+
+### Integrierte Internationalisierung (i18n)
+Schließlich spricht die Seite drei Sprachen: Spanisch (Standard), Englisch und Deutsch. Mit dem nativen System von Astro ist die Einrichtung so sauber wie hier:
+
+```javascript
+i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'en', 'de'],
+    routing: { prefixDefaultLocale: false }, // Das Stammverzeichnis "/" ist immer Spanisch
+}
+```
+Alle Oberflächentexte werden aus stark typisierten Wörterbüchern (`src/i18n/ui.ts`) extrahiert, um sicherzustellen, dass vor dem Push in die Produktion keine Übersetzung übersehen wird.
+
+## Fazit
+
+Der Aufbau von **fabianh.me** war eine unglaubliche Übung im Gleichgewicht. Es beweist, dass Sie heutzutage die Ästhetik Ihrer Benutzeroberfläche nicht opfern oder weniger Animationen verwenden müssen, um eine perfekte Leistung zu erzielen. Durch die Kombination des richtigen Ökosystems – Astro für das Skelett, React für Interaktivität und Tools wie Partytown und Server Islands zur Optimierung – können Sie das Web der Zukunft schon heute aufbauen.
