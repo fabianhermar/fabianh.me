@@ -55,43 +55,45 @@ const {
 							/>
 						</div>
 					</div>
-					<div class='w-full space-y-6 p-6 md:order-1 md:w-1/2'>
-						<div class='flex items-center justify-start gap-4 pb-4'>
-							<h2 class='font-heading text-3xl font-bold text-[#FFA84B] drop-shadow-sm'>
-								{title}
-							</h2>
-							<div class='flex items-center gap-4'>
-								<div class='h-8 w-px bg-neutral-300'></div>
-								<div class='flex gap-2'>
-									<a
-										href={githubLink}
-										target={target}
-										class='rounded-full p-2 transition-colors hover:bg-neutral-100'
-										aria-label="See project's source code on GitHub"
-									>
-										<Github class='h-5 w-5 text-neutral-600' />
-									</a>
-									<a
-										href={externalLink}
-										target={target}
-										class='rounded-full p-2 transition-colors hover:bg-neutral-100'
-										aria-label='Visit a live demo of the project'
-									>
-										<ExternalLinkIcon class='h-5 w-5 text-neutral-600' />
-									</a>
+					<div class='flex w-full flex-col justify-between p-6 md:order-1 md:w-1/2'>
+						<div class='space-y-6'>
+							<div class='flex items-center justify-start gap-4 pb-4'>
+								<h2 class='font-heading text-3xl font-bold text-[#FFA84B] drop-shadow-sm'>
+									{title}
+								</h2>
+								<div class='flex items-center gap-4'>
+									<div class='h-8 w-px bg-neutral-300'></div>
+									<div class='flex gap-2'>
+										<a
+											href={githubLink}
+											target={target}
+											class='rounded-full p-2 transition-colors hover:bg-neutral-100'
+											aria-label="See project's source code on GitHub"
+										>
+											<Github class='h-5 w-5 text-neutral-600' />
+										</a>
+										<a
+											href={externalLink}
+											target={target}
+											class='rounded-full p-2 transition-colors hover:bg-neutral-100'
+											aria-label='Visit a live demo of the project'
+										>
+											<ExternalLinkIcon class='h-5 w-5 text-neutral-600' />
+										</a>
+									</div>
 								</div>
 							</div>
+							<p class='font-display font-medium text-neutral-600'>
+								{subtitle}
+							</p>
+							<p class='font-accent text-sm font-normal text-neutral-700'>
+								{description}
+							</p>
+							<p class='font-accent text-sm font-normal text-neutral-700'>
+								{description2}
+							</p>
 						</div>
-						<p class='font-display font-medium text-neutral-600'>
-							{subtitle}
-						</p>
-						<p class='font-accent text-sm font-normal text-neutral-700'>
-							{description}
-						</p>
-						<p class='font-accent text-sm font-normal text-neutral-700'>
-							{description2}
-						</p>
-						<div class='flex flex-wrap gap-2'>
+						<div class='mt-6 flex flex-wrap gap-2'>
 							{
 								technologies?.map((tech) => (
 									<Pill
