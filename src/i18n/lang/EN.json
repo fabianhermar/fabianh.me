@@ -60,13 +60,10 @@
                 "description2": "This project had to be ready in 3 weeks, so I had to hurry to finish it as soon as possible because of the audit that the university was going to have. After the first week, the initial design of the landing page was finished, but the project fell through and could never be finished with the project and to be able to deploy it with the official domain. I leave here the preview of what it looks like."
             },
             "project3": {
-                "title": "Last Dusk",
-                "subtitle": "Zombie survival game",
-                "description": "Last Dusk was a university project part of the class \"Video Game Development\" and this consists of surviving as many nights as possible from zombies and various enemies. During the day you have to collect the necessary resources to survive by going through an extensive map with different zones and better loot, but with stronger enemies.",
-                "description2": "The project is about 50% finished, we intend to continue with the project but using different technologies, better modeling, interface improvements, easter eggs, etc. The game is not available for commercial use and/or distribution until it is mostly finished.",
-                "tech": {
-                    "1": "Teamwork"
-                }
+              "title": "ClearCut Studio",
+              "subtitle": "Edit images with AI",
+              "description": "ClearCut Studio is a project developed during 2026. It is a web application that allows users to remove image backgrounds using artificial intelligence and optimize their image sizes to formats like .WebP, .AVIF, etc.",
+              "description2": "The project was developed using NextJS, TypeScript, and Google Antigravity. It was a project that allowed me to learn how to integrate artificial intelligence models into web applications, as well as optimize performance and the user experience when working with high-quality images."
             },
             "project4": {
                 "title": "Boxode Website",

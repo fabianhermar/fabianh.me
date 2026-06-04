@@ -60,13 +60,10 @@
                 "description2": "Dieses Projekt musste innerhalb von 3 Wochen fertig sein, also musste ich mich beeilen, um es so schnell wie möglich fertigzustellen, da die Universität ein Audit durchführen wollte. Nach der ersten Woche war das anfängliche Design der Landing Page fertig, aber das Projekt fiel durch und konnte nie fertiggestellt werden, um es mit der offiziellen Domain bereitstellen zu können. Ich lasse hier die Vorschau, wie sie aussieht."
             },
             "project3": {
-                "title": "Last Dusk",
-                "subtitle": "Zombie-Überlebensspiel",
-                "description": "Last Dusk war ein Universitätsprojekt im Rahmen des Kurses „Videospielentwicklung“ und besteht darin, so viele Nächte wie möglich vor Zombies und verschiedenen Feinden zu überleben. Tagsüber muss man die notwendigen Ressourcen sammeln, um auf einer großen Karte mit verschiedenen Zonen und besserer Beute, aber stärkeren Feinden, zu überleben.",
-                "description2": "Das Projekt ist zu 50 % fertiggestellt. Es ist geplant, das Projekt fortzusetzen, aber mit anderen Technologien, besserer Modellierung, Verbesserungen der Benutzeroberfläche, Ostereiern usw. Das Spiel ist nicht für die kommerzielle Nutzung und/oder den Vertrieb verfügbar, bis es weitgehend fertig ist.",
-                "tech": {
-                    "1": "Teamarbeit"
-                }
+              "title": "ClearCut Studio",
+              "subtitle": "Bilder mit KI bearbeiten",
+              "description": "ClearCut Studio ist ein Projekt, das im Jahr 2026 entwickelt wurde. Es handelt sich um eine Webanwendung, die es Benutzern ermöglicht, Bildhintergründe mithilfe von künstlicher Intelligenz zu entfernen und die Dateigröße ihrer Bilder in Formaten wie .WebP, .AVIF usw. zu optimieren.",
+              "description2": "Das Projekt wurde mit NextJS, TypeScript und Google Antigravity entwickelt. Es war ein Projekt, das es mir ermöglichte, zu lernen, wie man Modelle der künstlichen Intelligenz in Webanwendungen integriert und die Leistung sowie die Benutzererfahrung bei der Arbeit mit hochwertigen Bildern optimiert."
             },
             "project4": {
                 "title": "Boxode Website",
