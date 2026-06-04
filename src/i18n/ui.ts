@@ -26,6 +26,7 @@ export const showDefaultLang = false
 
 export const ui = {
 	es: {
+		'nav.blog': 'Blog',
 		'nav.about': 'Sobre mi',
 		'nav.projects': 'Proyectos',
 		'nav.experience': 'Experiencia',
@@ -42,6 +43,7 @@ export const ui = {
 			'Desarrollado con mucho ❤ utilizando <a class="font-accent font-bold underline text-[#FF5D01]" href="https://astro.build" target="_blank">Astro</a> y <a class="font-accent font-bold underline text-[#00D8FF]" href="https://react.dev" target="_blank">React</a>. Desplegado en  <a class="font-accent font-bold underline text-black" href="https://vercel.com" target="_blank">Vercel</a> y administrado por <a class="font-accent font-bold underline text-[#F48120]" href="https://cloudflare.com" target="_blank">CloudFlare</a>.',
 	},
 	en: {
+		'nav.blog': 'Blog',
 		'nav.about': 'About me',
 		'nav.projects': 'Projects',
 		'nav.experience': 'Experience',
@@ -58,6 +60,7 @@ export const ui = {
 			'Developed with a lot of ❤ using <a class="font-accent font-bold underline text-[#FF5D01]" href="https://astro.build" target="_blank">Astro</a> and <a class="font-accent font-bold underline text-[#00D8FF]" href="https://react.dev" target="_blank">React</a>. Deployed on  <a class="font-accent font-bold underline text-black" href="https://vercel.com" target="_blank">Vercel</a> and managed by <a class="font-accent font-bold underline text-[#F48120]" href="https://cloudflare.com" target="_blank">CloudFlare</a>.',
 	},
 	de: {
+		'nav.blog': 'Blog',
 		'nav.about': 'Über mich',
 		'nav.projects': 'Projekte',
 		'nav.experience': 'Erfahrung',
