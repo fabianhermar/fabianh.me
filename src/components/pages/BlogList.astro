@@ -4,7 +4,6 @@ import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 import { getLangFromUrl } from '@/i18n/utils'
 import { getI18N } from '@/i18n'
-import { Image } from 'astro:assets'
 
 const lang = getLangFromUrl(Astro.url)
 const posts = await getCollection('blog', ({ data }) => {
@@ -15,62 +14,128 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 
-// Get unique categories for the filters
-const allCategories = [...new Set(posts.map(p => p.data.category).filter(Boolean))];
+const totalPosts = posts.length;
 ---
 <Layout title={`Blog | ${i18n.SEO.title}`}>
-	<section class='relative min-h-screen pt-24 pb-16'>
-		<Container>
-            <!-- Title -->
-			<h1 class='font-display mb-6 text-5xl font-bold tracking-tight text-neutral-950 md:text-6xl lg:text-7xl'>
-                Blog
-            </h1>
+	<section class='relative min-h-screen'>
 
-            <!-- Filters -->
-            <div class="mb-10 flex flex-wrap items-center gap-3">
-                <button class="rounded-full bg-neutral-900 px-4 py-1.5 font-accent text-sm font-medium text-white transition-colors hover:bg-neutral-800">
-                    All
-                </button>
-                {allCategories.map(cat => (
-                    <button class="rounded-full bg-neutral-100 px-4 py-1.5 font-accent text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200">
-                        {cat}
-                    </button>
-                ))}
-                {/* Fallbacks if empty to match design */}
-                {allCategories.length === 0 && (
-                    <>
-                        <button class="rounded-full bg-neutral-100 px-4 py-1.5 font-accent text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200">Guides</button>
-                        <button class="rounded-full bg-neutral-100 px-4 py-1.5 font-accent text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200">Comparisons</button>
-                        <button class="rounded-full bg-neutral-100 px-4 py-1.5 font-accent text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200">Native</button>
-                    </>
+        <!-- Hero Header -->
+        <div class="relative border-b border-neutral-200 bg-white pt-32 pb-16">
+            <!-- Decorative layer: overflow-hidden isolated here so it never clips the nav dropdown -->
+            <div class="pointer-events-none absolute inset-0 overflow-hidden">
+                <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px); background-size: 60px 60px;"></div>
+                <div class="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-[#ff5e69] opacity-20 blur-3xl"></div>
+                <div class="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[#ffa84b] opacity-20 blur-3xl"></div>
+            </div>
+
+            <Container>
+                <div class="relative flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                    <div class="max-w-2xl">
+                        <!-- Eyebrow -->
+                        <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-1.5 shadow-sm">
+                            <span class="h-1.5 w-1.5 rounded-full bg-[#ff5e69]"></span>
+                            <span class="font-accent text-xs font-semibold uppercase tracking-widest text-neutral-500">Artículos & Reflexiones</span>
+                        </div>
+
+                        <h1 class='font-display text-6xl font-bold tracking-tight text-neutral-950 md:text-7xl lg:text-8xl'>
+                            Blog
+                        </h1>
+                        <p class="mt-4 font-accent text-lg text-neutral-500 leading-relaxed max-w-xl">
+                            Ideas, proyectos y aprendizajes sobre desarrollo web, diseño y tecnología.
+                        </p>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex items-center gap-6 rounded-2xl border border-neutral-200 bg-white/80 px-6 py-4 shadow-sm backdrop-blur-sm self-end">
+                        <div class="text-center">
+                            <p class="font-display text-3xl font-bold text-neutral-950">{totalPosts}</p>
+                            <p class="font-accent text-xs text-neutral-500 uppercase tracking-wider mt-0.5">Artículos</p>
+                        </div>
+                        <div class="h-10 w-px bg-neutral-200"></div>
+                        <div class="text-center">
+                            <p class="font-display text-3xl font-bold text-neutral-950">3</p>
+                            <p class="font-accent text-xs text-neutral-500 uppercase tracking-wider mt-0.5">Idiomas</p>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="py-16">
+            <Container>
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {posts.map((post, index) => (
+                        <a
+                            href={`/${lang === 'es' ? 'blog' : lang + '/blog'}/${post.id.split('/').pop()}`}
+                            class="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-neutral-300"
+                        >
+                            <!-- Thumbnail -->
+                            <div class="relative aspect-video w-full overflow-hidden bg-neutral-100">
+                                {post.data.image ? (
+                                    <img
+                                        src={post.data.image}
+                                        alt={post.data.title}
+                                        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                ) : (
+                                    <!-- Fallback gradient placeholder -->
+                                    <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#b16cea]/20 via-[#ff5e69]/20 to-[#ffa84b]/20">
+                                        <svg class="h-12 w-12 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                )}
+                                <!-- Category badge on top of image -->
+                                {post.data.category && (
+                                    <span class="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-1 font-accent text-xs font-semibold text-neutral-700 backdrop-blur-sm shadow-sm">
+                                        {post.data.category}
+                                    </span>
+                                )}
+                            </div>
+
+                            <!-- Content -->
+                            <div class="flex flex-1 flex-col gap-3 p-5">
+                                <h2 class="font-heading text-lg font-bold leading-snug text-neutral-900 transition-colors group-hover:text-[#ff5e69] line-clamp-2">
+                                    {post.data.title}
+                                </h2>
+                                <p class="font-accent text-sm text-neutral-500 line-clamp-2 leading-relaxed">
+                                    {post.data.description}
+                                </p>
+
+                                <!-- Footer meta -->
+                                <div class="mt-auto flex items-center justify-between border-t border-neutral-100 pt-4">
+                                    <div class="flex items-center gap-2">
+                                        <div class="flex h-7 w-7 items-center justify-center rounded-full bg-[#ff5e69] font-heading text-xs font-bold text-white">
+                                            {(post.data.author || 'F').charAt(0)}
+                                        </div>
+                                        <span class="font-accent text-xs font-medium text-neutral-600">{post.data.author || 'Fabian Herrera'}</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 font-accent text-xs text-neutral-400">
+                                        <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <time>{post.data.pubDate.toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric' })}</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+
+                <!-- Empty state -->
+                {posts.length === 0 && (
+                    <div class="flex flex-col items-center justify-center py-32 text-center">
+                        <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-neutral-100">
+                            <svg class="h-8 w-8 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                            </svg>
+                        </div>
+                        <p class="font-heading text-lg font-semibold text-neutral-700">No hay artículos todavía</p>
+                        <p class="font-accent mt-1 text-sm text-neutral-400">Vuelve pronto para leer el primer post.</p>
+                    </div>
                 )}
-            </div>
-            
-            <!-- Cards Grid -->
-            <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
-                {posts.map(post => (
-                    <a href={`/${lang === 'es' ? 'blog' : lang + '/blog'}/${post.id.split('/').pop()}`} class="group flex flex-col gap-4 transition-all">
-                        <div class="relative aspect-video w-full overflow-hidden rounded-2xl bg-neutral-100 border border-neutral-200">
-                            {post.data.image && (
-                                <img
-                                    src={post.data.image} 
-                                    alt={post.data.title}
-                                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                />
-                            )}
-                        </div>
-                        <div>
-                            <h2 class="font-heading mb-2 text-2xl font-bold text-neutral-900 transition-colors group-hover:text-[#ff5e69]">{post.data.title}</h2>
-                            <p class="font-accent text-base text-neutral-600 line-clamp-2">{post.data.description}</p>
-                        </div>
-                        <div class="mt-auto flex items-center gap-2 font-accent text-sm text-neutral-500">
-                            <span>{post.data.author || 'Fabián Hernández'}</span>
-                            <span class="text-neutral-400">•</span>
-                            <time>{post.data.pubDate.toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric' })}</time>
-                        </div>
-                    </a>
-                ))}
-            </div>
-		</Container>
+            </Container>
+        </div>
 	</section>
 </Layout>
