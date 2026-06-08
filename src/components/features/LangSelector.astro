@@ -11,7 +11,7 @@ const currentLocaleData = LANGUAGES[lang]
 const otherLocales = Object.values(LANGUAGES).filter((locale) => locale.code !== lang)
 ---
 
-<div class='group relative z-50 inline-block text-left font-display text-xs text-white'>
+<div class='group relative z-[9999] inline-block text-left font-display text-xs text-white'>
 	<button
 		type='button'
 		class='inline-flex w-full items-center justify-start gap-x-2 rounded-md bg-black px-3 py-2 transition-all group-hover:bg-black/70'
@@ -22,7 +22,7 @@ const otherLocales = Object.values(LANGUAGES).filter((locale) => locale.code !==
 		{currentLocaleData.name}
 		<DropdownArrow />
 	</button>
-	<div class='absolute left-0 top-full hidden w-full pt-1 group-hover:block'>
+	<div class='absolute left-0 top-full hidden w-full pt-1 group-hover:block z-[9999]'>
 		<ul class='flex flex-col gap-1 rounded-md bg-black p-1 shadow-xl'>
 			{
 				otherLocales.map((locale) => (
