@@ -1,7 +1,6 @@
 ---
 import { getLangFromUrl } from '@/i18n/utils'
 import Analytics from '@vercel/analytics/astro'
-import { ClientRouter } from 'astro:transitions'
 
 import '../styles/global.css'
 
@@ -91,7 +90,6 @@ const lang = getLangFromUrl(Astro.url)
 			type='font/woff2'
 			crossorigin='anonymous'
 		/>
-		<ClientRouter />
 	</head>
 	<body class='dark-transition flex h-full flex-col'>
 		<Header />
