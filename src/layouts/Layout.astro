@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl } from '@/i18n/utils'
 import Analytics from '@vercel/analytics/astro'
+import { ClientRouter } from 'astro:transitions'
 
 import '../styles/global.css'
 
@@ -76,8 +77,21 @@ const lang = getLangFromUrl(Astro.url)
 		/>
 		<Analytics />
 		<link rel='preload' href='/me.avif' as='image' type='image/avif' fetchpriority='high' />
-		<link rel='preload' href='/fonts/Gilroy-Bold.woff2' as='font' type='font/woff2' crossorigin='anonymous' />
-		<link rel='preload' href='/fonts/Gilroy-SemiBold.woff2' as='font' type='font/woff2' crossorigin='anonymous' />
+		<link
+			rel='preload'
+			href='/fonts/Gilroy-Bold.woff2'
+			as='font'
+			type='font/woff2'
+			crossorigin='anonymous'
+		/>
+		<link
+			rel='preload'
+			href='/fonts/Gilroy-SemiBold.woff2'
+			as='font'
+			type='font/woff2'
+			crossorigin='anonymous'
+		/>
+		<ClientRouter />
 	</head>
 	<body class='dark-transition flex h-full flex-col'>
 		<Header />
