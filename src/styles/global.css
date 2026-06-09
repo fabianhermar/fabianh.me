@@ -53,29 +53,6 @@ html {
 	color: #ff5e69;
 }
 
-::view-transition-group(root) {
-	animation-timing-function: var(--expo-out);
-}
-
-::view-transition-new(root) {
-	mask: url('/svg/polygon.svg') top left / 0 no-repeat;
-	mask-origin: top left;
-	animation: scale 1.5s;
-}
-
-::view-transition-old(root),
-.dark::view-transition-old(root) {
-	animation: scale 1.5s;
-	z-index: -1;
-	transform-origin: top left;
-}
-
-@keyframes scale {
-	to {
-		mask-size: 200vmax;
-	}
-}
-
 .tooltip {
 	opacity: 0;
 	transition: opacity 0.3s ease-in-out;
