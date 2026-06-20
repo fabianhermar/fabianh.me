@@ -9,12 +9,12 @@
         "WIW": {
             "title": "Where I've worked",
             "card1": {
-                "title": "Lead Frontend Developer • Boxode",
-                "location": "Aguascalientes, México - Remote",
-                "duration": "April 2023 - July 2024 | Part-time",
-                "phrase": "\"Every step out of the comfort zone brings you closer to your goals.\"",
-                "description1": "Boxode was one of the most significant projects I have had the opportunity to participate in. Boxode, Ltd., or simply Boxode, is a software development company founded in December 2022 in the state of Aguascalientes, beginning official operations in April 2023. During my time at the company, I witnessed the growth of a team committed to technological innovation and the development of high-impact digital solutions.",
-                "description2": "During my time at the company, I led a small development team of five people, including myself. I was also responsible for training my development team, introducing tools that helped improve collaborative work efficiency and the end-user experience.",
+                "title": "Web Developer • INIFAP",
+                "location": "Aguascalientes, Mexico • On-site",
+                "duration": "January 2023 - June 2023 | Professional Internship",
+                "phrase": "",
+                "description1": "I completed my professional internship at the National Institute of Forestry, Agricultural and Livestock Research (INIFAP), where I developed a web platform for a researcher within the institution. The main goal was to design and build a dynamic website to showcase their research, ongoing projects, and scientific publications.",
+                "description2": "This project was key to obtaining my Software Engineering degree. At the researcher's request, the development was not 100% completed, allowing another student to continue and finish it by following the detailed technical documentation I prepared for the project.",
                 "tech": {
                     "tech1": "Resilience"
                 }

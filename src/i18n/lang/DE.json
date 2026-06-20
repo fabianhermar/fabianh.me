@@ -9,12 +9,12 @@
         "WIW": {
             "title": "Wo ich arbeitete",
             "card1": {
-                "title": "Leitender Frontend-Entwickler • Boxode",
-                "location": "Aguascalientes, Mexiko - Fernarbeit",
-                "duration": "April 2023 - Juli 2024 | Teilzeit",
-                "phrase": "\"Jeder Schritt aus der Komfortzone bringt Sie Ihren Zielen näher.\"",
-                "description1": "Boxode war eines der bedeutendsten Projekte, an denen ich jemals mitwirken durfte. Boxode, Ltd., oder einfach Boxode, ist ein Softwareentwicklungsunternehmen, das im Dezember 2022 im Bundesstaat Aguascalientes gegründet wurde und im April 2023 seinen offiziellen Betrieb aufnahm. Während meiner Zeit im Unternehmen war ich Zeuge des Wachstums eines Teams, das sich der technologischen Innovation und der Entwicklung wirkungsvoller digitaler Lösungen verschrieben hat.",
-                "description2": "Während meiner Zeit im Unternehmen leitete ich ein kleines Entwicklungsteam, das aus fünf Personen bestand, darunter auch ich selbst. Außerdem war ich für die Schulung meines Entwicklungsteams verantwortlich und führte Tools ein, die die Effizienz der Zusammenarbeit und die Endbenutzererfahrung verbesserten.",
+                "title": "Webentwickler • INIFAP",
+                "location": "Aguascalientes, Mexiko • Vor Ort",
+                "duration": "Januar 2023 - Juni 2023 | Berufspraktikum",
+                "phrase": "",
+                "description1": "Ich habe mein Berufspraktikum am Nationalen Institut für Forst-, Landwirtschafts- und Viehzuchtforschung (INIFAP) absolviert, wo ich eine Webplattform für einen Forscher des Instituts entwickelt habe. Hauptziel war die Konzeption und Erstellung einer dynamischen Website zur Präsentation seiner Forschungsarbeiten, laufenden Projekte und wissenschaftlichen Publikationen.",
+                "description2": "Dieses Projekt war ein wichtiger Bestandteil meines Abschlusses in Software Engineering. Auf Wunsch des Forschers wurde die Entwicklung nicht zu 100 % abgeschlossen, damit ein anderer Student das Projekt anhand der von mir erstellten detaillierten technischen Dokumentation fortführen und beenden konnte.",
                 "tech": {
                     "tech1": "Resilienz"
                 }

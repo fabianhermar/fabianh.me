@@ -9,12 +9,12 @@
         "WIW": {
             "title": "Dónde he trabajado",
             "card1": {
-                "title": "Desarrollador Frontend Principal • Boxode",
-                "location": "Aguascalientes, México • Remoto",
-                "duration": "Abril 2023 - Julio 2024 | Jornada Parcial",
-                "phrase": "\"Cada paso fuera de la zona de confort te acerca más a tus metas.\"",
-                "description1": "Boxode fue uno de los proyectos más significativos en los que he tenido la oportunidad de participar. Boxode, Ltd., o simplemente Boxode, es una empresa de desarrollo de software fundada en diciembre de 2022 en el estado de Aguascalientes, comenzando sus operaciones oficiales en abril de 2023. Durante mi tiempo en la compañía, fui testigo del crecimiento de un equipo comprometido con la innovación tecnológica y el desarrollo de soluciones digitales de alto impacto.",
-                "description2": "Durante mi tiempo en la empresa, lideré un pequeño equipo de desarrollo conformado por cinco personas, incluyendo mi participación activa. También me encargué de capacitar a mi equipo de desarrollo, introduciendo herramientas que ayudaron a la eficiencia del trabajo colaborativo y la experiencia del usuario final.",
+                "title": "Desarrollador Web • INIFAP",
+                "location": "Aguascalientes, México • Presencial",
+                "duration": "Enero 2023 - Junio 2023 | Estadías Profesionales",
+                "phrase": "",
+                "description1": "Realicé mis estadías profesionales en el Instituto Nacional de Investigaciones Forestales, Agrícolas y Pecuarias (INIFAP), donde desarrollé una plataforma web para un investigador de la institución. El objetivo principal fue diseñar y construir un sitio web dinámico para dar a conocer sus investigaciones, proyectos en curso y publicaciones científicas.",
+                "description2": "Este proyecto formó parte de mis estadías para titularme como Ingeniero de Software. Por solicitud del investigador, el desarrollo no se finalizó al 100% con el fin de permitir que otro estudiante pudiera continuarlo y concluirlo siguiendo la documentación técnica detallada que preparé para el proyecto.",
                 "tech": {
                     "tech1": "Resiliencia"
                 }
