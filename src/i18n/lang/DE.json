@@ -1,130 +1,195 @@
 {
     "SEO": {
-        "title": "Fabian Herrera - Fullstack-Webentwickler mit mehr als 2 Jahren Erfahrung."
+        "title": "Fabian Herrera — Fullstack-Webentwickler mit mehr als 2 Jahren Erfahrung",
+        "description": "Fullstack-Webentwickler mit mehr als 2 Jahren Erfahrung in der Entwicklung moderner Web-Interfaces mit React, Next.js und Astro für Startups und digitale Unternehmen."
     },
     "landing": {
-        "title": "Ich entwickle digitale produkte",
-        "title_2": "die die fantasie anregen und das nutzererlebnis verbessern.",
-        "subtitle": "Hallo! Ich bin Fabian Herrera, der „Cowboy des Codes“. Ich bin Softwareentwickler und habe mich auf die Erstellung moderner Benutzeroberflächen (unter Verwendung von Technologien wie React, Next.js und Astro) spezialisiert, um Start-ups und digitale Unternehmen voranzubringen.",
+        "brand_tag": "Der Code-Cowboy",
+        "available": "Verfügbar für Projekte",
+        "title": "Moderne Interfaces und digitale Produkte",
+        "title_2": "mit technischer Präzision für Startups und wachsende Unternehmen.",
+        "subtitle": "Ich bin Fabian Herrera, Fullstack-Webentwickler mit mehr als 2 Jahren Erfahrung in der Entwicklung schneller, skalierbarer Webanwendungen mit React, Next.js und Astro.",
+        "cta_primary": "Lass uns reden",
+        "cta_secondary": "Projekte ansehen",
         "WIW": {
-            "title": "Wo ich arbeitete",
+            "title": "Berufserfahrung",
+            "subtitle": "Erfahrung im Aufbau von Webplattformen, Verwaltungssystemen und technischer Dokumentation.",
             "card1": {
                 "title": "Webentwickler • INIFAP",
+                "role": "Webentwickler",
+                "company": "INIFAP",
                 "location": "Aguascalientes, Mexiko • Vor Ort",
-                "duration": "Januar 2025 - Juni 2025 | Berufspraktikum",
+                "duration": "Jan 2025 — Jun 2025 · Berufspraktikum",
                 "phrase": "",
-                "description1": "Ich habe mein Berufspraktikum am Nationalen Institut für Forst-, Landwirtschafts- und Viehzuchtforschung (INIFAP) absolviert, wo ich eine Webplattform für einen Forscher des Instituts entwickelt habe. Hauptziel war die Konzeption und Erstellung einer dynamischen Website zur Präsentation seiner Forschungsarbeiten, laufenden Projekte und wissenschaftlichen Publikationen.",
-                "description2": "Dieses Projekt war ein wichtiger Bestandteil meines Abschlusses in Software Engineering. Auf Wunsch des Forschers wurde die Entwicklung nicht zu 100 % abgeschlossen, damit ein anderer Student das Projekt anhand der von mir erstellten detaillierten technischen Dokumentation fortführen und beenden konnte.",
+                "description1": "Entwicklung einer wissenschaftlichen Webplattform am Nationalen Institut für Forst-, Landwirtschafts- und Viehzuchtforschung (INIFAP).",
+                "description2": "Übergabe der Plattform inklusive umfassender technischer Architekturdokumentation zur Sicherstellung der Projektkontinuität.",
+                "bullets": [
+                    "Konzeption und Entwicklung einer dynamischen Webplattform mit Astro, TypeScript und TailwindCSS für wissenschaftliche Publikationen.",
+                    "Strukturierung der Inhaltsarchitektur zur Optimierung von Lesbarkeit, Ladezeiten und Indexierung.",
+                    "Übergabe einer detaillierten technischen Dokumentation von Architektur und Komponenten für die nahtlose Weiterführung im Institut."
+                ],
                 "tech": {
-                    "tech1": "Resilienz"
+                    "tech1": "Dokumentierte Architektur"
                 }
             },
             "card2": {
-                "title": "Technischer Service für Systeme • CompuCel",
+                "title": "Technischer Systemservice • CompuCel",
+                "role": "Technischer Systemservice",
+                "company": "CompuCel",
                 "location": "Cuauhtémoc, ZAC, Mexiko • Vor Ort",
-                "duration": "November 2022 - Februar 2023 | Befristeter Vertrag",
+                "duration": "Nov 2022 — Feb 2023 · Befristeter Vertrag",
                 "phrase": "",
-                "description1": "Während meiner Zeit im technischen Support-Team war ich dafür verantwortlich, Benutzern bei der Lösung von Softwareproblemen sowie bei der Konfiguration und Wartung von Betriebssystemen und Hardware zu helfen.",
-                "description2": "Ich habe auch Fähigkeiten in der Erstellung technischer Dokumentationen entwickelt, in denen ich Vorfälle und ihre jeweiligen Lösungen aufgezeichnet habe, was die Lösung zukünftiger Probleme für andere Teammitglieder erleichterte.",
+                "description1": "Verantwortlich für Softwarediagnose, Betriebssystemkonfiguration und Hardwarewartung.",
+                "description2": "Erstellung interner technischer Dokumentationen zur schnelleren Fehlerbehebung im Team.",
+                "bullets": [
+                    "Diagnose und Behebung von Software-, Betriebssystem- und Hardwareproblemen mit kurzen Reaktionszeiten.",
+                    "Aufbau einer internen technischen Dokumentation für wiederkehrende Vorfälle und Lösungsprotokolle.",
+                    "Direkte Benutzerbetreuung und Übersetzung technischer Anforderungen in klare Lösungen."
+                ],
                 "tech": {
-                    "tech1": "Problem lösen",
+                    "tech1": "Problemlösung",
                     "tech2": "Kommunikation",
                     "tech3": "Zeitmanagement",
-                    "tech4": "Problemidentifikation"
+                    "tech4": "Technische Diagnose"
                 }
             },
             "card3": {
                 "title": "Softwareentwicklungspraktikant • INBAC Niels Bohr Institut",
-                "location": "San Francisco de los Romo, AGS, Mexiko • Fernarbeit",
-                "duration": "März 2022 - August 2022 | Berufspraktikum",
+                "role": "Softwareentwicklungspraktikant",
+                "company": "INBAC Niels Bohr Institut",
+                "location": "San Francisco de los Romo, AGS • Remote",
+                "duration": "Mär 2022 — Aug 2022 · Berufspraktikum",
                 "phrase": "",
-                "description1": "Diese Position war eine der ersten Herausforderungen, die sich mir auf meinem Weg stellten, als ich meine beruflichen Praktiken vorstellte, da ein Schulverwaltungssystem erstellt wurde, um das Personal, das die Institution bildet, sowie die Schüler besser zu verwalten.",
-                "description2": "Dank dieses Projekts, das eines der komplexesten war, das ich zu dieser Zeit durchgeführt habe, konnte ich die Programmiersprachen PHP und JS sowie die Verwendung verschiedener Methoden in den Datenbanken tiefergehend lernen und verstehen, die ich ehrlich gesagt nicht kannte, obwohl die Beratung durch meinen Projektleiter praktisch null war, konnte ich dieses Projekt durchführen.",
+                "description1": "Eigenständige Entwicklung eines webbasierten Schulverwaltungssystems für Lehrkräfte und Studierende.",
+                "description2": "Implementierung von PHP-Backend, relationaler MySQL-Datenbank und JavaScript-Frontend.",
+                "bullets": [
+                    "Eigenständige Entwicklung eines umfassenden Schulverwaltungssystems für Personal, Lehrkräfte und Schüler.",
+                    "Entwurf und Implementierung des relationalen MySQL-Datenbankschemas sowie der Module in PHP und JavaScript.",
+                    "Digitalisierung akademischer Verwaltungsprozesse, die zuvor manuell durchgeführt wurden."
+                ],
                 "tech": {
                     "tech1": "Analytisches Denken"
                 }
             }
         },
         "projects": {
-            "title": "Einige meiner Projekte",
+            "title": "Ausgewählte Projekte",
+            "subtitle": "Fallstudien mit Fokus auf Produktentscheidungen, Frontend-Architektur und Ergebnisse.",
+            "labels": {
+                "problem": "Problem",
+                "decision": "Entscheidung",
+                "result": "Ergebnis",
+                "live": "Live ansehen",
+                "code": "Quellcode",
+                "all": "Projektarchiv entdecken"
+            },
+            "project3": {
+                "title": "ClearCut Studio",
+                "subtitle": "KI-gestützte Bildfreistellung und Optimierung",
+                "year": "2026",
+                "problem": "Das Entfernen von Bildhintergründen und die Komprimierung für das Web erfordern oft mehrere langsame oder kostenpflichtige Tools.",
+                "decision": "Entwicklung einer Next.js- und TypeScript-Webanwendung mit KI-Modellen zur sofortigen Hintergrundentfernung und Konvertierung in WebP und AVIF.",
+                "result": "Einheitlicher Workflow direkt im Browser für produktionsreife Bilder in Sekunden. [COMPLETAR: durchschnittliche Dateigrößenreduzierung / aktive Nutzer].",
+                "description": "KI-gestützte Webanwendung, die Bildhintergründe sofort entfernt und Dateigrößen in moderne Formate wie WebP und AVIF optimiert.",
+                "description2": "Entwickelt mit Next.js, TypeScript und Google Antigravity mit Fokus auf Performance.",
+                "summary": "KI-gestützte Webanwendung, die Bildhintergründe sofort entfernt und deren Dateigrößen in modernen Formaten wie WebP und AVIF optimiert."
+            },
+            "project4": {
+                "title": "Boxode Website",
+                "subtitle": "Komplettes Redesign von Markenidentität und Webplattform",
+                "year": "2024",
+                "problem": "Der vorherigen Website von Boxode fehlte eine klare visuelle Hierarchie und sie spiegelte die technologische Reife der Marke nicht wider.",
+                "decision": "Neugestaltung der Informationsarchitektur und des Interfaces mit Next.js, React, TypeScript und TailwindCSS mit starkem Kontrast.",
+                "result": "Produktionsplattform (boxode.org) mit flüssiger Navigation, schnellen Ladezeiten und kohärenter digitaler Identität. [COMPLETAR: Lighthouse-Score / Verweildauer].",
+                "description": "Vollständiges Redesign der Boxode-Website, das visuelle Kreativität mit einer professionellen technologischen Identität verbindet.",
+                "description2": "Umgesetzt mit Next.js, React und TailwindCSS für optimale Performance.",
+                "summary": "Vollständiges Redesign der Boxode-Website im Weltraum-Design, das visuelle Kreativität mit einer professionellen technologischen Identität verbindet."
+            },
             "project1": {
                 "title": "Dune UI",
-                "subtitle": "Eine Bibliothek von TailwindCSS-Komponenten",
-                "description": "Dieses Projekt war eines der etwas größeren Projekte, die ich im Jahr 2024 durchgeführt habe, und dank dessen konnte ich viele weitere Dinge lernen, die ich zuvor nicht kannte.",
-                "description2": "Heute ist DuneUI eine Bibliothek von mehr TailwindCSS-Komponenten, die jedoch stärker auf meinen Designstil ausgerichtet ist, der etwas minimalistischer und moderner wird, was viele Monate Arbeit und eine frühzeitige Planung erfordert hat. Daher habe ich mich aus der Motivation von mehreren Freunden, Lehrern und Bekannten entschieden, sie zu erstellen, die meinen Designstil mögen, und hier präsentiere ich DuneUI.",
+                "subtitle": "Minimalistische TailwindCSS-Komponentenbibliothek",
+                "year": "2025",
+                "problem": "Das wiederholte Erstellen von UI-Mustern von Grund auf verlangsamte Projekte und führte zu Inkonsistenzen bei Abständen und Barrierefreiheit.",
+                "decision": "Aufbau einer modularen Komponentenbibliothek mit Astro, React, TypeScript und TailwindCSS mit Fokus auf Minimalismus und Wiederverwendbarkeit.",
+                "result": "Öffentlicher, dokumentierter Komponentenkatalog (ui.fabianh.me) zur Beschleunigung moderner Interfaces. [COMPLETAR: Anzahl veröffentlichter Komponenten / Nutzung].",
+                "description": "TailwindCSS-Komponentenbibliothek mit Fokus auf minimalistischem und modernem Design.",
+                "description2": "Geplant und entwickelt als offenes Designsystem für digitale Produkte.",
                 "summary": "TailwindCSS-Komponentenbibliothek mit Fokus auf minimalistischem und modernem Design, entwickelt für saubere und hocheffiziente Benutzeroberflächen."
             },
             "project2": {
                 "title": "Neugestaltung der UTNA-Website",
-                "subtitle": "Völlige Neugestaltung der Website von UTNA durch einen Studenten",
-                "description": "Die Neugestaltung der Website meiner Universität hat mir sehr viel Spaß gemacht. Sie ist schlichter gestaltet, zeigt aber gleichzeitig ein aktuelles, trendiges Design wie das „Bento Grid“. Dieses Projekt kam zustande, weil einer meiner Professoren mir anbot, die Website neu zu gestalten, was ich annahm. Das vorgeschlagene Design wurde von den Verwaltungsmitarbeitern genehmigt und von da an begann ich mit der Arbeit daran.",
-                "description2": "Dieses Projekt musste innerhalb von 3 Wochen fertig sein, also musste ich mich beeilen, um es so schnell wie möglich fertigzustellen, da die Universität ein Audit durchführen wollte. Nach der ersten Woche war das anfängliche Design der Landing Page fertig, aber das Projekt fiel durch und konnte nie fertiggestellt werden, um es mit der offiziellen Domain bereitstellen zu können. Ich lasse hier die Vorschau, wie sie aussieht."
-            },
-            "project3": {
-              "title": "ClearCut Studio",
-              "subtitle": "Bilder mit KI bearbeiten",
-              "description": "ClearCut Studio ist ein Projekt, das im Jahr 2026 entwickelt wurde. Es handelt sich um eine Webanwendung, die es Benutzern ermöglicht, Bildhintergründe mithilfe von künstlicher Intelligenz zu entfernen und die Dateigröße ihrer Bilder in Formaten wie .WebP, .AVIF usw. zu optimieren.",
-              "description2": "Das Projekt wurde mit NextJS, TypeScript und Google Antigravity entwickelt. Es war ein Projekt, das es mir ermöglichte, zu lernen, wie man Modelle der künstlichen Intelligenz in Webanwendungen integriert und die Leistung sowie die Benutzererfahrung bei der Arbeit mit hochwertigen Bildern optimiert.",
-              "summary": "KI-gestützte Webanwendung, die Bildhintergründe sofort entfernt und deren Dateigrößen in modernen Formaten wie WebP und AVIF optimiert."
-            },
-            "project4": {
-                "title": "Boxode Website",
-                "subtitle": "Komplette Neugestaltung der Website von Boxode",
-                "description": "Die Neugestaltung der Boxode-Website war eine Erfahrung, bei der ich visuelle Kreativität mit technologischer Identität verbinden konnte. Inspiriert von der Unendlichkeit des Weltraums, enthält das neue Design Elemente wie Sternenhimmel und subtile Meteoritenschauer, die die Benutzeroberfläche in eine futuristische und einhüllende Atmosphäre tauchen. Die Hauptfarbpalette aus tiefen Blautönen, strahlendem Weiß und schwarzen Akzenten unterstreicht eine klare, professionelle und moderne Ästhetik, die einen Teil des bisherigen Stils beibehält und ihn gleichzeitig auf eine neue Ebene hebt.",
-                "description2": "Bestimmte visuelle Komponenten des vorherigen Designs wurden beibehalten, aber diesmal wurde eine flüssigere und intuitivere Struktur angewendet, die aktuelle Interaktionselemente integriert, die den innovativen Charakter von Boxode besser widerspiegeln. Das Ergebnis war ein solider visueller Entwurf, der eine mutigere Vision der digitalen Zukunft der Marke widerspiegelt.",
-                "summary": "Vollständiges Redesign der Boxode-Website im Weltraum-Design, das visuelle Kreativität mit einer professionellen technologischen Identität verbindet."
+                "subtitle": "Konzept für das Universitätsportal",
+                "description": "Redesign-Entwurf für das Webportal der Universidad Tecnológica del Norte de Aguascalientes.",
+                "description2": "Entwickelt in einem 3-wöchigen Sprint zur Modernisierung der Informationsarchitektur."
             },
             "project5": {
                 "title": "Smart Agriculture Laboratory",
-                "subtitle": "Blog mit wissenschaftlichen Artikeln",
-                "description": "Dieses Projekt war das letzte, das ich an meiner Universität durchführen musste, um meinen Abschluss zu machen. Es wurde während meines Sozialdienstes, auch bekannt als Praktikum, durchgeführt, bei dem ich in einem Unternehmen arbeiten musste, das dieses Projekt auf der Grundlage der Anforderungen meines Unternehmensberaters entwickelte. Hier ist das fertige Projekt. Aufgrund der Lieferzeit war es noch nicht zu 100 % fertig, aber neue Funktionen werden nach und nach hinzugefügt.",
-                "description2": "Das Hauptziel des Projekts bestand darin, eine intuitive Schnittstelle zu schaffen, die es den Forschern erleichtert, ihre Arbeiten hochzuladen, wobei eine reibungslose und zugängliche Benutzererfahrung für alle Nutzer der Plattform im Vordergrund stand. Trotz der zeitlichen Beschränkungen habe ich ein hohes Maß an Engagement und Hingabe an den Tag gelegt, um ungeachtet des Umfangs des Projekts ein hochwertiges Ergebnis zu liefern."
+                "subtitle": "Plattform für wissenschaftliche Artikel",
+                "description": "Webplattform zur Veröffentlichung wissenschaftlicher Artikel und Forschungsprojekte.",
+                "description2": "Entwickelt mit Fokus auf Barrierefreiheit und einfache Verwaltung."
             }
         },
         "moreinfo": {
-            "title": "Mehr über mich",
-            "phrase": "Inspiration entriegelt die Zukunft",
+            "title": "Über mich",
+            "phrase": "\"Inspiration entriegelt die Zukunft\"",
             "who": {
-                "1": "Software-Ingenieur mit Abschluss an der Universidad Tecnológica del Norte de Aguascalientes und 1 Jahr Erfahrung als Entwickler",
+                "1": "Fullstack-Webentwickler mit mehr als 2 Jahren Erfahrung und Abschluss in Softwareentwicklungs- und Managementingenieurwesen an der Universidad Tecnológica del Norte de Aguascalientes (UTNA).",
                 "2": {
-                    "fp": "Im Alter von 13 Jahren begann ich, mich intensiver mit der Welt der Programmierung zu beschäftigen, indem ich meine ersten Programme in C++ erstellte. Nach einer Weile begann ich, mich intensiver mit dem Erlernen der",
-                    "sp": "Web-Entwicklung",
+                    "fp": "Mit 13 Jahren schrieb ich meine ersten Programme in C++ und konzentriere mich seitdem auf digitale Produkte in den Bereichen",
+                    "sp": "Webentwicklung",
                     "tp": "UI/UX",
-                    "ftp": "und natürlich auch die Entwicklung von",
-                    "ffp": "Mobile Anwendungen."
+                    "ftp": "sowie die Entwicklung von",
+                    "ffp": "Mobilen Apps."
                 },
-                "3": "Ich liebe es zu reisen und besonders der Natur nahe zu sein und mehr über sie zu erfahren.",
-                "title": "Wer bin ich?",
-                "button": "Siehe vollständige Zusammenfassung",
+                "3": "Ich verbinde sauberes Engineering mit gestalterischer Präzision und tanke abseits des Bildschirms Energie beim Reisen und in der Natur.",
+                "title": "Profil & Fokus",
+                "button": "Meine ganze Geschichte lesen",
                 "story": [
-                    "Ich bin ein junger Mann, der sich schon in jungen Jahren für Technologie im Allgemeinen begeistert. Ich fing an zu programmieren, als ich in die Mittelschule kam, wo ich meine ersten Schritte im Programmieren in C++ machte, obwohl der Unterricht nicht sehr tiefgreifend war. In der High School begannen wir dann, alles rund um Webtechnologien und Netzwerke zu sehen, wovon ich zunehmend fasziniert war.",
-                    "Eine meiner größten Motivationen ist es, jeden Tag zu lernen. So begann ich, mir Dinge selbst beizubringen, indem ich mir verschiedene Tutorial-Videos, Dokumente und sogar Bücher ansah, die ich im Internet fand. Ein paar Jahre später begann ich an der UTNA ein Studium im Bereich Softwareentwicklung und -management. Und seitdem lerne und entwickle ich mich als Softwareentwickler weiter.",
-                    "Ich liebe es, mein Wissen durch verschiedene Vorträge von Fachleuten auf diesem Gebiet weiter zu bereichern und mein Wissen schrittweise mit der Entwicklergemeinschaft teilen zu können."
+                    "Ich begeistere mich schon seit jungen Jahren für Technologie. Meine ersten Schritte in der Programmierung machte ich in der Mittelschule mit C++, bevor ich in der Oberstufe Webtechnologien und Netzwerke für mich entdeckte.",
+                    "Kontinuierliches Lernen ist mein stärkster Antrieb. Ich begann autodidaktisch mit technischer Dokumentation und eigenen Projekten, bevor ich mein Ingenieurstudium in Softwareentwicklung und -management an der UTNA absolvierte und mehr als 2 Jahre Erfahrung als Fullstack-Webentwickler sammelte.",
+                    "Mich motiviert es, Interfaces zu entwickeln, die nicht nur schnell funktionieren, sondern auch Klarheit und Vertrauen für Startups und digitale Unternehmen schaffen."
                 ],
-                "quote": "Und denken Sie daran: Glauben Sie an sich selbst und an das, was Sie sind. Seien Sie sich bewusst, dass etwas in Ihnen steckt, das größer ist als jedes Hindernis."
+                "quote": "Glaube an dich selbst und an das, was du baust. Die Liebe zum Detail macht aus gutem Code ein herausragendes Produkt."
             }
         },
         "bento": {
             "weather": {
-                "title": "Aktuelles Wetter"
+                "title": "Aktuelles Wetter",
+                "visibility": "Sichtweite",
+                "wind": "Wind",
+                "humidity": "Luftfeuchtigkeit",
+                "min": "Min",
+                "max": "Max",
+                "error": "Wetterdaten derzeit nicht verfügbar",
+                "retry": "Erneut versuchen"
             },
             "hobbies": {
-                "fp": "Wenn ich nicht in die Welt der Entwicklung eintauche, verbringe ich gerne Zeit mit Aktivitäten, die meine Kreativität fördern und mich inspirieren. Ich liebe , <strong class='font-heading text-black dark:text-white font-bold'>Kochen</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Geige spielen</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Gartenarbeit</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Die Natur erforschen</strong> und vor allem genieße ich es, <strong class='font-heading text-black dark:text-white font-bold'>Zeit mit meiner Familie und meinen Freunden zu verbringen.</strong>.",
-                "sp": "Ich bin der festen Überzeugung, dass das, was wir abseits der Tastatur tun, sich direkt auf unsere Perspektive und Kreativität auswirkt, wenn wir vor der Tastatur sitzen. <strong class='font-heading text-black dark:text-white font-bold'>Es ist ein perfekter Kreislauf aus Lernen und Inspiration!</strong>"
+                "title": "Hobbys & Interessen",
+                "items": [
+                    { "name": "Lesen", "icon": "book" },
+                    { "name": "Kochen", "icon": "utensils" },
+                    { "name": "Geige spielen", "icon": "music" },
+                    { "name": "Gartenarbeit", "icon": "sprout" },
+                    { "name": "Natur erkunden", "icon": "compass" },
+                    { "name": "Familie & Freunde", "icon": "users" }
+                ],
+                "fp": "Abseits des Codes widme ich mich Aktivitäten, die meinen Blick für Details schärfen: <strong class='font-semibold text-[var(--text-primary)]'>Lesen</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Kochen</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Geige spielen</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Gartenarbeit</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Natur erkunden</strong> und <strong class='font-semibold text-[var(--text-primary)]'>Zeit mit Familie und Freunden verbringen</strong>.",
+                "sp": "Was wir abseits der Tastatur pflegen, prägt direkt unsere Klarheit und Kreativität vor dem Bildschirm."
             },
             "education": {
                 "title": "Bildung",
                 "career": "Softwareentwicklungs- und Managementingenieurwesen",
+                "institution": "UTNA",
                 "location": "Rincón de Romos, AGS",
-                "duration": "September 2019 - April 2025",
-                "description": "Student an der <a href='https://utna.edu.mx/utna' target='_blank' rel='noopener noreferrer' class='font-heading font-bold text-black dark:text-white underline'>Universidad Tecnológica del Norte de Aguascalientes (UTNA)</a>, wo ich meine Fähigkeiten in der Softwareentwicklung gefestigt und mein Wissen in Schlüsselbereichen wie <strong class='font-heading font-bold text-black dark:text-white'>Algorithmen</strong>, <strong class='font-heading font-bold text-black dark:text-white'>Datenstrukturen</strong>, <strong class='font-heading font-bold text-black dark:text-white'>objektorientierte Programmierung</strong>, <strong class='font-heading font-bold text-black dark:text-white'>Datenbankverwaltung</strong>, usw. Meine Ausbildung hat es mir ermöglicht, Theorie und Praxis zu integrieren, um technologische Projekte mit einem innovativen und effizienten Ansatz anzugehen."
+                "duration": "2019 — 2025",
+                "description": "Studium an der <a href='https://utna.edu.mx/utna' target='_blank' rel='noopener noreferrer' class='font-semibold text-[var(--text-primary)] underline underline-offset-4 hover:text-[var(--accent)]'>Universidad Tecnológica del Norte de Aguascalientes (UTNA)</a> mit Schwerpunkt auf <strong class='font-semibold text-[var(--text-primary)]'>Softwarearchitektur</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Datenstrukturen</strong>, <strong class='font-semibold text-[var(--text-primary)]'>objektorientierter Programmierung</strong> und <strong class='font-semibold text-[var(--text-primary)]'>Datenbanksystemen</strong>."
             },
             "time": {
                 "title": "Aktuelle Zeit",
                 "timezone": "Wir sind in der gleichen Zeitzone (UTC-6)",
                 "direction": {
-                    "back": "Zurück",
-                    "forward": "Vorwärts"
+                    "back": "zurück",
+                    "forward": "voraus"
                 },
                 "message": {
                     "youre": "Du bist",
@@ -134,72 +199,85 @@
                     },
                     "local": "von Mexiko"
                 },
-                "zone": "Zeitzone: "
+                "zone": "Zeitzone:"
             }
         },
         "contact": {
-            "title": "Lass uns gemeinsam arbeiten :)?",
+            "title": "Lass uns über dein nächstes Projekt sprechen",
             "form": {
-                "gratefulness": "Danke, dass du hier bist!",
-                "subtitle": "Wenn du irgendwelche Fragen hast, ein Projekt im Kopf, an dem du gerne zusammen mit uns arbeiten würdest, oder einfach nur Hallo sagen möchtest, ist meine E-Mail-Adresse die folgende:",
+                "gratefulness": "Verfügbar für Freelance-Projekte und Fullstack-Positionen",
+                "subtitle": "Erzähl mir von deinem Produkt, Zeitplan oder deiner offenen Stelle. Ich antworte persönlich innerhalb von 24 Werktag-Stunden.",
                 "alternatives": {
-                    "title": "Mehr Möglichkeiten zur Kontaktaufnahme",
-                    "subtitle": "Wenn du es vorziehst, kannst du mich auch über meine anderen Social-Media-Konten erreichen, die ich unten aufliste. Ich bin immer gerne bereit, dir zu helfen."
+                    "title": "Direkter Kontakt & Netzwerke",
+                    "subtitle": "Alternativ erreichst du mich direkt per E-Mail oder über meine beruflichen Profile."
                 },
                 "contactForm": {
-                    "title": "Fülle das folgende Formular aus und ich werde mich so schnell wie möglich mit dir in Verbindung setzen.",
+                    "title": "Schreib mir eine direkte Nachricht",
                     "name": "Name",
                     "email": "E-Mail",
                     "subject": "Betreff",
                     "message": "Nachricht",
-                    "submit": "Senden",
-                    "delete": "Löschen",
-                    "footer": "Ich speichere oder teile keine deiner persönlichen Daten. Alle in das Formular eingegebenen Informationen sind vollständig vertraulich und werden nur für professionelle Kontaktdaten verwendet."
+                    "submit": "Nachricht senden",
+                    "sending": "Wird gesendet...",
+                    "delete": "Leeren",
+                    "footer": "Ich speichere oder teile keine deiner persönlichen Daten. Alle in das Formular eingegebenen Informationen sind vollständig vertraulich und werden nur für professionelle Kontaktdaten verwendet.",
+                    "errors": {
+                        "name": "Bitte gib deinen Namen ein (mindestens 2 Zeichen).",
+                        "email": "Bitte gib eine gültige E-Mail-Adresse ein.",
+                        "subject": "Bitte gib einen kurzen Betreff an (mindestens 3 Zeichen).",
+                        "message": "Bitte schreibe eine Nachricht mit mindestens 10 Zeichen."
+                    },
+                    "status": {
+                        "successTitle": "Nachricht erfolgreich gesendet",
+                        "successBody": "Ich habe deine Nachricht erhalten und melde mich schnellstmöglich zurück. Vielen Dank!",
+                        "errorTitle": "Nachricht konnte nicht gesendet werden",
+                        "errorBody": "Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut oder schreibe direkt an ctofabian@gmail.com."
+                    }
                 }
             }
         }
     },
     "styleguide": {
         "title": "Stilhandbuch",
-        "subtitle": "Erfahren Sie mehr über das Design, die Farben und die Typografie meines Portfolios.",
-        "badge": "Design System",
+        "subtitle": "Editorial-Tech-Designsystem 2026: OKLCH-Farbtokens, fließende Typografie und Linien-Ikonografie.",
+        "badge": "Designsystem 2026",
         "colors": {
-            "title": "Farben",
-            "description": "Eine dunkle, kontrastreiche und lebendige Palette mit Farbverläufen. Ideal für Komponenten im Glassmorphismus-Stil, die die Augen nicht ermüden, aber Eleganz verleihen."
+            "title": "OKLCH-Palette & Tokens",
+            "description": "Warme Papieroberflächen im hellen Modus und tiefer Graphit im dunklen Modus mit einem einzigen Terrakotta-Kupfer-Akzent."
         },
         "typo": {
-            "title": "Typografie",
-            "description": "Schnelles und elegantes Design beginnt mit sauberer Typografie. Dies ist der Text, der für lange Absätze, Beschreibungen und allgemeine Inhalte im Portfolio verwendet wird und eine hervorragende Lesbarkeit gewährleistet.",
-            "h1": "H1 - Haupttitel",
-            "h2": "H2 - Sekundärtitel",
-            "h3": "H3 - Untertitel",
-            "p": "P - Basistext",
-            "highlight": "Hervorgehobener Text",
+            "title": "Fließende Typografie-Skala",
+            "description": "Einmalig über clamp() mit Albert Sans Variable definiert für ausdrucksstarke Überschriften und tabellarische Ziffern.",
+            "h1": "H1 — Hauptüberschrift",
+            "h2": "H2 — Abschnittsüberschrift",
+            "h3": "H3 — Fallstudien-Untertitel",
+            "p": "P — Fließtext",
+            "highlight": "Einzelner Akzent",
             "standard": "Standardtext",
-            "small": "Kleiner Text"
+            "small": "Technische / Tabellarische Metadaten"
         },
         "elements": {
-            "title": "UI-Elemente",
+            "title": "Komponenten & Oberflächen",
             "buttons": {
                 "title": "Schaltflächen",
-                "primary": "Primäre Schaltfläche",
-                "cv": "Lebenslauf Herunterladen",
-                "description": "Interaktive Schaltflächenstile mit sanften Übergängen beim Hover und subtilen Schatten."
+                "primary": "Lass uns reden",
+                "cv": "CV herunterladen",
+                "description": "Klare Hierarchie zwischen einer primären Aktion und dezenten sekundären Aktionen."
             },
             "pills": {
-                "title": "Abzeichen (Pills)",
-                "description": "Minimalistische Abzeichen zur Anzeige von Technologien und Fähigkeiten mithilfe der globalen Komponente `Pill`."
+                "title": "Stack-Badges",
+                "description": "Kompakte 1px-Badges für Technologien und Werkzeuge."
             },
             "cards": {
-                "title": "Karten (Cards)",
-                "light_desc": "Beispiel für einen hellen Kartenstil, der in Projektkarten verwendet wird, um visuelle Inhalte hervorzuheben und maximale Lesbarkeit zu gewährleisten.",
-                "dark_desc": "Dunkles Stilbeispiel, das in der Erfahrung und im Bento Grid verwendet wird, um im standardmäßigen Dunkelmodus visuelle Tiefe zu erzeugen."
+                "title": "1px-Oberflächen",
+                "light_desc": "Helle Oberfläche mit feinen 1px-Rahmen.",
+                "dark_desc": "Dunkle Graphit-Oberfläche mit hohem Lesekontrast."
             }
         },
         "icons": {
-            "title": "Symbole",
-            "subtitle": "Hauptikonographie",
-            "description": "Native SVG-Symbole werden für maximale Effizienz inline gerendert. Sie werden hauptsächlich für die Navigation, externe Links und dekorative Details verwendet."
+            "title": "Linien-Ikonografie",
+            "subtitle": "Einheitliche 1.75px-Linienstärke",
+            "description": "Einheitliche Familie von Vektor-Liniensymbolen. Keine Emojis und keine 3D-Icons."
         }
     }
 }

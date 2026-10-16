@@ -1,5 +1,7 @@
 ---
 import Container from '@/components/common/Container.astro'
+import LineIcon from '@/components/ui/LineIcon.astro'
+import Pill from '@/components/ui/pill.astro'
 import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 import { getLangFromUrl, useTranslatedPath } from '@/i18n/utils'
@@ -8,250 +10,194 @@ import { getI18N } from '@/i18n'
 const lang = getLangFromUrl(Astro.url)
 const translatePath = useTranslatedPath(lang)
 const projects = await getCollection('projects', ({ data }) => {
-  return data.lang === lang;
+	return data.lang === lang
 })
 projects.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 
-// Logic to separate projects as requested
-const featuredTitles = ["ClearCut Studio", "Dune UI"];
-// Force Featured Projects to always have ClearCut Studio first, Dune UI second (if they exist)
-const featuredProjects = projects.filter(p => featuredTitles.includes(p.data.title)).sort((a, b) => {
-    return featuredTitles.indexOf(a.data.title) - featuredTitles.indexOf(b.data.title);
-});
+const featuredTitles = ['ClearCut Studio', 'Boxode Website', 'Dune UI']
+const featuredProjects = projects
+	.filter((p) => featuredTitles.includes(p.data.title))
+	.sort((a, b) => featuredTitles.indexOf(a.data.title) - featuredTitles.indexOf(b.data.title))
 
-const otherProjects = projects.filter(p => !featuredTitles.includes(p.data.title));
-const recentProjects = otherProjects.slice(0, 4);
-const moreProjects = otherProjects.slice(4);
+const otherProjects = projects.filter((p) => !featuredTitles.includes(p.data.title))
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 
-const isEs = lang === 'es';
-const isDe = lang === 'de';
+const isEs = lang === 'es'
+const isDe = lang === 'de'
 
 const t = {
-    title: isEs ? 'Archivo de Proyectos' : isDe ? 'Projektarchiv' : 'Projects Archive',
-    subtitle: isEs ? 'Aquí están listadas todas las cosas en las que he trabajado y que considero dignas de mencionar.' : isDe ? 'Hier finden Sie alle Dinge, an denen ich gearbeitet habe und die ich für erwähnenswert halte.' : 'Here is listed all the stuff I\'ve worked on that I consider to be worth mentioning.',
-    goBack: isEs ? 'Volver al inicio' : isDe ? 'Zurück' : 'Go back',
-    featured: isEs ? 'Proyectos Destacados' : isDe ? 'Ausgewählte Projekte' : 'Featured Projects',
-    recent: isEs ? 'Proyectos Recientes' : isDe ? 'Letzte Projekte' : 'Recent Projects',
-    more: isEs ? 'Más Proyectos' : isDe ? 'Weitere Projekte' : 'More Projects',
-    year: isEs ? 'Año' : isDe ? 'Jahr' : 'Year',
-    project: isEs ? 'Proyecto' : isDe ? 'Projekt' : 'Project',
-    description: isEs ? 'Descripción' : isDe ? 'Beschreibung' : 'Description',
-    built: isEs ? 'Hecho con' : isDe ? 'Erstellt mit' : 'Built with',
-    links: 'Links',
-    live: 'Live',
-    code: 'Code'
-};
+	title: isEs ? 'Archivo de Proyectos' : isDe ? 'Projektarchiv' : 'Projects Archive',
+	subtitle: isEs
+		? 'Selección completa de productos web, sistemas de diseño y experimentos técnicos.'
+		: isDe
+			? 'Vollständige Auswahl an Webprodukten, Designsystemen und technischen Projekten.'
+			: 'Complete selection of web products, design systems, and technical projects.',
+	goBack: isEs ? 'Volver al inicio' : isDe ? 'Zurück' : 'Back to home',
+	featured: isEs ? 'Casos de Estudio Principales' : isDe ? 'Hauptprojekte' : 'Featured Case Studies',
+	more: isEs ? 'Otros Proyectos' : isDe ? 'Weitere Projekte' : 'Additional Projects',
+	live: isEs ? 'Ver proyecto' : isDe ? 'Live' : 'Live',
+	code: isEs ? 'Código' : isDe ? 'Code' : 'Code',
+}
 ---
+
 <Layout title={`${t.title} | ${i18n.SEO.title}`}>
-	<section class='relative min-h-screen pt-24 pb-32 overflow-hidden'>
-        <!-- Background Glow -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-gradient-to-b from-[#b16cea]/10 to-transparent blur-3xl pointer-events-none -z-10 dark:from-[#b16cea]/20"></div>
-
+	<section class='py-12 md:py-20'>
 		<Container>
-            <div class="w-full">
-                <!-- Header -->
-                <div class="mb-20 text-center max-w-3xl mx-auto">
-                    <h1 class='font-display mb-6 text-5xl font-bold tracking-tight text-black dark:text-white md:text-6xl lg:text-7xl'>
-                        {t.title}
-                    </h1>
-                    <p class="font-accent mb-8 text-lg text-neutral-600 dark:text-[#a3a3a3] leading-relaxed">
-                        {t.subtitle}
-                    </p>
-                    <a href={translatePath('/')} class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-black/10 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-md text-sm font-semibold text-neutral-800 dark:text-neutral-200 hover:bg-black/5 dark:hover:bg-white/10 transition-all">
-                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                        </svg>
-                        {t.goBack}
-                    </a>
-                </div>
+			<!-- Back Link -->
+			<div class='mb-8'>
+				<a
+					href={translatePath('/')}
+					class='inline-flex items-center gap-2 font-mono text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]'
+				>
+					<LineIcon name='arrow-left' class='size-3.5' />
+					<span>{t.goBack}</span>
+				</a>
+			</div>
 
-                <!-- Featured Projects -->
-                {featuredProjects.length > 0 && (
-                    <div class="mb-32">
-                        <div class="flex items-center gap-4 mb-10">
-                            <h2 class="font-display text-3xl md:text-4xl font-bold text-black dark:text-white">{t.featured}</h2>
-                            <div class="h-px bg-gradient-to-r from-black/10 dark:from-white/10 to-transparent flex-1"></div>
-                        </div>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                            {featuredProjects.map(project => (
-                                <article class="group relative flex flex-col rounded-[3rem] bg-white dark:bg-[#080808] border border-black/5 dark:border-white/10 shadow-xl shadow-neutral-200/50 dark:shadow-none p-6 md:p-8 transition-all duration-500 hover:border-black/10 dark:hover:border-white/20">
-                                    <div class="relative w-full aspect-[16/10] md:aspect-video rounded-[2.25rem] overflow-hidden mb-8 bg-neutral-100 dark:bg-neutral-900">
-                                        {project.data.image ? (
-                                            <img src={project.data.image} alt={project.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700" loading="lazy" />
-                                        ) : (
-                                            <div class="absolute inset-0 bg-gradient-to-br from-[#b16cea]/20 to-[#ff5e69]/20"></div>
-                                        )}
-                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                                    </div>
-                                    <div class="flex flex-col flex-1">
-                                        <h3 class="font-display text-3xl font-bold text-black dark:text-white mb-3">{project.data.title}</h3>
-                                        <p class="font-accent text-neutral-600 dark:text-[#a3a3a3] text-lg leading-relaxed mb-8 flex-1">{project.data.description}</p>
-                                        
-                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-6 border-t border-black/5 dark:border-white/10">
-                                            <div class="flex flex-wrap gap-2">
-                                                {project.data.technologies?.slice(0, 3).map(tech => (
-                                                    <span class="inline-flex rounded-full bg-black/5 dark:bg-white/10 px-3 py-1 text-xs font-semibold text-neutral-700 dark:text-neutral-300">
-                                                        {tech}
-                                                    </span>
-                                                ))}
-                                                {project.data.technologies && project.data.technologies.length > 3 && (
-                                                    <span class="inline-flex rounded-full bg-black/5 dark:bg-white/10 px-3 py-1 text-xs font-semibold text-neutral-500">
-                                                        +{project.data.technologies.length - 3}
-                                                    </span>
-                                                )}
-                                            </div>
-                                            <div class="flex items-center gap-4 text-sm font-bold text-black dark:text-white">
-                                                {project.data.githubLink && (
-                                                    <a href={project.data.githubLink} target="_blank" class="hover:text-[#b16cea] flex items-center gap-2 group/link transition-colors">
-                                                        {t.code}
-                                                        <svg class="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                                                        </svg>
-                                                    </a>
-                                                )}
-                                                {project.data.externalLink && (
-                                                    <a href={project.data.externalLink} target="_blank" class="hover:text-[#b16cea] flex items-center gap-2 group/link transition-colors">
-                                                        {t.live}
-                                                        <svg class="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                                                        </svg>
-                                                    </a>
-                                                )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                            ))}
-                        </div>
-                    </div>
-                )}
+			<!-- Header -->
+			<div class='mb-14 border-b border-[var(--border-subtle)] pb-10'>
+				<span class='section-number'>ARCHIVE</span>
+				<h1 class='mt-2 text-scale-display text-[var(--text-primary)]'>
+					{t.title}
+				</h1>
+				<p class='mt-4 max-w-2xl text-scale-body-lg text-[var(--text-secondary)]'>
+					{t.subtitle}
+				</p>
+			</div>
 
-                <!-- Recent Projects -->
-                {recentProjects.length > 0 && (
-                    <div class="mb-32">
-                        <div class="flex items-center gap-4 mb-10">
-                            <h2 class="font-display text-3xl md:text-4xl font-bold text-black dark:text-white">{t.recent}</h2>
-                            <div class="h-px bg-gradient-to-r from-black/10 dark:from-white/10 to-transparent flex-1"></div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                            {recentProjects.map((project) => (
-                                <article class="group relative flex flex-col rounded-[2.5rem] bg-white dark:bg-[#0a0a0a] border border-black/5 dark:border-white/10 overflow-hidden transition-all duration-500 hover:border-black/10 dark:hover:border-white/20 p-6 md:p-8">
-                                    {project.data.image && (
-                                        <div class="relative w-full aspect-video rounded-[2rem] overflow-hidden mb-6 bg-neutral-100 dark:bg-neutral-900 border border-black/5 dark:border-white/10 shrink-0">
-                                            <img src={project.data.image} alt={project.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700" loading="lazy" />
-                                        </div>
-                                    )}
-                                    <div class="flex flex-col flex-1">
-                                        <h3 class="font-display text-2xl font-bold mb-3 text-black dark:text-white">{project.data.title}</h3>
-                                        <p class="font-accent text-base line-clamp-3 mb-6 text-neutral-600 dark:text-[#a3a3a3] flex-1">{project.data.description}</p>
-                                        
-                                        <div class="flex items-center justify-between gap-4 mt-auto pt-6 border-t border-black/5 dark:border-white/10">
-                                            <div class="flex flex-wrap gap-2">
-                                                {project.data.technologies?.slice(0, 3).map(tech => (
-                                                    <span class="inline-flex rounded-full bg-black/5 dark:bg-white/10 px-3 py-1 text-[10px] md:text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
-                                                        {tech}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                            <div class="flex items-center gap-3 shrink-0">
-                                                {project.data.externalLink ? (
-                                                    <a href={project.data.externalLink} target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center bg-black text-white dark:bg-white dark:text-black hover:scale-110 transition-transform">
-                                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                                                        </svg>
-                                                    </a>
-                                                ) : project.data.githubLink ? (
-                                                    <a href={project.data.githubLink} target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center bg-black text-white dark:bg-white dark:text-black hover:scale-110 transition-transform">
-                                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                                                        </svg>
-                                                    </a>
-                                                ) : null}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                            ))}
-                        </div>
-                    </div>
-                )}
+			<!-- Featured Projects Grid -->
+			{featuredProjects.length > 0 && (
+				<div class='mb-16'>
+					<h2 class='mb-6 text-scale-h2 text-[var(--text-primary)]'>{t.featured}</h2>
+					<div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+						{featuredProjects.map((project, idx) => (
+							<article class='surface-card surface-card-interactive flex flex-col justify-between overflow-hidden p-6'>
+								<div>
+									<div class='mb-4 flex items-center justify-between font-mono text-xs text-[var(--text-muted)]'>
+										<span class='text-[var(--accent)] font-semibold'>/0{idx + 1}</span>
+										<span class='tabular-nums'>
+											{project.data.date ? project.data.date.getFullYear() : ''}
+										</span>
+									</div>
 
-                <!-- More Projects (Table) -->
-                {moreProjects.length > 0 && (
-                    <div>
-                        <div class="flex items-center gap-4 mb-10">
-                            <h2 class="font-display text-3xl md:text-4xl font-bold text-black dark:text-white">{t.more}</h2>
-                            <div class="h-px bg-gradient-to-r from-black/10 dark:from-white/10 to-transparent flex-1"></div>
-                        </div>
-                        
-                        <div class="overflow-x-auto rounded-[2rem] bg-white dark:bg-[#0a0a0a] border border-black/5 dark:border-white/10 shadow-sm p-6 md:p-10">
-                            <table class="w-full min-w-[800px] text-left border-collapse">
-                                <thead>
-                                    <tr class="border-b border-black/5 dark:border-white/10 text-neutral-500 dark:text-neutral-400 font-accent text-xs uppercase tracking-wider">
-                                        <th class="pb-4 pr-4 font-semibold w-24">{t.year}</th>
-                                        <th class="pb-4 pr-4 font-semibold w-64">{t.project}</th>
-                                        <th class="pb-4 pr-4 font-semibold w-[30%]">{t.description}</th>
-                                        <th class="pb-4 pr-4 font-semibold">{t.built}</th>
-                                        <th class="pb-4 font-semibold text-right w-32">{t.links}</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="font-accent text-sm">
-                                    {moreProjects.map(project => (
-                                        <tr class="border-b border-black/5 dark:border-white/5 transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.02] group">
-                                            <td class="py-6 pr-4 text-neutral-500 dark:text-neutral-400 align-top font-medium">
-                                                {project.data.date ? project.data.date.getFullYear() : ''}
-                                            </td>
-                                            <td class="py-6 pr-4 align-top">
-                                                <span class="font-bold text-black dark:text-white text-base">{project.data.title}</span>
-                                            </td>
-                                            <td class="py-6 pr-4 align-top text-neutral-600 dark:text-[#a3a3a3] leading-relaxed">
-                                                {project.data.description}
-                                            </td>
-                                            <td class="py-6 pr-4 align-top">
-                                                <div class="flex flex-wrap gap-2">
-                                                    {project.data.technologies?.map(tech => (
-                                                        <span class="inline-flex rounded-full bg-black/5 dark:bg-white/10 px-2.5 py-1 text-[10px] font-bold text-neutral-700 dark:text-neutral-300 uppercase tracking-wider">
-                                                            {tech}
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                            </td>
-                                            <td class="py-6 align-top text-right">
-                                                <div class="flex items-center justify-end gap-3 text-neutral-800 dark:text-neutral-200 font-bold text-xs tracking-wider opacity-50 group-hover:opacity-100 transition-opacity">
-                                                    {project.data.githubLink && (
-                                                        <a href={project.data.githubLink} target="_blank" class="hover:text-[#b16cea] flex items-center gap-1 group/link transition-colors">
-                                                            {t.code}
-                                                            <svg class="h-3 w-3 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                                                            </svg>
-                                                        </a>
-                                                    )}
-                                                    {project.data.githubLink && project.data.externalLink && (
-                                                        <span class="text-neutral-300 dark:text-neutral-700 font-normal">|</span>
-                                                    )}
-                                                    {project.data.externalLink && (
-                                                        <a href={project.data.externalLink} target="_blank" class="hover:text-[#b16cea] flex items-center gap-1 group/link transition-colors">
-                                                            {t.live}
-                                                            <svg class="h-3 w-3 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                                                            </svg>
-                                                        </a>
-                                                    )}
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                )}
+									{project.data.image && (
+										<div class='mb-5 aspect-[16/10] w-full overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)]'>
+											<img
+												src={project.data.image}
+												alt={project.data.title}
+												width='600'
+												height='375'
+												loading='lazy'
+												class='h-full w-full object-cover object-top'
+											/>
+										</div>
+									)}
 
-            </div>
+									<h3 class='text-scale-h3 text-[var(--text-primary)]'>
+										{project.data.title}
+									</h3>
+									<p class='mt-2 text-sm leading-relaxed text-[var(--text-secondary)]'>
+										{project.data.description}
+									</p>
+								</div>
+
+								<div class='mt-6 border-t border-[var(--border-subtle)] pt-4'>
+									<div class='mb-4 flex flex-wrap gap-1.5'>
+										{project.data.technologies?.map((tech: string) => (
+											<Pill text={tech} />
+										))}
+									</div>
+
+									<div class='flex items-center gap-3 text-xs font-semibold'>
+										{project.data.externalLink && (
+											<a
+												href={project.data.externalLink}
+												target='_blank'
+												rel='noopener noreferrer'
+												class='inline-flex items-center gap-1 text-[var(--accent)] hover:underline underline-offset-4'
+											>
+												<span>{t.live}</span>
+												<LineIcon name='arrow-up-right' class='size-3.5' />
+											</a>
+										)}
+										{project.data.githubLink && (
+											<a
+												href={project.data.githubLink}
+												target='_blank'
+												rel='noopener noreferrer'
+												class='inline-flex items-center gap-1 text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+											>
+												<LineIcon name='github' class='size-3.5' />
+												<span>{t.code}</span>
+											</a>
+										)}
+									</div>
+								</div>
+							</article>
+						))}
+					</div>
+				</div>
+			)}
+
+			<!-- Other Projects -->
+			{otherProjects.length > 0 && (
+				<div>
+					<h2 class='mb-6 text-scale-h2 text-[var(--text-primary)]'>{t.more}</h2>
+					<div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
+						{otherProjects.map((project) => (
+							<article class='surface-card surface-card-interactive flex flex-col justify-between p-6'>
+								<div>
+									<div class='flex items-center justify-between gap-2'>
+										<h3 class='text-scale-h3 text-[var(--text-primary)]'>
+											{project.data.title}
+										</h3>
+										<span class='font-mono tabular-nums text-xs text-[var(--text-muted)]'>
+											{project.data.date ? project.data.date.getFullYear() : ''}
+										</span>
+									</div>
+									<p class='mt-2 text-sm leading-relaxed text-[var(--text-secondary)]'>
+										{project.data.description}
+									</p>
+								</div>
+
+								<div class='mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--border-subtle)] pt-4'>
+									<div class='flex flex-wrap gap-1.5'>
+										{project.data.technologies?.map((tech: string) => (
+											<Pill text={tech} />
+										))}
+									</div>
+									<div class='flex items-center gap-3 text-xs font-semibold'>
+										{project.data.externalLink && (
+											<a
+												href={project.data.externalLink}
+												target='_blank'
+												rel='noopener noreferrer'
+												class='inline-flex items-center gap-1 text-[var(--accent)] hover:underline'
+											>
+												<span>{t.live}</span>
+												<LineIcon name='arrow-up-right' class='size-3.5' />
+											</a>
+										)}
+										{project.data.githubLink && (
+											<a
+												href={project.data.githubLink}
+												target='_blank'
+												rel='noopener noreferrer'
+												class='inline-flex items-center gap-1 text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+											>
+												<LineIcon name='github' class='size-3.5' />
+												<span>{t.code}</span>
+											</a>
+										)}
+									</div>
+								</div>
+							</article>
+						))}
+					</div>
+				</div>
+			)}
 		</Container>
 	</section>
 </Layout>

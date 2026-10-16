@@ -1,13 +1,11 @@
 ---
-import ExternalLinkIcon from '@/components/icons/external.astro'
-import Github from '@/components/icons/github.astro'
-import AnimatedSection from '@/components/ui/animated-section'
+import LineIcon from '@/components/ui/LineIcon.astro'
 import Pill from '@/components/ui/pill.astro'
 import { Image } from 'astro:assets'
 
 interface Technologies {
 	text: string
-	image: string
+	image?: string
 }
 
 interface ProjectsCardProps {
@@ -17,123 +15,157 @@ interface ProjectsCardProps {
 	target?: string
 	title: string
 	subtitle: string
-	description: string
-	description2?: string
+	year?: string
+	problem: string
+	decision: string
+	result: string
+	labels: {
+		problem: string
+		decision: string
+		result: string
+		live: string
+		code: string
+	}
 	technologies: Technologies[]
 	projectNumber?: string
-	accentColor?: string
 }
 
 const {
 	projectImage,
 	externalLink,
 	githubLink,
-	target,
+	target = '_blank',
 	title,
 	subtitle,
-	description,
-	description2,
+	year = '2025',
+	problem,
+	decision,
+	result,
+	labels,
 	technologies,
 	projectNumber = '01',
-	accentColor = '#6ee7b7',
 } = Astro.props as ProjectsCardProps
 ---
 
-<section>
-	<AnimatedSection client:visible>
-		<article
-			class='project-card group w-full overflow-hidden rounded-2xl border border-black/5 bg-white transition-all duration-500 hover:border-black/10 dark:border-white/6 dark:bg-[#0f0f0f] dark:hover:border-white/12'
-			style={`--accent: ${accentColor};`}
-		>
-			<div class='flex flex-col md:flex-row'>
-				<!-- Image side -->
-				<div class='relative w-full overflow-hidden md:order-2 md:w-1/2'>
-					<!-- Removed image overlay to keep image bright -->
-					<div class='h-56 md:h-full'>
-						<Image
-							src={projectImage}
-							alt=`Screenshot of ${title} project`
-							class='h-full w-full object-cover select-none transition-transform duration-700 group-hover:scale-[1.02]'
-							width={700}
-							height={500}
-							loading='lazy'
-						/>
+<article class='surface-card surface-card-interactive reveal-on-scroll overflow-hidden p-6 md:p-8 lg:p-10'>
+	<div class='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10'>
+		<!-- Case Study Content (7 cols) -->
+		<div class='flex flex-col justify-between lg:col-span-7'>
+			<div>
+				<!-- Top Metadata Row -->
+				<div class='flex flex-wrap items-center justify-between gap-4 border-b border-[var(--border-subtle)] pb-4'>
+					<div class='flex items-center gap-3'>
+						<span class='font-mono tabular-nums text-xs font-semibold text-[var(--accent)]'>
+							/{projectNumber}
+						</span>
+						<span class='h-3.5 w-px bg-[var(--border-subtle)]' aria-hidden='true'></span>
+						<span class='font-mono tabular-nums text-xs text-[var(--text-muted)]'>
+							{year}
+						</span>
 					</div>
-				</div>
 
-				<!-- Content side -->
-				<div class='flex w-full flex-col justify-between p-6 md:order-1 md:w-1/2 md:p-8'>
-					<div class='space-y-4'>
-						<!-- Number + title row -->
-						<div class='flex items-start justify-between gap-4'>
-							<div class='flex-1'>
-								<span class='project-number font-display text-xs tracking-widest mb-2 block' style={`color: ${accentColor};`}>
-									{projectNumber}
-								</span>
-								<h2 class='font-heading text-2xl font-bold text-black transition-colors duration-300 dark:text-white md:text-3xl' style={`--accent: ${accentColor};`}>
-									{title}
-								</h2>
-							</div>
-							<!-- Links -->
-							<div class='flex items-center gap-2 pt-1'>
-								{githubLink && (
-									<a
-										href={githubLink}
-										target={target}
-										class='flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-black/5 text-black/50 transition-all duration-200 hover:border-black/30 hover:bg-black/10 hover:text-black dark:border-white/10 dark:bg-white/5 dark:text-white/50 dark:hover:border-white/25 dark:hover:bg-white/10 dark:hover:text-white'
-										aria-label="See project's source code on GitHub"
-									>
-										<Github class='h-4 w-4' />
-									</a>
-								)}
-								<a
-									href={externalLink}
-									target={target}
-									class='flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-black/5 text-black/50 transition-all duration-200 hover:border-black/30 hover:bg-black/10 hover:text-black dark:border-white/10 dark:bg-white/5 dark:text-white/50 dark:hover:border-white/25 dark:hover:bg-white/10 dark:hover:text-white'
-									aria-label='Visit a live demo of the project'
-								>
-									<ExternalLinkIcon class='h-4 w-4' />
-								</a>
-							</div>
-						</div>
-
-						<p class='font-display text-sm font-medium text-[#737373]'>
-							{subtitle}
-						</p>
-						<p class='font-accent text-sm text-neutral-600 leading-relaxed dark:text-[#a3a3a3]'>
-							{description}
-						</p>
-						{description2 && (
-							<p class='font-accent text-sm text-neutral-600 leading-relaxed dark:text-[#a3a3a3]'>
-								{description2}
-							</p>
+					<!-- External / Repo Links -->
+					<div class='flex items-center gap-2'>
+						{githubLink && (
+							<a
+								href={githubLink}
+								target={target}
+								rel='noopener noreferrer'
+								aria-label={`${labels.code}: ${title}`}
+								class='inline-flex h-8 items-center gap-1.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-2.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
+							>
+								<LineIcon name='github' class='size-3.5' />
+								<span>{labels.code}</span>
+							</a>
 						)}
-					</div>
-
-					<div class='mt-6 flex flex-wrap gap-2'>
-						{
-							technologies?.map((tech) => (
-								<Pill
-									text={tech.text}
-									image={tech.image}
-									class:list='min-w-[calc(50%-0.5rem)] flex-1 md:min-w-[calc(33%-0.5rem)]'
-								/>
-							))
-						}
+						<a
+							href={externalLink}
+							target={target}
+							rel='noopener noreferrer'
+							aria-label={`${labels.live}: ${title}`}
+							class='inline-flex h-8 items-center gap-1.5 rounded-md border border-[var(--accent-border)] bg-[var(--accent-soft)] px-3 text-xs font-semibold text-[var(--accent)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)]'
+						>
+							<span>{labels.live}</span>
+							<LineIcon name='arrow-up-right' class='size-3.5' />
+						</a>
 					</div>
 				</div>
+
+				<!-- Title & Subtitle -->
+				<div class='mt-5'>
+					<h3 class='text-scale-h2 text-[var(--text-primary)]'>
+						{title}
+					</h3>
+					<p class='mt-1 text-sm font-medium text-[var(--text-muted)]'>
+						{subtitle}
+					</p>
+				</div>
+
+				<!-- Case Study Blocks: Problema -> Decisión -> Resultado (Max 3 lines each) -->
+				<dl class='mt-6 grid grid-cols-1 gap-4 border-t border-[var(--border-subtle)] pt-5'>
+					<div class='grid grid-cols-1 gap-1 sm:grid-cols-12 sm:gap-4'>
+						<dt class='font-mono text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] sm:col-span-3 sm:pt-0.5'>
+							{labels.problem}
+						</dt>
+						<dd class='text-sm leading-relaxed text-[var(--text-secondary)] line-clamp-3 sm:col-span-9'>
+							{problem}
+						</dd>
+					</div>
+
+					<div class='grid grid-cols-1 gap-1 border-t border-[var(--border-subtle)] pt-3.5 sm:grid-cols-12 sm:gap-4'>
+						<dt class='font-mono text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] sm:col-span-3 sm:pt-0.5'>
+							{labels.decision}
+						</dt>
+						<dd class='text-sm leading-relaxed text-[var(--text-secondary)] line-clamp-3 sm:col-span-9'>
+							{decision}
+						</dd>
+					</div>
+
+					<div class='grid grid-cols-1 gap-1 border-t border-[var(--border-subtle)] pt-3.5 sm:grid-cols-12 sm:gap-4'>
+						<dt class='font-mono text-xs font-semibold uppercase tracking-wider text-[var(--accent)] sm:col-span-3 sm:pt-0.5'>
+							{labels.result}
+						</dt>
+						<dd class='text-sm font-medium leading-relaxed text-[var(--text-primary)] line-clamp-3 sm:col-span-9'>
+							{result}
+						</dd>
+					</div>
+				</dl>
 			</div>
-		</article>
-	</AnimatedSection>
-</section>
 
-<style>
-	.project-card {
-		box-shadow: 0 0 0 0 transparent;
-		transition: box-shadow 0.5s ease, border-color 0.3s ease, background-color 0.3s ease;
-	}
+			<!-- Stack Tags -->
+			<div class='mt-6 flex flex-wrap items-center gap-2 border-t border-[var(--border-subtle)] pt-4'>
+				{technologies?.map((tech) => <Pill text={tech.text} />)}
+			</div>
+		</div>
 
-	.project-card:hover {
-		box-shadow: 0 0 40px -10px color-mix(in srgb, var(--accent) 15%, transparent);
-	}
-</style>
+		<!-- Product Visual (5 cols) -->
+		<div class='flex items-center lg:col-span-5'>
+			<a
+				href={externalLink}
+				target={target}
+				rel='noopener noreferrer'
+				aria-label={`Ver captura y demostración de ${title}`}
+				class='group relative block w-full overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)]'
+			>
+				<div class='flex items-center gap-1.5 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)] px-3 py-2'>
+					<span class='size-2 rounded-full bg-[var(--border-default)]'></span>
+					<span class='size-2 rounded-full bg-[var(--border-default)]'></span>
+					<span class='size-2 rounded-full bg-[var(--border-default)]'></span>
+					<span class='ml-2 truncate font-mono text-[11px] text-[var(--text-muted)]'>
+						{externalLink.replace(/^https?:\/\//, '')}
+					</span>
+				</div>
+				<div class='aspect-[16/11] w-full overflow-hidden'>
+					<Image
+						src={projectImage}
+						alt={`Captura de producto de ${title}`}
+						class='h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]'
+						width={720}
+						height={495}
+						loading='lazy'
+					/>
+				</div>
+			</a>
+		</div>
+	</div>
+</article>

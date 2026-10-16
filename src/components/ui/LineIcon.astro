@@ -1,0 +1,306 @@
+---
+interface Props {
+	name:
+		| 'arrow-up-right'
+		| 'arrow-right'
+		| 'arrow-left'
+		| 'cloud-sun'
+		| 'clock'
+		| 'graduation-cap'
+		| 'compass'
+		| 'book'
+		| 'utensils'
+		| 'music'
+		| 'sprout'
+		| 'users'
+		| 'user'
+		| 'mail'
+		| 'download'
+		| 'search'
+		| 'command'
+		| 'briefcase'
+		| 'code'
+		| 'layers'
+		| 'smartphone'
+		| 'check'
+		| 'alert-circle'
+		| 'sun'
+		| 'moon'
+		| 'globe'
+		| 'wind'
+		| 'droplets'
+		| 'eye'
+		| 'thermometer'
+		| 'map-pin'
+		| 'calendar'
+		| 'external-link'
+		| 'github'
+		| 'linkedin'
+		| 'x'
+		| 'discord'
+	class?: string
+}
+
+const { name, class: className = 'size-4' } = Astro.props
+---
+
+<svg
+	xmlns='http://www.w3.org/2000/svg'
+	viewBox='0 0 24 24'
+	fill='none'
+	stroke='currentColor'
+	stroke-width='1.75'
+	stroke-linecap='round'
+	stroke-linejoin='round'
+	class={className}
+	aria-hidden='true'
+>
+	{name === 'arrow-up-right' && (
+		<>
+			<path d='M7 17L17 7' />
+			<path d='M7 7h10v10' />
+		</>
+	)}
+	{name === 'arrow-right' && (
+		<>
+			<path d='M5 12h14' />
+			<path d='m12 5 7 7-7 7' />
+		</>
+	)}
+	{name === 'arrow-left' && (
+		<>
+			<path d='M19 12H5' />
+			<path d='m12 19-7-7 7-7' />
+		</>
+	)}
+	{name === 'cloud-sun' && (
+		<>
+			<path d='M12 2v2' />
+			<path d='m4.93 4.93 1.41 1.41' />
+			<path d='M20 12h2' />
+			<path d='m19.07 4.93-1.41 1.41' />
+			<path d='M15.947 12.65a4 4 0 0 0-5.925-4.128' />
+			<path d='M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z' />
+		</>
+	)}
+	{name === 'clock' && (
+		<>
+			<circle cx='12' cy='12' r='10' />
+			<polyline points='12 6 12 12 16 14' />
+		</>
+	)}
+	{name === 'graduation-cap' && (
+		<>
+			<path d='M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z' />
+			<path d='M22 10v6' />
+			<path d='M6 12.5V16a6 3 0 0 0 12 0v-3.5' />
+		</>
+	)}
+	{name === 'compass' && (
+		<>
+			<circle cx='12' cy='12' r='10' />
+			<polygon points='16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76' />
+		</>
+	)}
+	{name === 'book' && (
+		<>
+			<path d='M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20' />
+		</>
+	)}
+	{name === 'utensils' && (
+		<>
+			<path d='M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2' />
+			<path d='M7 2v20' />
+			<path d='M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7' />
+		</>
+	)}
+	{name === 'music' && (
+		<>
+			<path d='M9 18V5l12-2v13' />
+			<circle cx='6' cy='18' r='3' />
+			<circle cx='18' cy='16' r='3' />
+		</>
+	)}
+	{name === 'sprout' && (
+		<>
+			<path d='M7 20h10' />
+			<path d='M10 20c5.5-2.5.8-6.4 3-10' />
+			<path d='M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z' />
+			<path d='M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z' />
+		</>
+	)}
+	{name === 'users' && (
+		<>
+			<path d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2' />
+			<circle cx='9' cy='7' r='4' />
+			<path d='M22 21v-2a4 4 0 0 0-3-3.87' />
+			<path d='M16 3.13a4 4 0 0 1 0 7.75' />
+		</>
+	)}
+	{name === 'user' && (
+		<>
+			<path d='M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2' />
+			<circle cx='12' cy='7' r='4' />
+		</>
+	)}
+	{name === 'mail' && (
+		<>
+			<rect width='20' height='16' x='2' y='4' rx='2' />
+			<path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7' />
+		</>
+	)}
+	{name === 'download' && (
+		<>
+			<path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4' />
+			<polyline points='7 10 12 15 17 10' />
+			<line x1='12' x2='12' y1='15' y2='3' />
+		</>
+	)}
+	{name === 'search' && (
+		<>
+			<circle cx='11' cy='11' r='8' />
+			<path d='m21 21-4.3-4.3' />
+		</>
+	)}
+	{name === 'command' && (
+		<>
+			<path d='M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3' />
+		</>
+	)}
+	{name === 'briefcase' && (
+		<>
+			<rect width='20' height='14' x='2' y='7' rx='2' ry='2' />
+			<path d='M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16' />
+		</>
+	)}
+	{name === 'code' && (
+		<>
+			<polyline points='16 18 22 12 16 6' />
+			<polyline points='8 6 2 12 8 18' />
+		</>
+	)}
+	{name === 'layers' && (
+		<>
+			<path d='m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z' />
+			<path d='m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65' />
+			<path d='m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65' />
+		</>
+	)}
+	{name === 'smartphone' && (
+		<>
+			<rect width='14' height='20' x='5' y='2' rx='2' ry='2' />
+			<path d='M12 18h.01' />
+		</>
+	)}
+	{name === 'check' && (
+		<>
+			<path d='M20 6 9 17l-5-5' />
+		</>
+	)}
+	{name === 'alert-circle' && (
+		<>
+			<circle cx='12' cy='12' r='10' />
+			<line x1='12' x2='12' y1='8' y2='12' />
+			<line x1='12' x2='12.01' y1='16' y2='16' />
+		</>
+	)}
+	{name === 'sun' && (
+		<>
+			<circle cx='12' cy='12' r='4' />
+			<path d='M12 2v2' />
+			<path d='M12 20v2' />
+			<path d='m4.93 4.93 1.41 1.41' />
+			<path d='m17.66 17.66 1.41 1.41' />
+			<path d='M2 12h2' />
+			<path d='M20 12h2' />
+			<path d='m6.34 17.66-1.41 1.41' />
+			<path d='m19.07 4.93-1.41 1.41' />
+		</>
+	)}
+	{name === 'moon' && (
+		<>
+			<path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z' />
+		</>
+	)}
+	{name === 'globe' && (
+		<>
+			<circle cx='12' cy='12' r='10' />
+			<path d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20' />
+			<path d='M2 12h20' />
+		</>
+	)}
+	{name === 'wind' && (
+		<>
+			<path d='M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2' />
+			<path d='M9.6 4.6A2 2 0 1 1 11 8H2' />
+			<path d='M12.6 19.4A2 2 0 1 0 14 16H2' />
+		</>
+	)}
+	{name === 'droplets' && (
+		<>
+			<path d='M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z' />
+			<path d='M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97' />
+		</>
+	)}
+	{name === 'eye' && (
+		<>
+			<path d='M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0' />
+			<circle cx='12' cy='12' r='3' />
+		</>
+	)}
+	{name === 'thermometer' && (
+		<>
+			<path d='M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z' />
+		</>
+	)}
+	{name === 'map-pin' && (
+		<>
+			<path d='M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0' />
+			<circle cx='12' cy='10' r='3' />
+		</>
+	)}
+	{name === 'calendar' && (
+		<>
+			<path d='M8 2v4' />
+			<path d='M16 2v4' />
+			<rect width='18' height='18' x='3' y='4' rx='2' />
+			<path d='M3 10h18' />
+		</>
+	)}
+	{name === 'external-link' && (
+		<>
+			<path d='M15 3h6v6' />
+			<path d='M10 14 21 3' />
+			<path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6' />
+		</>
+	)}
+	{name === 'github' && (
+		<>
+			<path d='M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4' />
+			<path d='M9 18c-4.51 2-5-2-7-2' />
+		</>
+	)}
+	{name === 'linkedin' && (
+		<>
+			<path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
+			<rect width='4' height='12' x='2' y='9' />
+			<circle cx='4' cy='4' r='2' />
+		</>
+	)}
+	{name === 'x' && (
+		<>
+			<path d='M4 4l11.733 16h4.267l-11.733 -16z' />
+			<path d='M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772' />
+		</>
+	)}
+	{name === 'discord' && (
+		<>
+			<circle cx='9' cy='12' r='1' />
+			<circle cx='15' cy='12' r='1' />
+			<path d='M7.5 7.5c3.5-1 5.5-1 9 0' />
+			<path d='M7 16.5c3.5 1 6.5 1 10 0' />
+			<path d='M15.5 17c0 1 1.5 3 2 3 1.5 0 2.833-1.667 3.5-3 .667-1.667.5-5.833-1.5-11.5-1.457-1.015-3-1.34-4.5-1.5l-1 2.5' />
+			<path d='M8.5 17c0 1-1.356 3-1.832 3-1.429 0-2.698-1.667-3.333-3-.635-1.667-.476-5.833 1.428-11.5C6.151 4.485 7.5 4.16 9 4l1 2.5' />
+		</>
+	)}
+</svg>

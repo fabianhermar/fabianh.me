@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getI18N } from '@/i18n'
 
-
 interface ClockProps {
 	currentLocale?: string
 }
@@ -21,8 +20,10 @@ export function UTCClock({ currentLocale }: ClockProps) {
 			setTimeZone('UTC')
 		}
 
-		const offset = -new Date().getTimezoneOffset() / 60
+		const now = new Date()
+		const offset = -now.getTimezoneOffset() / 60
 		setUtcOffset(offset)
+		setTime(now)
 
 		const timer = setInterval(() => {
 			setTime(new Date())
@@ -37,7 +38,7 @@ export function UTCClock({ currentLocale }: ClockProps) {
 			minute: '2-digit',
 			second: '2-digit',
 			hour12: false,
-			timeZone: timeZone || 'UTC', // Usa 'UTC' si timeZone no está definido
+			timeZone: timeZone || 'UTC',
 		}
 
 		return date.toLocaleTimeString('es-MX', options)
@@ -48,28 +49,61 @@ export function UTCClock({ currentLocale }: ClockProps) {
 			return `${i18n.landing.bento.time.timezone}`
 		} else {
 			const diff = utcOffset + 6
-			const direction = diff > 0 ? i18n.landing.bento.time.direction.forward : i18n.landing.bento.time.direction.back
+			const direction =
+				diff > 0
+					? i18n.landing.bento.time.direction.forward
+					: i18n.landing.bento.time.direction.back
 			return `${i18n.landing.bento.time.message.youre} ${Math.abs(diff)} ${i18n.landing.bento.time.message.hour.singular}${Math.abs(diff) !== 1 ? i18n.landing.bento.time.message.hour.plural : ''} ${direction} ${i18n.landing.bento.time.message.local}`
 		}
 	}
 
+	const currentHour = time ? time.getHours() : 12
+	const isDaytime = currentHour >= 6 && currentHour < 19
+
 	return (
-		<div className='mx-auto w-full max-w-md'>
-			<div className='px-6 py-4'>
-				<div className='flex flex-col items-center space-y-4'>
-					<div className='text-black dark:text-white font-heading text-5xl md:text-7xl' aria-live='polite'>
-						{time ? formatTime(time) : 'Loading...'}
-					</div>
-					<p className='text-neutral-600 dark:text-neutral-400 font-display text-sm md:text-xl'>
-						{i18n.landing.bento.time.zone} {timeZone}
-					</p>
-					<p
-						className='text-neutral-600 dark:text-neutral-400 text-center font-accent text-xs md:text-lg'
-						aria-live='polite'
-					>
-						{getTimeZoneMessage()}
-					</p>
+		<div className='flex flex-col justify-between gap-6 pt-3'>
+			{/* Large Tabular Clock Display (Zero layout jump on tick) */}
+			<div>
+				<div className='flex items-center justify-between gap-2'>
+					<span className='font-mono text-xs text-[var(--text-muted)]'>
+						{i18n.landing.bento.time.zone}{' '}
+						<strong className='font-medium text-[var(--text-secondary)]'>
+							{timeZone || 'UTC-6'}
+						</strong>
+					</span>
+					<span className='inline-flex items-center gap-1.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-[var(--text-secondary)]'>
+						<span
+							className='size-1.5 rounded-full'
+							style={{
+								backgroundColor: isDaytime ? 'var(--accent)' : 'var(--text-muted)',
+							}}
+						/>
+						{isDaytime ? 'DAY' : 'NIGHT'}
+					</span>
 				</div>
+
+				{time ? (
+					<div
+						className='mt-2 font-heading tabular-nums text-5xl font-bold tracking-tight text-[var(--text-primary)] md:text-6xl'
+						aria-live='off'
+					>
+						{formatTime(time)}
+					</div>
+				) : (
+					<div className='mt-2' aria-busy='true' aria-label='Cargando hora actual'>
+						<div className='skeleton-block h-14 w-56' />
+					</div>
+				)}
+			</div>
+
+			{/* Timezone Offset Relative to Mexico */}
+			<div className='flex items-center justify-between border-t border-[var(--border-subtle)] pt-4'>
+				<p className='text-xs font-medium text-[var(--text-secondary)]' aria-live='polite'>
+					{time ? getTimeZoneMessage() : <span className='skeleton-block inline-block h-4 w-48' />}
+				</p>
+				<span className='font-mono tabular-nums text-[11px] text-[var(--text-muted)]'>
+					MX · UTC-6
+				</span>
 			</div>
 		</div>
 	)

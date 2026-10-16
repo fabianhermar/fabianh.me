@@ -1,5 +1,4 @@
 ---
-import DropdownArrow from '@/components/icons/DropdownArrow.astro'
 import { LANGUAGES } from '@/i18n/ui'
 import { getLangFromUrl, getRouteFromUrl, useTranslatedPath } from '@/i18n/utils'
 
@@ -11,28 +10,46 @@ const currentLocaleData = LANGUAGES[lang]
 const otherLocales = Object.values(LANGUAGES).filter((locale) => locale.code !== lang)
 ---
 
-<div class='group relative z-[9999] inline-block text-left font-display text-xs text-white'>
+<div class='group relative inline-block text-left text-xs'>
 	<button
 		type='button'
-		class='inline-flex w-full items-center justify-start gap-x-2 rounded-md bg-black px-3 py-2 transition-all group-hover:bg-black/70'
-		aria-expanded='true'
+		class='inline-flex h-9 items-center gap-1.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-2.5 font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
+		aria-label={`Idioma actual: ${currentLocaleData.name}. Cambiar idioma`}
 		aria-haspopup='true'
 	>
-		<currentLocaleData.flag />
-		{currentLocaleData.name}
-		<DropdownArrow />
+		<span class='uppercase tracking-wider font-mono text-[11px]'>{currentLocaleData.code}</span>
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			class='size-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180'
+			viewBox='0 0 24 24'
+			fill='none'
+			stroke='currentColor'
+			stroke-width='1.75'
+			stroke-linecap='round'
+			stroke-linejoin='round'
+			aria-hidden='true'
+		>
+			<path d='m6 9 6 6 6-6'></path>
+		</svg>
 	</button>
-	<div class='absolute left-0 top-full hidden w-full pt-1 group-hover:block z-[9999]'>
-		<ul class='flex flex-col gap-1 rounded-md bg-black p-1 shadow-xl'>
+
+	<div
+		class='invisible absolute right-0 top-full z-50 w-32 pt-1.5 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100'
+	>
+		<ul
+			class='flex flex-col gap-0.5 rounded-lg border border-[var(--border-default)] bg-[var(--bg-surface)] p-1 shadow-lg'
+			role='menu'
+		>
 			{
 				otherLocales.map((locale) => (
-					<li>
+					<li role='none'>
 						<a
-							class='inline-flex w-full items-center justify-start gap-x-2 rounded-sm px-2 py-1.5 transition-colors hover:bg-white/20 whitespace-nowrap'
+							role='menuitem'
+							class='flex w-full items-center justify-between rounded-md px-2.5 py-1.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]'
 							href={translatePath(`/${route || ''}`, locale.code)}
 						>
-							<locale.flag />
-							{locale.name}
+							<span>{locale.name}</span>
+							<span class='font-mono text-[10px] uppercase text-[var(--text-muted)]'>{locale.code}</span>
 						</a>
 					</li>
 				))

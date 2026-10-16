@@ -1,7 +1,7 @@
 ---
 import Container from '@/components/common/Container.astro'
 import ProjectsCard from '@/components/features/ProjectsCard.astro'
-import GradualSpacing from '@/components/ui/gradual-spacing'
+import LineIcon from '@/components/ui/LineIcon.astro'
 import { getI18N } from '@/i18n'
 import { getLangFromUrl, useTranslatedPath } from '@/i18n/utils'
 
@@ -9,89 +9,111 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 const lang = getLangFromUrl(Astro.url)
 const translatePath = useTranslatedPath(lang)
+const labels = i18n.landing.projects.labels
 ---
 
-<Container>
-	<div class='mb-12 flex h-10 items-center justify-center pt-24' id='projects'>
-		<span class='section-number mr-3'>02</span>
-		<GradualSpacing
-			className='font-heading text-2xl font-bold text-black dark:text-white md:text-4xl'
-			text=`${i18n.landing.projects.title}`
-			client:visible
-		/>
-		<span class='mt-1 ml-4 h-px grow bg-gradient-to-r from-black/10 to-transparent dark:from-white/20'></span>
-	</div>
+<section
+	id='projects'
+	aria-labelledby='projects-heading'
+	class='border-b border-[var(--border-subtle)] py-16 md:py-24'
+>
+	<Container>
+		<!-- Section Header (No letter-by-letter H1!) -->
+		<div class='mb-12 grid grid-cols-1 items-end gap-4 md:grid-cols-12'>
+			<div class='md:col-span-8'>
+				<div class='mb-2 flex items-center gap-2'>
+					<span class='section-number'>01</span>
+					<span class='h-px w-8 bg-[var(--border-default)]' aria-hidden='true'></span>
+					<span class='font-mono text-xs uppercase tracking-wider text-[var(--text-muted)]'>
+						Case Studies
+					</span>
+				</div>
+				<h2 id='projects-heading' class='text-scale-h1 text-[var(--text-primary)]'>
+					{i18n.landing.projects.title}
+				</h2>
+			</div>
+			<div class='md:col-span-4 md:text-right'>
+				<p class='text-sm text-[var(--text-secondary)]'>
+					{i18n.landing.projects.subtitle}
+				</p>
+			</div>
+		</div>
 
-	<div class='flex flex-col gap-8 pb-16'>
-		<ProjectsCard
-			projectImage='/projects/ClearCutStudio.avif'
-			externalLink='https://studio.fabianh.me'
-			githubLink='https://github.com/fabianhermar/clearcut-studio'
-			target='_blank'
-			title=`${i18n.landing.projects.project3.title}`
-			subtitle=`🤖 ${i18n.landing.projects.project3.subtitle}`
-			description=`${i18n.landing.projects.project3.description}`
-			description2=`${i18n.landing.projects.project3.description2}`
-			projectNumber='01'
-			accentColor='#b16cea'
-			technologies={[
-				{ text: 'NextJS', image: '/svg/nextjs.svg' },
-				{ text: 'TypeScript', image: '/svg/typescript.svg' },
-				{ text: 'Antigravity', image: '/svg/antigravity.svg' },
-			]}
-		/>
+		<!-- Ordered Case Studies: 1. ClearCut Studio, 2. Boxode, 3. Dune UI -->
+		<div class='flex flex-col gap-8'>
+			<ProjectsCard
+				projectNumber='01'
+				projectImage='/projects/ClearCutStudio.avif'
+				externalLink='https://studio.fabianh.me'
+				githubLink='https://github.com/fabianhermar/clearcut-studio'
+				title={i18n.landing.projects.project3.title}
+				subtitle={i18n.landing.projects.project3.subtitle}
+				year={i18n.landing.projects.project3.year}
+				problem={i18n.landing.projects.project3.problem}
+				decision={i18n.landing.projects.project3.decision}
+				result={i18n.landing.projects.project3.result}
+				labels={labels}
+				technologies={[
+					{ text: 'Next.js' },
+					{ text: 'TypeScript' },
+					{ text: 'AI Models' },
+					{ text: 'WebP / AVIF' },
+				]}
+			/>
 
-		<ProjectsCard
-			projectImage='/projects/Boxode.avif'
-			externalLink='https://boxode.org'
-			githubLink={null}
-			target='_blank'
-			title=`${i18n.landing.projects.project4.title}`
-			subtitle=`🪐 ${i18n.landing.projects.project4.subtitle}`
-			description=`${i18n.landing.projects.project4.description}`
-			description2=`${i18n.landing.projects.project4.description2}`
-			projectNumber='02'
-			accentColor='#ff5e69'
-			technologies={[
-				{ text: 'NextJS', image: '/svg/nextjs.svg' },
-				{ text: 'React', image: '/svg/react.svg' },
-				{ text: 'TypeScript', image: '/svg/typescript.svg' },
-				{ text: 'TailwindCSS', image: '/svg/tailwindcss.svg' },
-			]}
-		/>
+			<ProjectsCard
+				projectNumber='02'
+				projectImage='/projects/Boxode.avif'
+				externalLink='https://boxode.org'
+				githubLink={null}
+				title={i18n.landing.projects.project4.title}
+				subtitle={i18n.landing.projects.project4.subtitle}
+				year={i18n.landing.projects.project4.year}
+				problem={i18n.landing.projects.project4.problem}
+				decision={i18n.landing.projects.project4.decision}
+				result={i18n.landing.projects.project4.result}
+				labels={labels}
+				technologies={[
+					{ text: 'Next.js' },
+					{ text: 'React' },
+					{ text: 'TypeScript' },
+					{ text: 'TailwindCSS' },
+				]}
+			/>
 
-		<ProjectsCard
-			projectImage='/projects/DuneUI.webp'
-			externalLink='https://ui.fabianh.me'
-			githubLink='https://github.com/fabianhermar/duneui'
-			target='_blank'
-			title=`${i18n.landing.projects.project1.title}`
-			subtitle=`🏜️ ${i18n.landing.projects.project1.subtitle}`
-			description=`${i18n.landing.projects.project1.description}`
-			description2=`${i18n.landing.projects.project1.description2}`
-			projectNumber='03'
-			accentColor='#ffa84b'
-			technologies={[
-				{ text: 'Astro', image: '/svg/astrojs.svg' },
-				{ text: 'React', image: '/svg/react.svg' },
-				{ text: 'JavaScript', image: '/svg/javascript.svg' },
-				{ text: 'TypeScript', image: '/svg/typescript.svg' },
-				{ text: 'TailwindCSS', image: '/svg/tailwindcss.svg' },
-			]}
-		/>
+			<ProjectsCard
+				projectNumber='03'
+				projectImage='/projects/DuneUI.webp'
+				externalLink='https://ui.fabianh.me'
+				githubLink='https://github.com/fabianhermar/duneui'
+				title={i18n.landing.projects.project1.title}
+				subtitle={i18n.landing.projects.project1.subtitle}
+				year={i18n.landing.projects.project1.year}
+				problem={i18n.landing.projects.project1.problem}
+				decision={i18n.landing.projects.project1.decision}
+				result={i18n.landing.projects.project1.result}
+				labels={labels}
+				technologies={[
+					{ text: 'Astro' },
+					{ text: 'React' },
+					{ text: 'TypeScript' },
+					{ text: 'TailwindCSS' },
+				]}
+			/>
+		</div>
 
-		<div class='flex justify-center pt-6'>
+		<!-- Secondary link to full archive -->
+		<div class='mt-10 flex justify-end'>
 			<a
 				href={translatePath('/proyectos')}
-				class='group relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-xl border border-black/10 bg-black/5 px-8 font-medium text-black/80 transition-all duration-300 hover:border-[#b16cea]/30 hover:bg-[#b16cea]/5 hover:text-[#b16cea] hover:shadow-[0_0_24px_rgba(177,108,234,0.1)] dark:border-white/10 dark:bg-white/5 dark:text-white/80 dark:hover:border-[#b16cea]/30 dark:hover:bg-[#b16cea]/5 dark:hover:text-[#b16cea]'
+				class='group inline-flex items-center gap-2 rounded-lg border border-[var(--border-default)] bg-[var(--bg-surface)] px-5 py-2.5 text-sm font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-strong)] hover:bg-[var(--bg-elevated)]'
 			>
-				<span class='font-display select-none'>Ver todos los proyectos</span>
-				<div class='ml-1 transition-transform duration-300 group-hover:translate-x-1'>
-					<svg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg' class='h-5 w-5'>
-						<path d='M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z' fill='currentColor' fill-rule='evenodd' clip-rule='evenodd'></path>
-					</svg>
-				</div>
+				<span>{labels.all}</span>
+				<LineIcon
+					name='arrow-right'
+					class='size-4 text-[var(--text-muted)] transition-transform group-hover:translate-x-0.5'
+				/>
 			</a>
 		</div>
-	</div>
-</Container>
+	</Container>
+</section>

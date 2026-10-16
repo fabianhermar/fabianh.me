@@ -1,12 +1,10 @@
 ---
-import Container from '@/components/common/Container.astro'
-import Arrow from '@/components/icons/Arrow.astro'
-import AnimatedSection from '@/components/ui/animated-section'
+import LineIcon from '@/components/ui/LineIcon.astro'
 import Pill from '@/components/ui/pill.astro'
 
 interface Technologies {
 	text: string
-	image: string
+	image?: string
 }
 
 interface Props {
@@ -15,73 +13,77 @@ interface Props {
 	title: string
 	location: string
 	duration: string
-	phase?: string
-	description: string
-	description2?: string
-	ContainerStyles?: string
-	textStyles?: string
+	bullets: string[]
 	technologies: Technologies[]
+	index?: string
 }
 
 const {
 	link,
-	target,
+	target = '_blank',
 	title,
 	location,
 	duration,
-	phase,
-	description,
-	description2,
-	ContainerStyles,
-	textStyles,
-	technologies,
+	bullets = [],
+	technologies = [],
+	index = '01',
 } = Astro.props
 ---
 
-<Container>
-	<AnimatedSection client:visible>
-		<article>
-			<a
-				href={link}
-				target={target}
-				aria-label=`Mi experiencia laboral en ${title}`
-				class=`block max-w-full glass-card transition-all rounded-2xl border border-black/5 dark:border-white/6 ${ContainerStyles}`
-			>
-				<div class='group relative overflow-hidden rounded-2xl transition-all duration-300 p-5 md:p-6'>
-					<div class='mb-2 flex items-center justify-between'>
-						<h2
-							class=`${textStyles} pr-2 md:text-3xl text-xl font-bold font-heading transition-colors text-balance text-black dark:text-white`
-						>
-							{title}
-						</h2>
-						<Arrow
-							styles={textStyles}
-							class:list='h-5 w-5 flex-shrink-0 text-black/40 dark:text-white/40 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 '
+<article
+	class='surface-card surface-card-interactive reveal-on-scroll p-6 md:p-8'
+>
+	<div class='grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8'>
+		<!-- Left Column: Period & Location Metadata (4 cols) -->
+		<div class='flex flex-col justify-between border-b border-[var(--border-subtle)] pb-4 lg:col-span-4 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-6'>
+			<div>
+				<span class='font-mono tabular-nums text-xs font-semibold text-[var(--accent)]'>
+					/{index}
+				</span>
+				<p class='mt-2 font-mono tabular-nums text-xs font-medium text-[var(--text-primary)]'>
+					{duration}
+				</p>
+				<p class='mt-1 flex items-center gap-1.5 text-xs text-[var(--text-muted)]'>
+					<LineIcon name='map-pin' class='size-3.5 shrink-0' />
+					<span>{location}</span>
+				</p>
+			</div>
+
+			<div class='mt-4 flex flex-wrap gap-1.5 lg:mt-6'>
+				{technologies.map((tech) => <Pill text={tech.text} />)}
+			</div>
+		</div>
+
+		<!-- Right Column: Role Title + Max 3 Achievement Bullets (8 cols) -->
+		<div class='lg:col-span-8'>
+			<div class='flex items-start justify-between gap-4'>
+				<h3 class='text-scale-h3 text-[var(--text-primary)]'>
+					{title}
+				</h3>
+				{link && (
+					<a
+						href={link}
+						target={target}
+						rel='noopener noreferrer'
+						aria-label={`Ver referencia externa de ${title}`}
+						class='inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
+					>
+						<LineIcon name='arrow-up-right' class='size-4' />
+					</a>
+				)}
+			</div>
+
+			<ul class='mt-4 space-y-2.5'>
+				{bullets.slice(0, 3).map((bullet) => (
+					<li class='flex items-start gap-3 text-sm leading-relaxed text-[var(--text-secondary)]'>
+						<span
+							class='mt-2 size-1.5 shrink-0 rounded-full bg-[var(--accent)]'
+							aria-hidden='true'
 						/>
-					</div>
-					<time class='font-display mb-4 text-sm text-[#737373]'>{location} | {duration}</time>
-					<p class='font-accent pt-3 text-sm text-pretty text-[#737373] italic'>
-						{phase}
-					</p>
-					<p class='font-accent mb-4 pt-3 text-sm text-pretty text-neutral-600 dark:text-[#a3a3a3]'>
-						{description}
-					</p>
-					<p class='font-accent mb-4 text-sm text-pretty text-neutral-600 dark:text-[#a3a3a3]'>
-						{description2}
-					</p>
-					<div class='flex flex-wrap gap-2 mt-2'>
-						{
-							technologies?.map((tech) => (
-								<Pill
-									text={tech.text}
-									image={tech.image}
-									class:list='min-w-[calc(50%-0.5rem)] flex-1 md:min-w-[calc(33%-0.5rem)]'
-								/>
-							))
-						}
-					</div>
-				</div>
-			</a>
-		</article>
-	</AnimatedSection>
-</Container>
+						<span>{bullet}</span>
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+</article>

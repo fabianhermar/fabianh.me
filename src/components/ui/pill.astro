@@ -1,23 +1,15 @@
 ---
-import { Image } from 'astro:assets'
 interface Props {
 	text: string
-	image: string
+	image?: string
+	class?: string
 }
 
-const { text, image } = Astro.props
+const { text, class: className = '' } = Astro.props
 ---
 
 <span
-	class='font-display inline-flex items-center justify-center space-x-2 rounded-full border border-black/10 bg-black/5 px-3 py-1.5 text-xs text-neutral-600 whitespace-nowrap select-none transition-colors duration-200 hover:border-black/20 hover:text-black dark:border-white/8 dark:bg-white/4 dark:text-white/60 dark:hover:border-white/16 dark:hover:text-white/80'
+	class={`surface-pill inline-flex items-center px-2.5 py-1 font-mono text-xs font-medium tracking-tight text-[var(--text-secondary)] select-none ${className}`}
 >
-	<Image
-		src={image}
-		alt={text}
-		class='mr-1 inline-block size-4 opacity-80'
-		width={16}
-		height={16}
-		loading='lazy'
-	/>
 	{text}
 </span>

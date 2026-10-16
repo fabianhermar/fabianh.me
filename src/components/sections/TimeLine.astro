@@ -1,102 +1,90 @@
 ---
 import Container from '@/components/common/Container.astro'
 import ExperienceCard from '@/components/features/ExperienceCard.astro'
-import GradualSpacing from '@/components/ui/gradual-spacing'
 import { getI18N } from '@/i18n'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<Container>
-	<div class='mb-12 flex h-10 items-center justify-center pt-24' id='experience'>
-		<span class='section-number mr-3'>01</span>
-		<GradualSpacing
-			className='font-heading text-2xl font-bold text-black dark:text-white md:text-4xl'
-			text=`${i18n.landing.WIW.title}`
-			client:visible
-		/>
-		<span class='mt-1 ml-4 h-px grow bg-gradient-to-r from-black/10 to-transparent dark:from-white/20'></span>
-	</div>
+<section
+	id='experience'
+	aria-labelledby='experience-heading'
+	class='border-b border-[var(--border-subtle)] py-16 md:py-24'
+>
+	<Container>
+		<!-- Section Header -->
+		<div class='mb-12 grid grid-cols-1 items-end gap-4 md:grid-cols-12'>
+			<div class='md:col-span-8'>
+				<div class='mb-2 flex items-center gap-2'>
+					<span class='section-number'>02</span>
+					<span class='h-px w-8 bg-[var(--border-default)]' aria-hidden='true'></span>
+					<span class='font-mono text-xs uppercase tracking-wider text-[var(--text-muted)]'>
+						Track Record
+					</span>
+				</div>
+				<h2 id='experience-heading' class='text-scale-h1 text-[var(--text-primary)]'>
+					{i18n.landing.WIW.title}
+				</h2>
+			</div>
+			<div class='md:col-span-4 md:text-right'>
+				<p class='text-sm text-[var(--text-secondary)]'>
+					{i18n.landing.WIW.subtitle}
+				</p>
+			</div>
+		</div>
 
-	<div class='pt-4 pb-16'>
-		<ol class='relative border-s border-black/10 dark:border-white/8 ms-3'>
-
-			<!-- Entry 1 -->
-			<li class='ms-6 mb-12'>
-				<span class='absolute -start-2 flex h-4 w-4 items-center justify-center rounded-full border border-[#b16cea]/30 bg-[#fafafa] dark:bg-[#080808]'>
-					<span class='h-2 w-2 rounded-full bg-[#b16cea] shadow-[0_0_8px_rgba(177,108,234,0.6)]'></span>
-				</span>
+		<!-- Compact Timeline List -->
+		<ol class='flex flex-col gap-5'>
+			<li>
 				<ExperienceCard
-					link=""
-					target=''
-					title=`${i18n.landing.WIW.card1.title}`
-					location=`${i18n.landing.WIW.card1.location}`
-					duration=`${i18n.landing.WIW.card1.duration}`
-					ContainerStyles='hover:border-[#b16cea]/20 hover:shadow-[0_0_20px_rgba(177,108,234,0.10)] hover:bg-[#b16cea]/5 dark:hover:border-[#b16cea]/20 dark:hover:shadow-[0_0_20px_rgba(177,108,234,0.05)] dark:hover:bg-[#b16cea]/5'
-					textStyles='group-hover:text-[#b16cea]'
-					phase=`${i18n.landing.WIW.card1.phrase}`
-					description=`${i18n.landing.WIW.card1.description1}`
-					description2=`${i18n.landing.WIW.card1.description2}`
+					index='01'
+					title={i18n.landing.WIW.card1.title}
+					location={i18n.landing.WIW.card1.location}
+					duration={i18n.landing.WIW.card1.duration}
+					bullets={i18n.landing.WIW.card1.bullets}
 					technologies={[
-						{ text: `${i18n.landing.WIW.card1.tech.tech1}`, image: '/svg/resilience.svg' },
-						{ text: 'AstroJS', image: '/svg/astrojs.svg' },
-						{ text: 'Tailwind CSS', image: '/svg/tailwindcss.svg' },
-						{ text: 'TypeScript', image: '/svg/typescript.svg' },
+						{ text: 'Astro' },
+						{ text: 'TypeScript' },
+						{ text: 'TailwindCSS' },
+						{ text: i18n.landing.WIW.card1.tech.tech1 },
 					]}
 				/>
 			</li>
 
-			<!-- Entry 2 -->
-			<li class='ms-6 mb-12'>
-				<span class='absolute -start-2 flex h-4 w-4 items-center justify-center rounded-full border border-[#ff5e69]/30 bg-[#fafafa] dark:bg-[#080808]'>
-					<span class='h-2 w-2 rounded-full bg-[#ff5e69] shadow-[0_0_8px_rgba(255,94,105,0.6)]'></span>
-				</span>
+			<li>
 				<ExperienceCard
-					phase=''
-					link=''
-					target=''
-					title=`${i18n.landing.WIW.card2.title}`
-					location=`${i18n.landing.WIW.card2.location}`
-					duration=`${i18n.landing.WIW.card2.duration}`
-					description=`${i18n.landing.WIW.card2.description1}`
-					description2=`${i18n.landing.WIW.card2.description2}`
-					ContainerStyles='hover:border-[#ff5e69]/20 hover:shadow-[0_0_20px_rgba(255,94,105,0.10)] hover:bg-[#ff5e69]/5 dark:hover:border-[#ff5e69]/20 dark:hover:shadow-[0_0_20px_rgba(255,94,105,0.05)] dark:hover:bg-[#ff5e69]/5'
-					textStyles='group-hover:text-[#ff5e69]'
+					index='02'
+					title={i18n.landing.WIW.card2.title}
+					location={i18n.landing.WIW.card2.location}
+					duration={i18n.landing.WIW.card2.duration}
+					bullets={i18n.landing.WIW.card2.bullets}
 					technologies={[
-						{ text: `${i18n.landing.WIW.card2.tech.tech1}`, image: '/svg/wrench.svg' },
-						{ text: `${i18n.landing.WIW.card2.tech.tech2}`, image: '/svg/communication.svg' },
-						{ text: `${i18n.landing.WIW.card2.tech.tech3}`, image: '/svg/clock.svg' },
-						{ text: `${i18n.landing.WIW.card2.tech.tech4}`, image: '/svg/attention.svg' },
+						{ text: i18n.landing.WIW.card2.tech.tech1 },
+						{ text: i18n.landing.WIW.card2.tech.tech2 },
+						{ text: i18n.landing.WIW.card2.tech.tech3 },
+						{ text: i18n.landing.WIW.card2.tech.tech4 },
 					]}
 				/>
 			</li>
 
-			<!-- Entry 3 -->
-			<li class='ms-6 mb-4'>
-				<span class='absolute -start-2 flex h-4 w-4 items-center justify-center rounded-full border border-[#ffa84b]/30 bg-[#fafafa] dark:bg-[#080808]'>
-					<span class='h-2 w-2 rounded-full bg-[#ffa84b] shadow-[0_0_8px_rgba(255,168,75,0.6)]'></span>
-				</span>
+			<li>
 				<ExperienceCard
-					phase=''
+					index='03'
 					link='https://www.facebook.com/InstitutoNielsBohr'
 					target='_blank'
-					title=`${i18n.landing.WIW.card3.title}`
-					location=`${i18n.landing.WIW.card3.location}`
-					duration=`${i18n.landing.WIW.card3.duration}`
-					ContainerStyles='hover:border-[#ffa84b]/20 hover:shadow-[0_0_20px_rgba(255,168,75,0.10)] hover:bg-[#ffa84b]/5 dark:hover:border-[#ffa84b]/20 dark:hover:shadow-[0_0_20px_rgba(255,168,75,0.05)] dark:hover:bg-[#ffa84b]/5'
-					textStyles='group-hover:text-[#ffa84b]'
-					description=`${i18n.landing.WIW.card3.description1}`
-					description2=`${i18n.landing.WIW.card3.description2}`
+					title={i18n.landing.WIW.card3.title}
+					location={i18n.landing.WIW.card3.location}
+					duration={i18n.landing.WIW.card3.duration}
+					bullets={i18n.landing.WIW.card3.bullets}
 					technologies={[
-						{ text: `${i18n.landing.WIW.card3.tech.tech1}`, image: '/svg/brain.svg' },
-						{ text: 'PHP', image: '/svg/php.svg' },
-						{ text: 'MySQL', image: '/svg/mysql.svg' },
-						{ text: 'JavaScript', image: '/svg/javascript.svg' },
+						{ text: 'PHP' },
+						{ text: 'MySQL' },
+						{ text: 'JavaScript' },
+						{ text: i18n.landing.WIW.card3.tech.tech1 },
 					]}
 				/>
 			</li>
-
 		</ol>
-	</div>
-</Container>
+	</Container>
+</section>

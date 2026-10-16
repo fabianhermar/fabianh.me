@@ -5,211 +5,148 @@ import Hobbies from '@/components/bento/Hobbies.astro'
 import CurrentWeather from '@/components/bento/Weather'
 import WhoIAm from '@/components/bento/WhoIAm.astro'
 import Container from '@/components/common/Container.astro'
-import AnimatedSection from '@/components/ui/animated-section'
-import GradualSpacing from '@/components/ui/gradual-spacing'
+import LineIcon from '@/components/ui/LineIcon.astro'
 import { getI18N } from '@/i18n'
-import { Image } from 'astro:assets'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<Container>
-	<div class='mb-12 flex h-10 items-center justify-center pt-24'>
-		<span class='section-number mr-3'>03</span>
-		<GradualSpacing
-			className='font-heading text-2xl font-bold text-black dark:text-white md:text-4xl'
-			text=`${i18n.landing.moreinfo.title}`
-			client:visible
-		/>
-		<span class='mt-1 ml-4 h-px grow bg-gradient-to-r from-black/10 to-transparent dark:from-white/20'></span>
-	</div>
-
-	<WhoIAm />
-
-	<AnimatedSection client:visible>
-		<section class='bento-parent pt-8 pb-16'>
-
-			<!-- Weather -->
-			<article class='bento-weather bento-card'>
-				<div class='flex items-center gap-x-3 px-5 pt-5 md:px-5 md:pt-5'>
-					<Image
-						class='h-8 w-8 select-none md:h-10 md:w-10'
-						src='/svg/sun_3d.svg'
-						alt='Weather'
-						width={40}
-						height={40}
-					/>
-					<h2 class='font-heading text-base font-bold text-black dark:text-white md:text-xl'>
-						{i18n.landing.bento.weather.title}
-					</h2>
+<section
+	id='about-me'
+	aria-labelledby='about-heading'
+	class='border-b border-[var(--border-subtle)] py-16 md:py-24'
+>
+	<Container>
+		<!-- Section Header -->
+		<div class='mb-12 grid grid-cols-1 items-end gap-4 md:grid-cols-12'>
+			<div class='md:col-span-8'>
+				<div class='mb-2 flex items-center gap-2'>
+					<span class='section-number'>03</span>
+					<span class='h-px w-8 bg-[var(--border-default)]' aria-hidden='true'></span>
+					<span class='font-mono text-xs uppercase tracking-wider text-[var(--text-muted)]'>
+						Bento Overview
+					</span>
 				</div>
-				<CurrentWeather client:visible />
+				<h2 id='about-heading' class='text-scale-h1 text-[var(--text-primary)]'>
+					{i18n.landing.moreinfo.title}
+				</h2>
+			</div>
+			<div class='md:col-span-4 md:text-right'>
+				<p class='font-mono text-xs text-[var(--text-muted)]'>
+					5 módulos · Datos en tiempo real
+				</p>
+			</div>
+		</div>
+
+		<!-- 2026 Bento Grid (12 cols on desktop, 1 col on mobile in logical reading order) -->
+		<div class='grid grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5'>
+			<!-- Card 1: Personal Summary & Skills (7 cols) -->
+			<article class='surface-card surface-card-interactive flex flex-col justify-between p-6 md:p-7 lg:col-span-7'>
+				<header class='flex items-center justify-between border-b border-[var(--border-subtle)] pb-3'>
+					<div class='flex items-center gap-2.5'>
+						<span class='inline-flex size-7 items-center justify-center rounded-md border border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--accent)]'>
+							<LineIcon name='user' class='size-4' />
+						</span>
+						<h3 class='font-heading text-base font-bold text-[var(--text-primary)]'>
+							{i18n.landing.moreinfo.who.title}
+						</h3>
+					</div>
+					<span class='font-mono text-[11px] text-[var(--text-muted)]'>01 / 05</span>
+				</header>
+				<WhoIAm />
 			</article>
 
-			<!-- Hobbies -->
-			<article class='bento-hobbies bento-card'>
-				<div class='flex items-center gap-x-3 px-5 pt-5 md:px-5 md:pt-5'>
-					<Image
-						class='h-8 w-8 select-none md:h-10 md:w-10'
-						src='/svg/man_tech.svg'
-						alt='Hobbies'
-						width={40}
-						height={40}
-					/>
-					<h2 class='font-heading text-base font-bold text-black dark:text-white md:text-xl'>Hobbies</h2>
-				</div>
-				<Hobbies />
-			</article>
-
-			<!-- Clock -->
-			<article class='bento-time bento-card'>
-				<div class='flex items-center gap-x-3 px-5 pt-5 md:mb-10 md:px-5 md:pt-5'>
-					<Image
-						class='h-8 w-8 select-none md:h-10 md:w-10'
-						src='/svg/seven_oclock.svg'
-						alt='Clock'
-						width={40}
-						height={40}
-					/>
-					<h2 class='font-heading text-base font-bold text-black dark:text-white md:text-xl'>
-						{i18n.landing.bento.time.title}
-					</h2>
-				</div>
+			<!-- Card 2: Current Time with Mexico Offset (5 cols, Visual Tabular Card) -->
+			<article
+				data-bento-ambient
+				class='surface-card surface-card-interactive bento-ambient-card group flex flex-col justify-between p-6 md:p-7 lg:col-span-5'
+			>
+				<header class='flex items-center justify-between border-b border-[var(--border-subtle)] pb-3'>
+					<div class='flex items-center gap-2.5'>
+						<span class='inline-flex size-7 items-center justify-center rounded-md border border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--accent)]'>
+							<LineIcon name='clock' class='size-4' />
+						</span>
+						<h3 class='font-heading text-base font-bold text-[var(--text-primary)]'>
+							{i18n.landing.bento.time.title}
+						</h3>
+					</div>
+					<span class='font-mono text-[11px] text-[var(--text-muted)]'>02 / 05</span>
+				</header>
 				<UTCClock client:visible currentLocale={currentLocale} />
 			</article>
 
-			<!-- Education -->
-			<article class='bento-education bento-card'>
-				<div class='flex items-center gap-x-3 px-5 pt-5 md:px-5 md:pt-5'>
-					<Image
-						class='h-8 w-8 select-none md:h-10 md:w-10'
-						src='/svg/graduation_cap_3d.svg'
-						alt='Graduation Cap'
-						width={40}
-						height={40}
-					/>
-					<h2 class='font-heading text-base font-bold text-black dark:text-white md:text-xl'>
-						{i18n.landing.bento.education.title}
-					</h2>
-				</div>
+			<!-- Card 3: Current Weather Live Data (5 cols, Visual Tabular Card) -->
+			<article
+				data-bento-ambient
+				class='surface-card surface-card-interactive bento-ambient-card group flex flex-col justify-between p-6 md:p-7 lg:col-span-5'
+			>
+				<header class='flex items-center justify-between border-b border-[var(--border-subtle)] pb-3'>
+					<div class='flex items-center gap-2.5'>
+						<span class='inline-flex size-7 items-center justify-center rounded-md border border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--accent)]'>
+							<LineIcon name='cloud-sun' class='size-4' />
+						</span>
+						<h3 class='font-heading text-base font-bold text-[var(--text-primary)]'>
+							{i18n.landing.bento.weather.title}
+						</h3>
+					</div>
+					<span class='font-mono text-[11px] text-[var(--text-muted)]'>03 / 05</span>
+				</header>
+				<CurrentWeather client:visible currentLocale={currentLocale} />
+			</article>
+
+			<!-- Card 4: Education (7 cols, Sober Card) -->
+			<article class='surface-card surface-card-interactive flex flex-col justify-between p-6 md:p-7 lg:col-span-7'>
+				<header class='flex items-center justify-between border-b border-[var(--border-subtle)] pb-3'>
+					<div class='flex items-center gap-2.5'>
+						<span class='inline-flex size-7 items-center justify-center rounded-md border border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--accent)]'>
+							<LineIcon name='graduation-cap' class='size-4' />
+						</span>
+						<h3 class='font-heading text-base font-bold text-[var(--text-primary)]'>
+							{i18n.landing.bento.education.title}
+						</h3>
+					</div>
+					<span class='font-mono text-[11px] text-[var(--text-muted)]'>04 / 05</span>
+				</header>
 				<Education />
 			</article>
 
-		</section>
-	</AnimatedSection>
-</Container>
+			<!-- Card 5: Hobbies (12 cols, Sober Horizontal Card) -->
+			<article class='surface-card surface-card-interactive flex flex-col justify-between p-6 md:p-7 lg:col-span-12'>
+				<header class='flex items-center justify-between border-b border-[var(--border-subtle)] pb-3'>
+					<div class='flex items-center gap-2.5'>
+						<span class='inline-flex size-7 items-center justify-center rounded-md border border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--accent)]'>
+							<LineIcon name='compass' class='size-4' />
+						</span>
+						<h3 class='font-heading text-base font-bold text-[var(--text-primary)]'>
+							{i18n.landing.bento.hobbies.title || 'Hobbies'}
+						</h3>
+					</div>
+					<span class='font-mono text-[11px] text-[var(--text-muted)]'>05 / 05</span>
+				</header>
+				<Hobbies />
+			</article>
+		</div>
+	</Container>
+</section>
 
 <style>
-	.bento-parent {
-		display: grid;
-		gap: 16px;
+	.bento-ambient-card[data-period='day'] {
+		background-color: var(--bento-day-bg);
 	}
-
-	.bento-card {
-		border-radius: 20px;
-		border: 1px solid rgba(0, 0, 0, 0.05);
-		background: rgba(0, 0, 0, 0.02);
-		backdrop-filter: blur(12px);
-		transition: border-color 0.3s ease, box-shadow 0.3s ease;
-		overflow: hidden;
-	}
-
-	.bento-card:hover {
-		border-color: rgba(0, 0, 0, 0.1);
-	}
-
-	:global(.dark) .bento-card {
-		border-color: rgba(255, 255, 255, 0.06);
-		background: rgba(255, 255, 255, 0.02);
-	}
-
-	:global(.dark) .bento-card:hover {
-		border-color: rgba(255, 255, 255, 0.1);
-	}
-
-	.bento-weather {
-		background: linear-gradient(135deg, rgba(177, 108, 234, 0.08) 0%, rgba(0, 0, 0, 0.02) 100%);
-	}
-	:global(.dark) .bento-weather {
-		background: linear-gradient(135deg, rgba(177, 108, 234, 0.08) 0%, rgba(8, 8, 8, 0.6) 100%);
-	}
-	.bento-weather:hover {
-		box-shadow: 0 0 30px rgba(177, 108, 234, 0.15);
-	}
-	:global(.dark) .bento-weather:hover {
-		box-shadow: 0 0 30px rgba(177, 108, 234, 0.08);
-	}
-
-	.bento-hobbies {
-		background: linear-gradient(135deg, rgba(255, 94, 105, 0.08) 0%, rgba(0, 0, 0, 0.02) 100%);
-	}
-	:global(.dark) .bento-hobbies {
-		background: linear-gradient(135deg, rgba(255, 94, 105, 0.08) 0%, rgba(8, 8, 8, 0.6) 100%);
-	}
-	.bento-hobbies:hover {
-		box-shadow: 0 0 30px rgba(255, 94, 105, 0.15);
-	}
-	:global(.dark) .bento-hobbies:hover {
-		box-shadow: 0 0 30px rgba(255, 94, 105, 0.08);
-	}
-
-	.bento-time {
-		background: linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.01) 100%);
-	}
-	:global(.dark) .bento-time {
-		background: linear-gradient(135deg, rgba(15, 15, 15, 0.9) 0%, rgba(30, 30, 30, 0.5) 100%);
-	}
-
-	.bento-education {
-		background: linear-gradient(135deg, rgba(255, 168, 75, 0.08) 0%, rgba(0, 0, 0, 0.02) 100%);
-	}
-	:global(.dark) .bento-education {
-		background: linear-gradient(135deg, rgba(255, 168, 75, 0.08) 0%, rgba(8, 8, 8, 0.6) 100%);
-	}
-	.bento-education:hover {
-		box-shadow: 0 0 30px rgba(255, 168, 75, 0.15);
-	}
-	:global(.dark) .bento-education:hover {
-		box-shadow: 0 0 30px rgba(255, 168, 75, 0.08);
-	}
-
-	/* Mobile */
-	@media screen and (max-width: 767px) {
-		.bento-parent {
-			grid-template-columns: 1fr;
-			grid-template-rows: repeat(4, auto);
-		}
-
-		.bento-weather,
-		.bento-hobbies,
-		.bento-time,
-		.bento-education {
-			grid-area: auto;
-		}
-	}
-
-	/* Desktop */
-	@media screen and (min-width: 768px) {
-		.bento-parent {
-			grid-template-columns: repeat(5, 1fr);
-			grid-template-rows: repeat(6, 1fr);
-		}
-
-		.bento-weather {
-			grid-area: 1 / 1 / 4 / 3;
-		}
-
-		.bento-hobbies {
-			grid-area: 1 / 3 / 4 / 6;
-		}
-
-		.bento-time {
-			grid-area: 4 / 4 / 7 / 6;
-		}
-
-		.bento-education {
-			grid-area: 4 / 1 / 7 / 4;
-		}
+	.bento-ambient-card[data-period='night'] {
+		background-color: var(--bento-night-bg);
 	}
 </style>
+
+<script>
+	function applyBentoAmbientPeriod() {
+		const hour = new Date().getHours()
+		const period = hour >= 6 && hour < 19 ? 'day' : 'night'
+		document.querySelectorAll('[data-bento-ambient]').forEach((el) => {
+			el.setAttribute('data-period', period)
+		})
+	}
+	applyBentoAmbientPeriod()
+	document.addEventListener('astro:after-swap', applyBentoAmbientPeriod)
+</script>

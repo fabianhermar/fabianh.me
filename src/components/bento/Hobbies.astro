@@ -1,12 +1,45 @@
 ---
+import LineIcon from '@/components/ui/LineIcon.astro'
 import { sanitizeHtml } from '@/helpers/satinizeHTML'
 import { getI18N } from '@/i18n'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
+const hobbyItems = i18n.landing.bento.hobbies.items || [
+	{ name: 'Leer', icon: 'book' },
+	{ name: 'Cocinar', icon: 'utensils' },
+	{ name: 'Tocar violín', icon: 'music' },
+	{ name: 'Jardinería', icon: 'sprout' },
+	{ name: 'Explorar la naturaleza', icon: 'compass' },
+	{ name: 'Familia y amigos', icon: 'users' },
+]
 ---
 
-<div class='prose max-w-full px-5 pt-4 pb-5'>
-	<p class='font-accent text-sm text-neutral-600 dark:text-[#a3a3a3] leading-relaxed' set:html={sanitizeHtml(i18n.landing.bento.hobbies.fp)} />
-	<p class='font-accent text-sm text-neutral-600 dark:text-[#a3a3a3] leading-relaxed mt-2' set:html={sanitizeHtml(i18n.landing.bento.hobbies.sp)} />
+<div class='grid grid-cols-1 gap-6 pt-3 lg:grid-cols-12 lg:items-center'>
+	<!-- 6 Hobby Pills with custom line glyphs -->
+	<div class='grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:col-span-6'>
+		{hobbyItems.map((item: { name: string; icon: any }) => (
+			<div class='group flex items-center gap-2.5 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3 py-2.5 transition-colors hover:border-[var(--border-strong)]'>
+				<LineIcon
+					name={item.icon}
+					class='size-4 shrink-0 text-[var(--accent)] transition-transform duration-200 group-hover:scale-110'
+				/>
+				<span class='text-xs font-medium text-[var(--text-primary)]'>
+					{item.name}
+				</span>
+			</div>
+		))}
+	</div>
+
+	<!-- Editorial description -->
+	<div class='space-y-2 border-t border-[var(--border-subtle)] pt-4 lg:col-span-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6'>
+		<p
+			class='text-sm leading-relaxed text-[var(--text-secondary)]'
+			set:html={sanitizeHtml(i18n.landing.bento.hobbies.fp)}
+		/>
+		<p
+			class='text-xs italic text-[var(--text-muted)]'
+			set:html={sanitizeHtml(i18n.landing.bento.hobbies.sp)}
+		/>
+	</div>
 </div>

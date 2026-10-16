@@ -2,70 +2,114 @@
 @plugin "@tailwindcss/typography";
 
 /* =========================================
-   TAILWIND CONFIG
+   TAILWIND V4 DARK VARIANT
    ========================================= */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* =========================================
-   DESIGN TOKENS
+   DESIGN TOKENS — OKLCH PALETTE & TYPE SCALE
    ========================================= */
 :root {
-	/* Light mode backgrounds */
-	--bg-base: #fafafa;
-	--bg-surface: #ffffff;
-	--bg-elevated: #f4f4f5;
+	color-scheme: light;
 
-	/* Original Palette Accents */
-	--accent-purple: #b16cea;
-	--accent-purple-dim: rgba(177, 108, 234, 0.15);
-	--accent-pink: #ff5e69;
-	--accent-pink-dim: rgba(255, 94, 105, 0.15);
-	--accent-orange: #ffa84b;
-	--accent-orange-dim: rgba(255, 168, 75, 0.15);
+	/* Surfaces (Light Mode — Warm Editorial Paper) */
+	--bg-base: oklch(0.985 0.003 85);
+	--bg-surface: oklch(0.996 0.002 85);
+	--bg-elevated: oklch(0.955 0.005 85);
+	--bg-subtle: oklch(0.97 0.004 85);
 
-	/* Text */
-	--text-primary: #171717; /* neutral-900 */
-	--text-secondary: #525252; /* neutral-600 */
-	--text-muted: #737373; /* neutral-500 */
+	/* Typography Colors (WCAG AA+ Contrast) */
+	--text-primary: oklch(0.16 0.01 260);
+	--text-secondary: oklch(0.39 0.012 260);
+	--text-muted: oklch(0.50 0.01 260);
 
-	/* Borders */
-	--border-subtle: rgba(0, 0, 0, 0.05);
-	--border-default: rgba(0, 0, 0, 0.1);
-	--border-glass: rgba(255, 255, 255, 0.5);
+	/* Borders (1px architectural lines) */
+	--border-subtle: oklch(0.89 0.006 85);
+	--border-default: oklch(0.82 0.008 85);
+	--border-strong: oklch(0.66 0.012 260);
 
-	/* Glow effects */
-	--glow-purple: 0 0 30px rgba(177, 108, 234, 0.25);
-	--glow-pink: 0 0 30px rgba(255, 94, 105, 0.25);
-	--glow-orange: 0 0 30px rgba(255, 168, 75, 0.25);
+	/* Single Accent — Terracotta / Copper Editorial */
+	--accent: oklch(0.53 0.175 36);
+	--accent-hover: oklch(0.46 0.175 36);
+	--accent-foreground: oklch(0.99 0.002 85);
+	--accent-soft: oklch(0.53 0.175 36 / 0.10);
+	--accent-border: oklch(0.53 0.175 36 / 0.32);
+
+	/* Semantic Status Tokens */
+	--status-online: oklch(0.56 0.16 152);
+	--status-online-soft: oklch(0.56 0.16 152 / 0.12);
+	--status-error: oklch(0.55 0.20 25);
+	--status-error-soft: oklch(0.55 0.20 25 / 0.10);
+
+	/* Dynamic Weather / Time Card Tints */
+	--bento-day-bg: oklch(0.975 0.012 75);
+	--bento-night-bg: oklch(0.96 0.012 255);
+
+	/* Radii & Shadows */
+	--radius-sm: 0.375rem; /* 6px */
+	--radius-md: 0.625rem; /* 10px */
+	--radius-lg: 0.875rem; /* 14px */
+	--radius-xl: 1.125rem; /* 18px */
+	--shadow-subtle: 0 1px 2px oklch(0.16 0.01 260 / 0.04), 0 4px 12px oklch(0.16 0.01 260 / 0.03);
+	--shadow-elevated: 0 12px 32px -8px oklch(0.16 0.01 260 / 0.10);
+
+	/* Fluid Typographic Scale (Defined Once) */
+	--step-display: clamp(2.375rem, 4.2vw + 1rem, 4.375rem);
+	--step-h1: clamp(2rem, 3vw + 0.85rem, 3.25rem);
+	--step-h2: clamp(1.5rem, 2vw + 0.75rem, 2.25rem);
+	--step-h3: clamp(1.1875rem, 1vw + 0.75rem, 1.5rem);
+	--step-body-lg: clamp(1.0625rem, 0.35vw + 0.95rem, 1.1875rem);
+	--step-body: 1rem;
+	--step-sm: 0.875rem;
+	--step-xs: 0.75rem;
 }
 
 .dark {
-	/* Dark mode backgrounds */
-	--bg-base: #080808;
-	--bg-surface: #0f0f0f;
-	--bg-elevated: #161616;
+	color-scheme: dark;
 
-	/* Text */
-	--text-primary: #f5f5f5; /* neutral-100 */
-	--text-secondary: #a3a3a3; /* neutral-400 */
-	--text-muted: #525252; /* neutral-600 */
+	/* Surfaces (Dark Mode — Deep Architectural Graphite) */
+	--bg-base: oklch(0.13 0.006 260);
+	--bg-surface: oklch(0.165 0.007 260);
+	--bg-elevated: oklch(0.21 0.009 260);
+	--bg-subtle: oklch(0.15 0.006 260);
+
+	/* Typography Colors (WCAG AA+ Contrast on Dark) */
+	--text-primary: oklch(0.96 0.004 85);
+	--text-secondary: oklch(0.76 0.008 260);
+	--text-muted: oklch(0.65 0.01 260);
 
 	/* Borders */
-	--border-subtle: rgba(255, 255, 255, 0.05);
-	--border-default: rgba(255, 255, 255, 0.1);
-	--border-glass: rgba(255, 255, 255, 0.05);
+	--border-subtle: oklch(0.24 0.008 260);
+	--border-default: oklch(0.30 0.01 260);
+	--border-strong: oklch(0.46 0.012 260);
 
-	/* Glow effects */
-	--glow-purple: 0 0 30px rgba(177, 108, 234, 0.15);
-	--glow-pink: 0 0 30px rgba(255, 94, 105, 0.15);
-	--glow-orange: 0 0 30px rgba(255, 168, 75, 0.15);
+	/* Single Accent — Luminous Copper for Dark Mode */
+	--accent: oklch(0.72 0.16 40);
+	--accent-hover: oklch(0.78 0.155 42);
+	--accent-foreground: oklch(0.13 0.006 260);
+	--accent-soft: oklch(0.72 0.16 40 / 0.14);
+	--accent-border: oklch(0.72 0.16 40 / 0.38);
+
+	/* Semantic Status Tokens */
+	--status-online: oklch(0.74 0.17 152);
+	--status-online-soft: oklch(0.74 0.17 152 / 0.14);
+	--status-error: oklch(0.70 0.18 25);
+	--status-error-soft: oklch(0.70 0.18 25 / 0.14);
+
+	/* Dynamic Weather / Time Card Tints */
+	--bento-day-bg: oklch(0.185 0.016 65);
+	--bento-night-bg: oklch(0.17 0.018 258);
+
+	/* Shadows */
+	--shadow-subtle: 0 1px 2px oklch(0 0 0 / 0.35), 0 4px 12px oklch(0 0 0 / 0.25);
+	--shadow-elevated: 0 16px 40px -8px oklch(0 0 0 / 0.55);
 }
 
 /* =========================================
-   TYPOGRAPHY
+   FONT FACES
    ========================================= */
 @font-face {
-	font-family: GilroySemibold;
+	font-family: 'GilroySemibold';
 	src: url(/fonts/Gilroy-SemiBold.woff2) format('woff2');
 	font-weight: 600;
 	font-style: normal;
@@ -73,9 +117,9 @@
 }
 
 @font-face {
-	font-family: GilroyBold;
+	font-family: 'GilroyBold';
 	src: url(/fonts/Gilroy-Bold.woff2) format('woff2');
-	font-weight: bold;
+	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
@@ -89,36 +133,219 @@
 }
 
 @theme {
-	--font-heading: 'GilroyBold', sans-serif;
-	--font-display: 'GilroySemibold', sans-serif;
-	--font-accent: 'Albert Sans Variable', sans-serif;
+	--font-heading: 'Albert Sans Variable', 'GilroyBold', system-ui, -apple-system, sans-serif;
+	--font-display: 'Albert Sans Variable', 'GilroySemibold', system-ui, -apple-system, sans-serif;
+	--font-accent: 'Albert Sans Variable', system-ui, -apple-system, sans-serif;
+	--font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+	--font-serif: Georgia, 'Times New Roman', serif;
 }
 
 /* =========================================
-   BASE
+   BASE & RESET
    ========================================= */
 html {
 	scroll-behavior: smooth;
+	background-color: var(--bg-base);
+	color: var(--text-primary);
+	font-family: var(--font-accent);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
 	background-color: var(--bg-base);
 	color: var(--text-primary);
+	overflow-x: hidden;
+	line-height: 1.6;
 }
 
-/* Noise texture overlay */
-body::before {
-	content: '';
-	position: fixed;
-	inset: 0;
-	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-	opacity: 0.04;
-	pointer-events: none;
-	z-index: 9999;
+/* Accessible visible focus */
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
 }
 
-.dark body::before {
-	opacity: 0.03;
+/* Selection */
+::selection {
+	background-color: var(--accent-soft);
+	color: var(--accent);
+}
+
+/* =========================================
+   TYPOGRAPHY UTILITIES (SINGLE SCALE)
+   ========================================= */
+.text-scale-display {
+	font-family: var(--font-heading);
+	font-size: var(--step-display);
+	line-height: 1.04;
+	letter-spacing: -0.035em;
+	font-weight: 750;
+}
+
+.text-scale-h1 {
+	font-family: var(--font-heading);
+	font-size: var(--step-h1);
+	line-height: 1.08;
+	letter-spacing: -0.03em;
+	font-weight: 720;
+}
+
+.text-scale-h2 {
+	font-family: var(--font-heading);
+	font-size: var(--step-h2);
+	line-height: 1.15;
+	letter-spacing: -0.025em;
+	font-weight: 700;
+}
+
+.text-scale-h3 {
+	font-family: var(--font-heading);
+	font-size: var(--step-h3);
+	line-height: 1.25;
+	letter-spacing: -0.015em;
+	font-weight: 650;
+}
+
+.text-scale-body-lg {
+	font-family: var(--font-accent);
+	font-size: var(--step-body-lg);
+	line-height: 1.6;
+}
+
+.tabular-nums {
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* =========================================
+   SURFACES & ARCHITECTURAL BORDERS
+   ========================================= */
+/* Liquid Glass: Permitted ONLY on the navigation bar */
+.nav-liquid-glass {
+	background: oklch(0.99 0.002 85 / 0.76);
+	backdrop-filter: blur(18px) saturate(160%);
+	-webkit-backdrop-filter: blur(18px) saturate(160%);
+	border: 1px solid oklch(0.16 0.01 260 / 0.08);
+	box-shadow:
+		0 1px 0 0 oklch(1 0 0 / 0.6) inset,
+		0 8px 24px -6px oklch(0.16 0.01 260 / 0.06);
+}
+
+.dark .nav-liquid-glass {
+	background: oklch(0.16 0.008 260 / 0.72);
+	border: 1px solid oklch(0.96 0.004 85 / 0.10);
+	box-shadow:
+		0 1px 0 0 oklch(1 0 0 / 0.08) inset,
+		0 10px 28px -6px oklch(0 0 0 / 0.45);
+}
+
+/* Standard Editorial Surface (1px border, subtle shadow, zero glass blur) */
+.surface-card {
+	background-color: var(--bg-surface);
+	border: 1px solid var(--border-subtle);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-subtle);
+	transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.surface-card-interactive:hover {
+	border-color: var(--border-strong);
+}
+
+.surface-pill {
+	background-color: var(--bg-elevated);
+	border: 1px solid var(--border-subtle);
+	color: var(--text-secondary);
+	border-radius: var(--radius-sm);
+}
+
+.section-number {
+	font-family: var(--font-mono);
+	font-variant-numeric: tabular-nums;
+	color: var(--accent);
+	font-size: var(--step-xs);
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+/* =========================================
+   TOOLTIP (ACCESSIBLE & SUBTLE)
+   ========================================= */
+.tooltip {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.has-tooltip:hover .tooltip,
+.has-tooltip:focus-within .tooltip {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* =========================================
+   MOTION & REDUCED MOTION
+   ========================================= */
+@keyframes pulse-status {
+	0%, 100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.45;
+		transform: scale(0.88);
+	}
+}
+
+.status-dot-pulse {
+	animation: pulse-status 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes skeleton-shimmer {
+	0%, 100% {
+		opacity: 0.55;
+	}
+	50% {
+		opacity: 0.9;
+	}
+}
+
+.skeleton-block {
+	background-color: var(--bg-elevated);
+	border-radius: var(--radius-sm);
+	animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+/* Native scroll-driven / subtle entry animation */
+@media (prefers-reduced-motion: no-preference) {
+	.reveal-on-scroll {
+		animation: editorial-reveal linear both;
+		animation-timeline: view();
+		animation-range: entry 5% cover 22%;
+	}
+
+	@keyframes editorial-reveal {
+		from {
+			opacity: 0;
+			transform: translateY(14px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 /* =========================================
@@ -126,173 +353,18 @@ body::before {
    ========================================= */
 ::-webkit-scrollbar {
 	width: 8px;
+	height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-	background: var(--bg-surface);
+	background: var(--bg-base);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #cbd5e1;
-	border-radius: 100px;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-	background: #333;
+	background: var(--border-default);
+	border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--accent-pink);
-}
-
-/* =========================================
-   SELECTION
-   ========================================= */
-::selection {
-	background-color: var(--accent-pink-dim);
-	color: var(--accent-pink);
-}
-
-/* =========================================
-   TOOLTIP
-   ========================================= */
-.tooltip {
-	opacity: 0;
-	transition: opacity 0.3s ease-in-out;
-}
-
-.has-tooltip:hover .tooltip {
-	opacity: 1;
-}
-
-/* =========================================
-   SCROLL REVEAL ANIMATIONS
-   ========================================= */
-.fade-enter-active {
-	opacity: 0;
-	transform: translateY(24px);
-	transition:
-		opacity 0.6s ease,
-		transform 0.6s ease;
-}
-
-.visible {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-/* =========================================
-   MESH GRADIENT BLOBS (Hero)
-   ========================================= */
-@keyframes blob-float-1 {
-	0%, 100% { transform: translate(0, 0) scale(1); }
-	33% { transform: translate(30px, -20px) scale(1.05); }
-	66% { transform: translate(-20px, 15px) scale(0.96); }
-}
-
-@keyframes blob-float-2 {
-	0%, 100% { transform: translate(0, 0) scale(1); }
-	33% { transform: translate(-25px, 30px) scale(1.07); }
-	66% { transform: translate(20px, -15px) scale(0.95); }
-}
-
-@keyframes blob-float-3 {
-	0%, 100% { transform: translate(0, 0) scale(1); }
-	50% { transform: translate(15px, 25px) scale(1.04); }
-}
-
-.hero-blob-1 {
-	animation: blob-float-1 12s ease-in-out infinite;
-}
-
-.hero-blob-2 {
-	animation: blob-float-2 15s ease-in-out infinite;
-}
-
-.hero-blob-3 {
-	animation: blob-float-3 10s ease-in-out infinite;
-}
-
-/* =========================================
-   AVAILABLE DOT (Hero badge)
-   ========================================= */
-@keyframes pulse-dot {
-	0%, 100% { opacity: 1; transform: scale(1); }
-	50% { opacity: 0.5; transform: scale(0.85); }
-}
-
-.pulse-dot {
-	animation: pulse-dot 2s ease-in-out infinite;
-}
-
-/* =========================================
-   GRADIENT TEXT UTILITY
-   ========================================= */
-.gradient-text {
-	background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-pink) 50%, var(--accent-orange) 100%);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	color: transparent;
-}
-
-/* =========================================
-   GLASS CARD UTILITY
-   ========================================= */
-.glass-card {
-	background: rgba(255, 255, 255, 0.7);
-	border: 1px solid var(--border-glass);
-	backdrop-filter: blur(16px);
-}
-
-.dark .glass-card {
-	background: rgba(255, 255, 255, 0.03);
-	border: 1px solid var(--border-glass);
-}
-
-.glass-card-hover {
-	transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.glass-card-hover:hover {
-	border-color: var(--accent-pink);
-	box-shadow: var(--glow-pink);
-	background: rgba(255, 255, 255, 0.9);
-}
-
-.dark .glass-card-hover:hover {
-	background: rgba(255, 255, 255, 0.05);
-}
-
-/* =========================================
-   SECTION NUMBER UTILITY
-   ========================================= */
-.section-number {
-	font-family: 'GilroySemibold', monospace;
-	color: var(--text-secondary);
-	font-size: 0.75rem;
-	letter-spacing: 0.1em;
-}
-
-/* =========================================
-   SPOTLIGHT CURSOR EFFECT
-   ========================================= */
-.spotlight {
-	position: fixed;
-	inset: 0;
-	pointer-events: none;
-	z-index: 1;
-	background: radial-gradient(
-		600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-		rgba(255, 94, 105, 0.03),
-		transparent 40%
-	);
-}
-
-.dark .spotlight {
-	background: radial-gradient(
-		600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-		rgba(255, 94, 105, 0.05),
-		transparent 40%
-	);
+	background: var(--border-strong);
 }

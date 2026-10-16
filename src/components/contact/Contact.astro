@@ -1,114 +1,146 @@
 ---
 import ContactForm from '@/components/contact/ContactForm'
-
+import LineIcon from '@/components/ui/LineIcon.astro'
 import { getI18N } from '@/i18n'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<div
-	class='relative flex min-h-[600px] w-full flex-col bg-transparent text-black dark:text-[#f5f5f5] lg:flex-row'
-	id='contact'
->
-	<!-- Left Side -->
-	<div class='flex w-full flex-col justify-center border-b border-black/5 p-8 dark:border-white/8 md:p-12 lg:w-1/2 lg:border-b-0 lg:border-r'>
-		<div class='mb-8 lg:mb-0'>
-			<h2 class='font-heading mb-4 text-3xl font-bold text-black dark:text-white md:text-5xl'>
-				{i18n.landing.contact.form.gratefulness} 🧡
-			</h2>
-			<p class='font-accent mb-8 max-w-md text-pretty text-lg font-normal text-neutral-600 dark:text-[#a3a3a3]'>
+<div class='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10'>
+	<!-- Primary Path: Featured Contact Form Card (8 cols on desktop) -->
+	<div class='surface-card p-6 md:p-8 lg:col-span-8 lg:p-10'>
+		<div class='mb-6 border-b border-[var(--border-subtle)] pb-4'>
+			<h3 class='text-scale-h2 text-[var(--text-primary)]'>
+				{i18n.landing.contact.form.contactForm.title}
+			</h3>
+			<p class='mt-1 text-sm text-[var(--text-secondary)]'>
 				{i18n.landing.contact.form.subtitle}
 			</p>
-			
-			<div class='pb-4 md:pb-10'>
+		</div>
+
+		<ContactForm client:visible currentLocale={currentLocale} />
+
+		<p class='mt-6 border-t border-[var(--border-subtle)] pt-4 text-xs leading-relaxed text-[var(--text-muted)]'>
+			{i18n.landing.contact.form.contactForm.footer}
+		</p>
+	</div>
+
+	<!-- Secondary Compact Options: Direct Email & Social Networks (4 cols on desktop) -->
+	<aside class='flex flex-col justify-between gap-6 lg:col-span-4'>
+		<div class='surface-card p-6 md:p-7'>
+			<div class='inline-flex items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3 py-1 text-xs font-medium text-[var(--text-secondary)]'>
+				<span class='size-2 rounded-full bg-[var(--status-online)]'></span>
+				<span>{i18n.landing.available}</span>
+			</div>
+
+			<h3 class='mt-4 text-scale-h3 text-[var(--text-primary)]'>
+				{i18n.landing.contact.form.alternatives.title}
+			</h3>
+			<p class='mt-2 text-sm leading-relaxed text-[var(--text-secondary)]'>
+				{i18n.landing.contact.form.alternatives.subtitle}
+			</p>
+
+			<!-- Direct Email Button -->
+			<div class='mt-5'>
 				<a
 					href='mailto:ctofabian@gmail.com'
-					class='group inline-flex h-14 items-center gap-4 rounded-full border border-black/5 bg-black/5 px-6 font-display text-base font-medium text-black transition-all duration-300 hover:border-black/10 hover:bg-black/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/15 dark:hover:bg-white/10'
+					class='group flex items-center justify-between rounded-lg border border-[var(--border-default)] bg-[var(--bg-elevated)] px-4 py-3 text-sm font-mono font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--accent)]'
 				>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						class='size-5 fill-current text-[#b16cea]'
-						viewBox='0 0 512 512'
-					>
-						<path
-							d='M424 80H88a56.06 56.06 0 00-56 56v240a56.06 56.06 0 0056 56h336a56.06 56.06 0 0056-56V136a56.06 56.06 0 00-56-56zm-14.18 92.63l-144 112a16 16 0 01-19.64 0l-144-112a16 16 0 1119.64-25.26L256 251.73l134.18-104.36a16 16 0 0119.64 25.26z'
-						></path>
-					</svg>
-					ctofabian@gmail.com
+					<span class='flex items-center gap-2.5 truncate'>
+						<LineIcon name='mail' class='size-4 shrink-0 text-[var(--accent)]' />
+						<span class='truncate'>ctofabian@gmail.com</span>
+					</span>
+					<LineIcon
+						name='arrow-up-right'
+						class='size-4 shrink-0 text-[var(--text-muted)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[var(--accent)]'
+					/>
 				</a>
 			</div>
-			
-			<!-- Alternatives (Desktop & Mobile combined logic) -->
-			<div class='pt-8 lg:pt-10'>
-				<h3 class='font-heading mb-3 text-xl font-bold tracking-tight text-black dark:text-white md:text-2xl'>
-					{i18n.landing.contact.form.alternatives.title}
-				</h3>
-				<p class='font-accent mb-6 text-sm text-neutral-500 dark:text-[#737373]'>
-					{i18n.landing.contact.form.alternatives.subtitle}
-				</p>
-				
-				<div class='flex flex-row items-center gap-4'>
+
+			<!-- Compact Social Links -->
+			<div class='mt-6 border-t border-[var(--border-subtle)] pt-5'>
+				<span class='block font-mono text-[11px] uppercase tracking-wider text-[var(--text-muted)]'>
+					Perfiles profesionales
+				</span>
+				<div class='mt-3 grid grid-cols-2 gap-2'>
 					<a
-						href='https://x.com/FabianHermar'
+						href='https://github.com/FabianHermar'
 						target='_blank'
-						rel='noreferrer'
-						aria-label='Visit my X page'
-						class='group flex size-12 items-center justify-center rounded-full border border-black/5 bg-black/5 transition-all duration-300 hover:border-[#b16cea]/30 hover:bg-[#b16cea]/10 hover:shadow-[0_0_20px_rgba(177,108,234,0.15)] dark:border-white/10 dark:bg-white/5'
+						rel='noopener noreferrer'
+						aria-label='GitHub de Fabian Herrera'
+						class='flex items-center gap-2 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)] px-3 py-2 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
 					>
-						<svg
-							class='size-5 fill-neutral-600 transition-colors duration-300 group-hover:fill-[#b16cea] dark:fill-[#a3a3a3]'
-							xmlns='http://www.w3.org/2000/svg'
-							viewBox='0 0 72 72'
-						>
-							<path d='M40.7568 32.1716L59.3704 11H54.9596L38.7974 29.383L25.8887 11H11L30.5205 38.7983L11 61H15.4111L32.4788 41.5869L46.1113 61H61L40.7557 32.1716H40.7568ZM34.7152 39.0433L32.7374 36.2752L17.0005 14.2492H23.7756L36.4755 32.0249L38.4533 34.7929L54.9617 57.8986H48.1865L34.7152 39.0443V39.0433Z'></path>
-						</svg>
+						<LineIcon name='github' class='size-3.5' />
+						<span>GitHub</span>
 					</a>
+
 					<a
 						href='https://www.linkedin.com/in/fabianhmz'
 						target='_blank'
-						rel='noreferrer'
-						aria-label='Visit my LinkedIn page'
-						class='group flex size-12 items-center justify-center rounded-full border border-black/5 bg-black/5 transition-all duration-300 hover:border-[#ff5e69]/30 hover:bg-[#ff5e69]/10 hover:shadow-[0_0_20px_rgba(255,94,105,0.15)] dark:border-white/10 dark:bg-white/5'
+						rel='noopener noreferrer'
+						aria-label='LinkedIn de Fabian Herrera'
+						class='flex items-center gap-2 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)] px-3 py-2 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
 					>
-						<svg
-							class='size-5 fill-neutral-600 transition-colors duration-300 group-hover:fill-[#ff5e69] dark:fill-[#a3a3a3]'
-							xmlns='http://www.w3.org/2000/svg'
-							viewBox='0 0 72 72'
-						>
-							<path d='M24.7612 55.999V28.3354H15.5433V55.999H24.7621H24.7612ZM20.1542 24.5591C23.3679 24.5591 25.3687 22.4348 25.3687 19.7801C25.3086 17.065 23.3679 15 20.2153 15C17.0605 15 15 17.065 15 19.7799C15 22.4346 17.0001 24.5588 20.0938 24.5588H20.1534L20.1542 24.5591ZM29.8633 55.999H39.0805V40.5521C39.0805 39.7264 39.1406 38.8985 39.3841 38.3088C40.0502 36.6562 41.5668 34.9455 44.1138 34.9455C47.4484 34.9455 48.7831 37.4821 48.7831 41.2014V55.999H58V40.1376C58 31.6408 53.4532 27.6869 47.3887 27.6869C42.4167 27.6869 40.233 30.4589 39.0198 32.347H39.0812V28.3364H29.8638C29.9841 30.9316 29.8631 56 29.8631 56L29.8633 55.999Z'></path>
-						</svg>
+						<LineIcon name='linkedin' class='size-3.5' />
+						<span>LinkedIn</span>
 					</a>
+
+					<a
+						href='https://x.com/FabianHermar'
+						target='_blank'
+						rel='noopener noreferrer'
+						aria-label='Perfil de X (Twitter) de Fabian Herrera'
+						class='flex items-center gap-2 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)] px-3 py-2 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
+					>
+						<LineIcon name='x' class='size-3.5' />
+						<span>X / Twitter</span>
+					</a>
+
 					<a
 						href='https://discord.com/users/607805987541352468'
 						target='_blank'
-						rel='noreferrer'
-						aria-label='Send me a message on Discord'
-						class='group flex size-12 items-center justify-center rounded-full border border-black/5 bg-black/5 transition-all duration-300 hover:border-[#ffa84b]/30 hover:bg-[#ffa84b]/10 hover:shadow-[0_0_20px_rgba(255,168,75,0.15)] dark:border-white/10 dark:bg-white/5'
+						rel='noopener noreferrer'
+						aria-label='Contactar por Discord'
+						class='flex items-center gap-2 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)] px-3 py-2 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
 					>
-						<svg
-							class='size-5 fill-neutral-600 transition-colors duration-300 group-hover:fill-[#ffa84b] dark:fill-[#a3a3a3]'
-							xmlns='http://www.w3.org/2000/svg'
-							viewBox='0 0 50 50'
-						>
-							<path d='M41.626,10.768C37.644,7.567,31.347,7.025,31.08,7.003c-0.42-0.036-0.819,0.202-0.992,0.587c-0.012,0.025-0.15,0.34-0.303,0.833c2.633,0.443,5.867,1.339,8.794,3.155c0.469,0.291,0.613,0.907,0.322,1.377c-0.189,0.305-0.516,0.473-0.851,0.473c-0.18,0-0.362-0.048-0.526-0.15C32.494,10.158,26.209,10,25,10s-7.495,0.158-12.523,3.278c-0.47,0.292-1.086,0.147-1.377-0.322c-0.292-0.47-0.147-1.086,0.322-1.377c2.927-1.815,6.16-2.712,8.794-3.155c-0.154-0.493-0.292-0.808-0.303-0.833c-0.173-0.386-0.571-0.629-0.993-0.587c-0.266,0.021-6.563,0.563-10.598,3.809C6.213,12.76,2,24.152,2,34c0,0.174,0.045,0.344,0.131,0.495c2.909,5.109,10.842,6.447,12.649,6.504C14.791,41,14.801,41,14.812,41c0.319,0,0.62-0.152,0.809-0.411l1.829-2.513c-4.933-1.276-7.453-3.439-7.598-3.568c-0.414-0.365-0.453-0.997-0.087-1.411c0.365-0.414,0.995-0.453,1.41-0.089C11.236,33.062,15.875,37,25,37c9.141,0,13.782-3.953,13.828-3.993c0.414-0.359,1.045-0.323,1.409,0.094c0.364,0.414,0.325,1.043-0.088,1.407c-0.146,0.129-2.666,2.292-7.599,3.568l1.829,2.513C34.568,40.848,34.869,41,35.188,41c0.011,0,0.021,0,0.031-0.001c1.809-0.057,9.741-1.395,12.649-6.504C47.955,34.344,48,34.174,48,34C48,24.152,43.787,12.76,41.626,10.768z M18.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C22,28.209,20.433,30,18.5,30z M31.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C35,28.209,33.433,30,31.5,30z'></path>
-						</svg>
+						<LineIcon name='discord' class='size-3.5' />
+						<span>Discord</span>
 					</a>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Right Side (Form) -->
-	<div class='flex w-full flex-col items-center justify-center p-8 md:p-12 lg:w-1/2'>
-		<div class='w-full max-w-lg lg:mb-0'>
-			<h2 class='font-display mb-8 text-2xl font-bold tracking-tight text-black dark:text-white md:text-3xl'>
-				{i18n.landing.contact.form.contactForm.title}
-			</h2>
-			<ContactForm client:visible currentLocale={currentLocale} />
-			<p class='font-accent mt-6 text-xs text-neutral-500 dark:text-[#525252]'>
-				{i18n.landing.contact.form.contactForm.footer}
-			</p>
+		<!-- Resume / CV Card -->
+		<div class='surface-card flex items-center justify-between gap-4 p-5'>
+			<div>
+				<p class='font-heading text-sm font-bold text-[var(--text-primary)]'>
+					Currículum Vitae
+				</p>
+				<p class='font-mono text-xs text-[var(--text-muted)]'>
+					PDF · Español / Inglés
+				</p>
+			</div>
+			<div class='flex items-center gap-2'>
+				<a
+					href='/FabianHerrera_CV.pdf'
+					download='FabianHerreraCV.pdf'
+					aria-label='Descargar CV en PDF'
+					class='inline-flex h-9 items-center gap-1.5 rounded-md border border-[var(--border-default)] bg-[var(--bg-elevated)] px-3 text-xs font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-strong)]'
+				>
+					<LineIcon name='download' class='size-3.5' />
+					<span>PDF</span>
+				</a>
+				<a
+					href='https://drive.google.com/file/d/1UKzGLJSSRQ5h7mvoZD7lJGE2NGqEX3pg/view?usp=sharing'
+					target='_blank'
+					rel='noopener noreferrer'
+					aria-label='Ver CV digital en Google Drive'
+					class='inline-flex h-9 items-center gap-1 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)] px-2.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
+				>
+					<LineIcon name='arrow-up-right' class='size-3.5' />
+				</a>
+			</div>
 		</div>
-	</div>
+	</aside>
 </div>

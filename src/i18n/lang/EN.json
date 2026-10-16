@@ -1,130 +1,195 @@
 {
     "SEO": {
-        "title": "Fabián Herrera - Fullstack web developer with more than 2 years of experience."
+        "title": "Fabian Herrera — Fullstack web developer with more than 2 years of experience",
+        "description": "Fullstack web developer with more than 2 years of experience crafting modern web interfaces with React, Next.js, and Astro for startups and digital businesses."
     },
     "landing": {
-        "title": "I develop digital products",
-        "title_2": "that capture the imagination and elevate people's experience.",
-        "subtitle": "Hi! I'm Fabian Herrera, the “code cowboy.” I'm a software developer who specializes in creating modern user interfaces (using technologies like React, Next.js, and Astro) to help startups and digital businesses thrive.",
+        "brand_tag": "The code cowboy",
+        "available": "Available for projects",
+        "title": "Modern interfaces and digital products",
+        "title_2": "engineered with precision for startups and growing businesses.",
+        "subtitle": "I'm Fabian Herrera, a fullstack web developer with more than 2 years of experience building fast, scalable web applications with React, Next.js, and Astro.",
+        "cta_primary": "Let's talk",
+        "cta_secondary": "View projects",
         "WIW": {
-            "title": "Where I've worked",
+            "title": "Professional experience",
+            "subtitle": "Track record building web platforms, management systems, and technical documentation.",
             "card1": {
                 "title": "Web Developer • INIFAP",
+                "role": "Web Developer",
+                "company": "INIFAP",
                 "location": "Aguascalientes, Mexico • On-site",
-                "duration": "January 2025 - June 2025 | Professional Internship",
+                "duration": "Jan 2025 — Jun 2025 · Professional Internship",
                 "phrase": "",
-                "description1": "I completed my professional internship at the National Institute of Forestry, Agricultural and Livestock Research (INIFAP), where I developed a web platform for a researcher within the institution. The main goal was to design and build a dynamic website to showcase their research, ongoing projects, and scientific publications.",
-                "description2": "This project was key to obtaining my Software Engineering degree. At the researcher's request, the development was not 100% completed, allowing another student to continue and finish it by following the detailed technical documentation I prepared for the project.",
+                "description1": "Developed a scientific outreach web platform at the National Institute of Forestry, Agricultural and Livestock Research (INIFAP) to showcase ongoing research and publications.",
+                "description2": "Delivered the platform along with comprehensive technical architecture documentation to ensure institutional continuity.",
+                "bullets": [
+                    "Designed and built a dynamic web platform using Astro, TypeScript, and TailwindCSS to showcase scientific research and publications.",
+                    "Structured the content architecture to optimize readability, loading performance, and publication indexing.",
+                    "Delivered comprehensive technical documentation of the architecture and components to guarantee seamless continuity within the institute."
+                ],
                 "tech": {
-                    "tech1": "Resilience"
+                    "tech1": "Documented Architecture"
                 }
             },
             "card2": {
                 "title": "Systems Technical Service • CompuCel",
-                "location": "Cuauhtémoc, ZAC, México • On-site",
-                "duration": "November 2022 - February 2023 | Temporary Contract",
+                "role": "Systems Technical Service",
+                "company": "CompuCel",
+                "location": "Cuauhtémoc, ZAC, Mexico • On-site",
+                "duration": "Nov 2022 — Feb 2023 · Temporary Contract",
                 "phrase": "",
-                "description1": "During my time as part of the technical support team, I was responsible for providing assistance to users in both software problem solving and operating system and hardware configuration and maintenance.",
-                "description2": "I also developed skills in creating technical documentation, where I recorded incidents and their respective solutions, which facilitated the resolution of future problems for other team members.",
+                "description1": "Provided software diagnostics, operating system configuration, and hardware maintenance for end users.",
+                "description2": "Created internal technical documentation logging recurring incidents and standardized solutions for the support team.",
+                "bullets": [
+                    "Diagnosed and resolved software, operating system, and hardware issues with a focus on fast turnaround times.",
+                    "Authored internal technical documentation of recurring incidents and resolution protocols to accelerate team support.",
+                    "Managed direct user communication, translating complex technical issues into clear, actionable solutions."
+                ],
                 "tech": {
                     "tech1": "Problem Solving",
                     "tech2": "Communication",
                     "tech3": "Time Management",
-                    "tech4": "Problem Identification"
+                    "tech4": "Technical Diagnostics"
                 }
             },
             "card3": {
                 "title": "Software Development Intern • INBAC Niels Bohr Institute",
-                "location": "San Francisco de los Romo, AGS, México • Remote",
-                "duration": "March 2022 - August 2022 | Professional Internship",
+                "role": "Software Development Intern",
+                "company": "INBAC Niels Bohr Institute",
+                "location": "San Francisco de los Romo, AGS • Remote",
+                "duration": "Mar 2022 — Aug 2022 · Professional Internship",
                 "phrase": "",
-                "description1": "This position was one of the first challenges that arose in my path when presenting my professional practices, since a school control system was created to better manage the personnel that make up the institution, as well as the students.",
-                "description2": "Thanks to this project, which was one of the most complex I carried out at that time, I was able to learn and understand more in depth the programming language PHP and JS. As well as the use of different methods in the databases that I honestly did not know, although the advice through my project superior was practically nil, I was able to carry out this project.",
+                "description1": "Built a web-based school management system from scratch to centralize faculty and student administration.",
+                "description2": "Independently implemented the PHP backend, MySQL relational schema, and interactive JavaScript interface.",
+                "bullets": [
+                    "Independently built an end-to-end school management system to administer staff, faculty, and students.",
+                    "Designed and implemented the relational database schema in MySQL and business logic modules in PHP and JavaScript.",
+                    "Digitized academic registration and reporting workflows previously handled manually across the institution."
+                ],
                 "tech": {
                     "tech1": "Analytical Thinking"
                 }
             }
         },
         "projects": {
-            "title": "Some of my projects",
+            "title": "Selected projects",
+            "subtitle": "Case studies focused on product decisions, frontend architecture, and measurable outcomes.",
+            "labels": {
+                "problem": "Problem",
+                "decision": "Decision",
+                "result": "Result",
+                "live": "Live project",
+                "code": "Source code",
+                "all": "Explore project archive"
+            },
+            "project3": {
+                "title": "ClearCut Studio",
+                "subtitle": "AI-powered image background removal and optimization",
+                "year": "2026",
+                "problem": "Removing image backgrounds and compressing assets for production web use often requires multiple fragmented tools or costly subscriptions.",
+                "decision": "Built a Next.js and TypeScript web application integrating AI models for instant background removal and direct conversion into WebP and AVIF formats.",
+                "result": "Unified browser-based workflow delivering production-ready visual assets in seconds. [COMPLETAR: average file size reduction percentage / active users].",
+                "description": "AI-powered web application that instantly removes image backgrounds and optimizes file sizes into modern formats like WebP and AVIF.",
+                "description2": "Built with Next.js, TypeScript, and Google Antigravity, prioritizing client-side speed and immediate usability.",
+                "summary": "AI-powered web application that instantly removes image backgrounds and optimizes their file sizes to modern formats like WebP and AVIF."
+            },
+            "project4": {
+                "title": "Boxode Website",
+                "subtitle": "Complete brand and web platform redesign",
+                "year": "2024",
+                "problem": "Boxode's previous website lacked clear visual hierarchy and failed to communicate the maturity of its technological identity.",
+                "decision": "Redesigned the information architecture and interface using Next.js, React, TypeScript, and TailwindCSS with high-contrast editorial direction.",
+                "result": "Production platform (boxode.org) featuring fluid navigation, fast load times, and a cohesive digital brand. [COMPLETAR: Lighthouse score improvement / engagement metric].",
+                "description": "Complete space-themed redesign for Boxode, merging visual creativity with a professional and modern technological identity.",
+                "description2": "Engineered with Next.js, React, and TailwindCSS for visual consistency and responsive performance.",
+                "summary": "Complete space-themed redesign for Boxode, merging visual creativity with a professional and modern technological identity."
+            },
             "project1": {
                 "title": "Dune UI",
-                "subtitle": "A TailwindCSS components library",
-                "description": "This project has been one of the somewhat large projects I have carried out in the year 2024 and thanks to this I was able to learn many more things that I previously did not know how to use.",
-                "description2": "Today, DuneUI is a library of more TailwindCSS components, but this one is more focused on my design style that becomes a bit more minimalist and modern, which has taken many months of work and planning in advance. To which, I decided to create it out of motivation from several friends, teachers, and acquaintances who like my way of designing and this is where I present DuneUI.",
+                "subtitle": "Minimalist TailwindCSS component library",
+                "year": "2025",
+                "problem": "Rebuilding UI patterns from scratch across projects slowed down delivery and introduced spacing and accessibility inconsistencies.",
+                "decision": "Developed a modular component library built with Astro, React, TypeScript, and TailwindCSS focused on minimalist aesthetics and copy-paste ergonomics.",
+                "result": "Public, documented component catalog (ui.fabianh.me) ready to accelerate modern interface development. [COMPLETAR: number of published components / adoption metric].",
+                "description": "TailwindCSS component library focused on minimalist and modern design, crafted to build clean and highly efficient user interfaces.",
+                "description2": "Planned and engineered as an open design system to speed up digital product delivery.",
                 "summary": "TailwindCSS component library focused on minimalist and modern design, crafted to build clean and highly efficient user interfaces."
             },
             "project2": {
                 "title": "UTNA Website Redesign",
-                "subtitle": "Total redesign of UTNA's website by a student",
-                "description": "The redesign of my university's website was something I really enjoyed doing, it has a simpler design, but at the same time it shows a current trend design such as the \"Bento Grid\". This project came about because one of my professors offered me the possibility of redesigning the web page which I accepted, the proposed design was approved by the administrative staff and from there I started working on it.",
-                "description2": "This project had to be ready in 3 weeks, so I had to hurry to finish it as soon as possible because of the audit that the university was going to have. After the first week, the initial design of the landing page was finished, but the project fell through and could never be finished with the project and to be able to deploy it with the official domain. I leave here the preview of what it looks like."
-            },
-            "project3": {
-              "title": "ClearCut Studio",
-              "subtitle": "Edit images with AI",
-              "description": "ClearCut Studio is a project developed during 2026. It is a web application that allows users to remove image backgrounds using artificial intelligence and optimize their image sizes to formats like .WebP, .AVIF, etc.",
-              "description2": "The project was developed using NextJS, TypeScript, and Google Antigravity. It was a project that allowed me to learn how to integrate artificial intelligence models into web applications, as well as optimize performance and the user experience when working with high-quality images.",
-              "summary": "AI-powered web application that instantly removes image backgrounds and optimizes their file sizes to modern formats like WebP and AVIF."
-            },
-            "project4": {
-                "title": "Boxode Website",
-                "subtitle": "Complete redesign of the Boxode website",
-                "description": "The redesign of the Boxode website was an experience that allowed me to merge visual creativity with technological identity. Inspired by the immensity of space, the new design incorporates elements such as starry skies and subtle meteor showers that envelop the interface in a futuristic and immersive atmosphere. The main palette of deep blue tones, bright white, and black accents reinforces a clean, professional, and modern aesthetic that respects part of the previous style while taking it to a new level.",
-                "description2": "Certain visual components of the previous design were retained, but this time a more fluid and intuitive structure was applied, integrating current interactive elements that better reflect Boxode's innovative character. The result was a solid visual proposal that reflects a bolder vision of the brand's digital future.",
-                "summary": "Complete space-themed redesign for Boxode, merging visual creativity with a professional and modern technological identity."
+                "subtitle": "University portal redesign proposal",
+                "description": "Bento-grid inspired redesign proposal for the Universidad Tecnológica del Norte de Aguascalientes institutional website.",
+                "description2": "Created under a 3-week sprint to modernize student and faculty access to university information."
             },
             "project5": {
                 "title": "Smart Agriculture Laboratory",
-                "subtitle": "Blog of scientific articles",
-                "description": "This project was the last one to be carried out within my university in order to graduate from my degree. It was carried out during my social service, also known as internship, in which I had to be in a company developing this project based on what my business advisor needed. Here is the completed project. Due to the delivery time, it was not 100% completed, but new functions are still being added little by little.",
-                "description2": "The main objective of the project was to ensure an intuitive interface that would make it easy for researchers to upload their work, prioritizing a smooth and accessible user experience for all users of the platform. Despite time constraints, I maintained a high level of commitment and dedication to deliver a quality result, regardless of the scale of the project."
+                "subtitle": "Scientific articles and research platform",
+                "description": "Web platform designed for researchers to publish and manage scientific articles and ongoing agricultural research.",
+                "description2": "Built with a focus on intuitive authoring workflows and accessible reading experiences."
             }
         },
         "moreinfo": {
-            "title": "More about me",
+            "title": "About me",
             "phrase": "\"Inspiration unlocks the future\"",
             "who": {
-                "1": "Software Engineer graduated from the Universidad Tecnológica del Norte de Aguascalientes with 1 year of experience as a developer.",
+                "1": "Fullstack web developer with more than 2 years of experience, holding a degree in Software Development and Management Engineering from the Universidad Tecnológica del Norte de Aguascalientes (UTNA).",
                 "2": {
-                    "fp": "At the age of 13 I started to get more involved in the programming world by creating my first programs in C++. After a while I started to get more involved in the learning of the",
+                    "fp": "I wrote my first C++ programs at age 13 and have since focused my career on crafting digital products across",
                     "sp": "Web Development",
                     "tp": "UI/UX",
-                    "ftp": "and of course, also the development of",
-                    "ffp": "Mobile Applications."
+                    "ftp": "and building",
+                    "ffp": "Mobile Apps."
                 },
-                "3": "I love traveling and especially being close to nature and learning more about it.",
-                "title": "Who am I?",
-                "button": "See complete summary",
+                "3": "I enjoy pairing clean engineering with editorial design judgment, and away from the screen I recharge by traveling and exploring nature.",
+                "title": "Profile & focus",
+                "button": "Read my full story",
                 "story": [
-                    "I am a young man passionate about technology in general from an early age. I started programming when I entered middle school where I took my first steps on how to program in C++, although the teaching was not very deep. Then in high school we began to see everything related to web technologies and networks, from which I began to be fascinated by everything I saw there.",
-                    "One of my greatest motivations is to learn day by day. That is how I started being self-taught by watching different tutorial videos, documents and even books that I found on the internet. A few years later I began to study Software Development and Management Engineering at UTNA. And, since then, I continue to learn and build myself as a software developer.",
-                    "I love to continue enriching my knowledge with different talks from professionals in the field, as well as being able to gradually share my knowledge with the developer community."
+                    "I have been passionate about technology from an early age. I took my first programming steps with C++ in middle school, and in high school I discovered web technologies and networking—the field that shaped my career path.",
+                    "Continuous learning is my strongest driver. I started as a self-taught developer studying technical documentation, books, and building projects before earning my Software Development and Management Engineering degree at UTNA, consolidating more than 2 years of experience as a fullstack web developer.",
+                    "I am motivated by building interfaces that not only perform fast, but also communicate clarity and trust for startups, product teams, and digital businesses."
                 ],
-                "quote": "And remember, believe in yourself and in what you are. Be aware that there is something inside you that is greater than any obstacle."
+                "quote": "Believe in yourself and in what you build. Care for detail is what turns good code into a remarkable product."
             }
         },
         "bento": {
             "weather": {
-                "title": "Current Weather"
+                "title": "Current weather",
+                "visibility": "Visibility",
+                "wind": "Wind",
+                "humidity": "Humidity",
+                "min": "Low",
+                "max": "High",
+                "error": "Weather data temporarily unavailable",
+                "retry": "Retry"
             },
             "hobbies": {
-                "fp": "When I'm not immersed in the development world, I enjoy spending time on activities that feed my creativity and keep me inspired. I love to <strong class='font-heading text-black dark:text-white font-bold'>Read</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Cook</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Play the violin</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Gardening</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Explore nature</strong>, and above all I also enjoy <strong class='font-heading text-black dark:text-white font-bold'>Spending time with my family and friends</strong>. These activities not only help me disconnect for a while, but also challenge me to think differently, which often translates into more creative and effective solutions in my work as a developer.",
-                "sp": "I firmly believe that what we do away from the keyboard has a direct impact on our perspective and creativity when we are in front of it. <strong class='font-heading text-black dark:text-white font-bold'>It's a perfect circle of learning and inspiration!</strong>"
+                "title": "Hobbies & interests",
+                "items": [
+                    { "name": "Reading", "icon": "book" },
+                    { "name": "Cooking", "icon": "utensils" },
+                    { "name": "Playing violin", "icon": "music" },
+                    { "name": "Gardening", "icon": "sprout" },
+                    { "name": "Exploring nature", "icon": "compass" },
+                    { "name": "Family & friends", "icon": "users" }
+                ],
+                "fp": "When I'm away from code, I spend time on activities that sharpen my perspective and attention to detail: <strong class='font-semibold text-[var(--text-primary)]'>Reading</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Cooking</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Playing the violin</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Gardening</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Exploring nature</strong>, and <strong class='font-semibold text-[var(--text-primary)]'>Spending time with family and friends</strong>.",
+                "sp": "What we cultivate away from the keyboard directly shapes the clarity and creativity we bring back to it."
             },
             "education": {
                 "title": "Education",
                 "career": "Software Development and Management Engineering",
+                "institution": "UTNA",
                 "location": "Rincón de Romos, AGS",
-                "duration": "September 2019 - April 2025",
-                "description": "Students of the <a href='https://utna.edu.mx/utna' target='_blank' rel='noopener noreferrer' class='font-heading font-bold text-black dark:text-white underline'>Universidad Tecnológica del Norte de Aguascalientes (UTNA)</a>, where I have strengthened my skills in software development and expanded my knowledge in key areas such as <strong class='font-heading font-bold text-black dark:text-white'>algorithms</strong>, <strong class='font-heading font-bold text-black dark:text-white'>data structures</strong>, <strong class='font-heading font-bold text-black dark:text-white'>object oriented programming</strong>, <strong class='font-heading font-bold text-black dark:text-white'>databases management</strong>, etc. My training has allowed me to integrate theory and practice to approach technological projects with an innovative and efficient approach."
+                "duration": "2019 — 2025",
+                "description": "Graduated from <a href='https://utna.edu.mx/utna' target='_blank' rel='noopener noreferrer' class='font-semibold text-[var(--text-primary)] underline underline-offset-4 hover:text-[var(--accent)]'>Universidad Tecnológica del Norte de Aguascalientes (UTNA)</a>, with a strong foundation in <strong class='font-semibold text-[var(--text-primary)]'>software architecture</strong>, <strong class='font-semibold text-[var(--text-primary)]'>data structures</strong>, <strong class='font-semibold text-[var(--text-primary)]'>object-oriented programming</strong>, and <strong class='font-semibold text-[var(--text-primary)]'>database systems</strong>."
             },
             "time": {
-                "title": "Current Time",
+                "title": "Current time",
                 "timezone": "We are in the same time zone (UTC-6)",
                 "direction": {
-                    "back": "Back",
-                    "forward": "Forward"
+                    "back": "behind",
+                    "forward": "ahead"
                 },
                 "message": {
                     "youre": "You're",
@@ -134,72 +199,85 @@
                     },
                     "local": "of Mexico"
                 },
-                "zone": "Time Zone: "
+                "zone": "Time zone:"
             }
         },
         "contact": {
-            "title": "Ready for work together :)?",
+            "title": "Let's talk about your next project",
             "form": {
-                "gratefulness": "Thanks for beeing here!",
-                "subtitle": "If you have any questions, a project in mind that you would like us to work on together, or simply want to say hello, my email is the following:",
+                "gratefulness": "Available for freelance projects and fullstack roles",
+                "subtitle": "Tell me about your product, timeline, or open role. I reply personally within 24 business hours.",
                 "alternatives": {
-                    "title": "More ways to contact me",
-                    "subtitle": "If you prefer, you can also reach me through my other social media accounts that I list below. I will always be happy to assist you."
+                    "title": "Direct email & social profiles",
+                    "subtitle": "Prefer direct email or social platforms? Reach out through any of the channels below."
                 },
                 "contactForm": {
-                    "title": "Fill out the form below and I will get in touch with you as soon as possible.",
+                    "title": "Send me a direct message",
                     "name": "Name",
                     "email": "Email",
                     "subject": "Subject",
                     "message": "Message",
-                    "submit": "Submit",
-                    "delete": "Delete",
-                    "footer": "I do not store or share any of your personal data. All information provided in the form is completely confidential and will only be used for professional contact purposes."
+                    "submit": "Send message",
+                    "sending": "Sending message...",
+                    "delete": "Clear",
+                    "footer": "I do not store or share any of your personal data. All information provided in the form is completely confidential and will only be used for professional contact purposes.",
+                    "errors": {
+                        "name": "Please enter your name (at least 2 characters).",
+                        "email": "Please enter a valid email address (e.g. name@domain.com).",
+                        "subject": "Please enter a brief subject (at least 3 characters).",
+                        "message": "Please write a message of at least 10 characters."
+                    },
+                    "status": {
+                        "successTitle": "Message sent successfully",
+                        "successBody": "I received your message and will get back to you as soon as possible. Thank you for reaching out!",
+                        "errorTitle": "Could not send message",
+                        "errorBody": "Something went wrong while sending your message. Please try again or email me directly at ctofabian@gmail.com."
+                    }
                 }
             }
         }
     },
     "styleguide": {
         "title": "Style Guide",
-        "subtitle": "Learn a little more about the design, colors and typography that make up my portfolio.",
-        "badge": "Design System",
+        "subtitle": "2026 editorial-tech design system: oklch() color tokens, fluid typographic scale, and single-family line iconography.",
+        "badge": "2026 Design System",
         "colors": {
-            "title": "Colors",
-            "description": "A dark, contrasting and vibrant palette with gradients. Ideal for glassmorphism style components that do not tire the eyes but provide elegance."
+            "title": "OKLCH Palette & Tokens",
+            "description": "Warm editorial paper surfaces in light mode and deep architectural graphite in dark mode, paired with a single WCAG AA terracotta-copper accent."
         },
         "typo": {
-            "title": "Typography",
-            "description": "Fast and elegant design starts with clean typography. This is the text used for long paragraphs, descriptions and general content in the portfolio, ensuring excellent readability.",
-            "h1": "H1 - Main Title",
-            "h2": "H2 - Secondary Title",
-            "h3": "H3 - Subtitle",
-            "p": "P - Base Text",
-            "highlight": "Highlighted Text",
-            "standard": "Standard Text",
-            "small": "Small Text"
+            "title": "Fluid Typographic Scale",
+            "description": "Defined once using clamp() with Albert Sans Variable for expressive headlines, comfortable long-form reading, and tabular numerals.",
+            "h1": "H1 — Primary Editorial Headline",
+            "h2": "H2 — Section Heading",
+            "h3": "H3 — Case Study Subheading",
+            "p": "P — Optimized Body Copy",
+            "highlight": "Single Accent",
+            "standard": "Primary Text",
+            "small": "Technical / Tabular Metadata"
         },
         "elements": {
-            "title": "UI Elements",
+            "title": "Components & Surfaces",
             "buttons": {
-                "title": "Buttons",
-                "primary": "Primary Button",
+                "title": "Actions & Buttons",
+                "primary": "Let's talk",
                 "cv": "Download CV",
-                "description": "Interactive button styles with smooth transitions on hover and subtle shadows."
+                "description": "Clear hierarchy between a single primary action and discreet 1px-bordered secondary actions."
             },
             "pills": {
-                "title": "Badges (Pills)",
-                "description": "Minimalist badges to show technologies and skills, using the global `Pill` component."
+                "title": "Stack Badges",
+                "description": "Compact 1px badges without visual clutter for technologies and tools."
             },
             "cards": {
-                "title": "Cards",
-                "light_desc": "Light Card style example used in project cards to highlight visual content and maintain maximum legibility.",
-                "dark_desc": "Dark style example used in the experience and bento grid to create visual depth in the default dark mode."
+                "title": "1px Surfaces",
+                "light_desc": "Light editorial surface on warm paper with fine borders and subtle elevation.",
+                "dark_desc": "Graphite dark surface with controlled contrast and crisp legibility."
             }
         },
         "icons": {
-            "title": "Icons",
-            "subtitle": "Main Iconography",
-            "description": "Native SVG icons are rendered inline for maximum efficiency. They are used mainly in navigation, external links and decorative details."
+            "title": "Line Iconography",
+            "subtitle": "Uniform 1.75px stroke",
+            "description": "Single family of inline vector line icons. Zero emojis and zero 3D clip-art icons."
         }
     }
 }

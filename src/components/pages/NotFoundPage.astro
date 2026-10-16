@@ -1,55 +1,29 @@
 ---
-import Bug from '@/components/icons/bug.astro'
-import Home from '@/components/icons/home.astro'
-import RefreshCw from '@/components/icons/reload.astro'
+import Container from '@/components/common/Container.astro'
+import LineIcon from '@/components/ui/LineIcon.astro'
 import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout title='404 - Page not found'>
-	<main class='flex min-h-[500px] flex-col items-center justify-center p-4'>
-		<section class='space-y-6 text-center'>
-			<h1 class='font-heading text-primary text-6xl font-bold'>404</h1>
+<Layout title='404 — Página no encontrada | Fabian Herrera'>
+	<section class='py-24 md:py-32'>
+		<Container>
+			<div class='surface-card mx-auto max-w-xl p-8 text-center md:p-12'>
+				<span class='section-number'>ERROR 404</span>
+				<h1 class='mt-2 text-scale-display tabular-nums text-[var(--text-primary)]'>404</h1>
+				<p class='mt-3 text-base text-[var(--text-secondary)]'>
+					La ruta que buscas no existe o fue movida a otra dirección.
+				</p>
 
-			<div
-				class='font-display mb-4 flex items-center justify-center space-x-2 text-4xl font-semibold'
-			>
-				<Bug />
-				<span>¡Ups! Parece que hay un bug en la matriz</span>
+				<div class='mt-8 flex flex-wrap items-center justify-center gap-3'>
+					<a
+						href='/'
+						class='inline-flex h-11 items-center gap-2 rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]'
+					>
+						<LineIcon name='arrow-left' class='size-4' />
+						<span>Volver al inicio</span>
+					</a>
+				</div>
 			</div>
-
-			<p class='font-accent mb-8 text-xl'>La página que buscas se ha perdido en el void pointer.</p>
-
-			<div
-				class='flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4'
-			>
-				<a
-					href='/'
-					class='bg-primary font-display text-primary-foreground hover:bg-primary/90 flex items-center space-x-2 px-4 py-2 font-semibold transition-colors'
-				>
-					<Home />
-					<span>Volver al inicio</span>
-				</a>
-				<button
-					class='bg-secondary font-display text-secondary-foreground hover:bg-secondary/90 flex items-center space-x-2 px-4 py-2 font-semibold transition-colors'
-					id='reload-button'
-				>
-					<RefreshCw />
-					<span>Recargar página</span>
-				</button>
-			</div>
-
-			<div class='mt-12 rounded-lg bg-black px-4 py-3 font-mono text-neutral-200 shadow-inner'>
-				<p class='text-[#ff5e69]'>&gt; Error 404: Page not found</p>
-				<p class='text-[#b16cea]'>&gt; Running diagnostics...</p>
-				<p class='text-[#ffa84b]'>&gt; Suggestion: Check the URL or navigate back to safety</p>
-			</div>
-		</section>
-	</main>
+		</Container>
+	</section>
 </Layout>
-
-<script>
-	document.getElementById('reload-button').addEventListener('click', (e) => {
-		e.preventDefault()
-		window.location.reload()
-	})
-</script>

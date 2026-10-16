@@ -1,118 +1,183 @@
 {
     "SEO": {
-        "title": "Fabian Herrera - Desarrollador web Fullstack con más 2 años de experiencia."
+        "title": "Fabian Herrera — Desarrollador web fullstack con más de 2 años de experiencia",
+        "description": "Desarrollador web fullstack con más de 2 años de experiencia creando interfaces modernas con React, Next.js y Astro para startups y negocios digitales."
     },
     "landing": {
-        "title": "Desarrollo productos digitales",
-        "title_2": "que capturan la imaginación y elevan la experiencia de usuario.",
-        "subtitle": "¡Hola! Soy Fabian Herrera, el vaquero del código. Soy un desarrollador de software especializado en crear interfaces modernas (utilizando tecnologías como React, Next.js y Astro) para impulsar startups y negocios digitales.",
+        "brand_tag": "El vaquero del código",
+        "available": "Disponible para proyectos",
+        "title": "Interfaces modernas y productos digitales",
+        "title_2": "con precisión técnica para startups y negocios en crecimiento.",
+        "subtitle": "Soy Fabian Herrera, desarrollador web fullstack con más de 2 años de experiencia creando experiencias web rápidas y escalables con React, Next.js y Astro.",
+        "cta_primary": "Hablemos",
+        "cta_secondary": "Ver proyectos",
         "WIW": {
-            "title": "Dónde he trabajado",
+            "title": "Experiencia profesional",
+            "subtitle": "Trayectoria construyendo plataformas web, sistemas de gestión e infraestructura técnica.",
             "card1": {
                 "title": "Desarrollador Web • INIFAP",
+                "role": "Desarrollador Web",
+                "company": "INIFAP",
                 "location": "Aguascalientes, México • Presencial",
-                "duration": "Enero 2025 - Junio 2025 | Estadías Profesionales",
+                "duration": "Ene 2025 — Jun 2025 · Estadía Profesional",
                 "phrase": "",
-                "description1": "Realicé mis estadías profesionales en el Instituto Nacional de Investigaciones Forestales, Agrícolas y Pecuarias (INIFAP), donde desarrollé una plataforma web para un investigador de la institución. El objetivo principal fue diseñar y construir un sitio web dinámico para dar a conocer sus investigaciones, proyectos en curso y publicaciones científicas.",
-                "description2": "Este proyecto formó parte de mis estadías para titularme como Ingeniero de Software. Por solicitud del investigador, el desarrollo no se finalizó al 100% con el fin de permitir que otro estudiante pudiera continuarlo y concluirlo siguiendo la documentación técnica detallada que preparé para el proyecto.",
+                "description1": "Desarrollé la plataforma web de divulgación científica para el Instituto Nacional de Investigaciones Forestales, Agrícolas y Pecuarias (INIFAP), diseñada para publicar investigaciones, proyectos activos y artículos científicos.",
+                "description2": "Entregué la plataforma funcional acompañada de documentación técnica integral de arquitectura y flujo de datos para asegurar la continuidad y escalabilidad institucional del proyecto.",
+                "bullets": [
+                    "Diseñé y construí una plataforma web dinámica con Astro, TypeScript y TailwindCSS para publicar investigaciones y artículos científicos.",
+                    "Estructuré la arquitectura de contenidos para optimizar la lectura, el rendimiento de carga y la indexación de publicaciones.",
+                    "Entregué documentación técnica detallada de arquitectura y componentes para garantizar la continuidad del sistema dentro del instituto."
+                ],
                 "tech": {
-                    "tech1": "Resiliencia"
+                    "tech1": "Arquitectura documentada"
                 }
             },
             "card2": {
                 "title": "Servicio Técnico de Sistemas • CompuCel",
+                "role": "Servicio Técnico de Sistemas",
+                "company": "CompuCel",
                 "location": "Cuauhtémoc, ZAC, México • Presencial",
-                "duration": "Noviembre 2022 - Febrero 2023 | Contrato Temporal",
+                "duration": "Nov 2022 — Feb 2023 · Contrato Temporal",
                 "phrase": "",
-                "description1": "Durante mi tiempo como parte del equipo de soporte técnico, fui responsable de brindar asistencia a usuarios tanto en la resolución de problemas de software como en la configuración y mantenimiento de sistemas operativos y hardware.",
-                "description2": "También desarrollé habilidades en la creación de documentación técnica, donde registraba incidencias y sus respectivas soluciones, lo que facilitó la resolución de problemas futuros para otros miembros del equipo.",
+                "description1": "Responsable de diagnóstico y soporte técnico de software, configuración de sistemas operativos y mantenimiento de hardware.",
+                "description2": "Creé documentación técnica interna registrando incidencias y soluciones estandarizadas para agilizar la atención del equipo.",
+                "bullets": [
+                    "Diagnosticé y resolví incidencias de software, sistemas operativos y hardware con enfoque en tiempos de respuesta ágiles.",
+                    "Elaboré documentación técnica interna de fallas recurrentes y protocolos de solución para acelerar el soporte del equipo.",
+                    "Coordiné la atención directa a usuarios traduciendo requerimientos técnicos en soluciones prácticas."
+                ],
                 "tech": {
                     "tech1": "Resolución de Problemas",
                     "tech2": "Comunicación",
                     "tech3": "Gestión del tiempo",
-                    "tech4": "Identificación del problema"
+                    "tech4": "Diagnóstico técnico"
                 }
             },
             "card3": {
                 "title": "Becario de Desarrollo de Software • INBAC Instituto Niels Bohr",
-                "location": "San Francisco de los Romo, AGS, México • Remoto",
-                "duration": "Marzo 2022 - Agosto 2022 | Estadías Profesionales",
+                "role": "Desarrollador de Software (Prácticas)",
+                "company": "INBAC Instituto Niels Bohr",
+                "location": "San Francisco de los Romo, AGS • Remoto",
+                "duration": "Mar 2022 — Ago 2022 · Estadía Profesional",
                 "phrase": "",
-                "description1": "Este puesto fue uno de los primeros retos que se presentarón en mi camino al estar presentando mis prácticas profesionales, ya que se creo un sistema de control escolar para administrar mejor al personal que conforma la institución, así como también a los alumnos.",
-                "description2": "Gracias a este proyecto que fue uno de los más complejos que realicé en ese tiempo, pude aprender y comprender más a profundidad el lenguange de programación PHP y JS. Así como también el uso de diferentes métodos en las bases de datos que sinceramente desconocia que, aunque las asesorias por medio de mi superior del proyecto eran prácticamente nulas, pude realizar este proyecto.",
+                "description1": "Desarrollé un sistema web de control escolar desde cero para centralizar la administración de personal docente y alumnado.",
+                "description2": "Implementé la lógica backend en PHP y el modelo relacional en MySQL con interfaz interactiva en JavaScript de forma autónoma.",
+                "bullets": [
+                    "Construí de forma autónoma un sistema integral de control escolar para gestionar personal administrativo, docentes y alumnos.",
+                    "Diseñé e implementé la base de datos relacional en MySQL y los módulos de negocio en PHP y JavaScript.",
+                    "Digitalicé los procesos de consulta y registro académico que antes se operaban manualmente en la institución."
+                ],
                 "tech": {
                     "tech1": "Pensamiento Analítico"
                 }
             }
         },
         "projects": {
-          "title": "Algunos de mis proyectos",
-          "project1": {
-            "title": "Dune UI",
-            "subtitle": "Una biblioteca de componentes TailwindCSS",
-            "description": "Este proyecto ha sido uno de los proyectos un tanto grande de los que he realizado en el año 2024 y que gracias a este pude aprender muchas más cosas de las cuales anteriormente desconocía y que no sabía cómo usar.",
-            "description2": "Hoy en día, DuneUI es una biblioteca más de componentes de TailwindCSS, pero esta esta más enfocada a mi estilo de diseño que llega a ser un tanto más minimalista y moderno, la cual a conllevado muchos meses de trabajo y planificación anticipada. A lo cual, decidí crearla por motivación de varios amigos, maestros y conocidos que les gusta mi forma de diseñar y es aquí que les presento DuneUI.",
-            "summary": "Biblioteca de componentes para TailwindCSS enfocada en un diseño minimalista y moderno, creada para construir interfaces limpias y altamente eficientes."
-          },
-          "project3": {
-            "title": "ClearCut Studio",
-            "subtitle": "Edita imágenes con IA",
-            "description": "ClearCut Studio es un proyecto que se desarrollo durante el año 2026, el cual se trata de una aplicación web que permite a los usuarios eliminar fondos de imagenes utilizando inteligencia artificial y optimizar el peso de sus imagenes a formatos .WebP, .AVIF, etc.",
-            "description2": "El proyecto se desarrollo utilizando NextJS, TypeScript y Google Antigravity. Fue un proyecto que me permitió aprender a integrar modelos de inteligencia artificial en aplicaciones web, así como también a optimizar el rendimiento y la experiencia del usuario al trabajar con imágenes de alta calidad.",
-            "summary": "Aplicación web impulsada por IA para eliminar fondos de imágenes al instante y optimizar su peso a formatos modernos como WebP y AVIF."
-          },
-          "project4": {
-            "title": "Boxode Website",
-            "subtitle": "Rediseño total de la página web de Boxode",
-            "description": "El rediseño de la página web de Boxode fue una experiencia que me permitió fusionar creatividad visual con identidad tecnológica. Inspirado en la inmensidad del espacio, el nuevo diseño incorpora elementos como cielos estrellados y sutiles lluvias de meteoros que envuelven la interfaz en una atmósfera futurista y envolvente. La paleta principal de tonos de azul profundo, blanco brillante y acentos en negro refuerza una estética limpia, profesional y moderna que respeta parte del estilo anterior mientras lo lleva a un nuevo nivel",
-            "description2": "Se mantuvieron ciertos componentes visuales del diseño previo, pero esta vez se aplico una estructura más fluida e intuitiva, integrando elementos de interacción actuales que reflejan mejor el carácter innovador de Boxode y el resultado fue una propuesta visual sólida que refleja una visión más audaz del futuro digital de la marca. ",
-            "summary": "Rediseño completo de temática espacial para Boxode, fusionando creatividad visual con una identidad tecnológica profesional y moderna."
-          }
+            "title": "Proyectos seleccionados",
+            "subtitle": "Casos de estudio enfocados en decisiones de producto, arquitectura frontend y resultados.",
+            "labels": {
+                "problem": "Problema",
+                "decision": "Decisión",
+                "result": "Resultado",
+                "live": "Ver proyecto",
+                "code": "Código fuente",
+                "all": "Explorar archivo de proyectos"
+            },
+            "project3": {
+                "title": "ClearCut Studio",
+                "subtitle": "Procesamiento y optimización de imágenes con IA",
+                "year": "2026",
+                "problem": "Remover fondos y comprimir imágenes para producción web suele requerir múltiples herramientas externas o flujos lentos que degradan la calidad visual.",
+                "decision": "Desarrollé una aplicación web en Next.js y TypeScript integrando modelos de IA para recorte automático de fondos y conversión directa a WebP y AVIF.",
+                "result": "Flujo unificado en el navegador que entrega activos listos para web en segundos sin servidores intermedios pesados. [COMPLETAR: porcentaje promedio de reducción de peso / usuarios activos].",
+                "description": "Aplicación web impulsada por IA para eliminar fondos de imágenes al instante y optimizar su peso a formatos modernos como WebP y AVIF.",
+                "description2": "Desarrollado con Next.js, TypeScript y Google Antigravity, priorizando rendimiento en cliente y experiencia de uso inmediata.",
+                "summary": "Aplicación web impulsada por IA para eliminar fondos de imágenes al instante y optimizar su peso a formatos modernos como WebP y AVIF."
+            },
+            "project4": {
+                "title": "Boxode Website",
+                "subtitle": "Rediseño de identidad digital y plataforma web",
+                "year": "2024",
+                "problem": "El sitio anterior de Boxode carecía de jerarquía visual clara y no transmitía la solidez tecnológica ni el carácter moderno de la marca.",
+                "decision": "Rediseñé la arquitectura de información y la interfaz con Next.js, React, TypeScript y TailwindCSS bajo una dirección visual limpia con alto contraste.",
+                "result": "Plataforma en producción (boxode.org) con navegación fluida, carga rápida y una identidad digital coherente. [COMPLETAR: mejora en Lighthouse / tiempo de permanencia].",
+                "description": "Rediseño completo para Boxode, fusionando dirección de arte tecnológica con una estructura de navegación rápida e intuitiva.",
+                "description2": "Implementado con Next.js, React y TailwindCSS manteniendo consistencia visual y tiempos de respuesta óptimos.",
+                "summary": "Rediseño completo para Boxode, fusionando creatividad visual con una identidad tecnológica profesional y moderna."
+            },
+            "project1": {
+                "title": "Dune UI",
+                "subtitle": "Biblioteca de componentes para TailwindCSS",
+                "year": "2025",
+                "problem": "Recrear patrones de interfaz desde cero en cada nuevo proyecto generaba fricción, código duplicado e inconsistencias en espaciado y accesibilidad.",
+                "decision": "Creé un sistema y catálogo de componentes modulares con Astro, React, TypeScript y TailwindCSS enfocado en diseño minimalista y reutilización directa.",
+                "result": "Biblioteca pública documentada (ui.fabianh.me) lista para acelerar el desarrollo de interfaces modernas. [COMPLETAR: número de componentes publicados / uso en proyectos].",
+                "description": "Biblioteca de componentes para TailwindCSS enfocada en un diseño minimalista y moderno, creada para construir interfaces limpias y altamente eficientes.",
+                "description2": "Planificada y construida como sistema de diseño abierto para acelerar la entrega de productos digitales.",
+                "summary": "Biblioteca de componentes para TailwindCSS enfocada en un diseño minimalista y moderno, creada para construir interfaces limpias y altamente eficientes."
+            }
         },
         "moreinfo": {
-            "title": "Mas sobre mi",
+            "title": "Sobre mí",
             "phrase": "\"La inspiración desbloquea el futuro\"",
             "who": {
-                "1": "Ingeniero de Software egresado de la Universidad Tecnológica del Norte de Aguascalientes con 1 año de experiencia como desarrollador.",
+                "1": "Desarrollador web fullstack con más de 2 años de experiencia, egresado de Ingeniería en Desarrollo y Gestión de Software por la Universidad Tecnológica del Norte de Aguascalientes (UTNA).",
                 "2": {
-                    "fp": "Empecé a los 13 años a relacionarme más con el mundo de la programación creando mis primeros programas en C++. Luego de un tiempo comencé a involucrarme más en el aprendizaje del",
+                    "fp": "Comencé a programar a los 13 años en C++ y desde entonces he enfocado mi carrera en construir productos cuidando cada capa del",
                     "sp": "Desarrollo Web",
                     "tp": "UI/UX",
-                    "ftp": "y claro, también el desarrollo de",
-                    "ffp": "Aplicaciones Móviles."
+                    "ftp": "y la creación de",
+                    "ffp": "Apps Móviles."
                 },
-                "3": "Me encanta el viajar y especialmente estar cercas de la naturaleza y conocer más sobre ella.",
-                "title": "¿Quién soy?",
-                "button": "Ver resumen completo",
+                "3": "Disfruto combinar ingeniería limpia con criterio editorial, y fuera del código recargo energía viajando y explorando la naturaleza.",
+                "title": "Perfil y enfoque",
+                "button": "Conocer mi historia completa",
                 "story": [
-                    "Soy un joven apasionado por la tecnología en general desde una corta edad. Empecé con la programación cuando ingresé a la secundaria donde me dieron mis primeros pasos de cómo programar en C++, solo que no fue muy profunda la enseñanza. Luego en preparatoria se comenzó a ver todo lo relacionado con tecnologías web y redes, de lo cual empecé a quedar fascinado de todo lo que miraba ahí.",
-                    "Una de mis mayores motivaciones es el aprender día tras día. Así fue que empecé siendo autodidacta viendo diferentes videos tutoriales, documentos e incluso hasta libros que iba encontrando por internet. Algunos años después fue que comencé a cursar la Ingeniería en Desarrollo y Gestión de Software en la UTNA. Y, desde entonces, sigo aprendiendo y sigo construyéndome como desarrollador de software.",
-                    "Me fascina seguir enriqueciendo mis conocimientos con diferentes charlas de personas profesionales del medio, así como también el poder compartir poco a poco mi conocimiento con la comunidad de desarrolladores."
+                    "Soy un apasionado por la tecnología desde temprana edad. Di mis primeros pasos programando en C++ durante la secundaria y en preparatoria descubrí el desarrollo web y las redes, área que definió mi camino profesional.",
+                    "El aprendizaje continuo ha sido mi motor principal. Comencé de forma autodidacta con documentación técnica, libros y proyectos propios antes de cursar la Ingeniería en Desarrollo y Gestión de Software en la UTNA, consolidando más de 2 años de experiencia como desarrollador web fullstack.",
+                    "Me motiva construir interfaces que no solo funcionen rápido, sino que comuniquen claridad y confianza para startups, equipos de producto y negocios digitales."
                 ],
-                "quote": "Y recuerda, cree en ti mismo y en lo que eres. Sé consciente de que hay algo en tu interior que es más grande que cualquier obstáculo."
+                "quote": "Cree en ti mismo y en lo que construyes. El cuidado por los detalles es lo que transforma buen código en un gran producto."
             }
         },
         "bento": {
             "weather": {
-                "title": "Clima actual"
+                "title": "Clima actual",
+                "visibility": "Visibilidad",
+                "wind": "Viento",
+                "humidity": "Humedad",
+                "min": "Mín",
+                "max": "Máx",
+                "error": "Clima temporalmente no disponible",
+                "retry": "Reintentar"
             },
             "hobbies": {
-                "fp": "Cuando no estoy inmerso en el mundo del desarrollo, disfruto dedicar tiempo a actividades que alimentan mi creatividad y me mantienen inspirado. Me encanta <strong class='font-heading text-black dark:text-white font-bold'>Leer</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Cocinar</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Tocar violín</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Jardinería</strong>, <strong class='font-heading text-black dark:text-white font-bold'>Explorar la naturaleza</strong>, y sobre todo disfruto también del <strong class='font-heading text-black dark:text-white font-bold'>Pasar tiempo con mi familia y amigos</strong>. Estas actividades no solo me ayudan a desconectar por un tiempo, sino que también me retan a pensar de manera diferente, lo que muchas veces se traduce en soluciones más creativas y eficaces en mi trabajo como desarrollador.",
-                "sp": "Creo firmemente que lo que hacemos fuera del teclado tiene un impacto directo en nuestra perspectiva y creatividad cuando estamos frente a él. <strong class='font-heading text-black dark:text-white font-bold'>¡Es un círculo perfecto de aprendizaje e inspiración!</strong>"
+                "title": "Hobbies e intereses",
+                "items": [
+                    { "name": "Leer", "icon": "book" },
+                    { "name": "Cocinar", "icon": "utensils" },
+                    { "name": "Tocar violín", "icon": "music" },
+                    { "name": "Jardinería", "icon": "sprout" },
+                    { "name": "Explorar la naturaleza", "icon": "compass" },
+                    { "name": "Familia y amigos", "icon": "users" }
+                ],
+                "fp": "Cuando no estoy inmerso en el desarrollo, dedico tiempo a actividades que alimentan mi criterio y atención al detalle: <strong class='font-semibold text-[var(--text-primary)]'>Leer</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Cocinar</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Tocar violín</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Jardinería</strong>, <strong class='font-semibold text-[var(--text-primary)]'>Explorar la naturaleza</strong> y <strong class='font-semibold text-[var(--text-primary)]'>Pasar tiempo con mi familia y amigos</strong>.",
+                "sp": "Lo que cultivamos fuera del teclado influye directamente en la claridad y creatividad con la que resolvemos problemas frente a él."
             },
             "education": {
                 "title": "Educación",
                 "career": "Ingeniería en Desarrollo y Gestión de Software",
+                "institution": "UTNA",
                 "location": "Rincón de Romos, AGS",
-                "duration": "Septiembre 2019 - Abril 2025",
-                "description": "Estudiante de la <a href='https://utna.edu.mx/utna' target='_blank' rel='noopener noreferrer' class='font-heading font-bold text-black dark:text-white underline'>Universidad Tecnológica del Norte de Aguascalientes (UTNA)</a>, donde he fortalecido mis habilidades en desarrollo de software y he ampliado mis conocimientos en áreas clave como <strong class='font-heading font-bold text-black dark:text-white'>algoritmos</strong>, <strong class='font-heading font-bold text-black dark:text-white'>estructuras de datos</strong>, <strong class='font-heading font-bold text-black dark:text-white'>programación orientada a objetos</strong>, <strong class='font-heading font-bold text-black dark:text-white'>manejo de bases de datos</strong>, etc. Mi formación me ha permitido integrar teoría y práctica para abordar proyectos tecnológicos con enfoque innovador y eficiente."
+                "duration": "2019 — 2025",
+                "description": "Formación en la <a href='https://utna.edu.mx/utna' target='_blank' rel='noopener noreferrer' class='font-semibold text-[var(--text-primary)] underline underline-offset-4 hover:text-[var(--accent)]'>Universidad Tecnológica del Norte de Aguascalientes (UTNA)</a>, consolidando bases sólidas en <strong class='font-semibold text-[var(--text-primary)]'>arquitectura de software</strong>, <strong class='font-semibold text-[var(--text-primary)]'>estructuras de datos</strong>, <strong class='font-semibold text-[var(--text-primary)]'>programación orientada a objetos</strong> y <strong class='font-semibold text-[var(--text-primary)]'>bases de datos</strong>."
             },
             "time": {
                 "title": "Hora actual",
                 "timezone": "Estamos en la misma zona horaria (UTC-6)",
                 "direction": {
-                    "back": "Atrás",
-                    "forward": "Adelante"
+                    "back": "atrás",
+                    "forward": "adelante"
                 },
                 "message": {
                     "youre": "Estás",
@@ -122,72 +187,85 @@
                     },
                     "local": "de México"
                 },
-                "zone": "Zona horaria: "
+                "zone": "Zona horaria:"
             }
         },
         "contact": {
-            "title": "¿Listo para trabajar juntos :)?",
+            "title": "Hablemos de tu próximo proyecto",
             "form": {
-                "gratefulness": "¡Gracias por estar aqui!",
-                "subtitle": "Si tienes alguna pregunta, un proyecto en mente en que te gustaría que trabajáramos juntos, o simplemente quieres decir ¡Hola!, mi correo es el siguiente:",
+                "gratefulness": "Disponible para proyectos freelance y posiciones fullstack",
+                "subtitle": "Cuéntame sobre tu producto, calendario o vacante. Respondo personalmente en menos de 24 horas hábiles.",
                 "alternatives": {
-                    "title": "Más formas de contacto",
-                    "subtitle": "Si lo prefieres, también puedes contactarme mediante mis otras redes que te dejo aquí debajo. En todas siempre estaré con el gusto de poder atenderte."
+                    "title": "Contacto directo y redes",
+                    "subtitle": "También puedes escribirme directamente por correo o conectar en mis perfiles profesionales."
                 },
                 "contactForm": {
-                    "title": "Rellena el siguiente formulario y me pondré en contacto contigo lo más pronto posible.",
+                    "title": "Envíame un mensaje directo",
                     "name": "Nombre",
                     "email": "Correo electrónico",
                     "subject": "Asunto",
                     "message": "Mensaje",
-                    "submit": "Enviar",
-                    "delete": "Borrar",
-                    "footer": "No conservo ni comparto ninguno de tus datos personales. Todo lo proporcionado en el formulario es totalmente confidencial y solo será utilizado para ambitos de contacto profesional."
+                    "submit": "Enviar mensaje",
+                    "sending": "Enviando mensaje...",
+                    "delete": "Limpiar",
+                    "footer": "No conservo ni comparto ninguno de tus datos personales. Todo lo proporcionado en el formulario es totalmente confidencial y solo será utilizado para ambitos de contacto profesional.",
+                    "errors": {
+                        "name": "Por favor ingresa tu nombre (mínimo 2 caracteres).",
+                        "email": "Ingresa un correo electrónico válido (ej. nombre@dominio.com).",
+                        "subject": "Indica un asunto breve para tu mensaje (mínimo 3 caracteres).",
+                        "message": "Escribe un mensaje con al menos 10 caracteres."
+                    },
+                    "status": {
+                        "successTitle": "Mensaje enviado correctamente",
+                        "successBody": "He recibido tu mensaje y te responderé lo antes posible. ¡Gracias por escribir!",
+                        "errorTitle": "No se pudo enviar el mensaje",
+                        "errorBody": "Ocurrió un problema al conectar con el servidor. Puedes intentarlo de nuevo o escribirme directamente a ctofabian@gmail.com."
+                    }
                 }
             }
         }
     },
     "styleguide": {
         "title": "Guía de Estilo",
-        "subtitle": "Conoce un poco más sobre el diseño, colores y tipografía que componen mi portafolio.",
-        "badge": "Design System",
+        "subtitle": "Sistema de diseño editorial-tecnológico 2026: tokens en oklch(), escala tipográfica fluida e iconografía de línea.",
+        "badge": "Sistema de Diseño 2026",
         "colors": {
-            "title": "Colores",
-            "description": "Una paleta oscura, contrastante y vibrante con gradientes. Ideal para componentes estilo glassmorphism que no cansen la vista pero aporten elegancia."
+            "title": "Paleta y Tokens OKLCH",
+            "description": "Superficies neutras cálidas en modo claro y grafito profundo en modo oscuro, acompañadas de un único acento terracota-cobre con contraste WCAG AA."
         },
         "typo": {
-            "title": "Tipografía",
-            "description": "El diseño rápido y elegante comienza con una tipografía limpia. Este es el texto que se utiliza para párrafos largos, descripciones y contenido general en el portafolio, garantizando una excelente legibilidad.",
-            "h1": "H1 - Título Principal",
-            "h2": "H2 - Título Secundario",
-            "h3": "H3 - Subtítulo",
-            "p": "P - Texto Base",
-            "highlight": "Texto Destacado",
-            "standard": "Texto Estándar",
-            "small": "Texto Pequeño"
+            "title": "Escala Tipográfica Fluida",
+            "description": "Definida una sola vez mediante clamp() con Albert Sans Variable para titulares expresivos, lectura cómoda en cuerpo y cifras tabulares.",
+            "h1": "H1 — Titular Principal Editorial",
+            "h2": "H2 — Encabezado de Sección",
+            "h3": "H3 — Subtítulo de Caso de Estudio",
+            "p": "P — Cuerpo de lectura optimizado",
+            "highlight": "Acento Único",
+            "standard": "Texto Principal",
+            "small": "Metadato Técnico / Tabular"
         },
         "elements": {
-            "title": "Elementos UI",
+            "title": "Componentes y Superficies",
             "buttons": {
-                "title": "Botones",
-                "primary": "Botón Primario",
+                "title": "Acciones y Botones",
+                "primary": "Hablemos",
                 "cv": "Descargar CV",
-                "description": "Estilos de botones interactivos con transiciones suaves en hover y sombras sutiles."
+                "description": "Jerarquía clara entre acción primaria única y acciones secundarias discretas con bordes de 1px."
             },
             "pills": {
-                "title": "Etiquetas (Pills)",
-                "description": "Etiquetas minimalistas para mostrar tecnologías y habilidades, usando el componente global `Pill`."
+                "title": "Etiquetas de Stack",
+                "description": "Etiquetas compactas de 1px sin ruido visual para tecnologías y herramientas."
             },
             "cards": {
-                "title": "Tarjetas (Cards)",
-                "light_desc": "Ejemplo de estilo claro (Light Card) usado en las tarjetas de proyectos para destacar contenido visual y mantener legibilidad máxima.",
-                "dark_desc": "Ejemplo de estilo oscuro usado en la experiencia y bento grid para crear profundidad visual en el modo oscuro por defecto."
+                "title": "Superficies de 1px",
+                "light_desc": "Superficie editorial clara sobre papel cálido con borde fino y sombra sutil.",
+                "dark_desc": "Superficie grafito en modo oscuro con contraste controlado y legibilidad alta."
             }
         },
         "icons": {
-            "title": "Iconos",
-            "subtitle": "Iconografía Principal",
-            "description": "Los iconos SVG nativos se renderizan inline para máxima eficiencia. Se utilizan principalmente en navegación, enlaces externos y detalles decorativos."
+            "title": "Iconografía de Línea",
+            "subtitle": "Trazo uniforme de 1.75px",
+            "description": "Familia única de iconos vectoriales de línea (estilo Lucide) renderizados inline. Cero emojis y cero iconos 3D."
         }
     }
 }

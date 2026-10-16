@@ -1,6 +1,6 @@
 ---
 import Container from '@/components/common/Container.astro'
-import SocialMediaLinks from '@/components/features/SocialMediaLinks.astro'
+import LineIcon from '@/components/ui/LineIcon.astro'
 import { getI18N } from '@/i18n'
 import { Image } from 'astro:assets'
 
@@ -8,73 +8,99 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<section class='hero-section relative flex flex-col items-center justify-center overflow-hidden pt-10 lg:pt-20 lg:min-h-[90vh] w-full'>
-
-	<!-- Background grid lines -->
-	<div class='hero-grid' aria-hidden='true'></div>
-
-	<!-- Mesh gradient blobs -->
-	<div class='pointer-events-none absolute inset-0 overflow-hidden' aria-hidden='true'>
-		<div class='hero-blob hero-blob-1 absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-[#b16cea]/10 blur-[100px] dark:bg-[#b16cea]/5'></div>
-		<div class='hero-blob hero-blob-2 absolute top-20 -left-20 h-[400px] w-[400px] rounded-full bg-[#ff5e69]/8 blur-[120px] dark:bg-[#ff5e69]/5'></div>
-		<div class='hero-blob hero-blob-3 absolute -bottom-20 right-1/3 h-[300px] w-[300px] rounded-full bg-[#ffa84b]/6 blur-[100px] dark:bg-[#ffa84b]/5'></div>
-	</div>
-
+<section
+	aria-labelledby='hero-heading'
+	class='relative border-b border-[var(--border-subtle)] pt-8 pb-16 md:pt-14 md:pb-24'
+>
 	<Container>
-		<div class="relative z-10 flex flex-col items-center justify-center lg:flex-row size-full">
-			<!-- Text side -->
-			<div class='relative z-10 size-full flex-1 pr-4 text-center lg:text-left'>
+		<div class='grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12'>
+			<!-- Editorial Copy (7 columns on desktop) -->
+			<div class='flex flex-col items-start lg:col-span-7'>
+				<!-- Technical Eyebrow -->
+				<div class='mb-6 flex flex-wrap items-center gap-3 text-xs font-mono text-[var(--text-muted)]'>
+					<span class='inline-flex items-center gap-1.5 text-[var(--text-primary)] font-medium'>
+						<LineIcon name='map-pin' class='size-3.5 text-[var(--accent)]' />
+						Zacatecas, MX
+					</span>
+					<span aria-hidden='true'>/</span>
+					<span>React · Next.js · Astro · TypeScript</span>
+				</div>
 
-				<h1
-					class='font-heading gradient-text text-4xl font-bold tracking-tight lg:h-auto lg:text-7xl'
-				>
-					{i18n.landing.title}
+				<!-- Single H1 on the page -->
+				<h1 id='hero-heading' class='text-scale-display text-balance text-[var(--text-primary)]'>
+					{i18n.landing.title}{' '}
+					<span class='text-[var(--text-secondary)] font-normal italic font-serif'>
+						{i18n.landing.title_2}
+					</span>
 				</h1>
-				<h2 class='font-heading mt-2 text-3xl font-bold text-balance text-black dark:text-white lg:text-5xl'>
-					{i18n.landing.title_2}
-				</h2>
-				<p class='font-accent mt-5 max-w-xl text-base font-normal text-balance text-neutral-600 dark:text-[#a3a3a3] lg:text-lg'>
+
+				<!-- Supporting phrase: max 2 lines on desktop -->
+				<p
+					class='mt-6 max-w-2xl text-scale-body-lg text-[var(--text-secondary)] line-clamp-3 md:line-clamp-2'
+				>
 					{i18n.landing.subtitle}
 				</p>
-				<div>
-					<SocialMediaLinks />
+
+				<!-- Single Primary CTA ("Hablemos") + Discreet Secondary CTA ("Ver proyectos") -->
+				<div class='mt-8 flex flex-wrap items-center gap-4'>
+					<a
+						href='#contact'
+						class='inline-flex h-12 items-center justify-center gap-2.5 rounded-lg bg-[var(--accent)] px-6 text-sm font-semibold text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]'
+					>
+						<span>{i18n.landing.cta_primary}</span>
+						<LineIcon name='arrow-right' class='size-4' />
+					</a>
+
+					<a
+						href='#projects'
+						class='inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-[var(--border-default)] bg-[var(--bg-surface)] px-5 text-sm font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-strong)] hover:bg-[var(--bg-elevated)]'
+					>
+						<span>{i18n.landing.cta_secondary}</span>
+						<LineIcon name='arrow-up-right' class='size-4 text-[var(--text-muted)]' />
+					</a>
 				</div>
 			</div>
 
-			<!-- Photo side -->
-			<div class='photo-wrapper relative mt-8 aspect-square h-auto w-72 select-none lg:mt-0 lg:w-[520px]'>
-				<Image
-					src='/me.avif'
-					alt='Fabian Herrera photo'
-					width='600'
-					height='600'
-					loading='eager'
-					fetchpriority='high'
-					decoding='async'
-					class='relative z-10 w-full h-auto'
-					style='
-					mask-image: linear-gradient(to bottom, white 50%, transparent 88%);
-					aspect-ratio: 1/1;
-				'
-				/>
+			<!-- Asymmetric Portrait Column (5 columns on desktop) -->
+			<div class='lg:col-span-5 flex justify-center lg:justify-end'>
+				<figure class='surface-card relative w-full max-w-[340px] sm:max-w-[370px] overflow-hidden p-3 rounded-2xl shadow-sm'>
+					<div class='relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-gradient-to-b from-[var(--bg-elevated)] via-[var(--bg-surface)] to-[var(--bg-elevated)]'>
+						<!-- Subtle accent aura -->
+						<div
+							class='pointer-events-none absolute inset-0 bg-radial from-[var(--accent)]/15 via-transparent to-transparent opacity-80'
+							aria-hidden='true'
+						></div>
+
+						<Image
+							src='/me.webp'
+							alt='Retrato de Fabian Herrera, desarrollador web fullstack'
+							width={523}
+							height={824}
+							loading='eager'
+							fetchpriority='high'
+							decoding='async'
+							class='relative z-10 h-full w-full object-contain object-bottom pt-3 transition-transform duration-500 hover:scale-[1.02]'
+							style='mask-image: linear-gradient(to bottom, black 86%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 86%, transparent 100%);'
+						/>
+					</div>
+					<figcaption
+						class='mt-3 flex items-center justify-between border-t border-[var(--border-subtle)] pt-3 px-1 text-xs'
+					>
+						<div class='flex items-center gap-2'>
+							<span class='font-heading font-semibold text-[var(--text-primary)]'>
+								Fabian Herrera
+							</span>
+							<span class='text-[var(--text-muted)]' aria-hidden='true'>·</span>
+							<span class='font-serif italic text-[var(--text-secondary)]'>
+								{i18n.landing.brand_tag}
+							</span>
+						</div>
+						<span class='font-mono tabular-nums text-[11px] text-[var(--text-muted)]'>
+							UTC-6 · FULLSTACK
+						</span>
+					</figcaption>
+				</figure>
 			</div>
 		</div>
 	</Container>
-
 </section>
-
-<style>
-	@reference "../../styles/global.css";
-
-	/* Grid lines */
-	.hero-grid {
-		position: absolute;
-		inset: 0;
-		background-image:
-			linear-gradient(var(--border-default) 1px, transparent 1px),
-			linear-gradient(90deg, var(--border-default) 1px, transparent 1px);
-		background-size: 64px 64px;
-		mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black, transparent);
-		pointer-events: none;
-	}
-</style>
