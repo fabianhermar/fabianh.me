@@ -1,5 +1,3 @@
-# fabianh.me — Portafolio Personal (v3.0 · 2026 Edition)
-
 <div align="center">
   <picture>
     <source
