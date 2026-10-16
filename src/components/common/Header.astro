@@ -33,9 +33,10 @@ const homePath = translatePath('/')
 
 				<span class='hidden h-4 w-px bg-[var(--border-subtle)] md:inline-block' aria-hidden='true'></span>
 
+				<!-- Availability pill: Only on desktop/tablet -->
 				<a
 					href={`${homePath}#contact`}
-					class='inline-flex items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-2.5 py-1 text-[11px] font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
+					class='hidden md:inline-flex items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-2.5 py-1 text-[11px] font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
 				>
 					<span class='relative flex size-2'>
 						<span
@@ -43,7 +44,7 @@ const homePath = translatePath('/')
 						></span>
 						<span class='relative inline-flex size-2 rounded-full bg-[var(--status-online)]'></span>
 					</span>
-					<span class='truncate max-w-[145px] sm:max-w-none'>{t('nav.available')}</span>
+					<span>{t('nav.available')}</span>
 				</a>
 			</div>
 
@@ -93,11 +94,12 @@ const homePath = translatePath('/')
 
 			<!-- Actions: Command Palette + CV + Lang + Theme + Mobile Toggle -->
 			<div class='flex items-center gap-2'>
+				<!-- Command Palette Trigger (Desktop & Tablet only) -->
 				<button
 					type='button'
 					data-open-cmdk
 					aria-label={t('nav.command')}
-					class='inline-flex h-9 items-center gap-2 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-2.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
+					class='hidden sm:inline-flex h-9 items-center gap-2 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-2.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
 				>
 					<LineIcon name='search' class='size-3.5' />
 					<span class='hidden xl:inline'>{t('nav.command')}</span>
@@ -171,6 +173,23 @@ const homePath = translatePath('/')
 			id='mobile-menu-panel'
 			class='mt-2 hidden rounded-xl border border-[var(--border-default)] bg-[var(--bg-surface)] p-4 shadow-lg lg:hidden'
 		>
+			<!-- Mobile Search / Command Palette trigger -->
+			<button
+				type='button'
+				data-open-cmdk
+				data-mobile-link
+				aria-label={t('nav.command')}
+				class='mb-3 flex w-full items-center justify-between rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3.5 py-2.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
+			>
+				<div class='flex items-center gap-2'>
+					<LineIcon name='search' class='size-4 text-[var(--accent)]' />
+					<span>{t('nav.command')}</span>
+				</div>
+				<kbd class='rounded border border-[var(--border-default)] bg-[var(--bg-surface)] px-2 py-0.5 font-mono text-[10px] text-[var(--text-muted)]'>
+					Buscar
+				</kbd>
+			</button>
+
 			<ul class='flex flex-col gap-1'>
 				<li>
 					<a
@@ -224,7 +243,24 @@ const homePath = translatePath('/')
 				</li>
 			</ul>
 
-			<div class='mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--border-subtle)] pt-3'>
+			<!-- Mobile Availability Status -->
+			<div class='mt-3 border-t border-[var(--border-subtle)] pt-3'>
+				<a
+					href={`${homePath}#contact`}
+					data-mobile-link
+					class='flex items-center gap-2.5 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3 py-2 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]'
+				>
+					<span class='relative flex size-2 shrink-0'>
+						<span
+							class='status-dot-pulse absolute inline-flex h-full w-full rounded-full bg-[var(--status-online)]'
+						></span>
+						<span class='relative inline-flex size-2 rounded-full bg-[var(--status-online)]'></span>
+					</span>
+					<span class='truncate'>{t('nav.available')}</span>
+				</a>
+			</div>
+
+			<div class='mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--border-subtle)] pt-3'>
 				<div class='flex items-center gap-2'>
 					<LangSelector />
 					<ThemeToggle />
