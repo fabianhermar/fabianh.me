@@ -12,6 +12,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://fabianh.me',
     output: 'server',
 
     adapter: vercel({
