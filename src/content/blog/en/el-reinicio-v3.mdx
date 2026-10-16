@@ -1,0 +1,123 @@
+---
+title: "The Reset: Why I Paused Coding, What Silence Taught Me, and Rebuilding v3.0"
+description: "An honest reflection on stepping away from programming due to health, family, and personal hardships, and the architectural decisions behind fabianh.me v3.0."
+pubDate: 2026-10-16
+lang: "en"
+image: "/portfolio_mockup.webp"
+author: "Fabian Herrera"
+category: "Reflections"
+readTime: 8
+---
+
+# The Reset: Why I Paused Coding, What Silence Taught Me, and Rebuilding v3.0
+
+There are moments when the screen turns dark not by choice, but because life demands your undivided attention. For a long while, my GitHub contributions went flat, my professional channels fell quiet, and the projects I used to pour late nights into were frozen in place.
+
+To anyone following my work, it might have looked like a sudden disappearance. In truth, I navigated an intense storm of external challenges that completely overwhelmed me: physical and mental health struggles that drained my daily energy, complex family hardships that required my complete presence, and the devastating passing of my partner—a loss that threw my world into chaos and literally knocked me down.
+
+Today, after months of quiet rebuilding and processing that profound grief, I feel somewhat better and I am back. And I didn't want this return to be just an isolated commit or a quick tweet; I wanted it to be a complete reinvention of my digital home: **the release of version 3.0 of [fabianh.me](https://fabianh.me)**.
+
+In this article, I want to share openly what happened during this hiatus, why I chose such a bold, radical redesign, and the technical and design choices that shaped this new chapter.
+
+---
+
+## 1. The Involuntary Break: When Life Demands a Pause
+
+In tech culture, there is relentless pressure to maintain uninterrupted visibility: the hustle myth, keeping GitHub streaks alive, writing articles every week, and never missing a beat with the newest framework or AI release.
+
+Yet when your health stumbles, when things at home crack, and when the person you love passes away, code loses any sense of urgency. At first, I attempted to keep coding as if I could outrun the shock. I sat in front of my editor trying to solve bugs while my head was enduring an unbearable storm and sorrow. The outcome was predictable: complete burnout, paralysis, and the certainty that I could not simply carry on in autopilot.
+
+I learned a fundamental truth: **you cannot debug your personal life with `Ctrl + Z`**. Grief, the body, and the mind demand patience, acceptance, help, and above all, silence.
+
+Choosing to step back from the keyboard wasn't quitting; it was an act of survival and self-respect. I focused on healing, caring for my health, standing by my family through their hardest days, and learning to navigate the painful absence of my partner. It was a long, slow climb, but taking that necessary pause is why today I feel renewed energy and the firm conviction to return to my craft.
+
+---
+
+## 2. The Return: Reborn in Code
+
+The passion for programming never died; it was simply waiting for the noise to subside. A few weeks ago, for the first time in a very long time, I felt that familiar spark in my hands again. A genuine curiosity to open the terminal, try new Astro features, refine typographic hierarchies, and craft an interface that felt alive.
+
+I realized that software engineering is not just my job—it is my craft and my voice. But if I was coming back, I didn't want to do it halfway. I wanted to return with greater maturity, clearer priorities, and a benchmark of quality far higher than what I had settled for in the past.
+
+The natural first step was to examine my calling card to the world: my personal portfolio.
+
+---
+
+## 3. Confronting My Past Self: Why Such a Sudden Redesign?
+
+When I revisited the codebase of my previous portfolio—built over two years ago—I experienced an immediate reality check. The website belonged to an outdated 2023 design cycle that no longer represented who I am:
+
+1. **Theatrical animations hurting usability**: Section titles animated letter-by-letter where every single letter was an `<h1>` tag inside Framer Motion. While flashy in 2023, it was a catastrophe for screen readers, accessibility, and SEO semantics.
+2. **Generic, toy-like visuals**: Cluttered emojis and 3D clip-art icons that undermined professional credibility.
+3. **Inconsistent brand profile**: Contradictory mentions of "Frontend" vs. "Fullstack", and mismatched years of experience.
+4. **Cluttered Hero**: Multiple competing CV buttons and four social links fighting for attention in the first viewport fold.
+5. **Projects written like homework assignments**: Descriptions focused on "what I learned" rather than engineering decisions, product architecture, and measurable business impact.
+6. **Bento Grid with rough loading states**: Widgets displaying plain text `"Loading..."` banners, flickering upon updates, and causing layout shifts on clock ticks.
+
+Applying small cosmetic fixes didn't make sense. I needed a complete overhaul: **a foundational visual and technical reset built for 2026 standards**.
+
+---
+
+## 4. Anatomy of Version 3.0: Design and Architectural Choices
+
+For v3.0, I established an uncompromising philosophy: **editorial-tech aesthetics, razor-sharp hierarchy, fine 1px borders, expressive typography, and uncompromising performance**.
+
+```
+                ┌──────────────────────────────────────────────┐
+                │        fabianh.me · v3.0 (2026)              │
+                ├──────────────────────────────────────────────┤
+                │  • Color tokens defined in oklch() space     │
+                │  • Fluid typography powered by clamp()       │
+                │  • Liquid Glass restricted strictly to Nav   │
+                │  • Accessible Command Palette (Ctrl/Cmd + K) │
+                │  • Case studies: Problem → Decision → Metric │
+                │  • Dynamic Bento Grid with zero layout shift │
+                │  • Accessible form with ARIA live validation │
+                └──────────────────────────────────────────────┘
+```
+
+### Color System in `oklch()`
+I moved away from arbitrary hex codes and saturated purple gradients. The token system is grounded in `oklch()`:
+- **Light Mode**: Warm off-white bone base (`oklch(98% 0.005 85)`) with crisp ivory surfaces and deep charcoal typography.
+- **Dark Mode**: Matte deep charcoal (`oklch(14% 0.006 60)`), ditching pure `#000` to prevent eye strain.
+- **Single Accent Color**: Contemporary terracotta/copper (`oklch(62% 0.17 42)`), reserved strategically for active states, key CTAs, and focal highlights.
+
+### Fluid Typography and Tabular Numerals
+Defined once using `clamp()` formulas, headings scale smoothly between 375px mobile screens and 1920px displays without jarring breakpoint jumps. Tabular numerals (`tabular-nums`) are enforced across clock and weather widgets, ensuring second-by-second changes never cause text to shake or shift.
+
+### Controlled "Liquid Glass" Surfaces
+Glassmorphism is ubiquitous, but overusing it turns a website into visual soup. In v3.0, liquid glass is strictly confined to the top sticky navigation bar. All other content cards use clean 1px borders (`var(--border-subtle)`), subtle depth, and consistent radii.
+
+### Command Palette (`Ctrl + K` / `Cmd + K`)
+For visitors who prefer keyboard navigation, I built an accessible modal in React (`CommandPalette.tsx`). It lets you jump to any section, switch themes, change languages, copy my email, or download my resume in a split second.
+
+### Product-Centric Case Studies
+The projects section was rewritten from scratch. Each featured product (**ClearCut Studio**, **Boxode Website**, and **Dune UI**) is structured around real product engineering:
+- **Problem**: The friction that existed before the project.
+- **Decision**: The architecture and stack selected to solve it.
+- **Result**: Quantifiable speed, adoption, or quality metrics.
+
+### Bento Grid 2026 & Origin
+I preserved all five original Bento cards, elevated with clean line icons, zero-flicker skeletons, and a live clock calculating time differences against Mexico. Furthermore, I unified my geographic origin: proudly representing **Zacatecas, Mexico**, alongside my degree from Universidad Tecnológica del Norte de Aguascalientes (UTNA).
+
+### Visual Identity
+My personal monogram vector was restored as a dedicated component with `fill="currentColor"`, seamlessly adapting to dark/light transitions. In the Hero, my portrait honors my roots with my cowboy hat and western plaid shirt—a nod to my brand as a "code cowboy"—proportioned in an editorial 4:5 vertical card with a gentle gradient mask.
+
+---
+
+## 5. Looking Ahead: The Journey Continues
+
+This redesign is not a finish line; it is a launchpad. Coming back to software development after hitting personal rock bottom changes how you write code. I no longer build to chase hype or feed vanity metrics; I build because I genuinely love solving hard problems, crafting delightful interfaces, and creating software that makes people's lives easier.
+
+What lies ahead:
+- **New Projects & Consulting**: I am officially open for freelance contracts and technical consulting for startups and forward-thinking businesses.
+- **Technical Writing**: I plan to write consistently on this blog about frontend architecture, Astro, React, web performance, and real-world engineering lessons.
+- **Consistency with Balance**: Pursuing engineering excellence while fiercely guarding physical health, mental peace, and time with loved ones.
+
+If you are reading this and going through a storm that forced you to pause what you love, hold on. The code and your craft will wait for you. Take the time you need to heal and rebuild. When you return, you will bring greater depth, clearer judgment, and far more truth.
+
+**I'm back. And this time, to stay.**
+
+---
+
+*Have an ambitious project or want to say hello? Drop me a message through the [contact form](https://fabianh.me/#contact) or find me on [GitHub](https://github.com/FabianHermar).*

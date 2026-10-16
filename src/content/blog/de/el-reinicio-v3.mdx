@@ -1,0 +1,82 @@
+---
+title: "Der Neuanfang: Warum ich pausierte, was die Stille mich lehrte und der v3.0-Relaunch"
+description: "Eine ehrliche Reflexion über meinen temporären Rückzug aus der Softwareentwicklung aufgrund gesundheitlicher, familiärer und persönlicher Hürden – und die Designentscheidungen hinter fabianh.me v3.0."
+pubDate: 2026-10-16
+lang: "de"
+image: "/portfolio_mockup.webp"
+author: "Fabian Herrera"
+category: "Reflexionen"
+readTime: 8
+---
+
+# Der Neuanfang: Warum ich pausierte, was die Stille mich lehrte und der v3.0-Relaunch
+
+Es gibt Momente im Leben, in denen der Bildschirm dunkel bleibt – nicht aus freiem Willen, sondern weil das reale Leben deine ungeteilte Aufmerksamkeit verlangt. Über viele Monate hinweg verstummten meine Beiträge auf GitHub, meine professionellen Kanäle blieben still und Projekte, in die ich einst Nächte investiert hatte, froren ein.
+
+Für Außenstehende mochte es wie ein plötzliches Verschwinden wirken. In Wirklichkeit durchlebte ich eine Welle externer Herausforderungen, die mich völlig überwältigte: gesundheitliche Krisen, die meine tägliche Energie raubten, schwere familiäre Prüfungen, die meine volle Präsenz erforderten, und der verheerende Verlust meiner Partnerin – ein Schicksalsschlag, der unendlichen Schmerz auslöste und mich buchstäblich zu Boden riss.
+
+Heute, nach Monaten stillen Wiederaufbaus und der Bewältigung dieser tiefen Trauer, fühle ich mich ein ganzes Stück besser und bin zurück. Und ich wollte, dass dieses Comeback mehr ist als nur ein Tweet oder ein Commit; es sollte eine ganzheitliche Neugestaltung meiner digitalen Identität sein: **der Release von Version 3.0 von [fabianh.me](https://fabianh.me)**.
+
+In diesem Beitrag teile ich transparent, was während dieser Auszeit geschah, warum ich mich für einen so radikalen Web-Relaunch entschied und welche technischen sowie gestalterischen Entscheidungen diesen neuen Lebensabschnitt prägen.
+
+---
+
+## 1. Die unfreiwillige Pause: Wenn das Leben dich stoppt
+
+In der Tech-Branche herrscht permanenter Druck zur Dauerpräsenz: der Hustle-Kult, grüne GitHub-Streaks und das wöchentliche Publizieren neuer Inhalte zu jedem Framework.
+
+Doch wenn die Gesundheit wankt, im familiären Umfeld Risse entstehen und der Mensch, den du liebst, für immer geht, verliert Code jede Dringlichkeit. Zunächst versuchte ich weiterzuprogrammieren, als könnte ich dem Schock entfliehen. Ich saß vor dem Editor, um Bugs zu fixen, während in meinem Kopf ein unerträglicher Sturm tobte. Das Resultat war Erschöpfung, Blockade und die Gewissheit, dass man so nicht im Autopiloten weitermachen kann.
+
+Ich lernte eine entscheidende Lektion: **Man kann das eigene Leben nicht mit `Strg + Z` debuggen**. Trauer, Körper und Seele verlangen Zeit, Akzeptanz, Beistand und vor allem: Stille.
+
+Die Entscheidung, die Tastatur beiseitezulegen, war keine Kapitulation; sie war ein Akt der Selbstachtung. Ich nahm mir die Zeit zu heilen, mich um meine Gesundheit zu kümmern, für meine Familie da zu sein und den schmerzhaften Verlust meiner Partnerin zu verarbeiten. Es war ein harter, langsamer Weg, aber dank dieser Pause spüre ich heute neue Lebenskraft und die feste Überzeugung, meine Leidenschaft wiederaufzunehmen.
+
+---
+
+## 2. Der Funke des Comebacks: Wiedergeboren im Code
+
+Die Leidenschaft fürs Programmieren war nie erloschen; sie wartete nur darauf, dass der Lärm nachließ. Vor einigen Wochen spürte ich erstmals wieder dieses vertraute Kribbeln in den Händen – die Neugier, das Terminal zu öffnen, moderne Astro-Features zu testen und ein Interface zu erschaffen, das Tiefe und Charakter besitzt.
+
+Mir wurde klar: Softwareentwicklung ist nicht nur mein Beruf, sondern meine Berufung. Wenn ich zurückkehrte, dann mit größerer Reife, klaren Prioritäten und einem Qualitätsanspruch, der weit über frühere Gewohnheiten hinausgeht.
+
+Der erste Schritt war der Blick auf meine digitale Visitenkarte: mein Portfolio.
+
+---
+
+## 3. Konfrontation mit der Vergangenheit: Warum ein so plötzlicher Relaunch?
+
+Als ich das Repository meines früheren Portfolios – gebaut vor über zwei Jahren – öffnete, traf mich die Realität: Die Seite stammte aus einem 2023er-Designzyklus, der mich heute nicht mehr repräsentiert:
+
+1. **Übertriebene Animationen**: Überschriften, die Buchstabe für Buchstabe animiert wurden, wobei jeder Buchstabe ein eigenes `<h1>`-Tag darstellte – ein Albtraum für Screenreader, Barrierefreiheit und SEO.
+2. **Generische Ästhetik**: Emojis und 3D-Clip-Art-Icons, die Professionalität und Ingenieurskunst vermissen ließen.
+3. **Inkonsistente Positionierung**: Widersprüchliche Angaben zwischen "Frontend" und "Fullstack" sowie ungenaue Erfahrungszeiträume.
+4. **Überladenes Hero**: Mehrere konkurrierende CV-Buttons und vier verstreute Social-Media-Links.
+5. **Projekte wie Hausarbeiten**: Beschreibungen nach dem Muster "Was ich gelernt habe", statt echter Produktentscheidungen, Architektur und messbarer Resultate.
+6. **Bento Grid mit Ladeflackern**: Widgets mit simplen `"Loading..."`-Texten und sprunghaften Layout-Verschiebungen beim Uhren-Tick.
+
+Kosmetische Reparaturen reichten nicht aus. Es brauchte ein klares Fundament: **einen Relaunch nach den modernen Standards von 2026**.
+
+---
+
+## 4. Anatomie der Version 3.0: Design und Architektur
+
+Für die Version 3.0 wählte ich eine konsequente Leitlinie: **Editorial-Tech-Design, strenge visuelle Hierarchie, 1px-Konturen, ausdrucksstarke Typografie und kompromisslose Performance**.
+
+- **Farbsystem im `oklch()`-Farbraum**: Warmes Elfenbein/Beige für den Light Mode, mattes Tiefgrau für den Dark Mode und ein einzelner moderner Terrakotta-Akzentton (`oklch(62% 0.17 42)`).
+- **Fluide Typografie und Tabellenziffern**: Fließende Skalierung mittels `clamp()`-Formeln und `tabular-nums` in Echtzeit-Widgets, wodurch Sekundensprünge der Uhr absolut wackelfrei bleiben.
+- **Flüssiges Glas (Liquid Glass)**: Streng begrenzt auf die obere Navigationsleiste; alle anderen Inhaltskarten setzen auf reduzierte 1px-Bordüren.
+- **Befehlspalette (`Cmd / Strg + K`)**: Vollständige Tastaturnavigation zum schnellen Wechseln von Abschnitten, Themes, Sprachen sowie zum Kopieren der E-Mail oder Herunterladen des Lebenslaufs.
+- **Produktorientierte Case Studies**: ClearCut Studio, Boxode Website und Dune UI strukturiert nach *Problem → Entscheidung → Resultat*.
+- **Herkunft & Identität**: Mein persönliches Vektormonogramm in Header und Footer mit `fill="currentColor"`, Porträt im 4:5-Format und stolze Vertretung meiner Heimat: **Zacatecas, Mexiko**.
+
+---
+
+## 5. Der Blick nach vorn: Die Reise geht weiter
+
+Dieser Relaunch ist kein Ziel, sondern ein Neustart. Nach persönlichem Tiefgang verändert sich der Blick auf Code: Ich baue nicht mehr für flüchtige Hypes, sondern um echte Probleme zu lösen und Interfaces zu schaffen, die Menschen bereichern.
+
+Ich bin wieder da. Und diesmal, um zu bleiben.
+
+---
+
+*Möchtest du ein Projekt besprechen oder dich austauschen? Schreib mir über das [Kontaktformular](https://fabianh.me/#contact) oder besuche mein Profil auf [GitHub](https://github.com/FabianHermar).*

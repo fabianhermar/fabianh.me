@@ -5,7 +5,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getI18N } from '@/i18n'
 import { render } from 'astro:content'
 import { getLangFromUrl, useTranslatedPath } from '@/i18n/utils'
-import CopyLinkButton from '@/components/pages/CopyLinkButton.tsx'
+import CopyLinkButton from '@/components/pages/CopyLinkButton'
 
 const { post } = Astro.props
 const { Content } = await render(post)

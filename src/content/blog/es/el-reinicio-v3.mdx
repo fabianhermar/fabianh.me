@@ -1,0 +1,123 @@
+---
+title: "El reinicio: Por qué pausé el código, qué aprendí del silencio y cómo reconstruí mi web en la v3.0"
+description: "Una reflexión honesta sobre mi retiro temporal de la programación por complicaciones de salud, familiares y personales, y las decisiones de diseño y arquitectura detrás de la v3.0 de fabianh.me."
+pubDate: 2026-10-16
+lang: "es"
+image: "/portfolio_mockup.webp"
+author: "Fabian Herrera"
+category: "Reflexiones"
+readTime: 8
+---
+
+# El reinicio: Por qué pausé el código, qué aprendí del silencio y cómo reconstruí mi web en la v3.0
+
+Hay momentos en los que la pantalla se apaga no por decisión propia, sino porque la vida exige toda tu atención. Durante un largo tiempo, mi actividad en GitHub se detuvo, mis redes profesionales quedaron en pausa y los proyectos en los que volcaba madrugadas enteras quedaron congelados. 
+
+Para quien me seguía o trabajaba conmigo, pudo parecer una desaparición repentina. La realidad es que atravesé una etapa marcada por una acumulación de complicaciones externas que me sobrepasaron por completo: problemas de salud física y mental que desgastaron mi energía diaria, tormentas familiares complejas que requerían mi presencia absoluta, y el fallecimiento de mi pareja, un golpe devastador que me causó un revuelo enorme en la cabeza y que literalmente me tumbó.
+
+Hoy, después de meses de reconstrucción silenciosa y de asimilar el duelo, me siento un tanto mejor y estoy de vuelta. Y quise que ese regreso no fuera solo un tuit o un commit aislado, sino una transformación integral de mi espacio digital: **el lanzamiento de la versión 3.0 de [fabianh.me](https://fabianh.me)**.
+
+En este artículo quiero contarte con total transparencia qué pasó durante este retiro, por qué decidí rediseñar la web de forma tan contundente y cómo concebí cada decisión técnica y visual de esta nueva etapa.
+
+---
+
+## 1. El retiro involuntario: Cuando la vida te obliga a pausar
+
+En la industria tecnológica existe una presión constante por la presencia ininterrumpida: el mito del *hustle*, la racha verde en GitHub, el publicar contenido todas las semanas y mantenerse siempre al día con el último framework o modelo de inteligencia artificial.
+
+Sin embargo, cuando la salud flaquea, cuando en casa las cosas se fracturan y cuando la persona que amas fallece, el código pierde cualquier sentido de urgencia. Intenté, al inicio, seguir programando como si pudiera amortiguar el impacto. Me sentaba frente al editor intentando resolver bugs mientras mi cabeza lidiaba con una tormenta y un dolor abrumadores. El resultado fue el esperado: agotamiento extremo, bloqueo y la certeza de que no podía continuar en automático.
+
+Aprendí algo fundamental: **no puedes depurar tu vida personal como si fuera un error sintáctico con `Ctrl + Z`**. El duelo, el cuerpo y la mente exigen tiempo, aceptación, ayuda y, sobre todo, silencio. 
+
+Tomar la decisión de soltar el teclado y retirarme temporalmente no fue una renuncia; fue un acto de supervivencia y respeto conmigo mismo. Me dediqué a sanar, a cuidar mi salud, a estar presente con mi familia en los momentos más difíciles y a procesar la ausencia de mi pareja. Fue un proceso duro y lento, pero gracias a ese espacio hoy me siento con ánimos renovados y con la firme convicción de retomar mi pasión.
+
+---
+
+## 2. La chispa del regreso: Renacer en código
+
+El deseo de programar no murió; solo estaba esperando que el ruido cesara. Hace unas semanas, por primera vez en mucho tiempo, volví a sentir ese cosquilleo familiar en las manos. Esa curiosidad genuina por abrir la terminal, probar una nueva función de Astro, experimentar con la escala tipográfica y construir una interfaz que se sintiera viva.
+
+Comprendí que la programación no era solo mi trabajo: es mi vocación y mi forma de expresarme. Pero si iba a regresar, no quería hacerlo a medias tintas ni con inercia. Quería regresar con más madurez, con prioridades claras y con un estándar de calidad mucho más alto del que solía conformarme.
+
+El primer paso natural era mirar mi carta de presentación al mundo: mi portafolio.
+
+---
+
+## 3. El choque con mi versión anterior: ¿Por qué un rediseño tan repentino?
+
+Al abrir el repositorio de mi portafolio anterior —construido hace más de dos años—, sentí un choque de realidad evidente. El sitio correspondía a una etapa de 2023 con patrones que hoy ya no me representaban en lo absoluto:
+
+1. **Efectos teatrales que dañaban la experiencia**: Títulos animados letra por letra donde cada carácter se envolvía en un `<h1>` dentro de Framer Motion. Era visualmente llamativo para 2023, pero un completo desastre para lectores de pantalla, accesibilidad y posicionamiento SEO.
+2. **Iconografía genérica e infantil**: El uso de emojis por doquier e iconos 3D estilo clip-art restaban seriedad a mi trabajo como ingeniero.
+3. **Inconsistencias de perfil**: En unas secciones me definía como "Frontend Developer", en otras como "Fullstack", y los años de experiencia variaban sin coherencia.
+4. **Hero saturado**: El primer pliegue del sitio competía consigo mismo con múltiples botones de CV, cuatro enlaces sociales dispersos y una jerarquía visual confusa.
+5. **Proyectos explicados como tareas escolares**: Casos redactados bajo el formato de "lo que aprendí en este proyecto", en lugar de articular el impacto real, las decisiones de arquitectura y los resultados para el negocio.
+6. **Bento Grid con carga descuidada**: Widgets que mostraban texto plano `"Loading..."`, parpadeos al actualizar datos y saltos bruscos de diseño al sincronizar la hora y el clima.
+
+No tenía sentido aplicar pequeños parches cosméticos. Necesitaba un cambio de raíz: **una refundación visual y técnica alineada a los estándares de 2026**.
+
+---
+
+## 4. Anatomía de la Versión 3.0: Decisiones de diseño y arquitectura
+
+Para esta nueva versión me impuse una filosofía clara: **diseño editorial-tecnológico, jerarquía impecable, bordes finos, tipografía con carácter y rendimiento sin compromisos**.
+
+```
+                ┌──────────────────────────────────────────────┐
+                │        fabianh.me · v3.0 (2026)              │
+                ├──────────────────────────────────────────────┤
+                │  • Tokens de color en espacio oklch()        │
+                │  • Tipografía fluida con clamp()             │
+                │  • Liquid Glass exclusivo en Header          │
+                │  • Paleta de Comandos (Ctrl / Cmd + K)       │
+                │  • Casos de estudio: Problema → Solución     │
+                │  • Bento Grid dinámico sin layout shifts     │
+                │  • Formulario con validación accesible ARIA  │
+                └──────────────────────────────────────────────┘
+```
+
+### Paleta de color en espacio `oklch()`
+Abandoné los colores hexadecimales arbitrarios y los gradientes morados estándar. Definí un sistema de tokens en `oklch()`:
+- **Modo Claro**: Base en blanco hueso cálido (`oklch(98% 0.005 85)`) con superficies marfil y texto en carbón profundo.
+- **Modo Oscuro**: Base en carbón mate (`oklch(14% 0.006 60)`), eliminando el negro `#000` absoluto para ofrecer una lectura descansada.
+- **Color de Acento Único**: Un tono terracota/cobre contemporáneo (`oklch(62% 0.17 42)`), utilizado estratégicamente en botones primarios, enlaces activos e indicadores de estado.
+
+### Tipografía fluida y números tabulares
+Diseñé una escala tipográfica fluida con funciones `clamp()` que se adapta con naturalidad desde pantallas móviles de 375px hasta monitores ultrawide de 1920px sin saltos bruscos. Además, apliqué numerales tabulares (`tabular-nums`) en el reloj en vivo y en los widgets de clima, logrando que los dígitos cambien cada segundo con absoluta estabilidad visual.
+
+### Superficies limpias y "Liquid Glass" controlado
+El efecto de cristal esmerilado (*liquid glass*) es una de las grandes tendencias visuales, pero suele abusarse de él hasta convertir una web en una gelatina borrosa. En la v3.0, el efecto liquid glass está estrictamente delimitado a la barra de navegación superior fija, mientras que el resto de las tarjetas y contenedores utilizan bordes limpios de `1px` (`var(--border-subtle)`), sombras mínimas y radios consistentes.
+
+### Paleta de Comandos (`Ctrl + K` / `Cmd + K`)
+Para quienes prefieren navegar sin levantar las manos del teclado, implementé una paleta de comandos interactiva en React (`CommandPalette.tsx`). Permite saltar entre secciones, explorar el blog, alternar el tema claro/oscuro, cambiar el idioma, copiar mi correo en un clic o descargar mi CV en PDF.
+
+### Casos de Estudio de Producto
+Reescribí por completo la sección de proyectos. En lugar de textos vagos, cada proyecto (**ClearCut Studio**, **Boxode Website** y **Dune UI**) está estructurado como un caso de estudio real:
+- **Problema**: Qué fricción existía antes de iniciar.
+- **Decisión**: Qué arquitectura frontend o modelo de datos elegí para solucionarlo.
+- **Resultado**: Métricas concretas de rendimiento y valor aportado.
+
+### Bento Grid 2026 y origen territorial
+Conservé las cinco tarjetas que formaban mi Bento Grid original, pero rediseñadas con glifos vectoriales de trazo fino, estados *skeleton* sin parpadeos y hora local con cálculo dinámico respecto a México. Asimismo, corregí la información de origen: represento con orgullo a **Zacatecas, México**, vinculando mi formación en la Universidad Tecnológica del Norte de Aguascalientes (UTNA).
+
+### Identidad y presencia
+Rescaté mi monograma vectorial personal, encapsulándolo en un componente dinámico con `fill="currentColor"` para que responda armónicamente a los cambios de tema y al hover. En el Hero, mi retrato viste con orgullo mi sombrero y camisa vaquera —un guiño sutil a mi esencia como "vaquero del código"—, encuadrado en una elegante proporción vertical `4:5` con un suave desvanecimiento inferior.
+
+---
+
+## 5. Mirando hacia adelante: El camino continúa
+
+Este rediseño no es una meta; es un punto de partida. Regresar a programar después de haber tocado fondo a nivel personal cambia por completo tu perspectiva. Ya no escribo código para inflar un ego ni para seguir modas efímeras; lo hago porque me apasiona resolver problemas, construir interfaces bellas y crear herramientas que faciliten la vida de las personas.
+
+¿Qué viene ahora?
+- **Nuevos proyectos y consultoría**: Estoy oficialmente abierto a nuevos proyectos freelance y colaboraciones técnicas para startups y negocios digitales.
+- **Más artículos técnicos**: Quiero escribir con frecuencia en este blog sobre arquitectura frontend, Astro, React, optimización web y las lecciones reales de construir productos.
+- **Constancia con equilibrio**: Mantener el compromiso técnico sin volver a descuidar la salud física, la mente y el tiempo con quienes amo.
+
+Si estás leyendo esto y por alguna razón estás atravesando un bache personal donde la vida te obligó a pausar lo que amas, quiero decirte que tengas paciencia. El código y tus proyectos van a esperar por ti. Tómate el tiempo de sanar y reconstruirte. Cuando estés listo para volver, regresarás con más fuerza, más criterio y mucha más verdad.
+
+**Estamos de vuelta. Y esta vez, para quedarnos.**
+
+---
+
+*¿Tienes un proyecto en mente o simplemente quieres saludar? Escríbeme a través del formulario de [contacto](https://fabianh.me/#contact) o encuéntrame en [GitHub](https://github.com/FabianHermar).*
