@@ -3,16 +3,16 @@
     <picture align="center">
       <source
         media='(prefers-color-scheme: dark)'
-        srcSet='https://github.com/FabianHermar/fabianh.dev/blob/main/public/svg/light-logo.svg'
+        srcSet='https://github.com/FabianHermar/fabianh.me/blob/main/public/svg/light-logo.svg'
       />
       <source
         media='(prefers-color-scheme: light)'
-        srcSet='https://github.com/FabianHermar/fabianh.dev/blob/main/public/svg/dark-logo.svg'
+        srcSet='https://github.com/FabianHermar/fabianh.me/blob/main/public/svg/dark-logo.svg'
       />
       <img
         height="75em"
         alt='Boxode Logo'
-        src='https://github.com/FabianHermar/fabianh.dev/blob/main/public/svg/dark-logo.svg'
+        src='https://github.com/FabianHermar/fabianh.me/blob/main/public/svg/dark-logo.svg'
       />
     </picture>
   <h3>Desarrollo productos digitales que capturan la imaginación y elevan la experiencia de usuario.</h3>
