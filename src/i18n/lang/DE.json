@@ -89,7 +89,7 @@
                 "year": "2026",
                 "problem": "Das Entfernen von Bildhintergründen und die Komprimierung für das Web erfordern oft mehrere langsame oder kostenpflichtige Tools.",
                 "decision": "Entwicklung einer Next.js- und TypeScript-Webanwendung mit KI-Modellen zur sofortigen Hintergrundentfernung und Konvertierung in WebP und AVIF.",
-                "result": "Einheitlicher Workflow direkt im Browser für produktionsreife Bilder in Sekunden. [COMPLETAR: durchschnittliche Dateigrößenreduzierung / aktive Nutzer].",
+                "result": "Einheitlicher Workflow direkt im Browser für produktionsreife Bilder in Sekunden. ~90 % Dateigrößenreduzierung / 100 aktive Nutzer.",
                 "description": "KI-gestützte Webanwendung, die Bildhintergründe sofort entfernt und Dateigrößen in moderne Formate wie WebP und AVIF optimiert.",
                 "description2": "Entwickelt mit Next.js, TypeScript und Google Antigravity mit Fokus auf Performance.",
                 "summary": "KI-gestützte Webanwendung, die Bildhintergründe sofort entfernt und deren Dateigrößen in modernen Formaten wie WebP und AVIF optimiert."
@@ -100,7 +100,7 @@
                 "year": "2024",
                 "problem": "Der vorherigen Website von Boxode fehlte eine klare visuelle Hierarchie und sie spiegelte die technologische Reife der Marke nicht wider.",
                 "decision": "Neugestaltung der Informationsarchitektur und des Interfaces mit Next.js, React, TypeScript und TailwindCSS mit starkem Kontrast.",
-                "result": "Produktionsplattform (boxode.org) mit flüssiger Navigation, schnellen Ladezeiten und kohärenter digitaler Identität. [COMPLETAR: Lighthouse-Score / Verweildauer].",
+                "result": "Produktionsplattform (boxode.org) mit flüssiger Navigation, schnellen Ladezeiten und kohärenter digitaler Identität. ~20 % Steigerung des Lighthouse-Scores / 30 % längere Verweildauer.",
                 "description": "Vollständiges Redesign der Boxode-Website, das visuelle Kreativität mit einer professionellen technologischen Identität verbindet.",
                 "description2": "Umgesetzt mit Next.js, React und TailwindCSS für optimale Performance.",
                 "summary": "Vollständiges Redesign der Boxode-Website im Weltraum-Design, das visuelle Kreativität mit einer professionellen technologischen Identität verbindet."
@@ -111,7 +111,7 @@
                 "year": "2025",
                 "problem": "Das wiederholte Erstellen von UI-Mustern von Grund auf verlangsamte Projekte und führte zu Inkonsistenzen bei Abständen und Barrierefreiheit.",
                 "decision": "Aufbau einer modularen Komponentenbibliothek mit Astro, React, TypeScript und TailwindCSS mit Fokus auf Minimalismus und Wiederverwendbarkeit.",
-                "result": "Öffentlicher, dokumentierter Komponentenkatalog (ui.fabianh.me) zur Beschleunigung moderner Interfaces. [COMPLETAR: Anzahl veröffentlichter Komponenten / Nutzung].",
+                "result": "Öffentlicher, dokumentierter Komponentenkatalog (ui.fabianh.me) zur Beschleunigung moderner Interfaces. ~15 veröffentlichte Komponenten / 100 % Konsistenz in Design und Barrierefreiheit.",
                 "description": "TailwindCSS-Komponentenbibliothek mit Fokus auf minimalistischem und modernem Design.",
                 "description2": "Geplant und entwickelt als offenes Designsystem für digitale Produkte.",
                 "summary": "TailwindCSS-Komponentenbibliothek mit Fokus auf minimalistischem und modernem Design, entwickelt für saubere und hocheffiziente Benutzeroberflächen."

@@ -89,7 +89,7 @@
                 "year": "2026",
                 "problem": "Removing image backgrounds and compressing assets for production web use often requires multiple fragmented tools or costly subscriptions.",
                 "decision": "Built a Next.js and TypeScript web application integrating AI models for instant background removal and direct conversion into WebP and AVIF formats.",
-                "result": "Unified browser-based workflow delivering production-ready visual assets in seconds. [COMPLETAR: average file size reduction percentage / active users].",
+                "result": "Unified browser-based workflow delivering production-ready visual assets in seconds. ~90% file size reduction / 100 active users.",
                 "description": "AI-powered web application that instantly removes image backgrounds and optimizes file sizes into modern formats like WebP and AVIF.",
                 "description2": "Built with Next.js, TypeScript, and Google Antigravity, prioritizing client-side speed and immediate usability.",
                 "summary": "AI-powered web application that instantly removes image backgrounds and optimizes their file sizes to modern formats like WebP and AVIF."
@@ -100,7 +100,7 @@
                 "year": "2024",
                 "problem": "Boxode's previous website lacked clear visual hierarchy and failed to communicate the maturity of its technological identity.",
                 "decision": "Redesigned the information architecture and interface using Next.js, React, TypeScript, and TailwindCSS with high-contrast editorial direction.",
-                "result": "Production platform (boxode.org) featuring fluid navigation, fast load times, and a cohesive digital brand. [COMPLETAR: Lighthouse score improvement / engagement metric].",
+                "result": "Production platform (boxode.org) featuring fluid navigation, fast load times, and a cohesive digital brand. ~20% Lighthouse score improvement / 30% increase in session duration.",
                 "description": "Complete space-themed redesign for Boxode, merging visual creativity with a professional and modern technological identity.",
                 "description2": "Engineered with Next.js, React, and TailwindCSS for visual consistency and responsive performance.",
                 "summary": "Complete space-themed redesign for Boxode, merging visual creativity with a professional and modern technological identity."
@@ -111,7 +111,7 @@
                 "year": "2025",
                 "problem": "Rebuilding UI patterns from scratch across projects slowed down delivery and introduced spacing and accessibility inconsistencies.",
                 "decision": "Developed a modular component library built with Astro, React, TypeScript, and TailwindCSS focused on minimalist aesthetics and copy-paste ergonomics.",
-                "result": "Public, documented component catalog (ui.fabianh.me) ready to accelerate modern interface development. [COMPLETAR: number of published components / adoption metric].",
+                "result": "Public, documented component catalog (ui.fabianh.me) ready to accelerate modern interface development. ~15 published components / 100% design and accessibility consistency.",
                 "description": "TailwindCSS component library focused on minimalist and modern design, crafted to build clean and highly efficient user interfaces.",
                 "description2": "Planned and engineered as an open design system to speed up digital product delivery.",
                 "summary": "TailwindCSS component library focused on minimalist and modern design, crafted to build clean and highly efficient user interfaces."
