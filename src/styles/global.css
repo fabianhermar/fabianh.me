@@ -222,21 +222,27 @@ body {
    ========================================= */
 /* Liquid Glass: Permitted ONLY on the navigation bar */
 .nav-liquid-glass {
-	background: oklch(0.99 0.002 85 / 0.76);
-	backdrop-filter: blur(18px) saturate(160%);
-	-webkit-backdrop-filter: blur(18px) saturate(160%);
-	border: 1px solid oklch(0.16 0.01 260 / 0.08);
+	background: oklch(0.988 0.003 85 / 0.88);
+	backdrop-filter: blur(24px) saturate(190%) contrast(102%);
+	-webkit-backdrop-filter: blur(24px) saturate(190%) contrast(102%);
+	border: 1px solid oklch(0.16 0.01 260 / 0.12);
 	box-shadow:
-		0 1px 0 0 oklch(1 0 0 / 0.6) inset,
-		0 8px 24px -6px oklch(0.16 0.01 260 / 0.06);
+		0 1px 0 0 oklch(1 0 0 / 0.9) inset,
+		0 -1px 0 0 oklch(0 0 0 / 0.04) inset,
+		0 12px 32px -6px oklch(0.16 0.01 260 / 0.08),
+		0 4px 12px -2px oklch(0.16 0.01 260 / 0.04);
 }
 
 .dark .nav-liquid-glass {
-	background: oklch(0.16 0.008 260 / 0.72);
-	border: 1px solid oklch(0.96 0.004 85 / 0.10);
+	background: oklch(0.145 0.008 260 / 0.86);
+	backdrop-filter: blur(24px) saturate(190%) contrast(102%);
+	-webkit-backdrop-filter: blur(24px) saturate(190%) contrast(102%);
+	border: 1px solid oklch(0.96 0.004 85 / 0.14);
 	box-shadow:
-		0 1px 0 0 oklch(1 0 0 / 0.08) inset,
-		0 10px 28px -6px oklch(0 0 0 / 0.45);
+		0 1px 0 0 oklch(1 0 0 / 0.18) inset,
+		0 -1px 0 0 oklch(0 0 0 / 0.35) inset,
+		0 16px 36px -6px oklch(0 0 0 / 0.65),
+		0 4px 12px -2px oklch(0 0 0 / 0.45);
 }
 
 /* Standard Editorial Surface (1px border, subtle shadow, zero glass blur) */

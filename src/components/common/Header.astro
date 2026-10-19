@@ -14,10 +14,11 @@ const homePath = translatePath('/')
 
 <header class='sticky top-0 z-50 w-full pt-3 pb-2'>
 	<Container>
-		<nav
-			aria-label='Navegación principal'
-			class='nav-liquid-glass flex items-center justify-between rounded-xl px-3.5 py-2.5 sm:px-5'
-		>
+		<div class='relative'>
+			<nav
+				aria-label='Navegación principal'
+				class='nav-liquid-glass flex items-center justify-between rounded-xl px-3.5 py-2.5 sm:px-5'
+			>
 			<!-- Brand + Availability Status -->
 			<div class='flex items-center gap-3 sm:gap-4'>
 				<a
@@ -168,10 +169,10 @@ const homePath = translatePath('/')
 			</div>
 		</nav>
 
-		<!-- Mobile Navigation Drawer -->
+		<!-- Mobile Navigation Drawer (Floats over content, does not push page down) -->
 		<div
 			id='mobile-menu-panel'
-			class='mt-2 hidden rounded-xl border border-[var(--border-default)] bg-[var(--bg-surface)] p-4 shadow-lg lg:hidden'
+			class='nav-liquid-glass absolute top-full left-0 right-0 mt-2 hidden rounded-2xl p-4 shadow-2xl lg:hidden z-50'
 		>
 			<!-- Mobile Search / Command Palette trigger -->
 			<button
@@ -275,6 +276,7 @@ const homePath = translatePath('/')
 				</a>
 			</div>
 		</div>
+		</div>
 	</Container>
 </header>
 
@@ -310,6 +312,26 @@ const homePath = translatePath('/')
 		menuBtn.addEventListener('click', () => toggleMenu())
 		mobileLinks.forEach((link) => {
 			link.addEventListener('click', () => toggleMenu(true))
+		})
+
+		// Close on click outside
+		document.addEventListener('click', (e) => {
+			const target = e.target as HTMLElement | null
+			if (
+				menuBtn.getAttribute('aria-expanded') === 'true' &&
+				target &&
+				!menuPanel.contains(target) &&
+				!menuBtn.contains(target)
+			) {
+				toggleMenu(true)
+			}
+		})
+
+		// Close on Escape key
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+				toggleMenu(true)
+			}
 		})
 	}
 
